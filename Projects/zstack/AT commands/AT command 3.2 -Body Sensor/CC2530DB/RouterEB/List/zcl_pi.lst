@@ -1,0 +1,2669 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         01/Jul/2015  18:28:58 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  S:\zigbee\Myzigbe\version 3.0 for new              #
+#                          ZStack-CC2530-2.5.1a\Components\stack\zcl\zcl_pi.c #
+#    Command line       =  -f "S:\zigbee\Myzigbe\version 3.0 for new          #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\Tools\CC2530DB\f8wRouter. #
+#                          cfg" (-DCPU32MHZ -DROOT=__near_func                #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig. #
+#                          cfg" (-DZIGBEEPRO -DSECURE=0                       #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x2015                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "S:\zigbee\Myzigbe\version  #
+#                          3.0 for new ZStack-CC2530-2.5.1a\Components\stack\ #
+#                          zcl\zcl_pi.c" -D ZIGBEEPRO -D NWK_AUTO_POLL -D     #
+#                          HAL_UART=TRUE -D HOLD_AUTO_START -D NV_RESTORE -D  #
+#                          REFLECTOR -D xHAL_UART_ISR_TX_MAX=200 -D           #
+#                          xPOWER_SAVING -D ZCL_READ -D ZCL_WRITE -D          #
+#                          ZCL_IDENTIFY -D ZCL_ON_OFF -D ZCL_DISCOVER -D      #
+#                          HAL_UART_ISR=1 -D HAL_UART_DMA=0 -D xZTOOL_P1 -D   #
+#                          xMT_TASK -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D        #
+#                          xLCD_SUPPORTED=DEBUG -D xMT_UART_DEFAULT_OVERFLOW= #
+#                          FALSE -lC "S:\zigbee\Myzigbe\version 3.0 for new   #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\RouterEB\List\" -lA                #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\RouterEB\List\" --diag_suppress    #
+#                          Pe001,Pa010 -o "S:\zigbee\Myzigbe\version 3.0 for  #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\RouterEB\Obj\" -e                  #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for new          #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 - SOCKET\CC2530DB\" -I     #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\Source\" -I                     #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\Source\hal\" -I                 #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\Source\Modified\" -I            #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\ZMain\TI2530DB\" -I       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\hal\incl #
+#                          ude\" -I "S:\zigbee\Myzigbe\version 3.0 for new    #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\hal\targ #
+#                          et\CC2530EB\" -I "S:\zigbee\Myzigbe\version 3.0    #
+#                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT    #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\mac\incl #
+#                          ude\" -I "S:\zigbee\Myzigbe\version 3.0 for new    #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\mac\high #
+#                          _level\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\mac\low_ #
+#                          level\srf04\" -I "S:\zigbee\Myzigbe\version 3.0    #
+#                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT    #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\mac\low_ #
+#                          level\srf04\single_chip\" -I                       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\mt\" -I  #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\osal\inc #
+#                          lude\" -I "S:\zigbee\Myzigbe\version 3.0 for new   #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\services #
+#                          \saddr\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\services #
+#                          \sdata\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\af #
+#                          \" -I "S:\zigbee\Myzigbe\version 3.0 for new       #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\nw #
+#                          k\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\sa #
+#                          pi\" -I "S:\zigbee\Myzigbe\version 3.0 for new     #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\se #
+#                          c\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\sy #
+#                          s\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\zd #
+#                          o\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\zc #
+#                          l\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\zmac\"   #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for new          #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\zmac\f8w #
+#                          \" -Ohz --require_prototypes                       #
+#    List file          =  S:\zigbee\Myzigbe\version 3.0 for new              #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\RouterEB\List\zcl_pi.lst           #
+#    Object file        =  S:\zigbee\Myzigbe\version 3.0 for new              #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\RouterEB\Obj\zcl_pi.r51            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+S:\zigbee\Myzigbe\version 3.0 for new ZStack-CC2530-2.5.1a\Components\stack\zcl\zcl_pi.c
+      1          /**************************************************************************************************
+      2            Filename:       zcl_pi.c
+      3            Revised:        $Date: 2010-09-28 08:39:46 -0700 (Tue, 28 Sep 2010) $
+      4            Revision:       $Revision: 23926 $
+      5          
+      6            Description:    Zigbee Cluster Library - Protocol Interfaces (PI)
+      7          
+      8          
+      9            Copyright 2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com. 
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          #include "ZComDef.h"
+     44          #include "OSAL.h"
+     45          #include "zcl.h"
+     46          #include "zcl_general.h"
+     47          #include "zcl_pi.h"
+     48          
+     49          #if defined ( INTER_PAN )
+     50            #include "stub_aps.h"
+     51          #endif
+     52          
+     53          /*********************************************************************
+     54           * MACROS
+     55           */
+     56          
+     57          /*********************************************************************
+     58           * CONSTANTS
+     59           */
+     60          
+     61          /*********************************************************************
+     62           * TYPEDEFS
+     63           */
+     64          typedef struct zclPICBRec
+     65          {
+     66            struct zclPICBRec     *next;
+     67            uint8                 endpoint; // Used to link it into the endpoint descriptor
+     68            zclPI_AppCallbacks_t  *CBs;     // Pointer to Callback function
+     69          } zclPICBRec_t;
+     70          
+     71          /*********************************************************************
+     72           * GLOBAL VARIABLES
+     73           */
+     74          
+     75          /*********************************************************************
+     76           * GLOBAL FUNCTIONS
+     77           */
+     78          
+     79          /*********************************************************************
+     80           * LOCAL VARIABLES
+     81           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     82          static zclPICBRec_t *zclPICBs = (zclPICBRec_t *)NULL;
+   \                     zclPICBs:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     83          static uint8 zclPIPluginRegisted = FALSE;
+   \                     zclPIPluginRegisted:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     84          
+     85          /*********************************************************************
+     86           * LOCAL FUNCTIONS
+     87           */
+     88          static ZStatus_t zclPI_HdlIncoming( zclIncoming_t *pInHdlrMsg );
+     89          static ZStatus_t zclPI_HdlInSpecificCommands( zclIncoming_t *pInMsg );
+     90          static zclPI_AppCallbacks_t *zclPI_FindCallbacks( uint8 endpoint );
+     91          
+     92          static ZStatus_t zclPI_ProcessIn_GenericTunneServer( zclIncoming_t *pInMsg,
+     93                                                               zclPI_AppCallbacks_t *pCBs );
+     94          static ZStatus_t zclPI_ProcessIn_GenericTunneClient( zclIncoming_t *pInMsg,
+     95                                                               zclPI_AppCallbacks_t *pCBs );
+     96          static ZStatus_t zclPI_ProcessIn_BACnetTunnelCmds( zclIncoming_t *pInMsg,
+     97                                                             zclPI_AppCallbacks_t *pCBs );
+     98          static ZStatus_t zclPI_ProcessIn_11073TunnelCmds( zclIncoming_t *pInMsg,
+     99                                                            zclPI_AppCallbacks_t *pCBs );
+    100          
+    101          /*********************************************************************
+    102           * @fn      zclPI_RegisterCmdCallbacks
+    103           *
+    104           * @brief   Register an applications command callbacks
+    105           *
+    106           * @param   endpoint - application's endpoint
+    107           * @param   callbacks - pointer to the callback record.
+    108           *
+    109           * @return  ZMemError if not able to allocate
+    110           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    111          ZStatus_t zclPI_RegisterCmdCallbacks( uint8 endpoint, zclPI_AppCallbacks_t *callbacks )
+   \                     zclPI_RegisterCmdCallbacks:
+    112          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   FF           MOV     R7,A
+    113            zclPICBRec_t *pNewItem;
+    114            zclPICBRec_t *pLoop;
+    115          
+    116            // Register as a ZCL Plugin
+    117            if ( !zclPIPluginRegisted )
+   \   00000B   90....       MOV     DPTR,#zclPIPluginRegisted
+   \   00000E   E0           MOVX    A,@DPTR
+   \   00000F   7021         JNZ     ??zclPI_RegisterCmdCallbacks_0
+    118            {
+    119              zcl_registerPlugin( ZCL_CLUSTER_ID_PI_GENERIC_TUNNEL,
+    120                                  ZCL_CLUSTER_ID_PI_11073_PROTOCOL_TUNNEL,
+    121                                  zclPI_HdlIncoming );
+   \   000011                ; Setup parameters for call to function zcl_registerPlugin
+   \   000011   75....       MOV     ?V0 + 2,#??zclPI_HdlIncoming?relay & 0xff
+   \   000014   75....       MOV     ?V0 + 3,#(??zclPI_HdlIncoming?relay >> 8) & 0xff
+   \   000017   78..         MOV     R0,#?V0 + 2
+   \   000019   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00001C   7C14         MOV     R4,#0x14
+   \   00001E   7D06         MOV     R5,#0x6
+   \   000020   7A00         MOV     R2,#0x0
+   \   000022   7B06         MOV     R3,#0x6
+   \   000024   12....       LCALL   ??zcl_registerPlugin?relay
+   \   000027   7402         MOV     A,#0x2
+   \   000029   12....       LCALL   ?DEALLOC_XSTACK8
+    122              zclPIPluginRegisted = TRUE;
+   \   00002C   90....       MOV     DPTR,#zclPIPluginRegisted
+   \   00002F   7401         MOV     A,#0x1
+   \   000031   F0           MOVX    @DPTR,A
+    123            }
+    124          
+    125            // Fill in the new profile list
+    126            pNewItem = osal_mem_alloc( sizeof( zclPICBRec_t ) );
+   \                     ??zclPI_RegisterCmdCallbacks_0:
+   \   000032                ; Setup parameters for call to function osal_mem_alloc
+   \   000032   7A05         MOV     R2,#0x5
+   \   000034   7B00         MOV     R3,#0x0
+   \   000036   12....       LCALL   ??osal_mem_alloc?relay
+   \   000039   8A..         MOV     ?V0 + 2,R2
+   \   00003B   8B..         MOV     ?V0 + 3,R3
+   \   00003D   A8..         MOV     R0,?V0 + 2
+   \   00003F   A9..         MOV     R1,?V0 + 3
+    127            if ( pNewItem == NULL )
+   \   000041   E8           MOV     A,R0
+   \   000042   49           ORL     A,R1
+   \   000043   7004         JNZ     ??zclPI_RegisterCmdCallbacks_1
+    128              return (ZMemError);
+   \   000045   7910         MOV     R1,#0x10
+   \   000047   8045         SJMP    ??zclPI_RegisterCmdCallbacks_2
+    129          
+    130            pNewItem->next = (zclPICBRec_t *)NULL;
+   \                     ??zclPI_RegisterCmdCallbacks_1:
+   \   000049   8882         MOV     DPL,R0
+   \   00004B   8983         MOV     DPH,R1
+   \   00004D   E4           CLR     A
+   \   00004E   F0           MOVX    @DPTR,A
+   \   00004F   A3           INC     DPTR
+   \   000050   12....       LCALL   ?Subroutine22 & 0xFFFF
+    131            pNewItem->endpoint = endpoint;
+   \                     ??CrossCallReturnLabel_37:
+   \   000053   A3           INC     DPTR
+   \   000054   A3           INC     DPTR
+   \   000055   E5..         MOV     A,?V0 + 0
+   \   000057   12....       LCALL   ?Subroutine22 & 0xFFFF
+    132            pNewItem->CBs = callbacks;
+   \                     ??CrossCallReturnLabel_38:
+   \   00005A   A3           INC     DPTR
+   \   00005B   A3           INC     DPTR
+   \   00005C   A3           INC     DPTR
+   \   00005D   EE           MOV     A,R6
+   \   00005E   F0           MOVX    @DPTR,A
+   \   00005F   A3           INC     DPTR
+   \   000060   EF           MOV     A,R7
+   \   000061   F0           MOVX    @DPTR,A
+    133          
+    134            // Find spot in list
+    135            if ( zclPICBs == NULL )
+   \   000062   90....       MOV     DPTR,#zclPICBs
+   \   000065   E0           MOVX    A,@DPTR
+   \   000066   FA           MOV     R2,A
+   \   000067   A3           INC     DPTR
+   \   000068   E0           MOVX    A,@DPTR
+   \   000069   FB           MOV     R3,A
+   \   00006A   EA           MOV     A,R2
+   \   00006B   4B           ORL     A,R3
+   \   00006C   7008         JNZ     ??zclPI_RegisterCmdCallbacks_3
+    136            {
+    137              zclPICBs = pNewItem;
+   \   00006E   90....       MOV     DPTR,#zclPICBs
+   \   000071   8016         SJMP    ??zclPI_RegisterCmdCallbacks_4
+    138            }
+    139            else
+    140            {
+    141              // Look for end of list
+    142              pLoop = zclPICBs;
+    143              while ( pLoop->next != NULL )
+    144                pLoop = pLoop->next;
+   \                     ??zclPI_RegisterCmdCallbacks_5:
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   FA           MOV     R2,A
+   \   000075   A3           INC     DPTR
+   \                     ??zclPI_RegisterCmdCallbacks_3:
+   \   000076   E0           MOVX    A,@DPTR
+   \   000077   FB           MOV     R3,A
+   \   000078   8A82         MOV     DPL,R2
+   \   00007A   8B83         MOV     DPH,R3
+   \   00007C   E0           MOVX    A,@DPTR
+   \   00007D   FC           MOV     R4,A
+   \   00007E   A3           INC     DPTR
+   \   00007F   E0           MOVX    A,@DPTR
+   \   000080   FD           MOV     R5,A
+   \   000081   EC           MOV     A,R4
+   \   000082   4D           ORL     A,R5
+   \   000083   8A82         MOV     DPL,R2
+   \   000085   8B83         MOV     DPH,R3
+   \   000087   70EA         JNZ     ??zclPI_RegisterCmdCallbacks_5
+    145          
+    146              // Put new item at end of list
+    147              pLoop->next = pNewItem;
+    148            }
+   \                     ??zclPI_RegisterCmdCallbacks_4:
+   \   000089   12....       LCALL   ?Subroutine31 & 0xFFFF
+    149            return ( ZSuccess );
+   \                     ??CrossCallReturnLabel_51:
+   \   00008C   7900         MOV     R1,#0x0
+   \                     ??zclPI_RegisterCmdCallbacks_2:
+   \   00008E                REQUIRE ?Subroutine0
+   \   00008E                ; // Fall through to label ?Subroutine0
+    150          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F04         MOV     R7,#0x4
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine22:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   8882         MOV     DPL,R0
+   \   000003   8983         MOV     DPH,R1
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine31:
+   \   000000   E8           MOV     A,R0
+   \   000001   F0           MOVX    @DPTR,A
+   \   000002   A3           INC     DPTR
+   \   000003   E9           MOV     A,R1
+   \   000004   F0           MOVX    @DPTR,A
+   \   000005   22           RET
+    151          
+    152          /*******************************************************************************
+    153           * @fn      zclPI_Send_MatchProtocolAddrCmd
+    154           *
+    155           * @brief   Call to send out a Match Protocol Address Command. This command is
+    156           *          used when an associated protocol specific tunnel wishes to find out
+    157           *          the ZigBee address of the Generic Tunnel server cluster representing
+    158           *          a protocol-specific device with a given protocol address. The 
+    159           *          command is typically multicast to a group of inter-communicating 
+    160           *          Generic Tunnel clusters.
+    161           *
+    162           * @param   srcEP - Sending application's endpoint
+    163           * @param   dstAddr - where you want the message to go
+    164           * @param   len - length of protocol address
+    165           * @param   protocolAddr - protocol address
+    166           * @param   disableDefaultRsp - whether to disable the Default Response command
+    167           * @param   seqNum - sequence number
+    168           *
+    169           * @return  ZStatus_t
+    170           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    171          ZStatus_t zclPI_Send_MatchProtocolAddrCmd( uint8 srcEP, afAddrType_t *dstAddr,
+   \                     zclPI_Send_MatchProtocolAddrCmd:
+    172                                                     uint8 len, uint8 *protocolAddr, 
+    173                                                     uint8 disableDefaultRsp, uint8 seqNum )
+    174          {
+   \   000000   74EE         MOV     A,#-0x12
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 18
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   8A..         MOV     ?V0 + 8,R2
+   \   000009   8B..         MOV     ?V0 + 9,R3
+   \   00000B   EC           MOV     A,R4
+   \   00000C   FF           MOV     R7,A
+   \   00000D   8D..         MOV     ?V0 + 2,R5
+   \   00000F   7412         MOV     A,#0x12
+   \   000011   12....       LCALL   ?XSTACK_DISP0_8
+   \   000014   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_15:
+   \   000017   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001A   12....       LCALL   ?Subroutine6 & 0xFFFF
+    175            uint8 *buf;
+    176            ZStatus_t stat;
+    177          
+    178            buf = osal_mem_alloc( len+1 );  // 1 for length field
+    179            if ( buf )
+   \                     ??CrossCallReturnLabel_7:
+   \   00001D   6072         JZ      ??zclPI_Send_MatchProtocolAddrCmd_0
+    180            {  
+    181              buf[0] = len;
+   \   00001F   EF           MOV     A,R7
+   \   000020   8A82         MOV     DPL,R2
+   \   000022   8B83         MOV     DPH,R3
+   \   000024   F0           MOVX    @DPTR,A
+    182              osal_memcpy( &(buf[1]), protocolAddr, len );
+   \   000025                ; Setup parameters for call to function osal_memcpy
+   \   000025   75..00       MOV     ?V0 + 6,#0x0
+   \   000028   78..         MOV     R0,#?V0 + 4
+   \   00002A   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00002D   8F..         MOV     ?V0 + 4,R7
+   \   00002F   AC..         MOV     R4,?V0 + 4
+   \   000031   7D00         MOV     R5,#0x0
+   \   000033   8A82         MOV     DPL,R2
+   \   000035   8B83         MOV     DPH,R3
+   \   000037   A3           INC     DPTR
+   \   000038   AA82         MOV     R2,DPL
+   \   00003A   AB83         MOV     R3,DPH
+   \   00003C   12....       LCALL   ??osal_memcpy?relay
+   \   00003F   7403         MOV     A,#0x3
+   \   000041   12....       LCALL   ?DEALLOC_XSTACK8
+    183          
+    184              stat = zcl_SendCommand( srcEP, dstAddr, ZCL_CLUSTER_ID_PI_GENERIC_TUNNEL,
+    185                                      COMMAND_PI_GENERIC_TUNNEL_MATCH_PROTOCOL_ADDR, TRUE, 
+    186                                      ZCL_FRAME_CLIENT_SERVER_DIR, disableDefaultRsp, 0, seqNum,
+    187                                      (len+1), buf );
+   \   000044                ; Setup parameters for call to function zcl_SendCommand
+   \   000044   78..         MOV     R0,#?V0 + 0
+   \   000046   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000049   12....       LCALL   ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_31:
+   \   00004C   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00004F   78..         MOV     R0,#?V0 + 3
+   \   000051   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000054   E4           CLR     A
+   \   000055   F5..         MOV     ?V0 + 4,A
+   \   000057   F5..         MOV     ?V0 + 5,A
+   \   000059   78..         MOV     R0,#?V0 + 4
+   \   00005B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00005E   E5..         MOV     A,?V0 + 2
+   \   000060   F5..         MOV     ?V0 + 3,A
+   \   000062   78..         MOV     R0,#?V0 + 3
+   \   000064   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000067   75..00       MOV     ?V0 + 3,#0x0
+   \   00006A   78..         MOV     R0,#?V0 + 3
+   \   00006C   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00006F   75..01       MOV     ?V0 + 3,#0x1
+   \   000072   78..         MOV     R0,#?V0 + 3
+   \   000074   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000077   75..00       MOV     ?V0 + 3,#0x0
+   \   00007A   78..         MOV     R0,#?V0 + 3
+   \   00007C   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00007F   12....       LCALL   ?Subroutine24 & 0xFFFF
+   \                     ??CrossCallReturnLabel_57:
+   \   000082   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000085   E9           MOV     A,R1
+   \   000086   F5..         MOV     ?V0 + 3,A
+    188              osal_mem_free( buf );
+   \   000088                ; Setup parameters for call to function osal_mem_free
+   \   000088   AA..         MOV     R2,?V0 + 0
+   \   00008A   AB..         MOV     R3,?V0 + 1
+   \   00008C   12....       LCALL   ??osal_mem_free?relay
+   \   00008F   8003         SJMP    ??zclPI_Send_MatchProtocolAddrCmd_1
+    189            }
+    190            else
+    191            {
+    192              stat = ZMemError;
+   \                     ??zclPI_Send_MatchProtocolAddrCmd_0:
+   \   000091   75..10       MOV     ?V0 + 3,#0x10
+    193            }
+    194            
+    195            return ( stat );
+   \                     ??zclPI_Send_MatchProtocolAddrCmd_1:
+   \   000094                REQUIRE ?Subroutine1
+   \   000094                ; // Fall through to label ?Subroutine1
+    196          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   A9..         MOV     R1,?V0 + 3
+   \   000002   7F0A         MOV     R7,#0xa
+   \   000004   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine24:
+   \   000000   7C00         MOV     R4,#0x0
+   \   000002   7D06         MOV     R5,#0x6
+   \   000004   AA..         MOV     R2,?V0 + 8
+   \   000006   AB..         MOV     R3,?V0 + 9
+   \   000008                REQUIRE ??Subroutine32_0
+   \   000008                ; // Fall through to label ??Subroutine32_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine32_0:
+   \   000000   EE           MOV     A,R6
+   \   000001   F9           MOV     R1,A
+   \   000002                REQUIRE ??Subroutine33_0
+   \   000002                ; // Fall through to label ??Subroutine33_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine33_0:
+   \   000000   12....       LCALL   ??zcl_SendCommand?relay
+   \   000003   740B         MOV     A,#0xb
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine19:
+   \   000000   EF           MOV     A,R7
+   \   000001   2401         ADD     A,#0x1
+   \   000003   F5..         MOV     ?V0 + 4,A
+   \   000005   E4           CLR     A
+   \   000006   3400         ADDC    A,#0x0
+   \   000008   F5..         MOV     ?V0 + 5,A
+   \   00000A   78..         MOV     R0,#?V0 + 4
+   \   00000C   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine10:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F5..         MOV     ?V0 + 4,A
+   \   000003   A3           INC     DPTR
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   F5..         MOV     ?V0 + 5,A
+   \   000007   7414         MOV     A,#0x14
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F5..         MOV     ?V0 + 3,A
+   \   000003                ; Setup parameters for call to function osal_mem_alloc
+   \   000003                ; Setup parameters for call to function osal_mem_alloc
+   \   000003   EC           MOV     A,R4
+   \   000004   2401         ADD     A,#0x1
+   \   000006   FA           MOV     R2,A
+   \   000007   E4           CLR     A
+   \   000008   3400         ADDC    A,#0x0
+   \   00000A   FB           MOV     R3,A
+   \   00000B   12....       LCALL   ?Subroutine29 & 0xFFFF
+   \                     ??CrossCallReturnLabel_47:
+   \   00000E   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine29:
+   \   000000   12....       LCALL   ??osal_mem_alloc?relay
+   \   000003   8A..         MOV     ?V0 + 0,R2
+   \   000005   8B..         MOV     ?V0 + 1,R3
+   \   000007   EA           MOV     A,R2
+   \   000008   45..         ORL     A,?V0 + 1
+   \   00000A   22           RET
+    197          
+    198          /*******************************************************************************
+    199           * @fn      zclPI_Send_MatchProtocolAddrRsp
+    200           *
+    201           * @brief   Call to send out a Match Protocol Address Response. This response
+    202           *          is sent back upon receipt of a Match Protocol Address command to
+    203           *          indicate that the Protocol Address was successfully matched.
+    204           *
+    205           * @param   srcEP - Sending application's endpoint
+    206           * @param   dstAddr - where you want the message to go
+    207           * @param   ieeeAddr - device address
+    208           * @param   len - length of protocol address
+    209           * @param   protocolAddr - protocol address
+    210           * @param   disableDefaultRsp - whether to disable the Default Response command
+    211           * @param   seqNum - sequence number
+    212           *
+    213           * @return  ZStatus_t
+    214           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    215          ZStatus_t zclPI_Send_MatchProtocolAddrRsp( uint8 srcEP, afAddrType_t *dstAddr,
+   \                     zclPI_Send_MatchProtocolAddrRsp:
+    216                                                     uint8 *ieeeAddr, uint8 len, uint8 *protocolAddr, 
+    217                                                     uint8 disableDefaultRsp, uint8 seqNum )
+    218          {
+   \   000000   74EA         MOV     A,#-0x16
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 22
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   8A..         MOV     ?V0 + 12,R2
+   \   000009   8B..         MOV     ?V0 + 13,R3
+   \   00000B   8C..         MOV     ?V0 + 4,R4
+   \   00000D   8D..         MOV     ?V0 + 5,R5
+   \   00000F   7416         MOV     A,#0x16
+   \   000011   12....       LCALL   ?XSTACK_DISP0_8
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   F5..         MOV     ?V0 + 7,A
+   \   000017   7417         MOV     A,#0x17
+   \   000019   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001C   E0           MOVX    A,@DPTR
+   \   00001D   F5..         MOV     ?V0 + 10,A
+   \   00001F   A3           INC     DPTR
+   \   000020   E0           MOVX    A,@DPTR
+   \   000021   F5..         MOV     ?V0 + 11,A
+   \   000023   7419         MOV     A,#0x19
+   \   000025   12....       LCALL   ?XSTACK_DISP0_8
+   \   000028   E0           MOVX    A,@DPTR
+   \   000029   FF           MOV     R7,A
+   \   00002A   741A         MOV     A,#0x1a
+   \   00002C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002F   E0           MOVX    A,@DPTR
+   \   000030   F5..         MOV     ?V0 + 2,A
+    219            uint8 *buf;
+    220            uint8 msgLen = Z_EXTADDR_LEN + 1 + len; // IEEE Address + 1 for length field
+   \   000032   7409         MOV     A,#0x9
+   \   000034   25..         ADD     A,?V0 + 7
+   \   000036   F5..         MOV     ?V0 + 3,A
+    221            ZStatus_t stat;
+    222          
+    223            buf = osal_mem_alloc( msgLen ); // 1 for length field
+   \   000038                ; Setup parameters for call to function osal_mem_alloc
+   \   000038   FA           MOV     R2,A
+   \   000039   12....       LCALL   ?Subroutine20 & 0xFFFF
+    224            if ( buf )
+   \                     ??CrossCallReturnLabel_33:
+   \   00003C   7003         JNZ     $+5
+   \   00003E   02....       LJMP    ??zclPI_Send_MatchProtocolAddrRsp_0 & 0xFFFF
+    225            {
+    226              // Copy over IEEE Address
+    227              osal_cpyExtAddr( buf, ieeeAddr );
+   \   000041                ; Setup parameters for call to function sAddrExtCpy
+   \   000041   AC..         MOV     R4,?V0 + 4
+   \   000043   AD..         MOV     R5,?V0 + 5
+   \   000045   12....       LCALL   ??sAddrExtCpy?relay
+    228          
+    229              // Copy over Protocol Address
+    230              buf[8] = len;
+   \   000048   85..82       MOV     DPL,?V0 + 0
+   \   00004B   85..83       MOV     DPH,?V0 + 1
+   \   00004E   A3           INC     DPTR
+   \   00004F   A3           INC     DPTR
+   \   000050   A3           INC     DPTR
+   \   000051   A3           INC     DPTR
+   \   000052   A3           INC     DPTR
+   \   000053   A3           INC     DPTR
+   \   000054   A3           INC     DPTR
+   \   000055   A3           INC     DPTR
+   \   000056   E5..         MOV     A,?V0 + 7
+   \   000058   12....       LCALL   ?Subroutine17 & 0xFFFF
+    231              osal_memcpy( &(buf[9]), protocolAddr, len );
+   \                     ??CrossCallReturnLabel_27:
+   \   00005B   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00005E   85....       MOV     ?V0 + 4,?V0 + 7
+   \   000061   AC..         MOV     R4,?V0 + 4
+   \   000063   7D00         MOV     R5,#0x0
+   \   000065   E5..         MOV     A,?V0 + 0
+   \   000067   2409         ADD     A,#0x9
+   \   000069   FA           MOV     R2,A
+   \   00006A   E5..         MOV     A,?V0 + 1
+   \   00006C   12....       LCALL   ??Subroutine34_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_64:
+   \   00006F   12....       LCALL   ?DEALLOC_XSTACK8
+    232          
+    233              stat = zcl_SendCommand( srcEP, dstAddr, ZCL_CLUSTER_ID_PI_GENERIC_TUNNEL,
+    234                                      COMMAND_PI_GENERIC_TUNNEL_MATCH_PROTOCOL_ADDR_RSP, TRUE, 
+    235                                      ZCL_FRAME_SERVER_CLIENT_DIR, disableDefaultRsp, 0, seqNum,
+    236                                      msgLen, buf );
+   \   000072                ; Setup parameters for call to function zcl_SendCommand
+   \   000072   78..         MOV     R0,#?V0 + 0
+   \   000074   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000077   85....       MOV     ?V0 + 4,?V0 + 3
+   \   00007A   75..00       MOV     ?V0 + 5,#0x0
+   \   00007D   78..         MOV     R0,#?V0 + 4
+   \   00007F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000082   78..         MOV     R0,#?V0 + 2
+   \   000084   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000087   E4           CLR     A
+   \   000088   F5..         MOV     ?V0 + 2,A
+   \   00008A   F5..         MOV     ?V0 + 3,A
+   \   00008C   78..         MOV     R0,#?V0 + 2
+   \   00008E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000091   EF           MOV     A,R7
+   \   000092   F5..         MOV     ?V0 + 2,A
+   \   000094   78..         MOV     R0,#?V0 + 2
+   \   000096   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000099   75..01       MOV     ?V0 + 2,#0x1
+   \   00009C   78..         MOV     R0,#?V0 + 2
+   \   00009E   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000A1   78..         MOV     R0,#?V0 + 2
+   \   0000A3   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000A6   75..00       MOV     ?V0 + 2,#0x0
+   \   0000A9   78..         MOV     R0,#?V0 + 2
+   \   0000AB   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000AE   7C00         MOV     R4,#0x0
+   \   0000B0   7D06         MOV     R5,#0x6
+   \   0000B2   AA..         MOV     R2,?V0 + 12
+   \   0000B4   AB..         MOV     R3,?V0 + 13
+   \   0000B6   12....       LCALL   ??Subroutine32_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_59:
+   \   0000B9   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000BC   E9           MOV     A,R1
+   \   0000BD   FF           MOV     R7,A
+    237              osal_mem_free( buf );
+   \   0000BE                ; Setup parameters for call to function osal_mem_free
+   \   0000BE   AA..         MOV     R2,?V0 + 0
+   \   0000C0   AB..         MOV     R3,?V0 + 1
+   \   0000C2   12....       LCALL   ??osal_mem_free?relay
+   \   0000C5   8002         SJMP    ??zclPI_Send_MatchProtocolAddrRsp_1
+    238            }
+    239            else
+    240            {
+    241              stat = ZMemError;
+   \                     ??zclPI_Send_MatchProtocolAddrRsp_0:
+   \   0000C7   7F10         MOV     R7,#0x10
+    242            }
+    243            
+    244            return ( stat );
+   \                     ??zclPI_Send_MatchProtocolAddrRsp_1:
+   \   0000C9                REQUIRE ?Subroutine2
+   \   0000C9                ; // Fall through to label ?Subroutine2
+    245          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   EF           MOV     A,R7
+   \   000001   F9           MOV     R1,A
+   \   000002   7F0E         MOV     R7,#0xe
+   \   000004   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine34_0:
+   \   000000   3400         ADDC    A,#0x0
+   \   000002   FB           MOV     R3,A
+   \   000003   12....       LCALL   ??osal_memcpy?relay
+   \   000006   7403         MOV     A,#0x3
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine20:
+   \   000000   7B00         MOV     R3,#0x0
+   \   000002   12....       LCALL   ?Subroutine29 & 0xFFFF
+   \                     ??CrossCallReturnLabel_48:
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine17:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001                ; Setup parameters for call to function osal_memcpy
+   \   000001                ; Setup parameters for call to function osal_memcpy
+   \   000001   85....       MOV     ?V0 + 4,?V0 + 10
+   \   000004   85....       MOV     ?V0 + 5,?V0 + 11
+   \   000007   75..00       MOV     ?V0 + 6,#0x0
+   \   00000A   78..         MOV     R0,#?V0 + 4
+   \   00000C   22           RET
+    246          
+    247          /*******************************************************************************
+    248           * @fn      zclPI_Send_AdvertiseProtocolAddrCmd
+    249           *
+    250           * @brief   Call to send out an Advertise Protocol Address Command. This command
+    251           *          is sent out typically upon startup or whenever the Protocol Address
+    252           *          attribute changes. It is typically multicast to a group of inter-
+    253           *          communicating Generic Tunnel clusters.
+    254           *
+    255           * @param   srcEP - Sending application's endpoint
+    256           * @param   dstAddr - where you want the message to go
+    257           * @param   len - length of protocol address
+    258           * @param   protocolAddr - protocol address
+    259           * @param   disableDefaultRsp - whether to disable the Default Response command
+    260           * @param   seqNum - sequence number
+    261           *
+    262           * @return  ZStatus_t
+    263           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    264          ZStatus_t zclPI_Send_AdvertiseProtocolAddrCmd( uint8 srcEP, afAddrType_t *dstAddr,
+   \                     zclPI_Send_AdvertiseProtocolAddrCmd:
+    265                                                         uint8 len, uint8 *protocolAddr, 
+    266                                                         uint8 disableDefaultRsp, uint8 seqNum )
+    267          {
+   \   000000   74EE         MOV     A,#-0x12
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 18
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   8A..         MOV     ?V0 + 8,R2
+   \   000009   8B..         MOV     ?V0 + 9,R3
+   \   00000B   EC           MOV     A,R4
+   \   00000C   FF           MOV     R7,A
+   \   00000D   8D..         MOV     ?V0 + 2,R5
+   \   00000F   7412         MOV     A,#0x12
+   \   000011   12....       LCALL   ?XSTACK_DISP0_8
+   \   000014   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_16:
+   \   000017   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001A   12....       LCALL   ?Subroutine6 & 0xFFFF
+    268            uint8 *buf;
+    269            ZStatus_t stat;
+    270          
+    271            buf = osal_mem_alloc( len+1 ); // 1 for length field
+    272            if ( buf )
+   \                     ??CrossCallReturnLabel_8:
+   \   00001D   606C         JZ      ??zclPI_Send_AdvertiseProtocolAddrCmd_0
+    273            {  
+    274              buf[0] = len;
+   \   00001F   EF           MOV     A,R7
+   \   000020   8A82         MOV     DPL,R2
+   \   000022   8B83         MOV     DPH,R3
+   \   000024   F0           MOVX    @DPTR,A
+    275              osal_memcpy( &(buf[1]), protocolAddr, len );
+   \   000025                ; Setup parameters for call to function osal_memcpy
+   \   000025   75..00       MOV     ?V0 + 6,#0x0
+   \   000028   78..         MOV     R0,#?V0 + 4
+   \   00002A   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00002D   8F..         MOV     ?V0 + 4,R7
+   \   00002F   AC..         MOV     R4,?V0 + 4
+   \   000031   7D00         MOV     R5,#0x0
+   \   000033   8A82         MOV     DPL,R2
+   \   000035   8B83         MOV     DPH,R3
+   \   000037   A3           INC     DPTR
+   \   000038   AA82         MOV     R2,DPL
+   \   00003A   AB83         MOV     R3,DPH
+   \   00003C   12....       LCALL   ??osal_memcpy?relay
+   \   00003F   7403         MOV     A,#0x3
+   \   000041   12....       LCALL   ?DEALLOC_XSTACK8
+    276          
+    277              stat = zcl_SendCommand( srcEP, dstAddr, ZCL_CLUSTER_ID_PI_GENERIC_TUNNEL,
+    278                                      COMMAND_PI_GENERIC_TUNNEL_ADVERTISE_PROTOCOL_ADDR, TRUE, 
+    279                                      ZCL_FRAME_SERVER_CLIENT_DIR, disableDefaultRsp, 0, seqNum,
+    280                                      (len+1), buf );
+   \   000044                ; Setup parameters for call to function zcl_SendCommand
+   \   000044   78..         MOV     R0,#?V0 + 0
+   \   000046   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000049   12....       LCALL   ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_32:
+   \   00004C   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00004F   78..         MOV     R0,#?V0 + 3
+   \   000051   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000054   E4           CLR     A
+   \   000055   F5..         MOV     ?V0 + 4,A
+   \   000057   F5..         MOV     ?V0 + 5,A
+   \   000059   78..         MOV     R0,#?V0 + 4
+   \   00005B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00005E   E5..         MOV     A,?V0 + 2
+   \   000060   F5..         MOV     ?V0 + 3,A
+   \   000062   78..         MOV     R0,#?V0 + 3
+   \   000064   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000067   75..01       MOV     ?V0 + 3,#0x1
+   \   00006A   78..         MOV     R0,#?V0 + 3
+   \   00006C   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00006F   78..         MOV     R0,#?V0 + 3
+   \   000071   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000074   78..         MOV     R0,#?V0 + 3
+   \   000076   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000079   12....       LCALL   ?Subroutine24 & 0xFFFF
+   \                     ??CrossCallReturnLabel_58:
+   \   00007C   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00007F   E9           MOV     A,R1
+   \   000080   F5..         MOV     ?V0 + 3,A
+    281              osal_mem_free( buf );
+   \   000082                ; Setup parameters for call to function osal_mem_free
+   \   000082   AA..         MOV     R2,?V0 + 0
+   \   000084   AB..         MOV     R3,?V0 + 1
+   \   000086   12....       LCALL   ??osal_mem_free?relay
+   \   000089   8003         SJMP    ??zclPI_Send_AdvertiseProtocolAddrCmd_1
+    282            }
+    283            else
+    284            {
+    285              stat = ZMemError;
+   \                     ??zclPI_Send_AdvertiseProtocolAddrCmd_0:
+   \   00008B   75..10       MOV     ?V0 + 3,#0x10
+    286            }
+    287            
+    288            return ( stat );
+   \                     ??zclPI_Send_AdvertiseProtocolAddrCmd_1:
+   \   00008E   02....       LJMP    ?Subroutine1 & 0xFFFF
+    289          }
+    290          
+    291          /*******************************************************************************
+    292           * @fn      zclPI_Send_11073TransferAPDUCmd
+    293           *
+    294           * @brief   Call to send out an 11073 Transfer APDU Command. This command is 
+    295           *          used when an 11073 network layer wishes to transfer an 11073 APDU 
+    296           *          across a ZigBee tunnel to another 11073 network layer.
+    297           *
+    298           *          The most stringent reliability characteristic of a given transport
+    299           *          technology is “Best” reliability. Note - For ZigBee, this corresponds
+    300           *          to use of APS-ACKs.
+    301           *
+    302           *          The least stringent reliability characteristic of a given transport
+    303           *          technology is “Good” reliability. Note - For ZigBee, this corresponds
+    304           *          to no use of APS-ACKs.
+    305           *
+    306           *          Note: This command shall always be transmitted with the Disable Default 
+    307           *          Response bit in the ZCL frame control field set to 1.
+    308           *
+    309           * @param   srcEP - Sending application's endpoint
+    310           * @param   dstAddr - where you want the message to go
+    311           * @param   len - length of APDU
+    312           * @param   apdu - APDU to be sent
+    313           * @param   seqNum - sequence number
+    314           *
+    315           * @return  ZStatus_t
+    316           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    317          ZStatus_t zclPI_Send_11073TransferAPDUCmd( uint8 srcEP, afAddrType_t *dstAddr,
+   \                     zclPI_Send_11073TransferAPDUCmd:
+    318                                                     uint16 len, uint8 *apdu, uint8 seqNum )
+    319          {
+   \   000000   74EC         MOV     A,#-0x14
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 20
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+   \   000007   8A..         MOV     ?V0 + 8,R2
+   \   000009   8B..         MOV     ?V0 + 9,R3
+   \   00000B   EC           MOV     A,R4
+   \   00000C   FE           MOV     R6,A
+   \   00000D   ED           MOV     A,R5
+   \   00000E   FF           MOV     R7,A
+   \   00000F   7414         MOV     A,#0x14
+   \   000011   12....       LCALL   ?XSTACK_DISP0_8
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   F5..         MOV     ?V0 + 2,A
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   F5..         MOV     ?V0 + 3,A
+   \   00001B   7416         MOV     A,#0x16
+   \   00001D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000020   E0           MOVX    A,@DPTR
+   \   000021   F5..         MOV     ?V0 + 1,A
+    320            uint8 *buf;
+    321            ZStatus_t stat;
+    322          
+    323            buf = osal_mem_alloc( len+2 ); // 2 for length field (long octet string)
+   \   000023                ; Setup parameters for call to function osal_mem_alloc
+   \   000023   EE           MOV     A,R6
+   \   000024   2402         ADD     A,#0x2
+   \   000026   FA           MOV     R2,A
+   \   000027   EF           MOV     A,R7
+   \   000028   3400         ADDC    A,#0x0
+   \   00002A   FB           MOV     R3,A
+   \   00002B   12....       LCALL   ??osal_mem_alloc?relay
+   \   00002E   8A..         MOV     ?V0 + 10,R2
+   \   000030   8B..         MOV     ?V0 + 11,R3
+    324            if ( buf )
+   \   000032   EA           MOV     A,R2
+   \   000033   45..         ORL     A,?V0 + 11
+   \   000035   7003         JNZ     $+5
+   \   000037   02....       LJMP    ??zclPI_Send_11073TransferAPDUCmd_0 & 0xFFFF
+    325            {  
+    326              buf[0] = LO_UINT16( len );
+   \   00003A   EE           MOV     A,R6
+   \   00003B   8A82         MOV     DPL,R2
+   \   00003D   8B83         MOV     DPH,R3
+   \   00003F   F0           MOVX    @DPTR,A
+    327              buf[1] = HI_UINT16( len );
+   \   000040   EF           MOV     A,R7
+   \   000041   A3           INC     DPTR
+   \   000042   F0           MOVX    @DPTR,A
+    328              osal_memcpy( &(buf[2]), apdu, len );
+   \   000043                ; Setup parameters for call to function osal_memcpy
+   \   000043   85....       MOV     ?V0 + 4,?V0 + 2
+   \   000046   85....       MOV     ?V0 + 5,?V0 + 3
+   \   000049   75..00       MOV     ?V0 + 6,#0x0
+   \   00004C   78..         MOV     R0,#?V0 + 4
+   \   00004E   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000051   EE           MOV     A,R6
+   \   000052   FC           MOV     R4,A
+   \   000053   EF           MOV     A,R7
+   \   000054   FD           MOV     R5,A
+   \   000055   EA           MOV     A,R2
+   \   000056   2402         ADD     A,#0x2
+   \   000058   12....       LCALL   ?Subroutine23 & 0xFFFF
+   \                     ??CrossCallReturnLabel_62:
+   \   00005B   12....       LCALL   ?DEALLOC_XSTACK8
+    329          
+    330              // This command shall always be transmitted with the Disable Default 
+    331              // Response bit in the ZCL frame control field set to 1.
+    332              stat = zcl_SendCommand( srcEP, dstAddr, ZCL_CLUSTER_ID_PI_11073_PROTOCOL_TUNNEL,
+    333                                      COMMAND_PI_11073_TUNNEL_TRANSFER_APDU, TRUE, 
+    334                                      ZCL_FRAME_CLIENT_SERVER_DIR, TRUE, 0, seqNum, (len+2), buf );
+   \   00005E                ; Setup parameters for call to function zcl_SendCommand
+   \   00005E   78..         MOV     R0,#?V0 + 10
+   \   000060   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000063   EE           MOV     A,R6
+   \   000064   2402         ADD     A,#0x2
+   \   000066   F5..         MOV     ?V0 + 2,A
+   \   000068   EF           MOV     A,R7
+   \   000069   3400         ADDC    A,#0x0
+   \   00006B   F5..         MOV     ?V0 + 3,A
+   \   00006D   78..         MOV     R0,#?V0 + 2
+   \   00006F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000072   78..         MOV     R0,#?V0 + 1
+   \   000074   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000077   E4           CLR     A
+   \   000078   F5..         MOV     ?V0 + 2,A
+   \   00007A   F5..         MOV     ?V0 + 3,A
+   \   00007C   78..         MOV     R0,#?V0 + 2
+   \   00007E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000081   75..01       MOV     ?V0 + 1,#0x1
+   \   000084   78..         MOV     R0,#?V0 + 1
+   \   000086   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000089   75..00       MOV     ?V0 + 1,#0x0
+   \   00008C   78..         MOV     R0,#?V0 + 1
+   \   00008E   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000091   75..01       MOV     ?V0 + 1,#0x1
+   \   000094   78..         MOV     R0,#?V0 + 1
+   \   000096   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000099   75..00       MOV     ?V0 + 1,#0x0
+   \   00009C   78..         MOV     R0,#?V0 + 1
+   \   00009E   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000A1   7C14         MOV     R4,#0x14
+   \   0000A3   7D06         MOV     R5,#0x6
+   \   0000A5   AA..         MOV     R2,?V0 + 8
+   \   0000A7   AB..         MOV     R3,?V0 + 9
+   \   0000A9   A9..         MOV     R1,?V0 + 0
+   \   0000AB   12....       LCALL   ??Subroutine33_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_60:
+   \   0000AE   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000B1   E9           MOV     A,R1
+   \   0000B2   FE           MOV     R6,A
+    335              osal_mem_free( buf );
+   \   0000B3                ; Setup parameters for call to function osal_mem_free
+   \   0000B3   AA..         MOV     R2,?V0 + 10
+   \   0000B5   AB..         MOV     R3,?V0 + 11
+   \   0000B7   12....       LCALL   ??osal_mem_free?relay
+   \   0000BA   8002         SJMP    ??zclPI_Send_11073TransferAPDUCmd_1
+    336            }
+    337            else
+    338            {
+    339              stat = ZMemError;
+   \                     ??zclPI_Send_11073TransferAPDUCmd_0:
+   \   0000BC   7E10         MOV     R6,#0x10
+    340            }
+    341            
+    342            return ( stat );
+   \                     ??zclPI_Send_11073TransferAPDUCmd_1:
+   \   0000BE   EE           MOV     A,R6
+   \   0000BF   F9           MOV     R1,A
+   \   0000C0   7F0C         MOV     R7,#0xc
+   \   0000C2   02....       LJMP    ?BANKED_LEAVE_XDATA
+    343          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine23:
+   \   000000   0A           INC     R2
+   \   000001   0A           INC     R2
+   \   000002   EB           MOV     A,R3
+   \   000003                REQUIRE ??Subroutine34_0
+   \   000003                ; // Fall through to label ??Subroutine34_0
+    344          
+    345          /*******************************************************************************
+    346           * @fn      zclPI_Send_11073ConnectReq
+    347           *
+    348           * @brief   Call to send out an 11073 Connect Request Command. This command
+    349           *          is generated when a Data Management device wishes to connect to
+    350           *          an 11073 agent device. This may be in response to receiving a 
+    351           *          connect status notification command from that agent device with
+    352           *          the connect status field set to RECONNECT_REQUEST.
+    353           *
+    354           * @param   srcEP - Sending application's endpoint
+    355           * @param   dstAddr - where you want the message to go
+    356           * @param   connectCtrl - connect control
+    357           * @param   idleTimeout - inactivity time (in minutes) which Data Management device
+    358           *                        will wait w/o receiving any data before it disconnects
+    359           * @param   managerAddr - IEEE address (64-bit) of Data Management device 
+    360           *                        transmitting this frame
+    361           * @param   managerEP - source endpoint from which Data Management device is
+    362                                  transmitting this frame
+    363           * @param   disableDefaultRsp - whether to disable the Default Response command
+    364           * @param   seqNum - sequence number
+    365           *
+    366           * @return  ZStatus_t
+    367           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    368          ZStatus_t zclPI_Send_11073ConnectReq( uint8 srcEP, afAddrType_t *dstAddr,
+   \                     zclPI_Send_11073ConnectReq:
+    369                                                uint8 connectCtrl, uint16 idleTimeout,
+    370                                                uint8 *managerAddr, uint8 managerEP, 
+    371                                                uint8 disableDefaultRsp, uint8 seqNum )
+    372          {
+   \   000000   74EA         MOV     A,#-0x16
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 22
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 7,R1
+   \   000007   8A..         MOV     ?V0 + 12,R2
+   \   000009   8B..         MOV     ?V0 + 13,R3
+   \   00000B   8C..         MOV     ?V0 + 3,R4
+   \   00000D   ED           MOV     A,R5
+   \   00000E   FE           MOV     R6,A
+   \   00000F   7416         MOV     A,#0x16
+   \   000011   12....       LCALL   ?XSTACK_DISP0_8
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   F5..         MOV     ?V0 + 4,A
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   F5..         MOV     ?V0 + 5,A
+   \   00001B   7418         MOV     A,#0x18
+   \   00001D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000020   E0           MOVX    A,@DPTR
+   \   000021   F5..         MOV     ?V0 + 10,A
+   \   000023   A3           INC     DPTR
+   \   000024   E0           MOVX    A,@DPTR
+   \   000025   F5..         MOV     ?V0 + 11,A
+   \   000027   741A         MOV     A,#0x1a
+   \   000029   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002C   E0           MOVX    A,@DPTR
+   \   00002D   FF           MOV     R7,A
+   \   00002E   741B         MOV     A,#0x1b
+   \   000030   12....       LCALL   ?XSTACK_DISP0_8
+   \   000033   E0           MOVX    A,@DPTR
+   \   000034   F5..         MOV     ?V0 + 2,A
+    373            uint8 *buf;
+    374            uint8 msgLen = 1 + 2 + Z_EXTADDR_LEN + 1; // connect ctrl + idle timeout + IEEE Address + manager EP
+    375            ZStatus_t stat;
+    376          
+    377            buf = osal_mem_alloc( msgLen );
+   \   000036                ; Setup parameters for call to function osal_mem_alloc
+   \   000036   7A0C         MOV     R2,#0xc
+   \   000038   12....       LCALL   ?Subroutine20 & 0xFFFF
+    378            if ( buf )
+   \                     ??CrossCallReturnLabel_34:
+   \   00003B   7003         JNZ     $+5
+   \   00003D   02....       LJMP    ??zclPI_Send_11073ConnectReq_0 & 0xFFFF
+    379            {
+    380              buf[0] = connectCtrl;
+   \   000040   8A82         MOV     DPL,R2
+   \   000042   8B83         MOV     DPH,R3
+   \   000044   E5..         MOV     A,?V0 + 3
+   \   000046   F0           MOVX    @DPTR,A
+    381              buf[1] = LO_UINT16( idleTimeout );
+   \   000047   A3           INC     DPTR
+   \   000048   E5..         MOV     A,?V0 + 4
+   \   00004A   F0           MOVX    @DPTR,A
+    382              buf[2] = HI_UINT16( idleTimeout );
+   \   00004B   E5..         MOV     A,?V0 + 5
+   \   00004D   8A82         MOV     DPL,R2
+   \   00004F   8B83         MOV     DPH,R3
+   \   000051   A3           INC     DPTR
+   \   000052   A3           INC     DPTR
+   \   000053   12....       LCALL   ?Subroutine17 & 0xFFFF
+    383              osal_memcpy( &(buf[3]), managerAddr, Z_EXTADDR_LEN );
+   \                     ??CrossCallReturnLabel_28:
+   \   000056   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000059   7C08         MOV     R4,#0x8
+   \   00005B   7D00         MOV     R5,#0x0
+   \   00005D   EA           MOV     A,R2
+   \   00005E   2403         ADD     A,#0x3
+   \   000060   0A           INC     R2
+   \   000061   12....       LCALL   ?Subroutine23 & 0xFFFF
+   \                     ??CrossCallReturnLabel_63:
+   \   000064   12....       LCALL   ?DEALLOC_XSTACK8
+    384              buf[11] = managerEP;
+   \   000067   E5..         MOV     A,?V0 + 0
+   \   000069   240B         ADD     A,#0xb
+   \   00006B   F582         MOV     DPL,A
+   \   00006D   E5..         MOV     A,?V0 + 1
+   \   00006F   3400         ADDC    A,#0x0
+   \   000071   F583         MOV     DPH,A
+   \   000073   EE           MOV     A,R6
+   \   000074   F0           MOVX    @DPTR,A
+    385          
+    386              stat = zcl_SendCommand( srcEP, dstAddr, ZCL_CLUSTER_ID_PI_11073_PROTOCOL_TUNNEL,
+    387                                      COMMAND_PI_11073_TUNNEL_CONNECT_REQ, TRUE, 
+    388                                      ZCL_FRAME_CLIENT_SERVER_DIR, disableDefaultRsp, 0, seqNum,
+    389                                      msgLen, buf );
+   \   000075                ; Setup parameters for call to function zcl_SendCommand
+   \   000075   78..         MOV     R0,#?V0 + 0
+   \   000077   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00007A   75..0C       MOV     ?V0 + 4,#0xc
+   \   00007D   75..00       MOV     ?V0 + 5,#0x0
+   \   000080   78..         MOV     R0,#?V0 + 4
+   \   000082   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000085   78..         MOV     R0,#?V0 + 2
+   \   000087   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00008A   E4           CLR     A
+   \   00008B   F5..         MOV     ?V0 + 4,A
+   \   00008D   78..         MOV     R0,#?V0 + 4
+   \   00008F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000092   EF           MOV     A,R7
+   \   000093   F5..         MOV     ?V0 + 2,A
+   \   000095   78..         MOV     R0,#?V0 + 2
+   \   000097   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00009A   75..00       MOV     ?V0 + 2,#0x0
+   \   00009D   78..         MOV     R0,#?V0 + 2
+   \   00009F   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000A2   75..01       MOV     ?V0 + 2,#0x1
+   \   0000A5   78..         MOV     R0,#?V0 + 2
+   \   0000A7   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000AA   78..         MOV     R0,#?V0 + 2
+   \   0000AC   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000AF   7C14         MOV     R4,#0x14
+   \   0000B1   7D06         MOV     R5,#0x6
+   \   0000B3   AA..         MOV     R2,?V0 + 12
+   \   0000B5   AB..         MOV     R3,?V0 + 13
+   \   0000B7   A9..         MOV     R1,?V0 + 7
+   \   0000B9   12....       LCALL   ??Subroutine33_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_61:
+   \   0000BC   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000BF   E9           MOV     A,R1
+   \   0000C0   FF           MOV     R7,A
+    390              osal_mem_free( buf );
+   \   0000C1                ; Setup parameters for call to function osal_mem_free
+   \   0000C1   AA..         MOV     R2,?V0 + 0
+   \   0000C3   AB..         MOV     R3,?V0 + 1
+   \   0000C5   12....       LCALL   ??osal_mem_free?relay
+   \   0000C8   8002         SJMP    ??zclPI_Send_11073ConnectReq_1
+    391            }
+    392            else
+    393            {
+    394              stat = ZMemError;
+   \                     ??zclPI_Send_11073ConnectReq_0:
+   \   0000CA   7F10         MOV     R7,#0x10
+    395            }
+    396            
+    397            return ( stat );
+   \                     ??zclPI_Send_11073ConnectReq_1:
+   \   0000CC   02....       LJMP    ?Subroutine2 & 0xFFFF
+    398          }
+    399          
+    400          /*********************************************************************
+    401           * @fn      zclPI_FindCallbacks
+    402           *
+    403           * @brief   Find the callbacks for an endpoint
+    404           *
+    405           * @param   endpoint
+    406           *
+    407           * @return  pointer to the callbacks
+    408           */
+    409          static zclPI_AppCallbacks_t *zclPI_FindCallbacks( uint8 endpoint )
+    410          {
+    411            zclPICBRec_t *pCBs;
+    412            
+    413            pCBs = zclPICBs;
+    414            while ( pCBs )
+    415            {
+    416              if ( pCBs->endpoint == endpoint )
+    417                return ( pCBs->CBs );
+    418            }
+    419            return ( (zclPI_AppCallbacks_t *)NULL );
+    420          }
+    421          
+    422          /*********************************************************************
+    423           * @fn      zclPI_HdlIncoming
+    424           *
+    425           * @brief   Callback from ZCL to process incoming Commands specific
+    426           *          to this cluster library or Profile commands for attributes
+    427           *          that aren't in the attribute list
+    428           *
+    429           * @param   pInMsg - pointer to the incoming message
+    430           * @param   logicalClusterID
+    431           *
+    432           * @return  ZStatus_t
+    433           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    434          static ZStatus_t zclPI_HdlIncoming( zclIncoming_t *pInMsg )
+   \                     zclPI_HdlIncoming:
+    435          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    436            ZStatus_t stat = ZSuccess;
+    437          
+    438          #if defined ( INTER_PAN )
+    439            if ( StubAPS_InterPan( pInMsg->msg->srcAddr.panId, pInMsg->msg->srcAddr.endPoint ) )
+    440              return ( stat ); // Cluster not supported thru Inter-PAN
+    441          #endif
+    442          
+    443            if ( zcl_ClusterCmd( pInMsg->hdr.fc.type ) )
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+   \   000008   A3           INC     DPTR
+   \   000009   A3           INC     DPTR
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   5403         ANL     A,#0x3
+   \   00000D   6401         XRL     A,#0x1
+   \   00000F   7010         JNZ     ??zclPI_HdlIncoming_0
+    444            {
+    445              // Is this a manufacturer specific command?
+    446              if ( pInMsg->hdr.fc.manuSpecific == 0 ) 
+   \   000011   8A82         MOV     DPL,R2
+   \   000013   8B83         MOV     DPH,R3
+   \   000015   A3           INC     DPTR
+   \   000016   A3           INC     DPTR
+   \   000017   E0           MOVX    A,@DPTR
+   \   000018   5404         ANL     A,#0x4
+   \   00001A   7005         JNZ     ??zclPI_HdlIncoming_0
+    447              {
+    448                stat = zclPI_HdlInSpecificCommands( pInMsg );
+   \   00001C                ; Setup parameters for call to function zclPI_HdlInSpecificCommands
+   \   00001C   12....       LCALL   ??zclPI_HdlInSpecificCommands?relay
+   \   00001F   8002         SJMP    ??zclPI_HdlIncoming_1
+    449              }
+    450              else
+    451              {
+    452                // We don't support any manufacturer specific command -- ignore it.
+    453                stat = ZFailure;
+   \                     ??zclPI_HdlIncoming_0:
+   \   000021   7901         MOV     R1,#0x1
+    454              }
+    455            }
+    456            else
+    457            {
+    458              // Handle all the normal (Read, Write...) commands
+    459              stat = ZFailure;
+    460            }
+    461          
+    462            return ( stat );
+   \                     ??zclPI_HdlIncoming_1:
+   \   000023   D083         POP     DPH
+   \   000025   D082         POP     DPL
+   \   000027   02....       LJMP    ?BRET
+    463          }
+    464          
+    465          /*********************************************************************
+    466           * @fn      zclPI_HdlInSpecificCommands
+    467           *
+    468           * @brief   Callback from ZCL to process incoming Commands specific
+    469           *          to this cluster library
+    470           *
+    471           * @param   pInMsg - pointer to the incoming message
+    472           *
+    473           * @return  ZStatus_t
+    474           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    475          static ZStatus_t zclPI_HdlInSpecificCommands( zclIncoming_t *pInMsg )
+   \                     zclPI_HdlInSpecificCommands:
+    476          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 6
+   \   000005   74FA         MOV     A,#-0x6
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    477            ZStatus_t stat;
+    478            zclPI_AppCallbacks_t *pCBs;
+    479          
+    480            // make sure endpoint exists
+    481            pCBs = zclPI_FindCallbacks( pInMsg->msg->endPoint );
+   \   00000A   8A82         MOV     DPL,R2
+   \   00000C   8B83         MOV     DPH,R3
+   \   00000E   E0           MOVX    A,@DPTR
+   \   00000F   2414         ADD     A,#0x14
+   \   000011   12....       LCALL   ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_17:
+   \   000014   FC           MOV     R4,A
+   \   000015   90....       MOV     DPTR,#zclPICBs
+   \   000018   12....       LCALL   ??Subroutine41_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_74:
+   \   00001B   7003         JNZ     $+5
+   \   00001D   02....       LJMP    ??zclPI_HdlInSpecificCommands_0 & 0xFFFF
+   \                     ??zclPI_HdlInSpecificCommands_1:
+   \   000020   8882         MOV     DPL,R0
+   \   000022   8983         MOV     DPH,R1
+   \   000024   A3           INC     DPTR
+   \   000025   A3           INC     DPTR
+   \   000026   E0           MOVX    A,@DPTR
+   \   000027   6C           XRL     A,R4
+   \   000028   70F6         JNZ     ??zclPI_HdlInSpecificCommands_1
+   \   00002A   8882         MOV     DPL,R0
+   \   00002C   8983         MOV     DPH,R1
+   \   00002E   A3           INC     DPTR
+   \   00002F   A3           INC     DPTR
+   \   000030   A3           INC     DPTR
+   \   000031   E0           MOVX    A,@DPTR
+   \   000032   FC           MOV     R4,A
+   \   000033   A3           INC     DPTR
+   \   000034   E0           MOVX    A,@DPTR
+   \   000035   FD           MOV     R5,A
+    482            if ( pCBs == NULL )
+   \   000036   EC           MOV     A,R4
+   \   000037   4D           ORL     A,R5
+   \   000038   7003         JNZ     $+5
+   \   00003A   02....       LJMP    ??zclPI_HdlInSpecificCommands_0 & 0xFFFF
+    483              return ( ZFailure );
+    484          
+    485            switch ( pInMsg->msg->clusterId )				
+   \   00003D   8A82         MOV     DPL,R2
+   \   00003F   8B83         MOV     DPH,R3
+   \   000041   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000044   A3           INC     DPTR
+   \   000045   A3           INC     DPTR
+   \   000046   A3           INC     DPTR
+   \   000047   A3           INC     DPTR
+   \   000048   E0           MOVX    A,@DPTR
+   \   000049   F5..         MOV     ?V0 + 0,A
+   \   00004B   A3           INC     DPTR
+   \   00004C   E0           MOVX    A,@DPTR
+   \   00004D   F5..         MOV     ?V0 + 1,A
+   \   00004F   78..         MOV     R0,#?V0 + 0
+   \   000051   12....       LCALL   ?US_SWITCH_SPARSE
+   \                     `?<Jumptable for zclPI_HdlInSpecificCommands>_0`:
+   \   000054   0000         DW        0
+   \   000056   0300         DW        3
+   \   000058   0006         DW        1536
+   \   00005A   ....         DW        ??zclPI_HdlInSpecificCommands_2
+   \   00005C   0106         DW        1537
+   \   00005E   ....         DW        ??zclPI_HdlInSpecificCommands_3
+   \   000060   1406         DW        1556
+   \   000062   ....         DW        ??zclPI_HdlInSpecificCommands_4
+   \   000064   ....         DW        ??zclPI_HdlInSpecificCommands_0
+    486            {
+    487              case ZCL_CLUSTER_ID_PI_GENERIC_TUNNEL:
+    488                if ( zcl_ServerCmd( pInMsg->hdr.fc.direction ) )
+   \                     ??zclPI_HdlInSpecificCommands_2:
+   \   000066   8A82         MOV     DPL,R2
+   \   000068   8B83         MOV     DPH,R3
+   \   00006A   A3           INC     DPTR
+   \   00006B   A3           INC     DPTR
+   \   00006C   E0           MOVX    A,@DPTR
+   \   00006D   5408         ANL     A,#0x8
+   \   00006F   7052         JNZ     ??zclPI_HdlInSpecificCommands_5
+    489                  stat = zclPI_ProcessIn_GenericTunneServer( pInMsg, pCBs );
+   \   000071   8A82         MOV     DPL,R2
+   \   000073   8B83         MOV     DPH,R3
+   \   000075   A3           INC     DPTR
+   \   000076   A3           INC     DPTR
+   \   000077   A3           INC     DPTR
+   \   000078   A3           INC     DPTR
+   \   000079   A3           INC     DPTR
+   \   00007A   A3           INC     DPTR
+   \   00007B   A3           INC     DPTR
+   \   00007C   E0           MOVX    A,@DPTR
+   \   00007D   6003         JZ      $+5
+   \   00007F   02....       LJMP    ??zclPI_HdlInSpecificCommands_0 & 0xFFFF
+   \   000082   8C82         MOV     DPL,R4
+   \   000084   8D83         MOV     DPH,R5
+   \   000086   12....       LCALL   ??Subroutine41_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_75:
+   \   000089   6078         JZ      ??zclPI_HdlInSpecificCommands_6
+   \   00008B   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   00008E   8A82         MOV     DPL,R2
+   \   000090   8B83         MOV     DPH,R3
+   \   000092   A3           INC     DPTR
+   \   000093   A3           INC     DPTR
+   \   000094   A3           INC     DPTR
+   \   000095   A3           INC     DPTR
+   \   000096   A3           INC     DPTR
+   \   000097   A3           INC     DPTR
+   \   000098   E0           MOVX    A,@DPTR
+   \   000099   C0E0         PUSH    A
+   \   00009B   7402         MOV     A,#0x2
+   \   00009D   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000A0   D0E0         POP     A
+   \   0000A2   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_71:
+   \   0000A5   C0E0         PUSH    A
+   \   0000A7   7403         MOV     A,#0x3
+   \   0000A9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000AC   D0E0         POP     A
+   \   0000AE   12....       LCALL   ?Subroutine12 & 0xFFFF
+   \                     ??CrossCallReturnLabel_20:
+   \   0000B1   7404         MOV     A,#0x4
+   \   0000B3   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000B6   E8           MOV     A,R0
+   \   0000B7   F0           MOVX    @DPTR,A
+   \   0000B8   A3           INC     DPTR
+   \   0000B9   E9           MOV     A,R1
+   \   0000BA   12....       LCALL   ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_30:
+   \   0000BD   8C82         MOV     DPL,R4
+   \   0000BF   8D83         MOV     DPH,R5
+   \   0000C1   803A         SJMP    ??zclPI_HdlInSpecificCommands_7
+    490                else
+    491                  stat = zclPI_ProcessIn_GenericTunneClient( pInMsg, pCBs );
+   \                     ??zclPI_HdlInSpecificCommands_5:
+   \   0000C3                ; Setup parameters for call to function zclPI_ProcessIn_GenericTunneClient
+   \   0000C3   12....       LCALL   ??zclPI_ProcessIn_GenericTunneClient?relay
+   \   0000C6   8046         SJMP    ??zclPI_HdlInSpecificCommands_8
+    492                break;
+    493          
+    494              case ZCL_CLUSTER_ID_PI_BACNET_PROTOCOL_TUNNEL:
+    495                stat = zclPI_ProcessIn_BACnetTunnelCmds( pInMsg, pCBs );
+   \                     ??zclPI_HdlInSpecificCommands_3:
+   \   0000C8   8A82         MOV     DPL,R2
+   \   0000CA   8B83         MOV     DPH,R3
+   \   0000CC   A3           INC     DPTR
+   \   0000CD   A3           INC     DPTR
+   \   0000CE   A3           INC     DPTR
+   \   0000CF   A3           INC     DPTR
+   \   0000D0   A3           INC     DPTR
+   \   0000D1   A3           INC     DPTR
+   \   0000D2   A3           INC     DPTR
+   \   0000D3   E0           MOVX    A,@DPTR
+   \   0000D4   7036         JNZ     ??zclPI_HdlInSpecificCommands_0
+   \   0000D6   8C82         MOV     DPL,R4
+   \   0000D8   8D83         MOV     DPH,R5
+   \   0000DA   12....       LCALL   ??Subroutine38_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_80:
+   \   0000DD   6024         JZ      ??zclPI_HdlInSpecificCommands_6
+   \   0000DF   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   0000E2   12....       LCALL   ??Subroutine35_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_67:
+   \   0000E5   7402         MOV     A,#0x2
+   \   0000E7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000EA   E8           MOV     A,R0
+   \   0000EB   F0           MOVX    @DPTR,A
+   \   0000EC   A3           INC     DPTR
+   \   0000ED   E9           MOV     A,R1
+   \   0000EE   12....       LCALL   ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_68:
+   \   0000F1   7404         MOV     A,#0x4
+   \   0000F3   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000F6   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_22:
+   \   0000F9   A3           INC     DPTR
+   \   0000FA   A3           INC     DPTR
+   \   0000FB   A3           INC     DPTR
+   \   0000FC   A3           INC     DPTR
+   \                     ??zclPI_HdlInSpecificCommands_7:
+   \   0000FD   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000100   12....       LCALL   ?CALL_IND
+   \                     ??zclPI_HdlInSpecificCommands_6:
+   \   000103   7900         MOV     R1,#0x0
+   \   000105   8007         SJMP    ??zclPI_HdlInSpecificCommands_8
+    496                break;
+    497          
+    498              case ZCL_CLUSTER_ID_PI_11073_PROTOCOL_TUNNEL:
+    499                stat = zclPI_ProcessIn_11073TunnelCmds( pInMsg, pCBs );
+   \                     ??zclPI_HdlInSpecificCommands_4:
+   \   000107                ; Setup parameters for call to function zclPI_ProcessIn_11073TunnelCmds
+   \   000107   12....       LCALL   ??zclPI_ProcessIn_11073TunnelCmds?relay
+    500                break;
+   \   00010A   8002         SJMP    ??zclPI_HdlInSpecificCommands_8
+    501          
+    502              default:
+    503                stat = ZFailure;
+   \                     ??zclPI_HdlInSpecificCommands_0:
+   \   00010C   7901         MOV     R1,#0x1
+    504                break;
+    505            }
+    506          
+    507            return ( stat );
+   \                     ??zclPI_HdlInSpecificCommands_8:
+   \   00010E   7406         MOV     A,#0x6
+   \   000110   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000113   7F02         MOV     R7,#0x2
+   \   000115   02....       LJMP    ?BANKED_LEAVE_XDATA
+    508          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine13:
+   \   000000   12....       LCALL   ?Subroutine26 & 0xFFFF
+   \                     ??CrossCallReturnLabel_43:
+   \   000003                REQUIRE ??Subroutine35_0
+   \   000003                ; // Fall through to label ??Subroutine35_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine35_0:
+   \   000000   A3           INC     DPTR
+   \   000001   A3           INC     DPTR
+   \   000002                REQUIRE ??Subroutine36_0
+   \   000002                ; // Fall through to label ??Subroutine36_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine36_0:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F9           MOV     R1,A
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001                REQUIRE ??Subroutine37_0
+   \   000001                ; // Fall through to label ??Subroutine37_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine37_0:
+   \   000000   12....       LCALL   ?Subroutine28 & 0xFFFF
+   \                     ??CrossCallReturnLabel_73:
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   FA           MOV     R2,A
+   \   000005   A3           INC     DPTR
+   \   000006   E0           MOVX    A,@DPTR
+   \   000007   F583         MOV     DPH,A
+   \   000009   8A82         MOV     DPL,R2
+   \   00000B   E0           MOVX    A,@DPTR
+   \   00000C   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine14:
+   \   000000   E8           MOV     A,R0
+   \   000001   F0           MOVX    @DPTR,A
+   \   000002   A3           INC     DPTR
+   \   000003   E9           MOV     A,R1
+   \   000004   12....       LCALL   ?Subroutine27 & 0xFFFF
+   \                     ??CrossCallReturnLabel_45:
+   \   000007   8C82         MOV     DPL,R4
+   \   000009   8D83         MOV     DPH,R5
+   \   00000B   A3           INC     DPTR
+   \   00000C   A3           INC     DPTR
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine12:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   8882         MOV     DPL,R0
+   \   000003   8983         MOV     DPH,R1
+   \   000005   E0           MOVX    A,@DPTR
+   \   000006   2401         ADD     A,#0x1
+   \   000008   F8           MOV     R0,A
+   \   000009   A3           INC     DPTR
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   3400         ADDC    A,#0x0
+   \   00000D   F9           MOV     R1,A
+   \   00000E   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   12....       LCALL   ?Subroutine25 & 0xFFFF
+   \                     ??CrossCallReturnLabel_42:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine25:
+   \   000000   12....       LCALL   ?Subroutine30 & 0xFFFF
+   \                     ??CrossCallReturnLabel_50:
+   \   000003   85..82       MOV     DPL,?XSP + 0
+   \   000006   85..83       MOV     DPH,?XSP + 1
+   \   000009   12....       LCALL   ?Subroutine31 & 0xFFFF
+   \                     ??CrossCallReturnLabel_56:
+   \   00000C   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F583         MOV     DPH,A
+   \   000006   8882         MOV     DPL,R0
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine18:
+   \   000000   12....       LCALL   ?Subroutine27 & 0xFFFF
+   \                     ??CrossCallReturnLabel_46:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine27:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001                ; Setup parameters for indirect call
+   \   000001                ; Setup parameters for indirect call
+   \   000001                ; Setup parameters for indirect call
+   \   000001                ; Setup parameters for indirect call
+   \   000001   85..82       MOV     DPL,?XSP + 0
+   \   000004   85..83       MOV     DPH,?XSP + 1
+   \   000007   AA82         MOV     R2,DPL
+   \   000009   AB83         MOV     R3,DPH
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine26:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   8A82         MOV     DPL,R2
+   \   000003   8B83         MOV     DPH,R3
+   \   000005   A3           INC     DPTR
+   \   000006   A3           INC     DPTR
+   \   000007   A3           INC     DPTR
+   \   000008   A3           INC     DPTR
+   \   000009   A3           INC     DPTR
+   \   00000A   A3           INC     DPTR
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine28:
+   \   000000   EA           MOV     A,R2
+   \   000001   2408         ADD     A,#0x8
+   \   000003   F8           MOV     R0,A
+   \   000004   EB           MOV     A,R3
+   \   000005   3400         ADDC    A,#0x0
+   \   000007   F9           MOV     R1,A
+   \   000008   8882         MOV     DPL,R0
+   \   00000A   8983         MOV     DPH,R1
+   \   00000C   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine11:
+   \   000000   F8           MOV     R0,A
+   \   000001   A3           INC     DPTR
+   \   000002   E0           MOVX    A,@DPTR
+   \   000003   3400         ADDC    A,#0x0
+   \   000005   F9           MOV     R1,A
+   \   000006   8882         MOV     DPL,R0
+   \   000008   8983         MOV     DPH,R1
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine30:
+   \   000000   8A82         MOV     DPL,R2
+   \   000002   8B83         MOV     DPH,R3
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   2406         ADD     A,#0x6
+   \   000007   F8           MOV     R0,A
+   \   000008   A3           INC     DPTR
+   \   000009   E0           MOVX    A,@DPTR
+   \   00000A   3400         ADDC    A,#0x0
+   \   00000C   F9           MOV     R1,A
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   12....       LCALL   ?Subroutine25 & 0xFFFF
+   \                     ??CrossCallReturnLabel_41:
+   \   000003   8A82         MOV     DPL,R2
+   \   000005   8B83         MOV     DPH,R3
+   \   000007   A3           INC     DPTR
+   \   000008   A3           INC     DPTR
+   \   000009   A3           INC     DPTR
+   \   00000A   A3           INC     DPTR
+   \   00000B   A3           INC     DPTR
+   \   00000C   A3           INC     DPTR
+   \   00000D   A3           INC     DPTR
+   \   00000E   A3           INC     DPTR
+   \   00000F   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine38_0:
+   \   000000   A3           INC     DPTR
+   \   000001   A3           INC     DPTR
+   \   000002                REQUIRE ??Subroutine39_0
+   \   000002                ; // Fall through to label ??Subroutine39_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine39_0:
+   \   000000   A3           INC     DPTR
+   \   000001   A3           INC     DPTR
+   \   000002                REQUIRE ??Subroutine40_0
+   \   000002                ; // Fall through to label ??Subroutine40_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine40_0:
+   \   000000   A3           INC     DPTR
+   \   000001   A3           INC     DPTR
+   \   000002                REQUIRE ??Subroutine41_0
+   \   000002                ; // Fall through to label ??Subroutine41_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine41_0:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F9           MOV     R1,A
+   \   000005   E8           MOV     A,R0
+   \   000006   49           ORL     A,R1
+   \   000007   22           RET
+    509          
+    510          /*********************************************************************
+    511           * @fn      zclPI_ProcessIn_GenericTunneServer
+    512           *
+    513           * @brief   Callback from ZCL to process incoming Commands specific
+    514           *          to this cluster library on a command ID basis
+    515           *
+    516           * @param   pInMsg - pointer to the incoming message
+    517           *
+    518           * @return  ZStatus_t
+    519           */
+    520          static ZStatus_t zclPI_ProcessIn_GenericTunneServer( zclIncoming_t *pInMsg,
+    521                                                               zclPI_AppCallbacks_t *pCBs )
+    522          {
+    523            if  ( pInMsg->hdr.commandID != COMMAND_PI_GENERIC_TUNNEL_MATCH_PROTOCOL_ADDR )
+    524              return (ZFailure);   // Error ignore the command
+    525          
+    526            if ( pCBs->pfnPI_MatchProtocolAddr )
+    527            {
+    528              zclPIMatchProtocolAddr_t cmd;
+    529              
+    530              cmd.srcAddr = &(pInMsg->msg->srcAddr);
+    531              cmd.seqNum = pInMsg->hdr.transSeqNum;
+    532              cmd.len = pInMsg->pData[0];
+    533              cmd.protocolAddr = &(pInMsg->pData[1]);
+    534              
+    535              pCBs->pfnPI_MatchProtocolAddr( &cmd );
+    536            }
+    537          
+    538            return ( ZSuccess );
+    539          }
+    540          
+    541          /*********************************************************************
+    542           * @fn      zclPI_ProcessIn_GenericTunneClient
+    543           *
+    544           * @brief   Callback from ZCL to process incoming Commands specific
+    545           *          to this cluster library on a command ID basis
+    546           *
+    547           * @param   pInMsg - pointer to the incoming message
+    548           *
+    549           * @return  ZStatus_t
+    550           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    551          static ZStatus_t zclPI_ProcessIn_GenericTunneClient( zclIncoming_t *pInMsg,
+   \                     zclPI_ProcessIn_GenericTunneClient:
+    552                                                               zclPI_AppCallbacks_t *pCBs )
+    553          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 12
+   \   000005   74F4         MOV     A,#-0xc
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    554            ZStatus_t stat = ZSuccess;
+   \   00000A   7E00         MOV     R6,#0x0
+    555          
+    556            switch ( pInMsg->hdr.commandID )				
+   \   00000C   8A82         MOV     DPL,R2
+   \   00000E   8B83         MOV     DPH,R3
+   \   000010   A3           INC     DPTR
+   \   000011   A3           INC     DPTR
+   \   000012   A3           INC     DPTR
+   \   000013   A3           INC     DPTR
+   \   000014   A3           INC     DPTR
+   \   000015   A3           INC     DPTR
+   \   000016   A3           INC     DPTR
+   \   000017   E0           MOVX    A,@DPTR
+   \   000018   6006         JZ      ??zclPI_ProcessIn_GenericTunneClient_0
+   \   00001A   14           DEC     A
+   \   00001B   606B         JZ      ??zclPI_ProcessIn_GenericTunneClient_1
+   \   00001D   02....       LJMP    ??zclPI_ProcessIn_GenericTunneClient_2 & 0xFFFF
+    557            {
+    558              case COMMAND_PI_GENERIC_TUNNEL_MATCH_PROTOCOL_ADDR_RSP:
+    559                if ( pCBs->pfnPI_MatchProtocolAddrRsp )
+   \                     ??zclPI_ProcessIn_GenericTunneClient_0:
+   \   000020   8C82         MOV     DPL,R4
+   \   000022   8D83         MOV     DPH,R5
+   \   000024   12....       LCALL   ??Subroutine40_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_78:
+   \   000027   7003         JNZ     $+5
+   \   000029   02....       LJMP    ??zclPI_ProcessIn_GenericTunneClient_3 & 0xFFFF
+    560                {
+    561                  zclPIMatchProtocolAddrRsp_t cmd;
+    562                  
+    563                  cmd.srcAddr = &(pInMsg->msg->srcAddr);
+   \   00002C   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   00002F   7405         MOV     A,#0x5
+   \   000031   12....       LCALL   ?XSTACK_DISP0_8
+   \   000034   12....       LCALL   ?Subroutine15 & 0xFFFF
+    564                  cmd.ieeeAddr = pInMsg->pData;
+   \                     ??CrossCallReturnLabel_23:
+   \   000037   E0           MOVX    A,@DPTR
+   \   000038   FA           MOV     R2,A
+   \   000039   A3           INC     DPTR
+   \   00003A   E0           MOVX    A,@DPTR
+   \   00003B   FB           MOV     R3,A
+   \   00003C   7407         MOV     A,#0x7
+   \   00003E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000041   12....       LCALL   ?Subroutine21 & 0xFFFF
+    565                  cmd.len = pInMsg->pData[8];
+   \                     ??CrossCallReturnLabel_35:
+   \   000044   FA           MOV     R2,A
+   \   000045   A3           INC     DPTR
+   \   000046   E0           MOVX    A,@DPTR
+   \   000047   F583         MOV     DPH,A
+   \   000049   8A82         MOV     DPL,R2
+   \   00004B   A3           INC     DPTR
+   \   00004C   A3           INC     DPTR
+   \   00004D   A3           INC     DPTR
+   \   00004E   A3           INC     DPTR
+   \   00004F   A3           INC     DPTR
+   \   000050   A3           INC     DPTR
+   \   000051   A3           INC     DPTR
+   \   000052   A3           INC     DPTR
+   \   000053   E0           MOVX    A,@DPTR
+   \   000054   C0E0         PUSH    A
+   \   000056   7409         MOV     A,#0x9
+   \   000058   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005B   D0E0         POP     A
+   \   00005D   12....       LCALL   ?Subroutine22 & 0xFFFF
+    566                  cmd.protocolAddr = &(pInMsg->pData[9]);
+   \                     ??CrossCallReturnLabel_39:
+   \   000060   E0           MOVX    A,@DPTR
+   \   000061   2409         ADD     A,#0x9
+   \   000063   F8           MOV     R0,A
+   \   000064   A3           INC     DPTR
+   \   000065   E0           MOVX    A,@DPTR
+   \   000066   3400         ADDC    A,#0x0
+   \   000068   F9           MOV     R1,A
+   \   000069   740A         MOV     A,#0xa
+   \   00006B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006E   12....       LCALL   ?Subroutine31 & 0xFFFF
+    567          
+    568                  pCBs->pfnPI_MatchProtocolAddrRsp( &cmd );
+   \                     ??CrossCallReturnLabel_52:
+   \   000071                ; Setup parameters for indirect call
+   \   000071   7405         MOV     A,#0x5
+   \   000073   12....       LCALL   ?XSTACK_DISP0_8
+   \   000076   AA82         MOV     R2,DPL
+   \   000078   AB83         MOV     R3,DPH
+   \   00007A   8C82         MOV     DPL,R4
+   \   00007C   8D83         MOV     DPH,R5
+   \                     ??zclPI_ProcessIn_GenericTunneClient_4:
+   \   00007E   A3           INC     DPTR
+   \   00007F   A3           INC     DPTR
+    569                }
+   \   000080   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000083   12....       LCALL   ?CALL_IND
+   \   000086   8026         SJMP    ??zclPI_ProcessIn_GenericTunneClient_3
+    570                break;
+    571          
+    572              case COMMAND_PI_GENERIC_TUNNEL_ADVERTISE_PROTOCOL_ADDR:
+    573                if ( pCBs->pfnPI_AdvertiseProtocolAddr )
+   \                     ??zclPI_ProcessIn_GenericTunneClient_1:
+   \   000088   8C82         MOV     DPL,R4
+   \   00008A   8D83         MOV     DPH,R5
+   \   00008C   12....       LCALL   ??Subroutine39_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_79:
+   \   00008F   601D         JZ      ??zclPI_ProcessIn_GenericTunneClient_3
+    574                {
+    575                  zclPIAdvertiseProtocolAddr_t cmd;
+    576                  
+    577                  cmd.srcAddr = &(pInMsg->msg->srcAddr);
+   \   000091   12....       LCALL   ?Subroutine7 & 0xFFFF
+    578                  cmd.len = pInMsg->pData[0];
+   \                     ??CrossCallReturnLabel_10:
+   \   000094   12....       LCALL   ??Subroutine37_0 & 0xFFFF
+    579                  cmd.protocolAddr = &(pInMsg->pData[1]);
+    580                  
+    581                  pCBs->pfnPI_AdvertiseProtocolAddr( &cmd );
+    582                }
+   \                     ??CrossCallReturnLabel_70:
+   \   000097   C0E0         PUSH    A
+   \   000099   7402         MOV     A,#0x2
+   \   00009B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00009E   D0E0         POP     A
+   \   0000A0   12....       LCALL   ?Subroutine12 & 0xFFFF
+   \                     ??CrossCallReturnLabel_19:
+   \   0000A3   7403         MOV     A,#0x3
+   \   0000A5   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000A8   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_21:
+   \   0000AB   80D1         SJMP    ??zclPI_ProcessIn_GenericTunneClient_4
+    583                break;
+    584          
+    585              default:
+    586                // Unknown command
+    587                stat = ZFailure;
+   \                     ??zclPI_ProcessIn_GenericTunneClient_2:
+   \   0000AD   0E           INC     R6
+    588                break;
+    589            }
+    590          
+    591            return ( stat );
+   \                     ??zclPI_ProcessIn_GenericTunneClient_3:
+   \   0000AE   EE           MOV     A,R6
+   \   0000AF   F9           MOV     R1,A
+   \   0000B0   740C         MOV     A,#0xc
+   \   0000B2   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000B5   7F01         MOV     R7,#0x1
+   \   0000B7   02....       LJMP    ?BANKED_LEAVE_XDATA
+    592          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine21:
+   \   000000   EA           MOV     A,R2
+   \   000001   F0           MOVX    @DPTR,A
+   \   000002   A3           INC     DPTR
+   \   000003   EB           MOV     A,R3
+   \   000004   F0           MOVX    @DPTR,A
+   \   000005   8882         MOV     DPL,R0
+   \   000007   8983         MOV     DPH,R1
+   \   000009   E0           MOVX    A,@DPTR
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine15:
+   \   000000   12....       LCALL   ?Subroutine31 & 0xFFFF
+   \                     ??CrossCallReturnLabel_55:
+   \   000003   12....       LCALL   ?Subroutine28 & 0xFFFF
+   \                     ??CrossCallReturnLabel_72:
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   12....       LCALL   ?Subroutine30 & 0xFFFF
+   \                     ??CrossCallReturnLabel_49:
+   \   000003   22           RET
+    593          
+    594          /*********************************************************************
+    595           * @fn      zclPI_ProcessIn_BACnetTunnelCmds
+    596           *
+    597           * @brief   Callback from ZCL to process incoming Commands specific
+    598           *          to this cluster library on a command ID basis
+    599           *
+    600           * @param   pInMsg - pointer to the incoming message
+    601           *
+    602           * @return  ZStatus_t
+    603           */
+    604          static ZStatus_t zclPI_ProcessIn_BACnetTunnelCmds( zclIncoming_t *pInMsg,
+    605                                                             zclPI_AppCallbacks_t *pCBs )
+    606          {
+    607            if  ( pInMsg->hdr.commandID != COMMAND_PI_BACNET_TUNNEL_TRANSFER_NPDU )
+    608              return (ZFailure);   // Error ignore the command
+    609          
+    610            if ( pCBs->pfnPI_BACnetTransferNPDU )
+    611            {
+    612              zclBACnetTransferNPDU_t cmd;
+    613              
+    614              cmd.srcAddr = &(pInMsg->msg->srcAddr);
+    615              cmd.len = pInMsg->pDataLen;
+    616              cmd.npdu = pInMsg->pData;
+    617              
+    618              pCBs->pfnPI_BACnetTransferNPDU( &cmd );
+    619            }
+    620            
+    621            return ( ZSuccess );
+    622          }
+    623          
+    624          /*********************************************************************
+    625           * @fn      zclPI_ProcessIn_11073TunnelCmds
+    626           *
+    627           * @brief   Callback from ZCL to process incoming Commands specific
+    628           *          to this cluster library on a command ID basis
+    629           *
+    630           * @param   pInMsg - pointer to the incoming message
+    631           *
+    632           * @return  ZStatus_t
+    633           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    634          static ZStatus_t zclPI_ProcessIn_11073TunnelCmds( zclIncoming_t *pInMsg,
+   \                     zclPI_ProcessIn_11073TunnelCmds:
+    635                                                            zclPI_AppCallbacks_t *pCBs )
+    636          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 23
+   \   000005   74E9         MOV     A,#-0x17
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    637            ZStatus_t stat = ZSuccess;
+   \   00000A   7E00         MOV     R6,#0x0
+    638          
+    639            switch ( pInMsg->hdr.commandID )				
+   \   00000C   8A82         MOV     DPL,R2
+   \   00000E   8B83         MOV     DPH,R3
+   \   000010   A3           INC     DPTR
+   \   000011   A3           INC     DPTR
+   \   000012   A3           INC     DPTR
+   \   000013   A3           INC     DPTR
+   \   000014   A3           INC     DPTR
+   \   000015   A3           INC     DPTR
+   \   000016   A3           INC     DPTR
+   \   000017   E0           MOVX    A,@DPTR
+   \   000018   6012         JZ      ??zclPI_ProcessIn_11073TunnelCmds_0
+   \   00001A   14           DEC     A
+   \   00001B   606D         JZ      ??zclPI_ProcessIn_11073TunnelCmds_1
+   \   00001D   14           DEC     A
+   \   00001E   7003         JNZ     $+5
+   \   000020   02....       LJMP    ??zclPI_ProcessIn_11073TunnelCmds_2 & 0xFFFF
+   \   000023   14           DEC     A
+   \   000024   7003         JNZ     $+5
+   \   000026   02....       LJMP    ??zclPI_ProcessIn_11073TunnelCmds_3 & 0xFFFF
+   \   000029   02....       LJMP    ??zclPI_ProcessIn_11073TunnelCmds_4 & 0xFFFF
+    640            {
+    641              case COMMAND_PI_11073_TUNNEL_TRANSFER_APDU:
+    642                if ( pCBs->pfnPI_11073TransferAPDU )
+   \                     ??zclPI_ProcessIn_11073TunnelCmds_0:
+   \   00002C   8C82         MOV     DPL,R4
+   \   00002E   8D83         MOV     DPH,R5
+   \   000030   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_81:
+   \   000033   7003         JNZ     $+5
+   \   000035   02....       LJMP    ??zclPI_ProcessIn_11073TunnelCmds_5 & 0xFFFF
+    643                {
+    644                  zcl11073TransferAPDU_t cmd;
+    645                  
+    646                  cmd.srcAddr = &(pInMsg->msg->srcAddr);
+   \   000038   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   00003B   7411         MOV     A,#0x11
+   \   00003D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000040   12....       LCALL   ?Subroutine15 & 0xFFFF
+    647                  cmd.len = BUILD_UINT16( pInMsg->pData[0], pInMsg->pData[1] );
+   \                     ??CrossCallReturnLabel_24:
+   \   000043   12....       LCALL   ??Subroutine36_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_66:
+   \   000046   8882         MOV     DPL,R0
+   \   000048   8983         MOV     DPH,R1
+   \   00004A   E0           MOVX    A,@DPTR
+   \   00004B   F5..         MOV     ?V0 + 0,A
+   \   00004D   A3           INC     DPTR
+   \   00004E   E0           MOVX    A,@DPTR
+   \   00004F   FB           MOV     R3,A
+   \   000050   7413         MOV     A,#0x13
+   \   000052   12....       LCALL   ?XSTACK_DISP0_8
+   \   000055   E5..         MOV     A,?V0 + 0
+   \   000057   F0           MOVX    @DPTR,A
+   \   000058   A3           INC     DPTR
+   \   000059   EB           MOV     A,R3
+   \   00005A   F0           MOVX    @DPTR,A
+    648                  cmd.apdu = &(pInMsg->pData[2]);
+   \   00005B   E8           MOV     A,R0
+   \   00005C   2402         ADD     A,#0x2
+   \   00005E   08           INC     R0
+   \   00005F   08           INC     R0
+   \   000060   E9           MOV     A,R1
+   \   000061   3400         ADDC    A,#0x0
+   \   000063   F9           MOV     R1,A
+   \   000064   7415         MOV     A,#0x15
+   \   000066   12....       LCALL   ?XSTACK_DISP0_8
+   \   000069   12....       LCALL   ?Subroutine31 & 0xFFFF
+    649          
+    650                  pCBs->pfnPI_11073TransferAPDU( &cmd );
+   \                     ??CrossCallReturnLabel_53:
+   \   00006C                ; Setup parameters for indirect call
+   \   00006C   7411         MOV     A,#0x11
+   \   00006E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000071   AA82         MOV     R2,DPL
+   \   000073   AB83         MOV     R3,DPH
+   \   000075   8C82         MOV     DPL,R4
+   \   000077   8D83         MOV     DPH,R5
+   \                     ??zclPI_ProcessIn_11073TunnelCmds_6:
+   \   000079   A3           INC     DPTR
+   \   00007A   A3           INC     DPTR
+   \   00007B   A3           INC     DPTR
+   \   00007C   A3           INC     DPTR
+   \   00007D   A3           INC     DPTR
+   \   00007E   A3           INC     DPTR
+   \   00007F   A3           INC     DPTR
+   \   000080   A3           INC     DPTR
+    651                }
+   \                     ??zclPI_ProcessIn_11073TunnelCmds_7:
+   \   000081   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   000084   12....       LCALL   ?CALL_IND
+   \   000087   02....       LJMP    ??zclPI_ProcessIn_11073TunnelCmds_5 & 0xFFFF
+    652                break;
+    653          
+    654              case COMMAND_PI_11073_TUNNEL_CONNECT_REQ:
+    655                if ( pCBs->pfnPI_11073ConnectReq )
+   \                     ??zclPI_ProcessIn_11073TunnelCmds_1:
+   \   00008A   8C82         MOV     DPL,R4
+   \   00008C   8D83         MOV     DPH,R5
+   \   00008E   A3           INC     DPTR
+   \   00008F   A3           INC     DPTR
+   \   000090   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_82:
+   \   000093   7003         JNZ     $+5
+   \   000095   02....       LJMP    ??zclPI_ProcessIn_11073TunnelCmds_5 & 0xFFFF
+    656                {
+    657                  zcl11073ConnectReq_t cmd;
+    658                  
+    659                  cmd.srcAddr = &(pInMsg->msg->srcAddr);
+   \   000098   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   00009B   7408         MOV     A,#0x8
+   \   00009D   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000A0   12....       LCALL   ?Subroutine16 & 0xFFFF
+    660                  cmd.seqNum = pInMsg->hdr.transSeqNum;
+   \                     ??CrossCallReturnLabel_25:
+   \   0000A3   C0E0         PUSH    A
+   \   0000A5   740A         MOV     A,#0xa
+   \   0000A7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000AA   D0E0         POP     A
+   \   0000AC   12....       LCALL   ?Subroutine9 & 0xFFFF
+    661                  cmd.connectCtrl = pInMsg->pData[0];
+   \                     ??CrossCallReturnLabel_69:
+   \   0000AF   C0E0         PUSH    A
+   \   0000B1   740B         MOV     A,#0xb
+   \   0000B3   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000B6   D0E0         POP     A
+   \   0000B8   12....       LCALL   ?Subroutine22 & 0xFFFF
+    662                  cmd.idleTimeout = BUILD_UINT16( pInMsg->pData[1], pInMsg->pData[2] );
+   \                     ??CrossCallReturnLabel_40:
+   \   0000BB   E0           MOVX    A,@DPTR
+   \   0000BC   FA           MOV     R2,A
+   \   0000BD   A3           INC     DPTR
+   \   0000BE   E0           MOVX    A,@DPTR
+   \   0000BF   FB           MOV     R3,A
+   \   0000C0   8A82         MOV     DPL,R2
+   \   0000C2   8B83         MOV     DPH,R3
+   \   0000C4   A3           INC     DPTR
+   \   0000C5   E0           MOVX    A,@DPTR
+   \   0000C6   F5..         MOV     ?V0 + 2,A
+   \   0000C8   8A82         MOV     DPL,R2
+   \   0000CA   8B83         MOV     DPH,R3
+   \   0000CC   A3           INC     DPTR
+   \   0000CD   A3           INC     DPTR
+   \   0000CE   E0           MOVX    A,@DPTR
+   \   0000CF   F5..         MOV     ?V0 + 1,A
+   \   0000D1   E5..         MOV     A,?V0 + 2
+   \   0000D3   F5..         MOV     ?V0 + 0,A
+   \   0000D5   740C         MOV     A,#0xc
+   \   0000D7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000DA   E5..         MOV     A,?V0 + 0
+   \   0000DC   F0           MOVX    @DPTR,A
+   \   0000DD   A3           INC     DPTR
+   \   0000DE   E5..         MOV     A,?V0 + 1
+   \   0000E0   F0           MOVX    @DPTR,A
+    663                  cmd.managerAddr = &(pInMsg->pData[3]);
+   \   0000E1   EA           MOV     A,R2
+   \   0000E2   2403         ADD     A,#0x3
+   \   0000E4   0A           INC     R2
+   \   0000E5   0A           INC     R2
+   \   0000E6   0A           INC     R2
+   \   0000E7   EB           MOV     A,R3
+   \   0000E8   3400         ADDC    A,#0x0
+   \   0000EA   FB           MOV     R3,A
+   \   0000EB   740E         MOV     A,#0xe
+   \   0000ED   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000F0   12....       LCALL   ?Subroutine21 & 0xFFFF
+    664                  cmd.managerEP = pInMsg->pData[11];
+   \                     ??CrossCallReturnLabel_36:
+   \   0000F3   240B         ADD     A,#0xb
+   \   0000F5   12....       LCALL   ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_18:
+   \   0000F8   C0E0         PUSH    A
+   \   0000FA   7410         MOV     A,#0x10
+   \   0000FC   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000FF   D0E0         POP     A
+   \   000101   F0           MOVX    @DPTR,A
+    665          
+    666                  pCBs->pfnPI_11073ConnectReq( &cmd );
+   \   000102                ; Setup parameters for indirect call
+   \   000102   7408         MOV     A,#0x8
+   \   000104   12....       LCALL   ?XSTACK_DISP0_8
+   \   000107   AA82         MOV     R2,DPL
+   \   000109   AB83         MOV     R3,DPH
+   \   00010B   8C82         MOV     DPL,R4
+   \   00010D   8D83         MOV     DPH,R5
+   \   00010F   A3           INC     DPTR
+   \   000110   A3           INC     DPTR
+   \   000111   02....       LJMP    ??zclPI_ProcessIn_11073TunnelCmds_6 & 0xFFFF
+    667                }
+    668                break;
+    669          
+    670              case COMMAND_PI_11073_TUNNEL_DISCONNECT_REQ:
+    671                if ( pCBs->pfnPI_11073DisconnectReq )
+   \                     ??zclPI_ProcessIn_11073TunnelCmds_2:
+   \   000114   EC           MOV     A,R4
+   \   000115   240C         ADD     A,#0xc
+   \   000117   F582         MOV     DPL,A
+   \   000119   ED           MOV     A,R5
+   \   00011A   3400         ADDC    A,#0x0
+   \   00011C   F583         MOV     DPH,A
+   \   00011E   12....       LCALL   ??Subroutine41_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_76:
+   \   000121   605D         JZ      ??zclPI_ProcessIn_11073TunnelCmds_5
+    672                {
+    673                  zcl11073DisconnectReq_t cmd;
+    674                  
+    675                  cmd.srcAddr = &(pInMsg->msg->srcAddr);
+   \   000123   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_14:
+   \   000126   7403         MOV     A,#0x3
+   \   000128   12....       LCALL   ?XSTACK_DISP0_8
+   \   00012B   12....       LCALL   ?Subroutine16 & 0xFFFF
+    676                  cmd.seqNum = pInMsg->hdr.transSeqNum;
+   \                     ??CrossCallReturnLabel_26:
+   \   00012E   C0E0         PUSH    A
+   \   000130   7405         MOV     A,#0x5
+   \   000132   12....       LCALL   ?XSTACK_DISP0_8
+   \   000135   D0E0         POP     A
+   \   000137   12....       LCALL   ?Subroutine13 & 0xFFFF
+    677                  cmd.managerAddr = pInMsg->pData;
+   \                     ??CrossCallReturnLabel_65:
+   \   00013A   7406         MOV     A,#0x6
+   \   00013C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00013F   12....       LCALL   ?Subroutine31 & 0xFFFF
+    678                  
+    679                  pCBs->pfnPI_11073DisconnectReq( &cmd );
+   \                     ??CrossCallReturnLabel_54:
+   \   000142                ; Setup parameters for indirect call
+   \   000142   7403         MOV     A,#0x3
+   \   000144   12....       LCALL   ?XSTACK_DISP0_8
+   \   000147   AA82         MOV     R2,DPL
+   \   000149   AB83         MOV     R3,DPH
+   \   00014B   EC           MOV     A,R4
+   \   00014C   240C         ADD     A,#0xc
+   \                     ??zclPI_ProcessIn_11073TunnelCmds_8:
+   \   00014E   F582         MOV     DPL,A
+   \   000150   ED           MOV     A,R5
+   \   000151   3400         ADDC    A,#0x0
+   \   000153   F583         MOV     DPH,A
+   \   000155   02....       LJMP    ??zclPI_ProcessIn_11073TunnelCmds_7 & 0xFFFF
+    680                }
+    681                break;
+    682          
+    683              case COMMAND_PI_11073_TUNNEL_CONNECT_STATUS_NOTI:
+    684                if ( pCBs->pfnPI_11073ConnectStatusNoti )
+   \                     ??zclPI_ProcessIn_11073TunnelCmds_3:
+   \   000158   EC           MOV     A,R4
+   \   000159   240E         ADD     A,#0xe
+   \   00015B   F582         MOV     DPL,A
+   \   00015D   ED           MOV     A,R5
+   \   00015E   3400         ADDC    A,#0x0
+   \   000160   F583         MOV     DPH,A
+   \   000162   12....       LCALL   ??Subroutine41_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_77:
+   \   000165   6019         JZ      ??zclPI_ProcessIn_11073TunnelCmds_5
+    685                {
+    686                  zcl11073ConnectStatusNoti_t cmd;
+    687                  
+    688                  cmd.srcAddr = &(pInMsg->msg->srcAddr);
+   \   000167   12....       LCALL   ?Subroutine4 & 0xFFFF
+    689                  cmd.connectStatus = pInMsg->pData[0];
+    690                  
+    691                  pCBs->pfnPI_11073ConnectStatusNoti( &cmd );
+    692                }
+   \                     ??CrossCallReturnLabel_0:
+   \   00016A   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   00016D   E0           MOVX    A,@DPTR
+   \   00016E   C0E0         PUSH    A
+   \   000170   7402         MOV     A,#0x2
+   \   000172   12....       LCALL   ?XSTACK_DISP0_8
+   \   000175   D0E0         POP     A
+   \   000177   12....       LCALL   ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_29:
+   \   00017A   EC           MOV     A,R4
+   \   00017B   240E         ADD     A,#0xe
+   \   00017D   80CF         SJMP    ??zclPI_ProcessIn_11073TunnelCmds_8
+    693                break;
+    694          
+    695              default:
+    696                // Unknown command
+    697                stat = ZFailure;
+   \                     ??zclPI_ProcessIn_11073TunnelCmds_4:
+   \   00017F   0E           INC     R6
+    698                break;
+    699            }
+    700          
+    701            return ( stat );
+   \                     ??zclPI_ProcessIn_11073TunnelCmds_5:
+   \   000180   EE           MOV     A,R6
+   \   000181   F9           MOV     R1,A
+   \   000182   7417         MOV     A,#0x17
+   \   000184   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000187   02....       LJMP    ?Subroutine0 & 0xFFFF
+    702          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine16:
+   \   000000   E8           MOV     A,R0
+   \   000001   F0           MOVX    @DPTR,A
+   \   000002   A3           INC     DPTR
+   \   000003   E9           MOV     A,R1
+   \   000004   12....       LCALL   ?Subroutine26 & 0xFFFF
+   \                     ??CrossCallReturnLabel_44:
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   A3           INC     DPTR
+   \   000001   A3           INC     DPTR
+   \   000002                REQUIRE ??Subroutine38_0
+   \   000002                ; // Fall through to label ??Subroutine38_0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclPI_RegisterCmdCallbacks?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclPI_RegisterCmdCallbacks
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclPI_Send_MatchProtocolAddrCmd?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclPI_Send_MatchProtocolAddrCmd
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclPI_Send_MatchProtocolAddrRsp?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclPI_Send_MatchProtocolAddrRsp
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclPI_Send_AdvertiseProtocolAddrCmd?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclPI_Send_AdvertiseProtocolAddrCmd
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclPI_Send_11073TransferAPDUCmd?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclPI_Send_11073TransferAPDUCmd
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclPI_Send_11073ConnectReq?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclPI_Send_11073ConnectReq
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclPI_HdlIncoming?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclPI_HdlIncoming
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclPI_HdlInSpecificCommands?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclPI_HdlInSpecificCommands
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclPI_ProcessIn_GenericTunneClient?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclPI_ProcessIn_GenericTunneClient
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclPI_ProcessIn_11073TunnelCmds?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclPI_ProcessIn_11073TunnelCmds
+    703          
+    704          
+    705          /****************************************************************************
+    706          ****************************************************************************/
+    707          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     zclPI_HdlInSpecificCommands        1      0     16
+       -> zclPI_ProcessIn_GenericTunneClient
+                                        0      0     32
+       -> zclPI_ProcessIn_11073TunnelCmds
+                                        0      0     32
+     zclPI_HdlIncoming                  2      0      0
+       -> zclPI_HdlInSpecificCommands
+                                        4      0      0
+     zclPI_ProcessIn_11073TunnelCmds
+                                        1      0     51
+     zclPI_ProcessIn_GenericTunneClient
+                                        1      0     37
+     zclPI_RegisterCmdCallbacks         1      0     14
+       -> zcl_registerPlugin            0      0     28
+       -> osal_mem_alloc                0      0     24
+     zclPI_Send_11073ConnectReq         1      0     39
+       -> osal_mem_alloc                0      0     44
+       -> osal_memcpy                   0      0     50
+       -> zcl_SendCommand               0      0     66
+       -> osal_mem_free                 0      0     44
+     zclPI_Send_11073TransferAPDUCmd
+                                        1      0     34
+       -> osal_mem_alloc                0      0     40
+       -> osal_memcpy                   0      0     46
+       -> zcl_SendCommand               0      0     62
+       -> osal_mem_free                 0      0     40
+     zclPI_Send_AdvertiseProtocolAddrCmd
+                                        1      0     32
+       -> osal_mem_alloc                0      0     36
+       -> osal_memcpy                   0      0     42
+       -> zcl_SendCommand               0      0     58
+       -> osal_mem_free                 0      0     36
+     zclPI_Send_MatchProtocolAddrCmd
+                                        1      0     32
+       -> osal_mem_alloc                0      0     36
+       -> osal_memcpy                   0      0     42
+       -> zcl_SendCommand               0      0     58
+       -> osal_mem_free                 0      0     36
+     zclPI_Send_MatchProtocolAddrRsp
+                                        1      0     38
+       -> osal_mem_alloc                0      0     44
+       -> sAddrExtCpy                   0      0     44
+       -> osal_memcpy                   0      0     50
+       -> zcl_SendCommand               0      0     66
+       -> osal_mem_free                 0      0     44
+
+
+   Segment part sizes:
+
+     Function/Label                              Bytes
+     --------------                              -----
+     zclPICBs                                       2
+     zclPIPluginRegisted                            1
+     zclPI_RegisterCmdCallbacks                   142
+     ?Subroutine0                                   5
+     ?Subroutine22                                  6
+     ?Subroutine31                                  6
+     zclPI_Send_MatchProtocolAddrCmd
+                                                  148
+     ?Subroutine1                                   7
+     ?Subroutine24                                  8
+     ??Subroutine32_0                               2
+     ??Subroutine33_0                               6
+     ?Subroutine19                                 13
+     ?Subroutine10                                 10
+     ?Subroutine6                                  15
+     ?Subroutine29                                 11
+     zclPI_Send_MatchProtocolAddrRsp
+                                                  201
+     ?Subroutine2                                   7
+     ??Subroutine34_0                               9
+     ?Subroutine20                                  6
+     ?Subroutine17                                 13
+     zclPI_Send_AdvertiseProtocolAddrCmd
+                                                  145
+     zclPI_Send_11073TransferAPDUCmd
+                                                  197
+     ?Subroutine23                                  3
+     zclPI_Send_11073ConnectReq                   207
+     zclPI_HdlIncoming                             42
+     zclPI_HdlInSpecificCommands                  280
+     ?Subroutine13                                  3
+     ??Subroutine35_0                               2
+     ??Subroutine36_0                               6
+     ?Subroutine9                                   1
+     ??Subroutine37_0                              13
+     ?Subroutine14                                 14
+     ?Subroutine12                                 15
+     ?Subroutine7                                   4
+     ?Subroutine25                                 13
+     ?Subroutine5                                   9
+     ?Subroutine18                                  4
+     ?Subroutine27                                 12
+     ?Subroutine26                                 12
+     ?Subroutine28                                 13
+     ?Subroutine11                                 12
+     ?Subroutine30                                 14
+     ?Subroutine4                                  16
+     ??Subroutine38_0                               2
+     ??Subroutine39_0                               2
+     ??Subroutine40_0                               2
+     ??Subroutine41_0                               8
+     zclPI_ProcessIn_GenericTunneClient
+                                                  186
+     ?Subroutine21                                 11
+     ?Subroutine15                                  7
+     ?Subroutine8                                   4
+     zclPI_ProcessIn_11073TunnelCmds
+                                                  394
+     ?Subroutine16                                  9
+     ?Subroutine3                                   2
+     ??zclPI_RegisterCmdCallbacks?relay             6
+     ??zclPI_Send_MatchProtocolAddrCmd?relay        6
+     ??zclPI_Send_MatchProtocolAddrRsp?relay        6
+     ??zclPI_Send_AdvertiseProtocolAddrCmd?relay    6
+     ??zclPI_Send_11073TransferAPDUCmd?relay        6
+     ??zclPI_Send_11073ConnectReq?relay             6
+     ??zclPI_HdlIncoming?relay                      6
+     ??zclPI_HdlInSpecificCommands?relay            6
+     ??zclPI_ProcessIn_GenericTunneClient?relay     6
+     ??zclPI_ProcessIn_11073TunnelCmds?relay        6
+
+ 
+ 2 279 bytes in segment BANKED_CODE
+    60 bytes in segment BANK_RELAYS
+     3 bytes in segment XDATA_Z
+ 
+ 2 339 bytes of CODE  memory
+     3 bytes of XDATA memory
+
+Errors: none
+Warnings: none

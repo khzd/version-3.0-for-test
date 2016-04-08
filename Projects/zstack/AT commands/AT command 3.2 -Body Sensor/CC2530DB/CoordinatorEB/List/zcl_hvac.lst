@@ -1,0 +1,955 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         15/Jun/2015  20:13:29 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  S:\zigbee\Myzigbe\version 3.0 for new              #
+#                          ZStack-CC2530-2.5.1a\Components\stack\zcl\zcl_hvac #
+#                          .c                                                 #
+#    Command line       =  -f "S:\zigbee\Myzigbe\version 3.0 for new          #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wCoord.cfg" (-DCPU32MHZ                   #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f "S:\zigbee\Myzigbe\version 3.0 for new          #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\Tools\CC #
+#                          2530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0      #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x2015                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "S:\zigbee\Myzigbe\version  #
+#                          3.0 for new ZStack-CC2530-2.5.1a\Components\stack\ #
+#                          zcl\zcl_hvac.c" -D ZIGBEEPRO -D NWK_AUTO_POLL -D   #
+#                          HAL_UART=TRUE -D HOLD_AUTO_START -D NV_RESTORE -D  #
+#                          REFLECTOR -D HAL_UART_ISR=1 -D HAL_UART_DMA=0 -D   #
+#                          xHAL_UART_ISR_TX_MAX=200 -D xPOWER_SAVING -D       #
+#                          ZCL_READ -D ZCL_WRITE -D ZCL_IDENTIFY -D           #
+#                          ZCL_ON_OFF -D ZCL_DISCOVER -D xZTOOL_P1 -D         #
+#                          xMT_TASK -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D        #
+#                          xLCD_SUPPORTED=DEBUG -D xMT_UART_DEFAULT_OVERFLOW= #
+#                          FALSE -lC "S:\zigbee\Myzigbe\version 3.0 for new   #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\CoordinatorEB\Lis #
+#                          t\" -lA "S:\zigbee\Myzigbe\version 3.0 for new     #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\CoordinatorEB\Lis #
+#                          t\" --diag_suppress Pe001,Pa010 -o                 #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\CoordinatorEB\Obj #
+#                          \" -e --no_code_motion --debug --core=plain        #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "S:\zigbee\Myzigbe\version #
+#                           3.0 for new ZStack-CC2530-2.5.1a\Projects\zstack\ #
+#                          AT commands\AT command 3.2\CC2530DB\" -I           #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\Source\" -I    #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\ZMain\TI #
+#                          2530DB\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\hal\include\" -I                          #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\hal\target\CC2530EB\" -I                  #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\mac\include\" -I                          #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\mac\high_level\" -I                       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\mac\low_level\srf04\" -I                  #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\mac\low_level\srf04\single_chip\" -I      #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\mt\" -I "S:\zigbee\Myzigbe\version 3.0    #
+#                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT    #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\osal\include\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\services\saddr\" -I                       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\services\sdata\" -I                       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\stack\af\" -I "S:\zigbee\Myzigbe\version  #
+#                          3.0 for new ZStack-CC2530-2.5.1a\Projects\zstack\A #
+#                          T commands\AT command 3.2\CC2530DB\..\..\..\..\..\ #
+#                          Components\stack\nwk\" -I                          #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\stack\sapi\" -I                           #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\stack\sec\" -I "S:\zigbee\Myzigbe\version #
+#                           3.0 for new ZStack-CC2530-2.5.1a\Projects\zstack\ #
+#                          AT commands\AT command 3.2\CC2530DB\..\..\..\..\.. #
+#                          \Components\stack\sys\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\stack\zdo\" -I "S:\zigbee\Myzigbe\version #
+#                           3.0 for new ZStack-CC2530-2.5.1a\Projects\zstack\ #
+#                          AT commands\AT command 3.2\CC2530DB\..\..\..\..\.. #
+#                          \Components\stack\zcl\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\zmac\" -I "S:\zigbee\Myzigbe\version 3.0  #
+#                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT    #
+#                          commands\AT command 3.2\CC2530DB\..\..\..\..\..\Co #
+#                          mponents\zmac\f8w\" -Ohz --require_prototypes      #
+#    List file          =  S:\zigbee\Myzigbe\version 3.0 for new              #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\CoordinatorEB\Lis #
+#                          t\zcl_hvac.lst                                     #
+#    Object file        =  S:\zigbee\Myzigbe\version 3.0 for new              #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2\CC2530DB\CoordinatorEB\Obj #
+#                          \zcl_hvac.r51                                      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+S:\zigbee\Myzigbe\version 3.0 for new ZStack-CC2530-2.5.1a\Components\stack\zcl\zcl_hvac.c
+      1          /**************************************************************************************************
+      2            Filename:       zcl_hvac.c
+      3            Revised:        $Date: 2011-05-19 11:53:12 -0700 (Thu, 19 May 2011) $
+      4            Revision:       $Revision: 26031 $
+      5          
+      6            Description:    Zigbee Cluster Library - HVAC
+      7          
+      8          
+      9            Copyright 2006-2011 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com. 
+     38          **************************************************************************************************/
+     39          
+     40          
+     41          /*********************************************************************
+     42           * INCLUDES
+     43           */
+     44          #include "ZComDef.h"
+     45          #include "OSAL.h"
+     46          #include "zcl.h"
+     47          #include "zcl_general.h"
+     48          #include "zcl_hvac.h"
+     49          
+     50          #if defined ( INTER_PAN )
+     51            #include "stub_aps.h"
+     52          #endif
+     53          
+     54          /*********************************************************************
+     55           * MACROS
+     56           */
+     57          
+     58          /*********************************************************************
+     59           * CONSTANTS
+     60           */
+     61          
+     62          /*********************************************************************
+     63           * TYPEDEFS
+     64           */
+     65          typedef struct zclHVACCBRec
+     66          {
+     67            struct zclHVACCBRec     *next;
+     68            uint8                   endpoint; // Used to link it into the endpoint descriptor
+     69            zclHVAC_AppCallbacks_t  *CBs;     // Pointer to Callback function
+     70          } zclHVACCBRec_t;
+     71          
+     72          /*********************************************************************
+     73           * GLOBAL VARIABLES
+     74           */
+     75          
+     76          /*********************************************************************
+     77           * GLOBAL FUNCTIONS
+     78           */
+     79          
+     80          /*********************************************************************
+     81           * LOCAL VARIABLES
+     82           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     83          static zclHVACCBRec_t *zclHVACCBs = (zclHVACCBRec_t *)NULL;
+   \                     zclHVACCBs:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     84          static uint8 zclHVACPluginRegisted = FALSE;
+   \                     zclHVACPluginRegisted:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     85          
+     86          
+     87          /*********************************************************************
+     88           * LOCAL FUNCTIONS
+     89           */
+     90          static ZStatus_t zclHVAC_HdlIncoming( zclIncoming_t *pInMsg );
+     91          static ZStatus_t zclHVAC_HdlInSpecificCommands( zclIncoming_t *pInMsg );
+     92          static zclHVAC_AppCallbacks_t *zclHVAC_FindCallbacks( uint8 endpoint );
+     93          
+     94          static ZStatus_t zclHVAC_ProcessInPumpCmds( zclIncoming_t *pInMsg );
+     95          static ZStatus_t zclHVAC_ProcessInThermostatCmds( zclIncoming_t *pInMsg, zclHVAC_AppCallbacks_t *pCBs );
+     96          
+     97          /*********************************************************************
+     98           * @fn      zclHVAC_RegisterCmdCallbacks
+     99           *
+    100           * @brief   Register an applications command callbacks
+    101           *
+    102           * @param   endpoint - application's endpoint
+    103           * @param   callbacks - pointer to the callback record.
+    104           *
+    105           * @return  ZMemError if not able to allocate
+    106           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    107          ZStatus_t zclHVAC_RegisterCmdCallbacks( uint8 endpoint, zclHVAC_AppCallbacks_t *callbacks )
+   \                     zclHVAC_RegisterCmdCallbacks:
+    108          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   FF           MOV     R7,A
+    109            zclHVACCBRec_t *pNewItem;
+    110            zclHVACCBRec_t *pLoop;
+    111          
+    112            // Register as a ZCL Plugin
+    113            if ( !zclHVACPluginRegisted )
+   \   00000B   90....       MOV     DPTR,#zclHVACPluginRegisted
+   \   00000E   E0           MOVX    A,@DPTR
+   \   00000F   7021         JNZ     ??zclHVAC_RegisterCmdCallbacks_0
+    114            {
+    115              zcl_registerPlugin( ZCL_CLUSTER_ID_HVAC_PUMP_CONFIG_CONTROL,
+    116                                  ZCL_CLUSTER_ID_HAVC_USER_INTERFACE_CONFIG,
+    117                                  zclHVAC_HdlIncoming );
+   \   000011                ; Setup parameters for call to function zcl_registerPlugin
+   \   000011   75....       MOV     ?V0 + 2,#??zclHVAC_HdlIncoming?relay & 0xff
+   \   000014   75....       MOV     ?V0 + 3,#(??zclHVAC_HdlIncoming?relay >> 8) & 0xff
+   \   000017   78..         MOV     R0,#?V0 + 2
+   \   000019   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00001C   7C04         MOV     R4,#0x4
+   \   00001E   7D02         MOV     R5,#0x2
+   \   000020   7A00         MOV     R2,#0x0
+   \   000022   7B02         MOV     R3,#0x2
+   \   000024   12....       LCALL   ??zcl_registerPlugin?relay
+   \   000027   7402         MOV     A,#0x2
+   \   000029   12....       LCALL   ?DEALLOC_XSTACK8
+    118              zclHVACPluginRegisted = TRUE;
+   \   00002C   90....       MOV     DPTR,#zclHVACPluginRegisted
+   \   00002F   7401         MOV     A,#0x1
+   \   000031   F0           MOVX    @DPTR,A
+    119            }
+    120          
+    121            // Fill in the new profile list
+    122            pNewItem = osal_mem_alloc( sizeof( zclHVACCBRec_t ) );
+   \                     ??zclHVAC_RegisterCmdCallbacks_0:
+   \   000032                ; Setup parameters for call to function osal_mem_alloc
+   \   000032   7A05         MOV     R2,#0x5
+   \   000034   7B00         MOV     R3,#0x0
+   \   000036   12....       LCALL   ??osal_mem_alloc?relay
+   \   000039   8A..         MOV     ?V0 + 2,R2
+   \   00003B   8B..         MOV     ?V0 + 3,R3
+   \   00003D   A8..         MOV     R0,?V0 + 2
+   \   00003F   A9..         MOV     R1,?V0 + 3
+    123            if ( pNewItem == NULL )
+   \   000041   E8           MOV     A,R0
+   \   000042   49           ORL     A,R1
+   \   000043   7004         JNZ     ??zclHVAC_RegisterCmdCallbacks_1
+    124              return (ZMemError);
+   \   000045   7910         MOV     R1,#0x10
+   \   000047   804B         SJMP    ??zclHVAC_RegisterCmdCallbacks_2
+    125          
+    126            pNewItem->next = (zclHVACCBRec_t *)NULL;
+   \                     ??zclHVAC_RegisterCmdCallbacks_1:
+   \   000049   8882         MOV     DPL,R0
+   \   00004B   8983         MOV     DPH,R1
+   \   00004D   E4           CLR     A
+   \   00004E   F0           MOVX    @DPTR,A
+   \   00004F   A3           INC     DPTR
+   \   000050   F0           MOVX    @DPTR,A
+    127            pNewItem->endpoint = endpoint;
+   \   000051   8882         MOV     DPL,R0
+   \   000053   8983         MOV     DPH,R1
+   \   000055   A3           INC     DPTR
+   \   000056   A3           INC     DPTR
+   \   000057   E5..         MOV     A,?V0 + 0
+   \   000059   F0           MOVX    @DPTR,A
+    128            pNewItem->CBs = callbacks;
+   \   00005A   8882         MOV     DPL,R0
+   \   00005C   8983         MOV     DPH,R1
+   \   00005E   A3           INC     DPTR
+   \   00005F   A3           INC     DPTR
+   \   000060   A3           INC     DPTR
+   \   000061   EE           MOV     A,R6
+   \   000062   F0           MOVX    @DPTR,A
+   \   000063   A3           INC     DPTR
+   \   000064   EF           MOV     A,R7
+   \   000065   F0           MOVX    @DPTR,A
+    129          
+    130            // Find spot in list
+    131            if ( zclHVACCBs == NULL )
+   \   000066   90....       MOV     DPTR,#zclHVACCBs
+   \   000069   E0           MOVX    A,@DPTR
+   \   00006A   FA           MOV     R2,A
+   \   00006B   A3           INC     DPTR
+   \   00006C   E0           MOVX    A,@DPTR
+   \   00006D   FB           MOV     R3,A
+   \   00006E   EA           MOV     A,R2
+   \   00006F   4B           ORL     A,R3
+   \   000070   7008         JNZ     ??zclHVAC_RegisterCmdCallbacks_3
+    132            {
+    133              zclHVACCBs = pNewItem;
+   \   000072   90....       MOV     DPTR,#zclHVACCBs
+   \   000075   8016         SJMP    ??zclHVAC_RegisterCmdCallbacks_4
+    134            }
+    135            else
+    136            {
+    137              // Look for end of list
+    138              pLoop = zclHVACCBs;
+    139              while ( pLoop->next != NULL )
+    140                pLoop = pLoop->next;
+   \                     ??zclHVAC_RegisterCmdCallbacks_5:
+   \   000077   E0           MOVX    A,@DPTR
+   \   000078   FA           MOV     R2,A
+   \   000079   A3           INC     DPTR
+   \                     ??zclHVAC_RegisterCmdCallbacks_3:
+   \   00007A   E0           MOVX    A,@DPTR
+   \   00007B   FB           MOV     R3,A
+   \   00007C   8A82         MOV     DPL,R2
+   \   00007E   8B83         MOV     DPH,R3
+   \   000080   E0           MOVX    A,@DPTR
+   \   000081   FC           MOV     R4,A
+   \   000082   A3           INC     DPTR
+   \   000083   E0           MOVX    A,@DPTR
+   \   000084   FD           MOV     R5,A
+   \   000085   EC           MOV     A,R4
+   \   000086   4D           ORL     A,R5
+   \   000087   8A82         MOV     DPL,R2
+   \   000089   8B83         MOV     DPH,R3
+   \   00008B   70EA         JNZ     ??zclHVAC_RegisterCmdCallbacks_5
+    141          
+    142              // Put new item at end of list
+    143              pLoop->next = pNewItem;
+   \                     ??zclHVAC_RegisterCmdCallbacks_4:
+   \   00008D   E8           MOV     A,R0
+   \   00008E   F0           MOVX    @DPTR,A
+   \   00008F   A3           INC     DPTR
+   \   000090   E9           MOV     A,R1
+   \   000091   F0           MOVX    @DPTR,A
+    144            }
+    145            return ( ZSuccess );
+   \   000092   7900         MOV     R1,#0x0
+   \                     ??zclHVAC_RegisterCmdCallbacks_2:
+   \   000094   7F04         MOV     R7,#0x4
+   \   000096   02....       LJMP    ?BANKED_LEAVE_XDATA
+    146          }
+    147          
+    148          /*********************************************************************
+    149           * @fn      zclHVAC_SendSetpointRaiseLower
+    150           *
+    151           * @brief   Call to send out a Setpoint Raise/Lower Command
+    152           *
+    153           * @param   srcEP - Sending application's endpoint
+    154           * @param   dstAddr - where you want the message to go
+    155           * @param   mode - which setpoint is to be configured
+    156           * @param   amount - amount setpoint(s) are to be increased (or decreased) by,
+    157           *                   in steps of 0.1°C
+    158           * @param   seqNum - transaction sequence number
+    159           *
+    160           * @return  ZStatus_t
+    161           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    162          ZStatus_t zclHVAC_SendSetpointRaiseLower( uint8 srcEP, afAddrType_t *dstAddr,
+   \                     zclHVAC_SendSetpointRaiseLower:
+    163                                                    uint8 mode, int8 amount, 
+    164                                                    uint8 disableDefaultRsp, uint8 seqNum )
+    165          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV     A,#-0x2
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EC           MOV     A,R4
+   \   00000D   FF           MOV     R7,A
+   \   00000E   740D         MOV     A,#0xd
+   \   000010   12....       LCALL   ?XSTACK_DISP0_8
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   F9           MOV     R1,A
+   \   000015   740E         MOV     A,#0xe
+   \   000017   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001A   E0           MOVX    A,@DPTR
+   \   00001B   FC           MOV     R4,A
+    166            uint8 buf[2];
+    167          
+    168            buf[0] = mode;
+   \   00001C   EF           MOV     A,R7
+   \   00001D   85..82       MOV     DPL,?XSP + 0
+   \   000020   85..83       MOV     DPH,?XSP + 1
+   \   000023   F0           MOVX    @DPTR,A
+    169            buf[1] = amount;
+   \   000024   7401         MOV     A,#0x1
+   \   000026   12....       LCALL   ?XSTACK_DISP0_8
+   \   000029   ED           MOV     A,R5
+   \   00002A   F0           MOVX    @DPTR,A
+    170          
+    171            return zcl_SendCommand( srcEP, dstAddr, ZCL_CLUSTER_ID_HAVC_THERMOSTAT,
+    172                                    COMMAND_THERMOSTAT_SETPOINT_RAISE_LOWER, TRUE, 
+    173                                    ZCL_FRAME_CLIENT_SERVER_DIR, disableDefaultRsp, 0, seqNum, 2, buf );
+   \   00002B                ; Setup parameters for call to function zcl_SendCommand
+   \   00002B   85..82       MOV     DPL,?XSP + 0
+   \   00002E   85..83       MOV     DPH,?XSP + 1
+   \   000031   8582..       MOV     ?V0 + 0,DPL
+   \   000034   8583..       MOV     ?V0 + 1,DPH
+   \   000037   78..         MOV     R0,#?V0 + 0
+   \   000039   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00003C   75..02       MOV     ?V0 + 0,#0x2
+   \   00003F   75..00       MOV     ?V0 + 1,#0x0
+   \   000042   78..         MOV     R0,#?V0 + 0
+   \   000044   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000047   EC           MOV     A,R4
+   \   000048   F5..         MOV     ?V0 + 0,A
+   \   00004A   78..         MOV     R0,#?V0 + 0
+   \   00004C   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00004F   E4           CLR     A
+   \   000050   F5..         MOV     ?V0 + 0,A
+   \   000052   78..         MOV     R0,#?V0 + 0
+   \   000054   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000057   E9           MOV     A,R1
+   \   000058   F5..         MOV     ?V0 + 0,A
+   \   00005A   78..         MOV     R0,#?V0 + 0
+   \   00005C   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00005F   75..00       MOV     ?V0 + 0,#0x0
+   \   000062   78..         MOV     R0,#?V0 + 0
+   \   000064   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000067   75..01       MOV     ?V0 + 0,#0x1
+   \   00006A   78..         MOV     R0,#?V0 + 0
+   \   00006C   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00006F   75..00       MOV     ?V0 + 0,#0x0
+   \   000072   78..         MOV     R0,#?V0 + 0
+   \   000074   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000077   7C01         MOV     R4,#0x1
+   \   000079   7D02         MOV     R5,#0x2
+   \   00007B   EE           MOV     A,R6
+   \   00007C   F9           MOV     R1,A
+   \   00007D   12....       LCALL   ??zcl_SendCommand?relay
+   \   000080   740B         MOV     A,#0xb
+   \   000082   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000085   7402         MOV     A,#0x2
+   \   000087   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00008A   7F03         MOV     R7,#0x3
+   \   00008C   02....       LJMP    ?BANKED_LEAVE_XDATA
+    174          }
+    175          
+    176          /*********************************************************************
+    177           * @fn      zclHVAC_FindCallbacks
+    178           *
+    179           * @brief   Find the callbacks for an endpoint
+    180           *
+    181           * @param   endpoint
+    182           *
+    183           * @return  pointer to the callbacks
+    184           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    185          static zclHVAC_AppCallbacks_t *zclHVAC_FindCallbacks( uint8 endpoint )
+   \                     zclHVAC_FindCallbacks:
+    186          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    187            zclHVACCBRec_t *pCBs;
+    188            pCBs = zclHVACCBs;
+   \   000004   90....       MOV     DPTR,#zclHVACCBs
+    189            while ( pCBs )
+    190            {
+    191              if ( pCBs->endpoint == endpoint )
+    192                return ( pCBs->CBs );
+    193              pCBs = pCBs->next;
+   \                     ??zclHVAC_FindCallbacks_0:
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   FA           MOV     R2,A
+   \   000009   A3           INC     DPTR
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   FB           MOV     R3,A
+   \   00000C   EA           MOV     A,R2
+   \   00000D   4B           ORL     A,R3
+   \   00000E   6018         JZ      ??zclHVAC_FindCallbacks_1
+   \   000010   8A82         MOV     DPL,R2
+   \   000012   8B83         MOV     DPH,R3
+   \   000014   A3           INC     DPTR
+   \   000015   A3           INC     DPTR
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   69           XRL     A,R1
+   \   000018   8A82         MOV     DPL,R2
+   \   00001A   8B83         MOV     DPH,R3
+   \   00001C   70E9         JNZ     ??zclHVAC_FindCallbacks_0
+   \   00001E   A3           INC     DPTR
+   \   00001F   A3           INC     DPTR
+   \   000020   A3           INC     DPTR
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   FA           MOV     R2,A
+   \   000023   A3           INC     DPTR
+   \   000024   E0           MOVX    A,@DPTR
+   \   000025   FB           MOV     R3,A
+   \   000026   8004         SJMP    ??zclHVAC_FindCallbacks_2
+    194            }
+    195            return ( (zclHVAC_AppCallbacks_t *)NULL );
+   \                     ??zclHVAC_FindCallbacks_1:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     ??zclHVAC_FindCallbacks_2:
+   \   00002C   D083         POP     DPH
+   \   00002E   D082         POP     DPL
+   \   000030   02....       LJMP    ?BRET
+    196          }
+    197          
+    198          /*********************************************************************
+    199           * @fn      zclHVAC_HdlIncoming
+    200           *
+    201           * @brief   Callback from ZCL to process incoming Commands specific
+    202           *          to this cluster library or Profile commands for attributes
+    203           *          that aren't in the attribute list
+    204           *
+    205           * @param   pInMsg - pointer to the incoming message
+    206           *
+    207           * @return  ZStatus_t
+    208           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    209          static ZStatus_t zclHVAC_HdlIncoming( zclIncoming_t *pInMsg )
+   \                     zclHVAC_HdlIncoming:
+    210          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV     A,#-0x2
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+    211            ZStatus_t stat = ZSuccess;
+    212          
+    213          #if defined ( INTER_PAN )
+    214            if ( StubAPS_InterPan( pInMsg->msg->srcAddr.panId, pInMsg->msg->srcAddr.endPoint ) )
+    215              return ( stat ); // Cluster not supported thru Inter-PAN
+    216          #endif
+    217            if ( zcl_ClusterCmd( pInMsg->hdr.fc.type ) )
+   \   00000E   8E82         MOV     DPL,R6
+   \   000010   8F83         MOV     DPH,R7
+   \   000012   A3           INC     DPTR
+   \   000013   A3           INC     DPTR
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   5403         ANL     A,#0x3
+   \   000017   6401         XRL     A,#0x1
+   \   000019   6003         JZ      $+5
+   \   00001B   02....       LJMP    ??zclHVAC_HdlIncoming_0 & 0xFFFF
+    218            {
+    219              // Is this a manufacturer specific command?
+    220              if ( pInMsg->hdr.fc.manuSpecific == 0 ) 
+   \   00001E   8E82         MOV     DPL,R6
+   \   000020   8F83         MOV     DPH,R7
+   \   000022   A3           INC     DPTR
+   \   000023   A3           INC     DPTR
+   \   000024   E0           MOVX    A,@DPTR
+   \   000025   5404         ANL     A,#0x4
+   \   000027   6003         JZ      $+5
+   \   000029   02....       LJMP    ??zclHVAC_HdlIncoming_0 & 0xFFFF
+    221              {
+    222                stat = zclHVAC_HdlInSpecificCommands( pInMsg );
+   \   00002C                ; Setup parameters for call to function zclHVAC_FindCallbacks
+   \   00002C   8E82         MOV     DPL,R6
+   \   00002E   8F83         MOV     DPH,R7
+   \   000030   E0           MOVX    A,@DPTR
+   \   000031   2414         ADD     A,#0x14
+   \   000033   F8           MOV     R0,A
+   \   000034   A3           INC     DPTR
+   \   000035   E0           MOVX    A,@DPTR
+   \   000036   12....       LCALL   ?Subroutine1 & 0xFFFF
+    223              }
+   \                     ??CrossCallReturnLabel_2:
+   \   000039   F9           MOV     R1,A
+   \   00003A   12....       LCALL   ??zclHVAC_FindCallbacks?relay
+   \   00003D   8A..         MOV     ?V0 + 0,R2
+   \   00003F   8B..         MOV     ?V0 + 1,R3
+   \   000041   AC..         MOV     R4,?V0 + 0
+   \   000043   AD..         MOV     R5,?V0 + 1
+   \   000045   EC           MOV     A,R4
+   \   000046   4D           ORL     A,R5
+   \   000047   6071         JZ      ??zclHVAC_HdlIncoming_0
+   \   000049   8E82         MOV     DPL,R6
+   \   00004B   8F83         MOV     DPH,R7
+   \   00004D   12....       LCALL   ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000050   A3           INC     DPTR
+   \   000051   A3           INC     DPTR
+   \   000052   A3           INC     DPTR
+   \   000053   E0           MOVX    A,@DPTR
+   \   000054   6401         XRL     A,#0x1
+   \   000056   7004         JNZ     ??zclHVAC_HdlIncoming_1
+   \   000058   A3           INC     DPTR
+   \   000059   E0           MOVX    A,@DPTR
+   \   00005A   6402         XRL     A,#0x2
+   \                     ??zclHVAC_HdlIncoming_1:
+   \   00005C   705C         JNZ     ??zclHVAC_HdlIncoming_0
+   \   00005E   8E82         MOV     DPL,R6
+   \   000060   8F83         MOV     DPH,R7
+   \   000062   A3           INC     DPTR
+   \   000063   A3           INC     DPTR
+   \   000064   A3           INC     DPTR
+   \   000065   A3           INC     DPTR
+   \   000066   A3           INC     DPTR
+   \   000067   A3           INC     DPTR
+   \   000068   A3           INC     DPTR
+   \   000069   E0           MOVX    A,@DPTR
+   \   00006A   704E         JNZ     ??zclHVAC_HdlIncoming_0
+   \   00006C   8C82         MOV     DPL,R4
+   \   00006E   8D83         MOV     DPH,R5
+   \   000070   E0           MOVX    A,@DPTR
+   \   000071   F8           MOV     R0,A
+   \   000072   A3           INC     DPTR
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   F9           MOV     R1,A
+   \   000075   E8           MOV     A,R0
+   \   000076   49           ORL     A,R1
+   \   000077   603D         JZ      ??zclHVAC_HdlIncoming_2
+   \   000079   EE           MOV     A,R6
+   \   00007A   2408         ADD     A,#0x8
+   \   00007C   F8           MOV     R0,A
+   \   00007D   EF           MOV     A,R7
+   \   00007E   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000081   FA           MOV     R2,A
+   \   000082   A3           INC     DPTR
+   \   000083   E0           MOVX    A,@DPTR
+   \   000084   F583         MOV     DPH,A
+   \   000086   8A82         MOV     DPL,R2
+   \   000088   E0           MOVX    A,@DPTR
+   \   000089   85..82       MOV     DPL,?XSP + 0
+   \   00008C   85..83       MOV     DPH,?XSP + 1
+   \   00008F   F0           MOVX    @DPTR,A
+   \   000090   8882         MOV     DPL,R0
+   \   000092   8983         MOV     DPH,R1
+   \   000094   12....       LCALL   ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000097   E0           MOVX    A,@DPTR
+   \   000098   C0E0         PUSH    A
+   \   00009A   7401         MOV     A,#0x1
+   \   00009C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00009F   D0E0         POP     A
+   \   0000A1   F0           MOVX    @DPTR,A
+   \   0000A2                ; Setup parameters for indirect call
+   \   0000A2   85..82       MOV     DPL,?XSP + 0
+   \   0000A5   85..83       MOV     DPH,?XSP + 1
+   \   0000A8   AA82         MOV     R2,DPL
+   \   0000AA   AB83         MOV     R3,DPH
+   \   0000AC   8C82         MOV     DPL,R4
+   \   0000AE   8D83         MOV     DPH,R5
+   \   0000B0   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   0000B3   12....       LCALL   ?CALL_IND
+   \                     ??zclHVAC_HdlIncoming_2:
+   \   0000B6   7900         MOV     R1,#0x0
+   \   0000B8   8002         SJMP    ??zclHVAC_HdlIncoming_3
+    224              else
+    225              {
+    226                // We don't support any manufacturer specific command -- ignore it.
+    227                stat = ZFailure;
+   \                     ??zclHVAC_HdlIncoming_0:
+   \   0000BA   7901         MOV     R1,#0x1
+    228              }
+    229            }
+    230            else
+    231            {
+    232              // Handle all the normal (Read, Write...) commands -- should never get here
+    233              stat = ZFailure;
+    234            }
+    235            return ( stat );
+   \                     ??zclHVAC_HdlIncoming_3:
+   \   0000BC   7402         MOV     A,#0x2
+   \   0000BE   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000C1   7F02         MOV     R7,#0x2
+   \   0000C3   02....       LJMP    ?BANKED_LEAVE_XDATA
+    236          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   3400         ADDC    A,#0x0
+   \   000002   F9           MOV     R1,A
+   \   000003   8882         MOV     DPL,R0
+   \   000005   8983         MOV     DPH,R1
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   000003   A3           INC     DPTR
+   \   000004   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F583         MOV     DPH,A
+   \   000006   8882         MOV     DPL,R0
+   \   000008   22           RET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclHVAC_RegisterCmdCallbacks?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclHVAC_RegisterCmdCallbacks
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclHVAC_SendSetpointRaiseLower?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclHVAC_SendSetpointRaiseLower
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclHVAC_FindCallbacks?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclHVAC_FindCallbacks
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclHVAC_HdlIncoming?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclHVAC_HdlIncoming
+    237          
+    238          /*********************************************************************
+    239           * @fn      zclHVAC_HdlInSpecificCommands
+    240           *
+    241           * @brief   Callback from ZCL to process incoming Commands specific
+    242           *          to this cluster library
+    243          
+    244           * @param   pInMsg - pointer to the incoming message
+    245           *
+    246           * @return  ZStatus_t
+    247           */
+    248          static ZStatus_t zclHVAC_HdlInSpecificCommands( zclIncoming_t *pInMsg )
+    249          {
+    250            ZStatus_t stat = ZSuccess;
+    251            zclHVAC_AppCallbacks_t *pCBs;
+    252            
+    253            // make sure endpoint exists
+    254            pCBs = (void*)zclHVAC_FindCallbacks( pInMsg->msg->endPoint );
+    255            if ( pCBs == NULL )
+    256              return ( ZFailure );
+    257            
+    258            switch ( pInMsg->msg->clusterId )				
+    259            {
+    260              case ZCL_CLUSTER_ID_HVAC_PUMP_CONFIG_CONTROL:
+    261                stat = zclHVAC_ProcessInPumpCmds( pInMsg );
+    262                break;
+    263          
+    264              case ZCL_CLUSTER_ID_HAVC_THERMOSTAT:
+    265                stat = zclHVAC_ProcessInThermostatCmds( pInMsg, pCBs );
+    266                break;
+    267           
+    268              default:
+    269                stat = ZFailure;
+    270                break;
+    271            }
+    272          
+    273            return ( stat );
+    274          }
+    275          
+    276          /*********************************************************************
+    277           * @fn      zclHVAC_ProcessInPumpCmds
+    278           *
+    279           * @brief   Callback from ZCL to process incoming Commands specific
+    280           *          to this cluster library on a command ID basis
+    281          
+    282           * @param   pInMsg - pointer to the incoming message
+    283           *
+    284           * @return  ZStatus_t
+    285           */
+    286          static ZStatus_t zclHVAC_ProcessInPumpCmds( zclIncoming_t *pInMsg )
+    287          {
+    288            ZStatus_t stat = ZFailure;
+    289          
+    290            // there are no specific command for this cluster yet.
+    291            // instead of suppressing a compiler warnings( for a code porting reasons )
+    292            // fake unused call here and keep the code skeleton intact
+    293           (void)pInMsg;
+    294            if ( stat != ZFailure )
+    295              zclHVAC_FindCallbacks( 0 );
+    296          
+    297            return ( stat );
+    298          }
+    299          
+    300          /*********************************************************************
+    301           * @fn      zclHVAC_ProcessInThermostatCmds
+    302           *
+    303           * @brief   Callback from ZCL to process incoming Commands specific
+    304           *          to this cluster library on a command ID basis
+    305          
+    306           * @param   pInMsg - pointer to the incoming message
+    307           *
+    308           * @return  ZStatus_t
+    309           */
+    310          static ZStatus_t zclHVAC_ProcessInThermostatCmds( zclIncoming_t *pInMsg,
+    311                                                            zclHVAC_AppCallbacks_t *pCBs )
+    312          {
+    313            if  ( pInMsg->hdr.commandID != COMMAND_THERMOSTAT_SETPOINT_RAISE_LOWER )
+    314              return (ZFailure);   // Error ignore the command
+    315          
+    316            if ( pCBs->pfnHVAC_SetpointRaiseLower )
+    317            {
+    318              zclCmdThermostatSetpointRaiseLowerPayload_t cmd;
+    319              
+    320              cmd.mode = pInMsg->pData[0];
+    321              cmd.amount = pInMsg->pData[1];
+    322              
+    323              pCBs->pfnHVAC_SetpointRaiseLower( &cmd );
+    324            }
+    325            
+    326            return ( ZSuccess );
+    327          }
+    328          
+    329          /*********************************************************************
+    330           * LOCAL VARIABLES
+    331           */
+    332          
+    333          
+    334          /*********************************************************************
+    335           * LOCAL FUNCTIONS
+    336           */
+    337          
+    338          
+    339          /****************************************************************************
+    340          ****************************************************************************/
+    341          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     zclHVAC_FindCallbacks              2      0     12
+     zclHVAC_HdlIncoming                1      0     12
+       -> zclHVAC_FindCallbacks         0      0     24
+     zclHVAC_RegisterCmdCallbacks       1      0     14
+       -> zcl_registerPlugin            0      0     28
+       -> osal_mem_alloc                0      0     24
+     zclHVAC_SendSetpointRaiseLower     1      0     26
+       -> zcl_SendCommand               0      0     48
+
+
+   Segment part sizes:
+
+     Function/Label                         Bytes
+     --------------                         -----
+     zclHVACCBs                                2
+     zclHVACPluginRegisted                     1
+     zclHVAC_RegisterCmdCallbacks            153
+     zclHVAC_SendSetpointRaiseLower          143
+     zclHVAC_FindCallbacks                    51
+     zclHVAC_HdlIncoming                     198
+     ?Subroutine1                              9
+     ?Subroutine0                              5
+     ?Subroutine2                              9
+     ??zclHVAC_RegisterCmdCallbacks?relay      6
+     ??zclHVAC_SendSetpointRaiseLower?relay    6
+     ??zclHVAC_FindCallbacks?relay             6
+     ??zclHVAC_HdlIncoming?relay               6
+
+ 
+ 568 bytes in segment BANKED_CODE
+  24 bytes in segment BANK_RELAYS
+   3 bytes in segment XDATA_Z
+ 
+ 592 bytes of CODE  memory
+   3 bytes of XDATA memory
+
+Errors: none
+Warnings: none

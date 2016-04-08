@@ -1,0 +1,1423 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        01/Jul/2015  18:28:54 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  S:\zigbee\Myzigbe\version 3.0 for new             /
+//                          ZStack-CC2530-2.5.1a\Components\stack\zcl\zcl_clo /
+//                          sures.c                                           /
+//    Command line       =  -f "S:\zigbee\Myzigbe\version 3.0 for new         /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\Tools\CC2530DB\f8wRouter /
+//                          .cfg" (-DCPU32MHZ -DROOT=__near_func              /
+//                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                  /
+//                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8        /
+//                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                  /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig /
+//                          .cfg" (-DZIGBEEPRO -DSECURE=0                     /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0x2015                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 "S:\zigbee\Myzigbe\version /
+//                           3.0 for new ZStack-CC2530-2.5.1a\Components\stac /
+//                          k\zcl\zcl_closures.c" -D ZIGBEEPRO -D             /
+//                          NWK_AUTO_POLL -D HAL_UART=TRUE -D                 /
+//                          HOLD_AUTO_START -D NV_RESTORE -D REFLECTOR -D     /
+//                          xHAL_UART_ISR_TX_MAX=200 -D xPOWER_SAVING -D      /
+//                          ZCL_READ -D ZCL_WRITE -D ZCL_IDENTIFY -D          /
+//                          ZCL_ON_OFF -D ZCL_DISCOVER -D HAL_UART_ISR=1 -D   /
+//                          HAL_UART_DMA=0 -D xZTOOL_P1 -D xMT_TASK -D        /
+//                          xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                   /
+//                          xLCD_SUPPORTED=DEBUG -D                           /
+//                          xMT_UART_DEFAULT_OVERFLOW=FALSE -lC               /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\RouterEB\List\" -lA               /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\RouterEB\List\" --diag_suppress   /
+//                          Pe001,Pa010 -o "S:\zigbee\Myzigbe\version 3.0     /
+//                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT   /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\RouterEB\Obj\" -e                 /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 - SOCKET\CC2530DB\" -I    /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\Source\" -I                    /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\Source\hal\" -I                /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\Source\Modified\" -I           /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\ZMain\TI2530DB\" -I      /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\hal\inc /
+//                          lude\" -I "S:\zigbee\Myzigbe\version 3.0 for new  /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\hal\tar /
+//                          get\CC2530EB\" -I "S:\zigbee\Myzigbe\version 3.0  /
+//                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT   /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\mac\inc /
+//                          lude\" -I "S:\zigbee\Myzigbe\version 3.0 for new  /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\mac\hig /
+//                          h_level\" -I "S:\zigbee\Myzigbe\version 3.0 for   /
+//                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT       /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\mac\low /
+//                          _level\srf04\" -I "S:\zigbee\Myzigbe\version 3.0  /
+//                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT   /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\mac\low /
+//                          _level\srf04\single_chip\" -I                     /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\mt\"    /
+//                          -I "S:\zigbee\Myzigbe\version 3.0 for new         /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\osal\in /
+//                          clude\" -I "S:\zigbee\Myzigbe\version 3.0 for     /
+//                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT       /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\service /
+//                          s\saddr\" -I "S:\zigbee\Myzigbe\version 3.0 for   /
+//                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT       /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\service /
+//                          s\sdata\" -I "S:\zigbee\Myzigbe\version 3.0 for   /
+//                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT       /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\a /
+//                          f\" -I "S:\zigbee\Myzigbe\version 3.0 for new     /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\n /
+//                          wk\" -I "S:\zigbee\Myzigbe\version 3.0 for new    /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\s /
+//                          api\" -I "S:\zigbee\Myzigbe\version 3.0 for new   /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\s /
+//                          ec\" -I "S:\zigbee\Myzigbe\version 3.0 for new    /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\s /
+//                          ys\" -I "S:\zigbee\Myzigbe\version 3.0 for new    /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\z /
+//                          do\" -I "S:\zigbee\Myzigbe\version 3.0 for new    /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\z /
+//                          cl\" -I "S:\zigbee\Myzigbe\version 3.0 for new    /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\zmac\"  /
+//                          -I "S:\zigbee\Myzigbe\version 3.0 for new         /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\..\..\..\..\..\Components\zmac\f8 /
+//                          w\" -Ohz --require_prototypes                     /
+//    List file          =  S:\zigbee\Myzigbe\version 3.0 for new             /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          SOCKET\CC2530DB\RouterEB\List\zcl_closures.s51    /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME zcl_closures
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?US_SWITCH_DENSE
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        FUNCTION ??zclClosures_FindCallbacks?relay,0203H
+        FUNCTION ??zclClosures_HdlIncoming?relay,0203H
+        PUBLIC ??zclClosures_RegisterCmdCallbacks?relay
+        FUNCTION ??zclClosures_RegisterCmdCallbacks?relay,0203H
+        FUNCTION zclClosures_FindCallbacks,0203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        FUNCTION zclClosures_HdlIncoming,0a1603H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC zclClosures_RegisterCmdCallbacks
+        FUNCTION zclClosures_RegisterCmdCallbacks,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 14, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+zcl_registerPlugin  SYMBOL "zcl_registerPlugin"
+osal_mem_alloc      SYMBOL "osal_mem_alloc"
+??osal_mem_alloc?relay SYMBOL "?relay", osal_mem_alloc
+??zcl_registerPlugin?relay SYMBOL "?relay", zcl_registerPlugin
+zclClosures_RegisterCmdCallbacks SYMBOL "zclClosures_RegisterCmdCallbacks"
+??zclClosures_RegisterCmdCallbacks?relay SYMBOL "?relay", zclClosures_RegisterCmdCallbacks
+
+        EXTERN zcl_registerPlugin
+        FUNCTION zcl_registerPlugin,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_mem_alloc
+        FUNCTION osal_mem_alloc,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??osal_mem_alloc?relay
+        FUNCTION ??osal_mem_alloc?relay,00H
+        EXTERN ??zcl_registerPlugin?relay
+        FUNCTION ??zcl_registerPlugin?relay,00H
+
+// S:\zigbee\Myzigbe\version 3.0 for new ZStack-CC2530-2.5.1a\Components\stack\zcl\zcl_closures.c
+//    1 /**************************************************************************************************
+//    2   Filename:       zcl_closures.c
+//    3   Revised:        $Date: 2011-05-02 10:30:51 -0700 (Mon, 02 May 2011) $
+//    4   Revision:       $Revision: 25832 $
+//    5 
+//    6   Description:    Zigbee Cluster Library - Closures.
+//    7 
+//    8 
+//    9   Copyright 2006-2011 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com. 
+//   38 **************************************************************************************************/
+//   39 
+//   40 
+//   41 /*********************************************************************
+//   42  * INCLUDES
+//   43  */
+//   44 #include "ZComDef.h"
+//   45 #include "OSAL.h"
+//   46 #include "zcl.h"
+//   47 #include "zcl_general.h"
+//   48 #include "zcl_closures.h"
+//   49 
+//   50 #if defined ( INTER_PAN )
+//   51   #include "stub_aps.h"
+//   52 #endif
+//   53 
+//   54 /*********************************************************************
+//   55  * MACROS
+//   56  */
+//   57 
+//   58 /*********************************************************************
+//   59  * CONSTANTS
+//   60  */
+//   61 
+//   62 /*********************************************************************
+//   63  * TYPEDEFS
+//   64  */
+//   65 
+//   66 typedef struct zclClosuresCBRec
+//   67 {
+//   68   struct zclClosuresCBRec     *next;
+//   69   uint8                       endpoint; // Used to link it into the endpoint descriptor
+//   70   zclClosures_AppCallbacks_t  *CBs;     // Pointer to Callback function
+//   71 } zclClosuresCBRec_t;
+//   72 
+//   73 /*********************************************************************
+//   74  * GLOBAL VARIABLES
+//   75  */
+//   76 
+//   77 /*********************************************************************
+//   78  * GLOBAL FUNCTIONS
+//   79  */
+//   80 
+//   81 /*********************************************************************
+//   82  * LOCAL VARIABLES
+//   83  */
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//   84 static zclClosuresCBRec_t *zclClosuresCBs = (zclClosuresCBRec_t *)NULL;
+zclClosuresCBs:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   85 static uint8 zclClosuresPluginRegisted = FALSE;
+zclClosuresPluginRegisted:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   86 
+//   87 /*********************************************************************
+//   88  * LOCAL FUNCTIONS
+//   89  */
+//   90 static ZStatus_t zclClosures_HdlIncoming( zclIncoming_t *pInMsg );
+//   91 static ZStatus_t zclClosures_HdlInSpecificCommands( zclIncoming_t *pInMsg );
+//   92 static zclClosures_AppCallbacks_t *zclClosures_FindCallbacks( uint8 endpoint );
+//   93 static ZStatus_t zclClosures_ProcessInClosuresCmds( zclIncoming_t *pInMsg );
+//   94 
+//   95 #ifdef ZCL_DOORLOCK
+//   96 static ZStatus_t zclClosures_ProcessInDoorLock( zclIncoming_t *pInMsg,
+//   97                                                 zclClosures_AppCallbacks_t *pCBs );
+//   98 #endif //ZCL_DOORLOCK
+//   99 
+//  100 #ifdef ZCL_WINDOWCOVERING
+//  101 static ZStatus_t zclClosures_ProcessInWindowCovering( zclIncoming_t *pInMsg,
+//  102                                                       zclClosures_AppCallbacks_t *pCBs );
+//  103 #endif //ZCL_WINDOWCOVERING
+//  104 
+//  105 /*********************************************************************
+//  106  * @fn      zclClosures_RegisterCmdCallbacks
+//  107  *
+//  108  * @brief   Register an applications command callbacks
+//  109  *
+//  110  * @param   endpoint - application's endpoint
+//  111  * @param   callbacks - pointer to the callback record.
+//  112  *
+//  113  * @return  ZMemError if not able to allocate
+//  114  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  115 ZStatus_t zclClosures_RegisterCmdCallbacks( uint8 endpoint, zclClosures_AppCallbacks_t *callbacks )
+zclClosures_RegisterCmdCallbacks:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function zclClosures_RegisterCmdCallbacks
+        CODE
+//  116 {
+        FUNCALL zclClosures_RegisterCmdCallbacks, zcl_registerPlugin
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclClosures_RegisterCmdCallbacks, osal_mem_alloc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     ?V0 + 0,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  117   zclClosuresCBRec_t *pNewItem;
+//  118   zclClosuresCBRec_t *pLoop;
+//  119 
+//  120   // Register as a ZCL Plugin
+//  121   if ( !zclClosuresPluginRegisted )
+        MOV     DPTR,#zclClosuresPluginRegisted
+        MOVX    A,@DPTR
+        JNZ     ??zclClosures_RegisterCmdCallbacks_0
+//  122   {
+//  123     zcl_registerPlugin( ZCL_CLUSTER_ID_CLOSURES_SHADE_CONFIG,
+//  124                         ZCL_CLUSTER_ID_CLOSURES_WINDOW_COVERING,
+//  125                         zclClosures_HdlIncoming );
+        ; Setup parameters for call to function zcl_registerPlugin
+        MOV     ?V0 + 2,#??zclClosures_HdlIncoming?relay & 0xff
+        MOV     ?V0 + 3,#(??zclClosures_HdlIncoming?relay >> 8) & 0xff
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 14)
+        MOV     R4,#0x2
+        MOV     R5,#0x1
+        MOV     R2,#0x0
+        MOV     R3,#0x1
+        LCALL   ??zcl_registerPlugin?relay
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 12)
+//  126     zclClosuresPluginRegisted = TRUE;
+        MOV     DPTR,#zclClosuresPluginRegisted
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  127   }
+//  128 
+//  129   // Fill in the new profile list
+//  130   pNewItem = osal_mem_alloc( sizeof( zclClosuresCBRec_t ) );
+??zclClosures_RegisterCmdCallbacks_0:
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV     R2,#0x5
+        MOV     R3,#0x0
+        LCALL   ??osal_mem_alloc?relay
+        MOV     ?V0 + 2,R2
+        MOV     ?V0 + 3,R3
+        MOV     R0,?V0 + 2
+        MOV     R1,?V0 + 3
+//  131   if ( pNewItem == NULL )
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??zclClosures_RegisterCmdCallbacks_1
+//  132     return (ZMemError);
+        MOV     R1,#0x10
+        SJMP    ??zclClosures_RegisterCmdCallbacks_2
+//  133 
+//  134   pNewItem->next = (zclClosuresCBRec_t *)NULL;
+??zclClosures_RegisterCmdCallbacks_1:
+        MOV     DPL,R0
+        MOV     DPH,R1
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+//  135   pNewItem->endpoint = endpoint;
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        INC     DPTR
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+//  136   pNewItem->CBs = callbacks;
+        MOV     DPL,R0
+        MOV     DPH,R1
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R7
+        MOVX    @DPTR,A
+//  137 
+//  138   // Find spot in list
+//  139   if ( zclClosuresCBs == NULL )
+        MOV     DPTR,#zclClosuresCBs
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     A,R2
+        ORL     A,R3
+        JNZ     ??zclClosures_RegisterCmdCallbacks_3
+//  140   {
+//  141     zclClosuresCBs = pNewItem;
+        MOV     DPTR,#zclClosuresCBs
+        SJMP    ??zclClosures_RegisterCmdCallbacks_4
+//  142   }
+//  143   else
+//  144   {
+//  145     // Look for end of list
+//  146     pLoop = zclClosuresCBs;
+//  147     while ( pLoop->next != NULL )
+//  148       pLoop = pLoop->next;
+??zclClosures_RegisterCmdCallbacks_5:
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+??zclClosures_RegisterCmdCallbacks_3:
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R4
+        ORL     A,R5
+        MOV     DPL,R2
+        MOV     DPH,R3
+        JNZ     ??zclClosures_RegisterCmdCallbacks_5
+//  149 
+//  150     // Put new item at end of list
+//  151     pLoop->next = pNewItem;
+??zclClosures_RegisterCmdCallbacks_4:
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  152   }
+//  153   return ( ZSuccess );
+        MOV     R1,#0x0
+        CFI EndBlock cfiBlock0
+??zclClosures_RegisterCmdCallbacks_2:
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//  154 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+//  155 
+//  156 /*********************************************************************
+//  157  * @fn      zclClosures_FindCallbacks
+//  158  *
+//  159  * @brief   Find the callbacks for an endpoint
+//  160  *
+//  161  * @param   endpoint
+//  162  *
+//  163  * @return  pointer to the callbacks
+//  164  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  165 static zclClosures_AppCallbacks_t *zclClosures_FindCallbacks( uint8 endpoint )
+zclClosures_FindCallbacks:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function zclClosures_FindCallbacks
+        CODE
+//  166 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  167   zclClosuresCBRec_t *pCBs;
+//  168   
+//  169   pCBs = zclClosuresCBs;
+        MOV     DPTR,#zclClosuresCBs
+//  170   while ( pCBs )
+//  171   {
+//  172     if ( pCBs->endpoint == endpoint )
+//  173       return ( pCBs->CBs );
+//  174     pCBs = pCBs->next;
+??zclClosures_FindCallbacks_0:
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     A,R2
+        ORL     A,R3
+        JZ      ??zclClosures_FindCallbacks_1
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,R1
+        MOV     DPL,R2
+        MOV     DPH,R3
+        JNZ     ??zclClosures_FindCallbacks_0
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        SJMP    ??zclClosures_FindCallbacks_2
+//  175   }
+//  176   return ( (zclClosures_AppCallbacks_t *)NULL );
+??zclClosures_FindCallbacks_1:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+??zclClosures_FindCallbacks_2:
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock2
+//  177 }
+//  178 
+//  179 /*********************************************************************
+//  180  * @fn      zclClosures_HdlIncoming
+//  181  *
+//  182  * @brief   Callback from ZCL to process incoming Commands specific
+//  183  *          to this cluster library or Profile commands for attributes
+//  184  *          that aren't in the attribute list
+//  185  *
+//  186  * @param   pInMsg - pointer to the incoming message
+//  187  * @param   logicalClusterID
+//  188  *
+//  189  * @return  ZStatus_t
+//  190  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  191 static ZStatus_t zclClosures_HdlIncoming(  zclIncoming_t *pInMsg )
+zclClosures_HdlIncoming:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function zclClosures_HdlIncoming
+        CODE
+//  192 {
+        FUNCALL zclClosures_HdlIncoming, zclClosures_FindCallbacks
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  193   ZStatus_t stat = ZSuccess;
+//  194 
+//  195 #if defined ( INTER_PAN )
+//  196   if ( StubAPS_InterPan( pInMsg->msg->srcAddr.panId, pInMsg->msg->srcAddr.endPoint ) )
+//  197     return ( stat ); // Cluster not supported thru Inter-PAN
+//  198 #endif
+//  199   if ( zcl_ClusterCmd( pInMsg->hdr.fc.type ) )
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ANL     A,#0x3
+        XRL     A,#0x1
+        JNZ     ??zclClosures_HdlIncoming_0
+//  200   {
+//  201     // Is this a manufacturer specific command?
+//  202     if ( pInMsg->hdr.fc.manuSpecific == 0 ) 
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ANL     A,#0x4
+        JNZ     ??zclClosures_HdlIncoming_0
+//  203     {
+//  204       stat = zclClosures_HdlInSpecificCommands( pInMsg );
+        ; Setup parameters for call to function zclClosures_FindCallbacks
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        ADD     A,#0x14
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??zclClosures_FindCallbacks?relay
+        MOV     ?V0 + 3,R3
+        MOV     A,R2
+        ORL     A,?V0 + 3
+        JZ      ??zclClosures_HdlIncoming_0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 2
+        LCALL   ?US_SWITCH_DENSE
+`?<Jumptable for zclClosures_HdlIncoming>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        257
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??zclClosures_HdlIncoming_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??zclClosures_HdlIncoming_2
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??zclClosures_HdlIncoming_2
+        CODE
+??zclClosures_HdlIncoming_1:
+        MOV     ?V0 + 0,#0x1
+??zclClosures_HdlIncoming_2:
+        MOV     R1,?V0 + 0
+        SJMP    ??zclClosures_HdlIncoming_3
+//  205     }
+//  206     else
+//  207     {
+//  208       // We don't support any manufacturer specific command.
+//  209       stat = ZFailure;
+??zclClosures_HdlIncoming_0:
+        MOV     R1,#0x1
+//  210     }
+//  211   }
+//  212   else
+//  213   {
+//  214     // Handle all the normal (Read, Write...) commands -- should never get here
+//  215     stat = ZFailure;
+//  216   }
+//  217   return ( stat );
+??zclClosures_HdlIncoming_3:
+        LJMP    ?Subroutine0 & 0xFFFF
+        CFI EndBlock cfiBlock3
+//  218 }
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??zclClosures_RegisterCmdCallbacks?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    zclClosures_RegisterCmdCallbacks
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??zclClosures_FindCallbacks?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    zclClosures_FindCallbacks
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??zclClosures_HdlIncoming?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    zclClosures_HdlIncoming
+
+        END
+//  219 
+//  220 /*********************************************************************
+//  221  * @fn      zclClosures_HdlInSpecificCommands
+//  222  *
+//  223  * @brief   Callback from ZCL to process incoming Commands specific
+//  224  *          to this cluster library
+//  225 
+//  226  * @param   pInMsg - pointer to the incoming message
+//  227  *
+//  228  * @return  ZStatus_t
+//  229  */
+//  230 static ZStatus_t zclClosures_HdlInSpecificCommands( zclIncoming_t *pInMsg )
+//  231 {
+//  232   ZStatus_t stat;
+//  233   zclClosures_AppCallbacks_t *pCBs;
+//  234   
+//  235   // make sure endpoint exists
+//  236   pCBs = zclClosures_FindCallbacks( pInMsg->msg->endPoint );
+//  237   if ( pCBs == NULL )
+//  238     return ( ZFailure );
+//  239   
+//  240   switch ( pInMsg->msg->clusterId )				
+//  241   {
+//  242     case ZCL_CLOSURES_LOGICAL_CLUSTER_ID_SHADE_CONFIG:
+//  243       stat = zclClosures_ProcessInClosuresCmds( pInMsg );
+//  244       break;
+//  245 
+//  246     case ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK:
+//  247 #ifdef ZCL_DOORLOCK
+//  248       stat = zclClosures_ProcessInDoorLock( pInMsg, pCBs );
+//  249 #endif //ZCL_DOORLOCK
+//  250       break;
+//  251 
+//  252     case ZCL_CLUSTER_ID_CLOSURES_WINDOW_COVERING:
+//  253 #ifdef ZCL_WINDOWCOVERING
+//  254       stat = zclClosures_ProcessInWindowCovering( pInMsg, pCBs );
+//  255 #endif //ZCL_WINDOWCOVERING
+//  256       break;
+//  257 
+//  258     default:
+//  259       stat = ZFailure;
+//  260       break;
+//  261   }
+//  262 
+//  263   return ( stat );
+//  264 }
+//  265 
+//  266 /*********************************************************************
+//  267  * @fn      zclSS_ProcessInClosuresCmds
+//  268  *
+//  269  * @brief   Callback from ZCL to process incoming Commands specific
+//  270  *          to this cluster library on a command ID basis
+//  271 
+//  272  * @param   pInMsg - pointer to the incoming message
+//  273  *
+//  274  * @return  ZStatus_t
+//  275  */
+//  276 static ZStatus_t zclClosures_ProcessInClosuresCmds( zclIncoming_t *pInMsg )
+//  277 {
+//  278   ZStatus_t stat = ZFailure;
+//  279 
+//  280   // there are no specific command for this cluster yet.
+//  281   // instead of suppressing a compiler warnings( for a code porting reasons )
+//  282   // fake unused call here and keep the code skeleton intact
+//  283   (void)pInMsg;
+//  284   if ( stat != ZFailure )
+//  285     zclClosures_FindCallbacks( 0 );
+//  286 
+//  287   return ( stat );
+//  288 }
+//  289 
+//  290 #ifdef ZCL_DOORLOCK
+//  291 /*********************************************************************
+//  292  * @fn      zclClosures_ProcessInDoorLock
+//  293  *
+//  294  * @brief   Process in the received DoorLock Command.
+//  295  *
+//  296  * @param   pInMsg - pointer to the incoming message
+//  297  * @param   pCBs - pointer to the Application callback functions
+//  298  * 
+//  299  * @return  ZStatus_t
+//  300  */
+//  301 static ZStatus_t zclClosures_ProcessInDoorLock( zclIncoming_t *pInMsg,
+//  302                                                zclClosures_AppCallbacks_t *pCBs )
+//  303 {
+//  304   if ( zcl_ServerCmd( pInMsg->hdr.fc.direction ) )
+//  305   {
+//  306     switch(pInMsg->hdr.commandID)
+//  307     {
+//  308     case COMMAND_CLOSURES_LOCK_DOOR:
+//  309     case COMMAND_CLOSURES_UNLOCK_DOOR:
+//  310       if ( pCBs->pfnDoorLock )
+//  311       {
+//  312         pCBs->pfnDoorLock( pInMsg->hdr.commandID, &(pInMsg->msg->srcAddr), pInMsg->hdr.transSeqNum );
+//  313       }
+//  314       break;
+//  315       
+//  316     default:
+//  317       return ( ZCL_STATUS_UNSUP_CLUSTER_COMMAND );   // Error ignore the command
+//  318     }
+//  319   }
+//  320   else
+//  321   {
+//  322     switch(pInMsg->hdr.commandID)
+//  323     {
+//  324     case COMMAND_CLOSURES_LOCK_DOOR_RESPONSE:
+//  325     case COMMAND_CLOSURES_UNLOCK_DOOR_RESPONSE:
+//  326       if ( pCBs->pfnDoorLockRes )
+//  327       {
+//  328         pCBs->pfnDoorLockRes( pInMsg->hdr.commandID, &(pInMsg->msg->srcAddr), pInMsg->hdr.transSeqNum );
+//  329       }
+//  330       break;
+//  331       
+//  332     default:
+//  333       return ( ZCL_STATUS_UNSUP_CLUSTER_COMMAND );   // Error ignore the command
+//  334     }
+//  335   }
+//  336 
+//  337   return ( ZCL_STATUS_CMD_HAS_RSP );
+//  338 }
+//  339 
+//  340 /*********************************************************************
+//  341  * @fn      zclClosures_SendDoorLockRequest
+//  342  *
+//  343  * @brief   Call to send out a Door Lock/ Door Unlock Request Command
+//  344  *
+//  345  * @param   srcEP - Sending application's endpoint
+//  346  * @param   dstAddr - where you want the message to go
+//  347  * @param   cmd - either COMMAND_DOOR_LOCK or COMMAND_DOOR_UNLOCK
+//  348  * @param   clusterID - cluster whose commands and attributes lock and unlock 
+//  349                         the door
+//  350  * @param   disableDefaultRsp - decides default response is necessary or not
+//  351  * @param   seqNum - sequence number of the command packet
+//  352  * 
+//  353  * @return  ZStatus_t
+//  354  */
+//  355 ZStatus_t zclClosures_SendDoorLockRequest( uint8 srcEP, afAddrType_t *dstAddr,
+//  356                                        uint8 cmd, uint16 clusterID,
+//  357                                        uint8 disableDefaultRsp, uint8 seqNum )
+//  358 {
+//  359   return zcl_SendCommand( srcEP, dstAddr, ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+//  360                           cmd, TRUE, ZCL_FRAME_CLIENT_SERVER_DIR,
+//  361                           disableDefaultRsp, 0, seqNum, 0, NULL );
+//  362 }
+//  363 
+//  364 /*********************************************************************
+//  365  * @fn      zclClosures_SendDoorLockResponse
+//  366  *
+//  367  * @brief   Call to send out a Door Lock/ Door Unlock Response Command
+//  368  *
+//  369  * @param   srcEP - Sending application's endpoint
+//  370  * @param   dstAddr - where you want the message to go
+//  371  * @param   cmd - either COMMAND_DOOR_LOCK or COMMAND_DOOR_UNLOCK
+//  372  * @param   clusterID - cluster whose commands and attributes lock and unlock 
+//  373                         the door
+//  374  * @param   disableDefaultRsp - decides default response is necessary or not
+//  375  * @param   seqNum - sequence number of the command packet
+//  376  * @param   status - status of the Door Lock/ Door Unlock Request Command
+//  377  * 
+//  378  * @return  ZStatus_t
+//  379  */
+//  380 ZStatus_t zclClosures_SendDoorLockResponse( uint8 srcEP, afAddrType_t *dstAddr,
+//  381                                        uint8 cmd, uint16 clusterID,
+//  382                                        uint8 disableDefaultRsp, uint8 seqNum, 
+//  383                                        uint8 status )
+//  384 {
+//  385   uint8 payload[DOORLOCK_RES_PAYLOAD_LEN];
+//  386   
+//  387   payload[0] = status;
+//  388   return zcl_SendCommand( srcEP, dstAddr, ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+//  389                           cmd, TRUE, ZCL_FRAME_SERVER_CLIENT_DIR,
+//  390                           disableDefaultRsp, 0, seqNum, 
+//  391                           DOORLOCK_RES_PAYLOAD_LEN, payload );
+//  392 }
+//  393 #endif //ZCL_DOORLOCK
+//  394 
+//  395 #ifdef ZCL_WINDOWCOVERING
+//  396 /*********************************************************************
+//  397  * @fn      zclClosures_ProcessInWindowCovering
+//  398  *
+//  399  * @brief   Process in the received Window Covering cluster Command.
+//  400  *
+//  401  * @param   pInMsg - pointer to the incoming message
+//  402  *
+//  403  * @return  ZStatus_t
+//  404  */
+//  405 static ZStatus_t zclClosures_ProcessInWindowCovering( zclIncoming_t *pInMsg,
+//  406                                                       zclClosures_AppCallbacks_t *pCBs )
+//  407 {
+//  408   ZStatus_t status = ZCL_STATUS_SUCCESS;
+//  409   uint8 *pData = pInMsg->pData;
+//  410   
+//  411   if ( zcl_ServerCmd( pInMsg->hdr.fc.direction ) )
+//  412   {   
+//  413     switch ( pInMsg->hdr.commandID )
+//  414     {
+//  415     case COMMAND_CLOSURES_UP_OPEN:
+//  416       if ( pCBs->pfnWindowCoveringUpOpen )
+//  417       {
+//  418         pCBs->pfnWindowCoveringUpOpen();
+//  419       }
+//  420       break;
+//  421       
+//  422     case COMMAND_CLOSURES_DOWN_CLOSE:
+//  423       if ( pCBs->pfnWindowCoveringDownClose )
+//  424       {
+//  425         pCBs->pfnWindowCoveringDownClose();
+//  426       }
+//  427       break;
+//  428       
+//  429     case COMMAND_CLOSURES_STOP:
+//  430       if ( pCBs->pfnWindowCoveringStop )
+//  431       {
+//  432         pCBs->pfnWindowCoveringStop();
+//  433       }
+//  434       break;
+//  435       
+//  436     case COMMAND_CLOSURES_GO_TO_LIFT_SETPOINT:
+//  437       if ( pCBs->pfnWindowCoveringGotoLiftSetpoint )
+//  438       {
+//  439         status = pCBs->pfnWindowCoveringGotoLiftSetpoint( pData[0] );
+//  440       }
+//  441       break;
+//  442       
+//  443     case COMMAND_CLOSURES_GO_TO_LIFT_VALUE:
+//  444       if ( pCBs->pfnWindowCoveringGotoLiftValue )
+//  445       {
+//  446         if ( pCBs->pfnWindowCoveringGotoLiftValue( BUILD_UINT16( pData[0], pData[1] ) ) == FALSE )
+//  447         {
+//  448           status = ZCL_STATUS_INVALID_VALUE;
+//  449         }
+//  450       }
+//  451       break;
+//  452       
+//  453     case COMMAND_CLOSURES_GO_TO_LIFT_PERCENTAGE:
+//  454       if ( pCBs->pfnWindowCoveringGotoLiftPercentage )
+//  455       {
+//  456         if ( pCBs->pfnWindowCoveringGotoLiftPercentage( pData[0] ) == FALSE )
+//  457         {
+//  458           status = ZCL_STATUS_INVALID_VALUE;
+//  459         }
+//  460       }
+//  461       break;
+//  462       
+//  463     case COMMAND_CLOSURES_GO_TO_TILT_SETPOINT:
+//  464       if ( pCBs->pfnWindowCoveringGotoTiltSetpoint )
+//  465       {
+//  466         status = pCBs->pfnWindowCoveringGotoTiltSetpoint( pData[0] );
+//  467       }
+//  468       break;
+//  469       
+//  470     case COMMAND_CLOSURES_GO_TO_TILT_VALUE:
+//  471       if ( pCBs->pfnWindowCoveringGotoTiltValue )
+//  472       {
+//  473         if ( pCBs->pfnWindowCoveringGotoTiltValue( BUILD_UINT16( pData[0], pData[1] ) ) == FALSE )
+//  474         {
+//  475           status = ZCL_STATUS_INVALID_VALUE;
+//  476         }
+//  477       }
+//  478       break;
+//  479       
+//  480     case COMMAND_CLOSURES_GO_TO_TILT_PERCENTAGE:
+//  481       if ( pCBs->pfnWindowCoveringGotoTiltPercentage )
+//  482       {
+//  483         if ( pCBs->pfnWindowCoveringGotoTiltPercentage( pData[0] ) == FALSE )
+//  484         {
+//  485           status = ZCL_STATUS_INVALID_VALUE;
+//  486         }
+//  487       }
+//  488       break;
+//  489       
+//  490     case COMMAND_CLOSURES_PROGRAM_SETPOINT:
+//  491       if ( pCBs->pfnWindowCoveringProgramSetpoint )
+//  492       {
+//  493         programSetpointPayload_t setpoint;
+//  494         if( pInMsg->pDataLen == ZCL_WC_PROGRAMSETPOINTREQ_VER1_PAYLOADLEN )
+//  495         {
+//  496           setpoint.version = programSetpointVersion1;
+//  497           setpoint.setpointType = (setpointType_t)pData[0]; 
+//  498           setpoint.setpointIndex = pData[1];
+//  499           setpoint.setpointValue = BUILD_UINT16( pData[2], pData[3] );
+//  500         }
+//  501         else if( pInMsg->pDataLen == ZCL_WC_PROGRAMSETPOINTREQ_VER2_PAYLOADLEN )
+//  502         {
+//  503           setpoint.version = programSetpointVersion2;
+//  504           setpoint.setpointIndex = pData[0];
+//  505         }
+//  506         else
+//  507         {
+//  508           return ZCL_STATUS_INVALID_VALUE;
+//  509         }
+//  510         if ( pCBs->pfnWindowCoveringProgramSetpoint( &setpoint ) == FALSE )
+//  511         {
+//  512           status = ZCL_STATUS_INSUFFICIENT_SPACE;
+//  513         }
+//  514       }
+//  515       break;
+//  516       
+//  517     default:
+//  518       return( ZCL_STATUS_UNSUP_CLUSTER_COMMAND );
+//  519     }
+//  520   }
+//  521   // no Client command
+//  522 
+//  523   return ( status );
+//  524 }
+//  525 
+//  526 /*********************************************************************
+//  527  * @fn      zclClosures_WCSimpleRequest
+//  528  *
+//  529  * @brief   Call to send out a Window Covering command with no payload 
+//  530  *          as Up/Open, Down/Close or Stop
+//  531  *
+//  532  * @param   srcEP - Sending application's endpoint
+//  533  * @param   dstAddr - where you want the message to go
+//  534  * @param   cmd - Command ID
+//  535  * @param   disableDefaultRsp - decides default response is necessary or not
+//  536  * @param   seqNum - sequence number of the command packet
+//  537  * 
+//  538  * @return  ZStatus_t
+//  539  */
+//  540 ZStatus_t zclClosures_WCSimpleRequest( uint8 srcEP, afAddrType_t *dstAddr,
+//  541                                        uint8 cmd, uint8 disableDefaultRsp, uint8 seqNum )
+//  542 {
+//  543   return zcl_SendCommand( srcEP, dstAddr, ZCL_CLUSTER_ID_CLOSURES_WINDOW_COVERING,
+//  544                           cmd, TRUE, ZCL_FRAME_CLIENT_SERVER_DIR,
+//  545                           disableDefaultRsp, 0, seqNum, 0, NULL );
+//  546 }
+//  547 
+//  548 /*********************************************************************
+//  549  * @fn      zclClosures_SendGoToSetpointRequest
+//  550  *
+//  551  * @brief   Call to send out a Go to Setpoint Request Command
+//  552  *
+//  553  * @param   srcEP - Sending application's endpoint
+//  554  * @param   dstAddr - where you want the message to go
+//  555  * @param   cmd - Command ID for COMMAND_CLOSURES_GO_TO_LIFT_SETPOINT 
+//  556  *                or COMMAND_CLOSURES_GO_TO_TILT_SETPOINT
+//  557  * @param   disableDefaultRsp - decides default response is necessary or not
+//  558  * @param   seqNum - sequence number of the command packet
+//  559  * @param   SetpointIndex - payload
+//  560  * 
+//  561  * @return  ZStatus_t
+//  562  */
+//  563 ZStatus_t zclClosures_WCSendGoToSetpointRequest( uint8 srcEP, afAddrType_t *dstAddr,
+//  564                                                uint8 cmd, uint8 disableDefaultRsp, 
+//  565                                                uint8 seqNum, uint8 SetpointIndex )
+//  566 {
+//  567   uint8 buf[ZCL_WC_GOTOSETPOINTREQ_PAYLOADLEN];
+//  568 
+//  569   buf[0] = SetpointIndex;
+//  570   
+//  571   return zcl_SendCommand( srcEP, dstAddr, ZCL_CLUSTER_ID_CLOSURES_WINDOW_COVERING,
+//  572                           cmd, TRUE, ZCL_FRAME_CLIENT_SERVER_DIR,
+//  573                           disableDefaultRsp, 0, seqNum, 
+//  574                           ZCL_WC_GOTOSETPOINTREQ_PAYLOADLEN, buf );
+//  575 }
+//  576 
+//  577 
+//  578 /*********************************************************************
+//  579  * @fn      zclClosures_WCSendGoToValueRequest
+//  580  *
+//  581  * @brief   Call to send out a Go to Value Request Command
+//  582  *
+//  583  * @param   srcEP - Sending application's endpoint
+//  584  * @param   dstAddr - where you want the message to go
+//  585  * @param   cmd - Command ID for COMMAND_CLOSURES_GO_TO_LIFT_VALUE
+//  586  * @param   disableDefaultRsp - decides default response is necessary or not
+//  587  * @param   seqNum - sequence number of the command packet
+//  588  * @param   liftValue - payload
+//  589  * 
+//  590  * @return  ZStatus_t
+//  591  */
+//  592 ZStatus_t zclClosures_WCSendGoToValueRequest( uint8 srcEP, afAddrType_t *dstAddr,
+//  593                                               uint8 cmd, uint8 disableDefaultRsp, 
+//  594                                               uint8 seqNum, uint16 Value )
+//  595 {
+//  596   uint8 buf[ZCL_WC_GOTOVALUEREQ_PAYLOADLEN];
+//  597 
+//  598   buf[0] = LO_UINT16( Value );
+//  599   buf[1] = HI_UINT16( Value );
+//  600   
+//  601   return zcl_SendCommand( srcEP, dstAddr, ZCL_CLUSTER_ID_CLOSURES_WINDOW_COVERING,
+//  602                           cmd, TRUE, ZCL_FRAME_CLIENT_SERVER_DIR,
+//  603                           disableDefaultRsp, 0, seqNum, 
+//  604                           ZCL_WC_GOTOVALUEREQ_PAYLOADLEN, buf );
+//  605 }
+//  606 
+//  607 /*********************************************************************
+//  608  * @fn      zclClosures_WCSendGoToPercentageRequest
+//  609  *
+//  610  * @brief   Call to send out a Go to Percentage Request Command
+//  611  *
+//  612  * @param   srcEP - Sending application's endpoint
+//  613  * @param   dstAddr - where you want the message to go
+//  614  * @param   cmd - Command ID e.g. COMMAND_CLOSURES_GO_TO_LIFT_PERCENTAGE
+//  615  * @param   disableDefaultRsp - decides default response is necessary or not
+//  616  * @param   seqNum - sequence number of the command packet
+//  617  * @param   percentageLiftValue - payload
+//  618  * 
+//  619  * @return  ZStatus_t
+//  620  */
+//  621 ZStatus_t zclClosures_WCSendGoToPercentageRequest( uint8 srcEP, afAddrType_t *dstAddr,
+//  622                                                      uint8 cmd, uint8 disableDefaultRsp, 
+//  623                                                      uint8 seqNum, uint8 percentageValue )
+//  624 {
+//  625   uint8 buf[ZCL_WC_GOTOPERCENTAGEREQ_PAYLOADLEN];
+//  626 
+//  627   buf[0] = percentageValue;
+//  628   
+//  629   return zcl_SendCommand( srcEP, dstAddr, ZCL_CLUSTER_ID_CLOSURES_WINDOW_COVERING,
+//  630                           cmd, TRUE, ZCL_FRAME_CLIENT_SERVER_DIR,
+//  631                           disableDefaultRsp, 0, seqNum, 
+//  632                           ZCL_WC_GOTOPERCENTAGEREQ_PAYLOADLEN, buf );
+//  633 }
+//  634 
+//  635 /*********************************************************************
+//  636  * @fn      zclClosures_WCSendProgramSetpointRequest
+//  637  *
+//  638  * @brief   Call to send out a Program Setpoint Request Command
+//  639  *
+//  640  * @param   srcEP - Sending application's endpoint
+//  641  * @param   dstAddr - where you want the message to go
+//  642  * @param   cmd - Command ID for COMMAND_CLOSURES_PROGRAM_SETPOINT
+//  643  * @param   disableDefaultRsp - decides default response is necessary or not
+//  644  * @param   seqNum - sequence number of the command packet
+//  645  * @param   programSetpoint - contains payload information
+//  646  * 
+//  647  * @return  ZStatus_t
+//  648  */
+//  649 ZStatus_t zclClosures_WCSendProgramSetpointRequest( uint8 srcEP, afAddrType_t *dstAddr,
+//  650                                                     uint8 cmd, uint8 disableDefaultRsp, 
+//  651                                                     uint8 seqNum, programSetpointPayload_t *programSetpoint )
+//  652 {
+//  653   uint8 buf[ZCL_WC_PROGRAMSETPOINTREQ_VER1_PAYLOADLEN];
+//  654   uint8 len;
+//  655   
+//  656   if( programSetpoint->version == programSetpointVersion1 )
+//  657   {
+//  658     buf[0] = programSetpoint->setpointType;
+//  659     buf[1] = programSetpoint->setpointIndex;
+//  660     buf[2] = LO_UINT16( programSetpoint->setpointValue );
+//  661     buf[3] = HI_UINT16( programSetpoint->setpointValue );
+//  662     
+//  663     len = ZCL_WC_PROGRAMSETPOINTREQ_VER1_PAYLOADLEN;
+//  664   }
+//  665   else if( programSetpoint->version == programSetpointVersion2 )
+//  666   {
+//  667     buf[0] = programSetpoint->setpointIndex;
+//  668     
+//  669     len = ZCL_WC_PROGRAMSETPOINTREQ_VER2_PAYLOADLEN;
+//  670   }
+//  671   else
+//  672   {
+//  673     return( ZFailure );
+//  674   }
+//  675   return zcl_SendCommand( srcEP, dstAddr, ZCL_CLUSTER_ID_CLOSURES_WINDOW_COVERING,
+//  676                           cmd, TRUE, ZCL_FRAME_CLIENT_SERVER_DIR,
+//  677                           disableDefaultRsp, 0, seqNum, len, buf );
+//  678 }
+//  679 #endif //ZCL_WINDOWCOVERING
+//  680 
+//  681 /********************************************************************************************
+//  682 *********************************************************************************************/
+// 
+// 315 bytes in segment BANKED_CODE
+//  18 bytes in segment BANK_RELAYS
+//   3 bytes in segment XDATA_Z
+// 
+// 333 bytes of CODE  memory
+//   3 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,848 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         26/Aug/2015  19:20:57 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\Source\hal\hal_key.c                  #
+#    Command line       =  -f "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\Tools\CC2530DB\f8wE #
+#                          ndev.cfg" (-DCPU32MHZ -DROOT=__near_func           #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\Tools\C #
+#                          C2530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0     #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\Source\hal\hal_key.c" -D  #
+#                          ZIGBEEPRO -D NWK_AUTO_POLL -D HAL_UART=TRUE -D     #
+#                          HOLD_AUTO_START -D NV_RESTORE -D REFLECTOR -D      #
+#                          HAL_UART_ISR=1 -D HAL_UART_DMA=0 -D                #
+#                          xHAL_UART_ISR_TX_MAX=200 -D xPOWER_SAVING -D       #
+#                          ZCL_READ -D ZCL_WRITE -D ZCL_IDENTIFY -D           #
+#                          ZCL_ON_OFF -D ZCL_DISCOVER -D xZTOOL_P1 -D         #
+#                          xMT_TASK -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D        #
+#                          xLCD_SUPPORTED=DEBUG -D xMT_UART_DEFAULT_OVERFLOW= #
+#                          FALSE -lC "S:\zigbee\Myzigbe\version 3.0 for       #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\" -lA       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\"           #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\Obj\" -e         #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\" -I               #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\hal\" -I           #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\Modified\" -I      #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\ZMain\TI2530DB\"    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\include\" -I "S:\zigbee\Myzigbe\version 3.0 for  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\target\CC2530EB\" -I "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\high_level\" -I "S:\zigbee\Myzigbe\version 3.0   #
+#                          for test\Projects\zstack\AT commands\AT command    #
+#                          3.2 -Body Sensor\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\low_level\srf04\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\low_level\srf04\single_chip\" -I                 #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\mt #
+#                          \" -I "S:\zigbee\Myzigbe\version 3.0 for           #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\os #
+#                          al\include\" -I "S:\zigbee\Myzigbe\version 3.0     #
+#                          for test\Projects\zstack\AT commands\AT command    #
+#                          3.2 -Body Sensor\CC2530DB\..\..\..\..\..\Component #
+#                          s\services\saddr\" -I "S:\zigbee\Myzigbe\version   #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\..\..\C #
+#                          omponents\services\sdata\" -I                      #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\af\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\nwk\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sapi\" -I "S:\zigbee\Myzigbe\version 3.0 for   #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sec\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sys\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\zdo\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\zcl\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\" -I "S:\zigbee\Myzigbe\version 3.0 for         #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\f8w\" -Ohz --require_prototypes                 #
+#    List file          =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\hal_key.lst #
+#    Object file        =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\Obj\hal_key.r51  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+S:\zigbee\Myzigbe\version 3.0 for test\Projects\zstack\AT commands\AT command 3.2 -Body Sensor\Source\hal\hal_key.c
+      1          
+      2          /* ------------------------------------------------------------------------------------------------
+      3           *                                          Includes
+      4           * ------------------------------------------------------------------------------------------------
+      5           */
+      6          
+      7          #include "hal_board.h"
+
+   \                                 In  segment SFR_AN, at 0x8b
+   \   unsigned char volatile __sfr P2IFG
+   \                     P2IFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8c
+   \   unsigned char volatile __sfr PICTL
+   \                     PICTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9a
+   \   unsigned char volatile __sfr IEN2
+   \                     IEN2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa0
+   \   union <unnamed> volatile __sfr _A_P2
+   \                     _A_P2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xac
+   \   unsigned char volatile __sfr P2IEN
+   \                     P2IEN:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe8
+   \   union <unnamed> volatile __sfr _A_IRCON2
+   \                     _A_IRCON2:
+   \   000000                DS 1
+      8          #include "hal_drivers.h"
+      9          #include "hal_key.h"
+     10          #include "hal_types.h"
+     11          #include "osal.h"
+     12          
+     13          /* ------------------------------------------------------------------------------------------------
+     14           *                                           Macros  
+     15           * ------------------------------------------------------------------------------------------------
+     16           */
+     17          
+     18          #define HAL_KEY_CLR_INT() \
+     19          st ( \
+     20            /* PxIFG has to be cleared before PxIF. */\
+     21            P2IFG = 0; \
+     22            P2IF = 0; \
+     23          )
+     24          
+     25          /* ------------------------------------------------------------------------------------------------
+     26           *                                          Constants
+     27           * ------------------------------------------------------------------------------------------------
+     28           */
+     29          
+     30          /* ------------------------------------------------------------------------------------------------
+     31           *                                          Typedefs
+     32           * ------------------------------------------------------------------------------------------------
+     33           */
+     34          
+     35          /* ------------------------------------------------------------------------------------------------
+     36           *                                       Global Variables
+     37           * ------------------------------------------------------------------------------------------------
+     38           */
+     39          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     40          uint8 Hal_KeyIntEnable;
+   \                     Hal_KeyIntEnable:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     41          
+     42          /* ------------------------------------------------------------------------------------------------
+     43           *                                       Global Functions
+     44           * ------------------------------------------------------------------------------------------------
+     45           */
+     46          
+     47          /* ------------------------------------------------------------------------------------------------
+     48           *                                       Local Variables
+     49           * ------------------------------------------------------------------------------------------------
+     50           */
+     51          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     52          static halKeyCBack_t pHalKeyProcessFunction;
+   \                     pHalKeyProcessFunction:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     53          static volatile uint8 isrKeys;
+   \                     isrKeys:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     54          static uint8 halKeys;
+   \                     halKeys:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     55          uint32 hal_key_pre_faliing_time=0;
+   \                     hal_key_pre_faliing_time:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     56          uint32 hal_key_pre_interval_time=0;
+   \                     hal_key_pre_interval_time:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+     57          /* ------------------------------------------------------------------------------------------------
+     58           *                                       Local Functions
+     59           * ------------------------------------------------------------------------------------------------
+     60           */
+     61          
+     62          /**************************************************************************************************
+     63           * @fn          HalKeyInit
+     64           *
+     65           * @brief       This function is called by HalDriverInit to initialize the H/W keys.
+     66           *
+     67           * input parameters
+     68           *
+     69           * None.
+     70           *
+     71           * output parameters
+     72           *
+     73           * None.
+     74           *
+     75           * @return      None.
+     76           **************************************************************************************************
+     77           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     78          void HalKeyInit(void)
+   \                     HalKeyInit:
+     79          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     80          }
+   \   000000   02....       LJMP    ?BRET
+     81          
+     82          /**************************************************************************************************
+     83           * @fn          HalKeyConfig
+     84           *
+     85           * @brief       This function is called by HalDriverInit to initialize the H/W keys.
+     86           *
+     87           * input parameters
+     88           *
+     89           * @param       interruptEnable - TRUE/FALSE to enable the key interrupt.
+     90           * @param       cback - The callback function for the key change event.
+     91           *
+     92           * output parameters
+     93           *
+     94           * None.
+     95           *
+     96           * @return      None.
+     97           **************************************************************************************************
+     98           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     99          void HalKeyConfig(bool interruptEnable, halKeyCBack_t cback)
+   \                     HalKeyConfig:
+    100          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    101            if ((Hal_KeyIntEnable = interruptEnable))
+   \   000009   E9           MOV     A,R1
+   \   00000A   90....       MOV     DPTR,#Hal_KeyIntEnable
+   \   00000D   F0           MOVX    @DPTR,A
+   \   00000E   6010         JZ      ??HalKeyConfig_0
+    102            {
+    103              HAL_KEY_CLR_INT();             // Clear spurious ints.
+   \   000010   758B00       MOV     0x8b,#0x0
+   \   000013   C2E8         CLR     0xe8.0
+    104              PICTL |= (0x01<<3);              // P2ICONL: Falling edge ints on P2.
+   \   000015   438C08       ORL     0x8c,#0x8
+    105              P2IEN |= PUSH1_BV;                // Enable specific P2 bits for ints by bit mask.
+   \   000018   43AC01       ORL     0xac,#0x1
+    106              IEN2 |=(0x01<<1);               // Enable general P2 interrupts.
+   \   00001B   439A02       ORL     0x9a,#0x2
+   \   00001E   800C         SJMP    ??HalKeyConfig_1
+    107              
+    108            }
+    109            else
+    110            {
+    111              (void)osal_set_event(Hal_TaskID, HAL_KEY_EVENT);
+   \                     ??HalKeyConfig_0:
+   \   000020                ; Setup parameters for call to function osal_set_event
+   \   000020   7A01         MOV     R2,#0x1
+   \   000022   7B00         MOV     R3,#0x0
+   \   000024   90....       MOV     DPTR,#Hal_TaskID
+   \   000027   E0           MOVX    A,@DPTR
+   \   000028   F9           MOV     R1,A
+   \   000029   12....       LCALL   ??osal_set_event?relay
+    112            }
+    113          
+    114            pHalKeyProcessFunction = cback;
+   \                     ??HalKeyConfig_1:
+   \   00002C   90....       MOV     DPTR,#pHalKeyProcessFunction
+   \   00002F   EE           MOV     A,R6
+   \   000030   F0           MOVX    @DPTR,A
+   \   000031   A3           INC     DPTR
+   \   000032   EF           MOV     A,R7
+   \   000033   F0           MOVX    @DPTR,A
+    115          }
+   \   000034   7F01         MOV     R7,#0x1
+   \   000036   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000039                REQUIRE P2IFG
+   \   000039                REQUIRE _A_IRCON2
+   \   000039                REQUIRE PICTL
+   \   000039                REQUIRE P2IEN
+   \   000039                REQUIRE IEN2
+    116          
+    117          /**************************************************************************************************
+    118           * @fn          HalKeyPoll
+    119           *
+    120           * @brief       This function is called by Hal_ProcessEvent() on a HAL_KEY_EVENT.
+    121           *
+    122           * input parameters
+    123           *
+    124           * None.
+    125           *
+    126           * output parameters
+    127           *
+    128           * None.
+    129           *
+    130           * @return      None.
+    131           **************************************************************************************************
+    132           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    133          void HalKeyPoll(void)
+   \                     HalKeyPoll:
+    134          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    135            uint8 newKeys;
+    136          
+    137            if (Hal_KeyIntEnable)
+   \   000004   90....       MOV     DPTR,#Hal_KeyIntEnable
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   6013         JZ      ??HalKeyPoll_0
+    138            {
+    139              halIntState_t intState;
+    140              HAL_ENTER_CRITICAL_SECTION(intState);
+   \   00000A   E5A8         MOV     A,0xa8
+   \   00000C   F8           MOV     R0,A
+   \   00000D   C2AF         CLR     0xa8.7
+    141              newKeys = isrKeys;
+   \   00000F   90....       MOV     DPTR,#isrKeys
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   F9           MOV     R1,A
+    142              isrKeys = 0;
+   \   000014   E4           CLR     A
+   \   000015   F0           MOVX    @DPTR,A
+    143              HAL_EXIT_CRITICAL_SECTION(intState);
+   \   000016   E8           MOV     A,R0
+   \   000017   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000019   92AF         MOV     0xa8.7,C
+   \   00001B   800E         SJMP    ??HalKeyPoll_1
+    144            }
+    145            else
+    146            {
+    147              uint8 keys = HalKeyRead();
+   \                     ??HalKeyPoll_0:
+   \   00001D                ; Setup parameters for call to function HalKeyRead
+   \   00001D   12....       LCALL   ??HalKeyRead?relay
+   \   000020   E9           MOV     A,R1
+   \   000021   F8           MOV     R0,A
+    148              newKeys = (halKeys ^ keys) & keys;
+   \   000022   90....       MOV     DPTR,#halKeys
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   68           XRL     A,R0
+   \   000027   58           ANL     A,R0
+   \   000028   F9           MOV     R1,A
+    149              halKeys = keys;
+   \   000029   E8           MOV     A,R0
+   \   00002A   F0           MOVX    @DPTR,A
+    150            }
+    151          
+    152            if (newKeys && pHalKeyProcessFunction)
+   \                     ??HalKeyPoll_1:
+   \   00002B   E9           MOV     A,R1
+   \   00002C   601C         JZ      ??HalKeyPoll_2
+   \   00002E   90....       MOV     DPTR,#pHalKeyProcessFunction
+   \   000031   E0           MOVX    A,@DPTR
+   \   000032   FA           MOV     R2,A
+   \   000033   A3           INC     DPTR
+   \   000034   E0           MOVX    A,@DPTR
+   \   000035   FB           MOV     R3,A
+   \   000036   EA           MOV     A,R2
+   \   000037   4B           ORL     A,R3
+   \   000038   6010         JZ      ??HalKeyPoll_2
+    153            {
+    154              (pHalKeyProcessFunction)(newKeys, HAL_KEY_STATE_NORMAL);
+   \   00003A                ; Setup parameters for indirect call
+   \   00003A   7A00         MOV     R2,#0x0
+   \   00003C   90....       MOV     DPTR,#pHalKeyProcessFunction
+   \   00003F   E0           MOVX    A,@DPTR
+   \   000040   F8           MOV     R0,A
+   \   000041   A3           INC     DPTR
+   \   000042   E0           MOVX    A,@DPTR
+   \   000043   F583         MOV     DPH,A
+   \   000045   8882         MOV     DPL,R0
+   \   000047   12....       LCALL   ?CALL_IND
+    155            }
+    156          }
+   \                     ??HalKeyPoll_2:
+   \   00004A                REQUIRE ?Subroutine0
+   \   00004A                REQUIRE _A_IEN0
+   \   00004A                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+    157          
+    158          /**************************************************************************************************
+    159           * @fn          HalKeyRead
+    160           *
+    161           * @brief       This function is called anywhere.
+    162           *
+    163           * input parameters
+    164           *
+    165           * None.
+    166           *
+    167           * output parameters
+    168           *
+    169           * None.
+    170           *
+    171           * @return      The bit mask of all keys pressed.
+    172           **************************************************************************************************
+    173           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    174          uint8 HalKeyRead(void)
+   \                     HalKeyRead:
+    175          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    176            uint8 keys = 0;
+   \   000000   7900         MOV     R1,#0x0
+    177          
+    178            if (HAL_PUSH_BUTTON1())
+   \   000002   A2A0         MOV     C,0xa0.0
+   \   000004   4001         JC      ??HalKeyRead_0
+    179            {
+    180              keys |= HAL_KEY_SW_1;
+   \   000006   09           INC     R1
+    181            }
+    182          
+    183            if (HAL_PUSH_BUTTON2())
+   \                     ??HalKeyRead_0:
+   \   000007   A293         MOV     C,0x90.3
+   \   000009   4004         JC      ??HalKeyRead_1
+    184            {
+    185              keys |= HAL_KEY_SW_2;
+   \   00000B   E9           MOV     A,R1
+   \   00000C   D2E1         SETB    0xE0 /* A   */.1
+   \   00000E   F9           MOV     R1,A
+    186            }
+    187          
+    188            return keys;
+   \                     ??HalKeyRead_1:
+   \   00000F   02....       LJMP    ?BRET
+   \   000012                REQUIRE _A_P2
+   \   000012                REQUIRE _A_P1
+    189          }
+    190          
+    191          /**************************************************************************************************
+    192           * @fn      HalKeyEnterSleep
+    193           *
+    194           * @brief  - Get called to enter sleep mode
+    195           *
+    196           * @param
+    197           *
+    198           * @return
+    199           **************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    200          void HalKeyEnterSleep ( void )
+   \                     HalKeyEnterSleep:
+    201          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    202          }
+   \   000000   02....       LJMP    ?BRET
+    203          
+    204          /**************************************************************************************************
+    205           * @fn      HalKeyExitSleep
+    206           *
+    207           * @brief   - Get called when sleep is over
+    208           *
+    209           * @param
+    210           *
+    211           * @return  - return saved keys
+    212           **************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    213          uint8 HalKeyExitSleep ( void )
+   \                     HalKeyExitSleep:
+    214          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    215            /* Wake up and read keys */
+    216            return ( HalKeyRead () );
+   \   000004                ; Setup parameters for call to function HalKeyRead
+   \   000004   12....       LCALL   ??HalKeyRead?relay
+   \   000007   80..         SJMP    ?Subroutine0
+    217          }
+    218          
+    219          /**************************************************************************************************
+    220           * @fn          usbKeyISR
+    221           *
+    222           * @brief       This function is the ISR for the Port2 USB/Key interrupt.
+    223           *
+    224           * input parameters
+    225           *
+    226           * None.
+    227           *
+    228           * output parameters
+    229           *
+    230           * None.
+    231           *
+    232           * @return      None.
+    233           **************************************************************************************************
+    234           */
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    235          HAL_ISR_FUNCTION( usbKeyISR, P2INT_VECTOR )
+   \                     usbKeyISR:
+    236          {
+   \   000000   C0E0         PUSH    A
+   \   000002   74EF         MOV     A,#-0x11
+   \   000004   12....       LCALL   ?INTERRUPT_ENTER_XSP
+   \   000007                ; Saved register size: 17
+   \   000007                ; Auto size: 0
+    237            HAL_ENTER_ISR();
+   \   000007   A2AF         MOV     C,0xa8.7
+   \   000009   E4           CLR     A
+   \   00000A   33           RLC     A
+   \   00000B   FE           MOV     R6,A
+   \   00000C   D2AF         SETB    0xa8.7
+    238            if(PICTL&(0x01<<3)){//previous seting is flling edge
+   \   00000E   E58C         MOV     A,0x8c
+   \   000010   A2E3         MOV     C,0xE0 /* A   */.3
+   \   000012   501B         JNC     ??usbKeyISR_0
+    239              hal_key_pre_faliing_time = osal_GetSystemClock();
+   \   000014                ; Setup parameters for call to function osal_GetSystemClock
+   \   000014   12....       LCALL   ??osal_GetSystemClock?relay
+   \   000017   90....       MOV     DPTR,#hal_key_pre_faliing_time
+   \   00001A   12....       LCALL   ?XSTORE_R2345
+    240              osal_start_timerEx( Hal_TaskID, HAL_KEY_TIME_EVT, 5000);
+   \   00001D                ; Setup parameters for call to function osal_start_timerEx
+   \   00001D   7C88         MOV     R4,#-0x78
+   \   00001F   7D13         MOV     R5,#0x13
+   \   000021   7A10         MOV     R2,#0x10
+   \   000023   7B00         MOV     R3,#0x0
+   \   000025   90....       MOV     DPTR,#Hal_TaskID
+   \   000028   E0           MOVX    A,@DPTR
+   \   000029   F9           MOV     R1,A
+   \   00002A   12....       LCALL   ??osal_start_timerEx?relay
+   \   00002D   801B         SJMP    ??usbKeyISR_1
+    241            }else{
+    242              hal_key_pre_interval_time =osal_GetSystemClock()-hal_key_pre_faliing_time;
+   \                     ??usbKeyISR_0:
+   \   00002F                ; Setup parameters for call to function osal_GetSystemClock
+   \   00002F   12....       LCALL   ??osal_GetSystemClock?relay
+   \   000032   8A..         MOV     ?V0 + 0,R2
+   \   000034   8B..         MOV     ?V0 + 1,R3
+   \   000036   8C..         MOV     ?V0 + 2,R4
+   \   000038   8D..         MOV     ?V0 + 3,R5
+   \   00003A   90....       MOV     DPTR,#hal_key_pre_faliing_time
+   \   00003D   78..         MOV     R0,#?V0 + 0
+   \   00003F   12....       LCALL   ?L_SUB_X
+   \   000042   90....       MOV     DPTR,#hal_key_pre_interval_time
+   \   000045   78..         MOV     R0,#?V0 + 0
+   \   000047   12....       LCALL   ?L_MOV_TO_X
+    243            }//thus the MCU will check both edges
+    244            
+    245            if (P2IFG & PUSH1_BV)
+   \                     ??usbKeyISR_1:
+   \   00004A   E58B         MOV     A,0x8b
+   \   00004C   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00004E   5007         JNC     ??usbKeyISR_2
+    246            {
+    247              isrKeys |= HAL_KEY_SW_1;
+   \   000050   90....       MOV     DPTR,#isrKeys
+   \   000053   E0           MOVX    A,@DPTR
+   \   000054   D2E0         SETB    0xE0 /* A   */.0
+   \   000056   F0           MOVX    @DPTR,A
+    248            }
+    249          /*
+    250            if (P0IFG & PUSH2_BV)
+    251            {
+    252              isrKeys |= HAL_KEY_SW_2;
+    253            }
+    254            */
+    255            //execute when a rising edge iterrupt comes
+    256            if( ! (PICTL&(0x01<<3))) {
+   \                     ??usbKeyISR_2:
+   \   000057   E58C         MOV     A,0x8c
+   \   000059   A2E3         MOV     C,0xE0 /* A   */.3
+   \   00005B   4025         JC      ??usbKeyISR_3
+    257              if(hal_key_pre_interval_time>10)//ensure the time slot which is less than 10 ms to be filtered
+   \   00005D   90....       MOV     DPTR,#hal_key_pre_interval_time
+   \   000060   C082         PUSH    DPL
+   \   000062   90....       MOV     DPTR,#__Constant_b
+   \   000065   78..         MOV     R0,#?V0 + 0
+   \   000067   12....       LCALL   ?L_MOV_X
+   \   00006A   7583..       MOV     DPH,#(hal_key_pre_interval_time >> 8) & 0xff
+   \   00006D   D082         POP     DPL
+   \   00006F   78..         MOV     R0,#?V0 + 0
+   \   000071   12....       LCALL   ?UL_GT_X
+   \   000074   400C         JC      ??usbKeyISR_3
+    258                osal_set_event(Hal_TaskID, HAL_KEY_EVENT);
+   \   000076                ; Setup parameters for call to function osal_set_event
+   \   000076   7A01         MOV     R2,#0x1
+   \   000078   7B00         MOV     R3,#0x0
+   \   00007A   90....       MOV     DPTR,#Hal_TaskID
+   \   00007D   E0           MOVX    A,@DPTR
+   \   00007E   F9           MOV     R1,A
+   \   00007F   12....       LCALL   ??osal_set_event?relay
+    259            }
+    260            if(PUSH1_SBIT) PICTL |= (0x01<<3); //set to falling edge//anti-shake of the button
+   \                     ??usbKeyISR_3:
+   \   000082   A2A0         MOV     C,0xa0.0
+   \   000084   5005         JNC     ??usbKeyISR_4
+   \   000086   438C08       ORL     0x8c,#0x8
+   \   000089   8003         SJMP    ??usbKeyISR_5
+    261            else PICTL &= ~(0x01<<3); //set to rising edge
+   \                     ??usbKeyISR_4:
+   \   00008B   538CF7       ANL     0x8c,#0xf7
+    262            HAL_KEY_CLR_INT();
+   \                     ??usbKeyISR_5:
+   \   00008E   758B00       MOV     0x8b,#0x0
+   \   000091   C2E8         CLR     0xe8.0
+    263          
+    264            HAL_EXIT_ISR();
+   \   000093   EE           MOV     A,R6
+   \   000094   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000096   92AF         MOV     0xa8.7,C
+    265          }
+   \   000098   7F04         MOV     R7,#0x4
+   \   00009A   02....       LJMP    ?INTERRUPT_LEAVE_XSP
+   \   00009D                REQUIRE _A_IEN0
+   \   00009D                REQUIRE PICTL
+   \   00009D                REQUIRE P2IFG
+   \   00009D                REQUIRE _A_P2
+   \   00009D                REQUIRE _A_IRCON2
+
+   \                                 In  segment INTVEC, offset 0x33, root
+   \                     `??usbKeyISR??INTVEC 51`:
+   \   000033   02....       LJMP       (usbKeyISR)
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_b:
+   \   000000   0B000000     DD 11
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalKeyInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalKeyInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalKeyConfig?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalKeyConfig
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalKeyPoll?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalKeyPoll
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalKeyRead?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalKeyRead
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalKeyEnterSleep?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalKeyEnterSleep
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalKeyExitSleep?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalKeyExitSleep
+    266          
+    267          /**************************************************************************************************
+    268          */
+
+   Maximum stack usage in bytes:
+
+     Function                 ISTACK PSTACK XSTACK
+     --------                 ------ ------ ------
+     HalKeyConfig                 0      0      9
+       -> osal_set_event          0      0     18
+     HalKeyEnterSleep             0      0      0
+     HalKeyExitSleep              2      0      0
+       -> HalKeyRead              4      0      0
+     HalKeyInit                   0      0      0
+     HalKeyPoll                   2      0      0
+       -> HalKeyRead              4      0      0
+     HalKeyRead                   0      0      0
+     usbKeyISR                    2      0     17
+       -> osal_GetSystemClock     0      0     34
+       -> osal_start_timerEx      0      0     34
+       -> osal_GetSystemClock     0      0     34
+       -> osal_set_event          0      0     34
+
+
+   Segment part sizes:
+
+     Function/Label            Bytes
+     --------------            -----
+     P2IFG                        1
+     PICTL                        1
+     _A_P1                        1
+     IEN2                         1
+     _A_P2                        1
+     _A_IEN0                      1
+     P2IEN                        1
+     _A_IRCON2                    1
+     Hal_KeyIntEnable             1
+     pHalKeyProcessFunction       2
+     isrKeys                      1
+     halKeys                      1
+     hal_key_pre_faliing_time     4
+     hal_key_pre_interval_time    4
+     HalKeyInit                   3
+     HalKeyConfig                57
+     HalKeyPoll                  74
+     ?Subroutine0                 7
+     HalKeyRead                  18
+     HalKeyEnterSleep             3
+     HalKeyExitSleep              9
+     usbKeyISR                  157
+     ??usbKeyISR??INTVEC 51       3
+     __Constant_b                 4
+     ??HalKeyInit?relay           6
+     ??HalKeyConfig?relay         6
+     ??HalKeyPoll?relay           6
+     ??HalKeyRead?relay           6
+     ??HalKeyEnterSleep?relay     6
+     ??HalKeyExitSleep?relay      6
+
+ 
+ 171 bytes in segment BANKED_CODE
+  36 bytes in segment BANK_RELAYS
+   3 bytes in segment INTVEC
+ 157 bytes in segment NEAR_CODE
+   8 bytes in segment SFR_AN
+   4 bytes in segment XDATA_ROM_C
+  13 bytes in segment XDATA_Z
+ 
+ 364 bytes of CODE  memory (+ 3 bytes shared)
+   0 bytes of CONST memory (+ 4 bytes shared)
+   0 bytes of DATA  memory (+ 8 bytes shared)
+  13 bytes of XDATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,311 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         26/Aug/2015  19:20:33 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\Source\AT_relay.c                     #
+#    Command line       =  -f "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\Tools\CC2530DB\f8wE #
+#                          ndev.cfg" (-DCPU32MHZ -DROOT=__near_func           #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\Tools\C #
+#                          C2530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0     #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\Source\AT_relay.c" -D     #
+#                          ZIGBEEPRO -D NWK_AUTO_POLL -D HAL_UART=TRUE -D     #
+#                          HOLD_AUTO_START -D NV_RESTORE -D REFLECTOR -D      #
+#                          HAL_UART_ISR=1 -D HAL_UART_DMA=0 -D                #
+#                          xHAL_UART_ISR_TX_MAX=200 -D xPOWER_SAVING -D       #
+#                          ZCL_READ -D ZCL_WRITE -D ZCL_IDENTIFY -D           #
+#                          ZCL_ON_OFF -D ZCL_DISCOVER -D xZTOOL_P1 -D         #
+#                          xMT_TASK -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D        #
+#                          xLCD_SUPPORTED=DEBUG -D xMT_UART_DEFAULT_OVERFLOW= #
+#                          FALSE -lC "S:\zigbee\Myzigbe\version 3.0 for       #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\" -lA       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\"           #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\Obj\" -e         #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\" -I               #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\hal\" -I           #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\Modified\" -I      #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\ZMain\TI2530DB\"    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\include\" -I "S:\zigbee\Myzigbe\version 3.0 for  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\target\CC2530EB\" -I "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\high_level\" -I "S:\zigbee\Myzigbe\version 3.0   #
+#                          for test\Projects\zstack\AT commands\AT command    #
+#                          3.2 -Body Sensor\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\low_level\srf04\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\low_level\srf04\single_chip\" -I                 #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\mt #
+#                          \" -I "S:\zigbee\Myzigbe\version 3.0 for           #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\os #
+#                          al\include\" -I "S:\zigbee\Myzigbe\version 3.0     #
+#                          for test\Projects\zstack\AT commands\AT command    #
+#                          3.2 -Body Sensor\CC2530DB\..\..\..\..\..\Component #
+#                          s\services\saddr\" -I "S:\zigbee\Myzigbe\version   #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\..\..\C #
+#                          omponents\services\sdata\" -I                      #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\af\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\nwk\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sapi\" -I "S:\zigbee\Myzigbe\version 3.0 for   #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sec\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sys\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\zdo\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\zcl\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\" -I "S:\zigbee\Myzigbe\version 3.0 for         #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\f8w\" -Ohz --require_prototypes                 #
+#    List file          =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\AT_relay.ls #
+#                          t                                                  #
+#    Object file        =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\Obj\AT_relay.r51 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+S:\zigbee\Myzigbe\version 3.0 for test\Projects\zstack\AT commands\AT command 3.2 -Body Sensor\Source\AT_relay.c
+      1          #include"iocc2530.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      2          #include"OnBoard.h"
+      3          #include "AT_relay.h" 
+      4          
+      5          
+      6          void relay_on(void);
+      7          void relay_off(void);
+      8          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      9          void relay_init(void){
+   \                     relay_init:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     10            RELAY_ONOFF_IO_PIN = RELAY_OFF;
+   \   000000                REQUIRE ?Subroutine0
+   \   000000                REQUIRE _A_P0
+   \   000000                REQUIRE P0DIR
+   \   000000                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D285         SETB    0x80.5
+     11            RELAY_SET_PIN_INPUT();
+   \   000002   53FDDF       ANL     0xfd,#0xdf
+     12          }
+   \   000005   02....       LJMP    ?BRET
+     13          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     14          extern void relay_disable(void){
+   \                     relay_disable:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     15            RELAY_ONOFF_IO_PIN = RELAY_OFF;
+   \   000000   80..         SJMP    ?Subroutine0
+   \   000002                REQUIRE _A_P0
+   \   000002                REQUIRE P0DIR
+     16            RELAY_SET_PIN_INPUT();
+     17          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     18          extern void relay_enable(void){
+   \                     relay_enable:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     19            RELAY_ONOFF_IO_PIN = RELAY_OFF;
+   \   000000   D285         SETB    0x80.5
+     20            RELAY_SET_PIN_OUTPUT();
+   \   000002   43FD20       ORL     0xfd,#0x20
+     21          }
+   \   000005   02....       LJMP    ?BRET
+   \   000008                REQUIRE _A_P0
+   \   000008                REQUIRE P0DIR
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     22          void relay_on(void){
+   \                     relay_on:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     23            RELAY_ONOFF_IO_PIN=RELAY_ON;
+   \   000000   C285         CLR     0x80.5
+     24          }
+   \   000002   02....       LJMP    ?BRET
+   \   000005                REQUIRE _A_P0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     25          void relay_off(void){
+   \                     relay_off:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     26            RELAY_ONOFF_IO_PIN=RELAY_OFF;
+   \   000000   D285         SETB    0x80.5
+     27          }
+   \   000002   02....       LJMP    ?BRET
+   \   000005                REQUIRE _A_P0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??relay_init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    relay_init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??relay_disable?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    relay_disable
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??relay_enable?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    relay_enable
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??relay_on?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    relay_on
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??relay_off?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    relay_off
+     28          
+
+   Maximum stack usage in bytes:
+
+     Function      ISTACK PSTACK XSTACK
+     --------      ------ ------ ------
+     relay_disable     0      0      0
+     relay_enable      0      0      0
+     relay_init        0      0      0
+     relay_off         0      0      0
+     relay_on          0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label        Bytes
+     --------------        -----
+     _A_P0                    1
+     P0DIR                    1
+     relay_init               0
+     ?Subroutine0             8
+     relay_disable            2
+     relay_enable             8
+     relay_on                 5
+     relay_off                5
+     ??relay_init?relay       6
+     ??relay_disable?relay    6
+     ??relay_enable?relay     6
+     ??relay_on?relay         6
+     ??relay_off?relay        6
+
+ 
+ 28 bytes in segment BANKED_CODE
+ 30 bytes in segment BANK_RELAYS
+  2 bytes in segment SFR_AN
+ 
+ 58 bytes of CODE memory
+  0 bytes of DATA memory (+ 2 bytes shared)
+
+Errors: none
+Warnings: none

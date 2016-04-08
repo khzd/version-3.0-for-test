@@ -1,0 +1,944 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         26/Aug/2015  19:20:30 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\Source\AT_ZCL_DHT.c                   #
+#    Command line       =  -f "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\Tools\CC2530DB\f8wE #
+#                          ndev.cfg" (-DCPU32MHZ -DROOT=__near_func           #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\Tools\C #
+#                          C2530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0     #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\Source\AT_ZCL_DHT.c" -D   #
+#                          ZIGBEEPRO -D NWK_AUTO_POLL -D HAL_UART=TRUE -D     #
+#                          HOLD_AUTO_START -D NV_RESTORE -D REFLECTOR -D      #
+#                          HAL_UART_ISR=1 -D HAL_UART_DMA=0 -D                #
+#                          xHAL_UART_ISR_TX_MAX=200 -D xPOWER_SAVING -D       #
+#                          ZCL_READ -D ZCL_WRITE -D ZCL_IDENTIFY -D           #
+#                          ZCL_ON_OFF -D ZCL_DISCOVER -D xZTOOL_P1 -D         #
+#                          xMT_TASK -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D        #
+#                          xLCD_SUPPORTED=DEBUG -D xMT_UART_DEFAULT_OVERFLOW= #
+#                          FALSE -lC "S:\zigbee\Myzigbe\version 3.0 for       #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\" -lA       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\"           #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\Obj\" -e         #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\" -I               #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\hal\" -I           #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\Modified\" -I      #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\ZMain\TI2530DB\"    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\include\" -I "S:\zigbee\Myzigbe\version 3.0 for  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\target\CC2530EB\" -I "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\high_level\" -I "S:\zigbee\Myzigbe\version 3.0   #
+#                          for test\Projects\zstack\AT commands\AT command    #
+#                          3.2 -Body Sensor\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\low_level\srf04\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\low_level\srf04\single_chip\" -I                 #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\mt #
+#                          \" -I "S:\zigbee\Myzigbe\version 3.0 for           #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\os #
+#                          al\include\" -I "S:\zigbee\Myzigbe\version 3.0     #
+#                          for test\Projects\zstack\AT commands\AT command    #
+#                          3.2 -Body Sensor\CC2530DB\..\..\..\..\..\Component #
+#                          s\services\saddr\" -I "S:\zigbee\Myzigbe\version   #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\..\..\C #
+#                          omponents\services\sdata\" -I                      #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\af\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\nwk\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sapi\" -I "S:\zigbee\Myzigbe\version 3.0 for   #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sec\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sys\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\zdo\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\zcl\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\" -I "S:\zigbee\Myzigbe\version 3.0 for         #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\f8w\" -Ohz --require_prototypes                 #
+#    List file          =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\AT_ZCL_DHT. #
+#                          lst                                                #
+#    Object file        =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\Obj\AT_ZCL_DHT.r #
+#                          51                                                 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+S:\zigbee\Myzigbe\version 3.0 for test\Projects\zstack\AT commands\AT command 3.2 -Body Sensor\Source\AT_ZCL_DHT.c
+      1          
+      2          /*********************************************************************
+      3           * INCLUDES
+      4           */
+      5          #include "ZComDef.h"
+      6          #include "OSAL.h"
+      7          #include "AF.h"
+      8          #include "ZDApp.h"
+      9          
+     10          #include "zcl.h"
+     11          #include "zcl_general.h"
+     12          #include "zcl_ms.h"
+     13          #include "zcl_ha.h"
+     14          #include "AT_ZCL.h"
+     15          #include "AT_uart.h"
+     16          #include "AT_ZCL_DHT.h"
+     17          #include "AT_DHT11.h" 
+     18          
+     19          #include "onboard.h"
+     20          
+     21          /* HAL */
+     22          #include "hal_led.h"
+     23          #include "hal_key.h"
+     24          
+     25          /*********************************************************************
+     26           * GLOBAL VARIABLES
+     27           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     28          byte AT_ZCL_DHT_TaskID;
+   \                     AT_ZCL_DHT_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     29          
+     30          /*********************************************************************
+     31           * LOCAL FUNCTION
+     32           */
+     33          static void AT_ZCL_DHT_IdentifyCB( zclIdentify_t *pCmd );
+     34          static void AT_ZCL_DHT_BasicResetCB( void );
+     35          static void AT_ZCL_DHT_ProcessIdentifyTimeChange( void );
+     36          static void AT_ZCL_DHT_OnOffCB( uint8 cmd );
+     37          static void AT_ZCL_DHT_update(void);
+     38          static void AT_ZCL_DHT_EP_ENABLE( bool isEnable);
+     39          /*********************************************************************
+     40           * ZCL General Profile Callback table
+     41           */
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     42          static zclGeneral_AppCallbacks_t AT_ZCL_DHT_GEN_CmdCallbacks =
+   \                     AT_ZCL_DHT_GEN_CmdCallbacks:
+   \   000000                DS 30
+   \   00001E                REQUIRE `?<Initializer for AT_ZCL_DHT_GEN_CmdCallbacks>`
+   \   00001E                REQUIRE __INIT_XDATA_I
+     43          { 
+     44            AT_ZCL_DHT_BasicResetCB,                 // Basic Cluster Reset command
+     45            AT_ZCL_DHT_IdentifyCB,                   // Identify command   
+     46            NULL,                                      // Identify Query Response command
+     47            AT_ZCL_DHT_OnOffCB,                      // On/Off cluster command
+     48            NULL,                                     // Level Control Move to Level command
+     49            NULL,                                     // Level Control Move command
+     50            NULL,                                     // Level Control Step command
+     51            NULL,                                     // Group Response commands
+     52            NULL,                                     // Scene Store Request command
+     53            NULL,                                     // Scene Recall Request command
+     54            NULL,                                     // Scene Response command
+     55            NULL,                                     // Alarm (Response) command
+     56            NULL,                                     // RSSI Location commands
+     57            NULL,                                     // RSSI Location Response commands
+     58          };
+     59          
+     60          
+     61          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     62          void AT_ZCL_DHT_Init( byte task_id )
+   \                     AT_ZCL_DHT_Init:
+     63          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+     64            AT_ZCL_DHT_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#AT_ZCL_DHT_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+     65          
+     66            // This app is part of the Home Automation Profile
+     67            zclHA_Init( &AT_ZCL_DHT_SimpleDesc );
+   \   00000A                ; Setup parameters for call to function zclHA_Init
+   \   00000A   7A..         MOV     R2,#AT_ZCL_DHT_SimpleDesc & 0xff
+   \   00000C   7B..         MOV     R3,#(AT_ZCL_DHT_SimpleDesc >> 8) & 0xff
+   \   00000E   12....       LCALL   ??zclHA_Init?relay
+     68          
+     69            // Register the ZCL General Cluster Library callback functions
+     70            zclGeneral_RegisterCmdCallbacks( AT_ZCL_DHT_ENDPOINT, &AT_ZCL_DHT_GEN_CmdCallbacks );
+   \   000011                ; Setup parameters for call to function zclGeneral_RegisterCmdCallbacks
+   \   000011   7A..         MOV     R2,#AT_ZCL_DHT_GEN_CmdCallbacks & 0xff
+   \   000013   7B..         MOV     R3,#(AT_ZCL_DHT_GEN_CmdCallbacks >> 8) & 0xff
+   \   000015   7906         MOV     R1,#0x6
+   \   000017   12....       LCALL   ??zclGeneral_RegisterCmdCallbacks?relay
+     71            
+     72            // Register the application's attribute list
+     73            zcl_registerAttrList( AT_ZCL_DHT_ENDPOINT, AT_ZCL_DHT_MAX_ATTRIBUTES, AT_ZCL_DHT_Attrs );
+   \   00001A                ; Setup parameters for call to function zcl_registerAttrList
+   \   00001A   7C..         MOV     R4,#AT_ZCL_DHT_Attrs & 0xff
+   \   00001C   7D..         MOV     R5,#(AT_ZCL_DHT_Attrs >> 8) & 0xff
+   \   00001E   7A0E         MOV     R2,#0xe
+   \   000020   7906         MOV     R1,#0x6
+   \   000022   12....       LCALL   ??zcl_registerAttrList?relay
+     74            
+     75            //register for AT command system enable/disable call back function
+     76            AT_ZCL_EP_ENABLE_Register(  AT_ZCL_DHT_ENDPOINT,AT_ZCL_DHT_EP_ENABLE);
+   \   000025                ; Setup parameters for call to function AT_ZCL_EP_ENABLE_Register
+   \   000025   7A..         MOV     R2,#??AT_ZCL_DHT_EP_ENABLE?relay & 0xff
+   \   000027   7B..         MOV     R3,#(??AT_ZCL_DHT_EP_ENABLE?relay >> 8) & 0xff
+   \   000029   7906         MOV     R1,#0x6
+   \   00002B   12....       LCALL   ??AT_ZCL_EP_ENABLE_Register?relay
+     77            
+     78            //initialize the ONOFF device such as: a relay
+     79            //no need for initialize
+     80            
+     81          }
+   \   00002E   02....       LJMP    ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     82          
+     83          
+     84          
+     85          /*********************************************************************
+     86           * @fn          zclSample_event_loop
+     87           *
+     88           * @brief       Event Loop Processor for zclGeneral.
+     89           *
+     90           * @param       none
+     91           *
+     92           * @return      none
+     93           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     94          uint16 AT_ZCL_DHT_event_loop( uint8 task_id, uint16 events )
+   \                     AT_ZCL_DHT_event_loop:
+     95          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     96            afIncomingMSGPacket_t *MSGpkt;
+     97            
+     98            (void)task_id;  // Intentionally unreferenced parameter
+     99          
+    100            if ( events & SYS_EVENT_MSG )
+   \   000009   5480         ANL     A,#0x80
+   \   00000B   702B         JNZ     ??AT_ZCL_DHT_event_loop_0
+    101            {
+    102              while ( (MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( AT_ZCL_DHT_TaskID )) )
+    103              {
+    104                switch ( MSGpkt->hdr.event )
+    105                { 
+    106                   default:
+    107                    break;
+    108                }
+    109                // Release the memory
+    110                osal_msg_deallocate( (uint8 *)MSGpkt );
+    111              }
+    112          
+    113              // return unprocessed events
+    114              return (events ^ SYS_EVENT_MSG);
+    115            }
+    116          
+    117            if ( events & AT_ZCL_DHT_IDENTIFY_TIMEOUT_EVT )
+   \   00000D   EE           MOV     A,R6
+   \   00000E   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000010   5039         JNC     ??AT_ZCL_DHT_event_loop_1
+    118            {
+    119              if (AT_ZCL_DHT_IdentifyTime > 0 )
+   \   000012   90....       MOV     DPTR,#AT_ZCL_DHT_IdentifyTime
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   F8           MOV     R0,A
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   F9           MOV     R1,A
+   \   00001A   E8           MOV     A,R0
+   \   00001B   49           ORL     A,R1
+   \   00001C   600C         JZ      ??AT_ZCL_DHT_event_loop_2
+    120                AT_ZCL_DHT_IdentifyTime--;
+   \   00001E   90....       MOV     DPTR,#AT_ZCL_DHT_IdentifyTime
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   24FF         ADD     A,#-0x1
+   \   000024   F0           MOVX    @DPTR,A
+   \   000025   A3           INC     DPTR
+   \   000026   E0           MOVX    A,@DPTR
+   \   000027   34FF         ADDC    A,#-0x1
+   \   000029   F0           MOVX    @DPTR,A
+    121              AT_ZCL_DHT_ProcessIdentifyTimeChange();
+   \                     ??AT_ZCL_DHT_event_loop_2:
+   \   00002A                ; Setup parameters for call to function AT_ZCL_DHT_ProcessIdentifyTimeChange
+   \   00002A   12....       LCALL   ??AT_ZCL_DHT_ProcessIdentifyTimeChange?relay
+    122          
+    123              return ( events ^ AT_ZCL_DHT_IDENTIFY_TIMEOUT_EVT );
+   \   00002D   EE           MOV     A,R6
+   \   00002E   6401         XRL     A,#0x1
+   \   000030   FA           MOV     R2,A
+   \   000031   EF           MOV     A,R7
+   \                     ??AT_ZCL_DHT_event_loop_3:
+   \   000032   FB           MOV     R3,A
+   \   000033   8058         SJMP    ??AT_ZCL_DHT_event_loop_4
+    124            }
+   \                     ??AT_ZCL_DHT_event_loop_5:
+   \   000035                ; Setup parameters for call to function osal_msg_deallocate
+   \   000035   12....       LCALL   ??osal_msg_deallocate?relay
+   \                     ??AT_ZCL_DHT_event_loop_0:
+   \   000038                ; Setup parameters for call to function osal_msg_receive
+   \   000038   90....       MOV     DPTR,#AT_ZCL_DHT_TaskID
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   F9           MOV     R1,A
+   \   00003D   12....       LCALL   ??osal_msg_receive?relay
+   \   000040   EA           MOV     A,R2
+   \   000041   4B           ORL     A,R3
+   \   000042   70F1         JNZ     ??AT_ZCL_DHT_event_loop_5
+   \   000044   EE           MOV     A,R6
+   \   000045   FA           MOV     R2,A
+   \   000046   EF           MOV     A,R7
+   \   000047   6480         XRL     A,#0x80
+   \   000049   80E7         SJMP    ??AT_ZCL_DHT_event_loop_3
+    125            //measure the temperature and relative humidity
+    126            if ( events & AT_ZCL_DHT_MEASURE_EVT )
+   \                     ??AT_ZCL_DHT_event_loop_1:
+   \   00004B   5402         ANL     A,#0x2
+   \   00004D   603A         JZ      ??AT_ZCL_DHT_event_loop_6
+    127            {
+    128              AT_ZCL_DHT_update();
+   \   00004F                ; Setup parameters for call to function DHT11
+   \   00004F   12....       LCALL   ??DHT11?relay
+   \   000052   90....       MOV     DPTR,#ucharT_data_H
+   \   000055   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000058   90....       MOV     DPTR,#ucharT_data_L
+   \   00005B   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   00005E   90....       MOV     DPTR,#AT_ZCL_DHT_T_current
+   \   000061   E8           MOV     A,R0
+   \   000062   F0           MOVX    @DPTR,A
+   \   000063   A3           INC     DPTR
+   \   000064   E9           MOV     A,R1
+   \   000065   F0           MOVX    @DPTR,A
+   \   000066   90....       MOV     DPTR,#ucharRH_data_H
+   \   000069   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   00006C   90....       MOV     DPTR,#ucharRH_data_L
+   \   00006F   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000072   90....       MOV     DPTR,#AT_ZCL_DHT_RH_current
+   \   000075   E8           MOV     A,R0
+   \   000076   F0           MOVX    @DPTR,A
+   \   000077   A3           INC     DPTR
+   \   000078   E9           MOV     A,R1
+   \   000079   F0           MOVX    @DPTR,A
+    129              osal_start_timerEx( AT_ZCL_DHT_TaskID, AT_ZCL_DHT_MEASURE_EVT, 1000 );
+   \   00007A                ; Setup parameters for call to function osal_start_timerEx
+   \   00007A   7CE8         MOV     R4,#-0x18
+   \   00007C   7D03         MOV     R5,#0x3
+   \   00007E   12....       LCALL   ?Subroutine3 & 0xFFFF
+    130              return ( events ^ AT_ZCL_DHT_MEASURE_EVT );
+   \                     ??CrossCallReturnLabel_4:
+   \   000081   EE           MOV     A,R6
+   \   000082   6402         XRL     A,#0x2
+   \   000084   FA           MOV     R2,A
+   \   000085   EF           MOV     A,R7
+   \   000086   FB           MOV     R3,A
+   \   000087   8004         SJMP    ??AT_ZCL_DHT_event_loop_4
+    131            }
+    132          
+    133            
+    134            // Discard unknown events
+    135            return 0;
+   \                     ??AT_ZCL_DHT_event_loop_6:
+   \   000089   7A00         MOV     R2,#0x0
+   \   00008B   7B00         MOV     R3,#0x0
+   \                     ??AT_ZCL_DHT_event_loop_4:
+   \   00008D   7F02         MOV     R7,#0x2
+   \   00008F   02....       LJMP    ?BANKED_LEAVE_XDATA
+    136          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7A02         MOV     R2,#0x2
+   \   000002                REQUIRE ??Subroutine5_0
+   \   000002                ; // Fall through to label ??Subroutine5_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine5_0:
+   \   000000   7B00         MOV     R3,#0x0
+   \   000002   90....       MOV     DPTR,#AT_ZCL_DHT_TaskID
+   \   000005   E0           MOVX    A,@DPTR
+   \   000006   F9           MOV     R1,A
+   \   000007   12....       LCALL   ??osal_start_timerEx?relay
+   \   00000A   22           RET
+    137          
+    138          
+    139          
+    140          
+    141          
+    142          
+    143          
+    144          
+    145          
+    146          /*********************************************************************
+    147           * @fn      AT_ZCL_DHT_BasicResetCB
+    148           *
+    149           * @brief   Callback from the ZCL General Cluster Library
+    150           *          to set all the Basic Cluster attributes to default values.
+    151           *
+    152           * @param   none
+    153           *
+    154           * @return  none
+    155           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    156          static void AT_ZCL_DHT_BasicResetCB( void )
+   \                     AT_ZCL_DHT_BasicResetCB:
+    157          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 4
+   \   000004   74FC         MOV     A,#-0x4
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+    158            // Reset all attributes to default values
+    159            AT_ZCL_DHT_OnOffCB( COMMAND_OFF );
+   \   000009                ; Setup parameters for call to function AT_ZCL_DHT_OnOffCB
+   \   000009   7900         MOV     R1,#0x0
+   \   00000B   12....       LCALL   ??AT_ZCL_DHT_OnOffCB?relay
+    160            
+    161            
+    162            zclIdentify_t identifyCmd={NULL,0};
+   \   00000E   85..82       MOV     DPL,?XSP + 0
+   \   000011   85..83       MOV     DPH,?XSP + 1
+   \   000014   AC82         MOV     R4,DPL
+   \   000016   AD83         MOV     R5,DPH
+   \   000018   7583..       MOV     DPH,#(`?<Constant {(afAddrType_t *)0, 0}>` >> 8) & 0xff
+   \   00001B   7582..       MOV     DPL,#`?<Constant {(afAddrType_t *)0, 0}>` & 0xff
+   \   00001E   7404         MOV     A,#0x4
+   \   000020   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    163            AT_ZCL_DHT_IdentifyCB( &identifyCmd );
+   \   000023                ; Setup parameters for call to function AT_ZCL_DHT_IdentifyCB
+   \   000023   85..82       MOV     DPL,?XSP + 0
+   \   000026   85..83       MOV     DPH,?XSP + 1
+   \   000029   AA82         MOV     R2,DPL
+   \   00002B   AB83         MOV     R3,DPH
+   \   00002D   12....       LCALL   ??AT_ZCL_DHT_IdentifyCB?relay
+    164          }
+   \   000030   7404         MOV     A,#0x4
+   \   000032   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000035                REQUIRE ?Subroutine1
+   \   000035                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+    165          
+    166          
+    167          /*********************************************************************
+    168           * @fn      AT_ZCL_DHT_IdentifyCB
+    169           *
+    170           * @brief   Callback from the ZCL General Cluster Library when
+    171           *          it received an Identity Command for this application.
+    172           *
+    173           * @param   srcAddr - source address and endpoint of the response message
+    174           * @param   identifyTime - the number of seconds to identify yourself
+    175           *
+    176           * @return  none
+    177           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    178          static void AT_ZCL_DHT_IdentifyCB( zclIdentify_t *pCmd )
+   \                     AT_ZCL_DHT_IdentifyCB:
+    179          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    180            AT_ZCL_DHT_IdentifyTime = pCmd->identifyTime;
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+   \   000008   A3           INC     DPTR
+   \   000009   A3           INC     DPTR
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   F8           MOV     R0,A
+   \   00000C   A3           INC     DPTR
+   \   00000D   E0           MOVX    A,@DPTR
+   \   00000E   F9           MOV     R1,A
+   \   00000F   90....       MOV     DPTR,#AT_ZCL_DHT_IdentifyTime
+   \   000012   E8           MOV     A,R0
+   \   000013   F0           MOVX    @DPTR,A
+   \   000014   A3           INC     DPTR
+   \   000015   E9           MOV     A,R1
+   \   000016   F0           MOVX    @DPTR,A
+    181            AT_ZCL_DHT_ProcessIdentifyTimeChange();
+   \   000017                ; Setup parameters for call to function AT_ZCL_DHT_ProcessIdentifyTimeChange
+   \   000017   12....       LCALL   ??AT_ZCL_DHT_ProcessIdentifyTimeChange?relay
+    182          }
+   \   00001A   80..         SJMP    ?Subroutine1
+    183          
+    184          /*********************************************************************
+    185           * @fn      AT_ZCL_DHT_ProcessIdentifyTimeChange
+    186           *
+    187           * @brief   Called to process any change to the IdentifyTime attribute.
+    188           *
+    189           * @param   none
+    190           *
+    191           * @return  none
+    192           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    193          static void AT_ZCL_DHT_ProcessIdentifyTimeChange( void )
+   \                     AT_ZCL_DHT_ProcessIdentifyTimeChange:
+    194          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    195            if ( AT_ZCL_DHT_IdentifyTime > 0 )
+   \   000004   90....       MOV     DPTR,#AT_ZCL_DHT_IdentifyTime
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   F8           MOV     R0,A
+   \   000009   A3           INC     DPTR
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   F9           MOV     R1,A
+   \   00000C   E8           MOV     A,R0
+   \   00000D   49           ORL     A,R1
+   \   00000E   6018         JZ      ??AT_ZCL_DHT_ProcessIdentifyTimeChange_0
+    196            {
+    197              osal_start_timerEx( AT_ZCL_DHT_TaskID, AT_ZCL_DHT_IDENTIFY_TIMEOUT_EVT, 1000 );
+   \   000010                ; Setup parameters for call to function osal_start_timerEx
+   \   000010   7CE8         MOV     R4,#-0x18
+   \   000012   7D03         MOV     R5,#0x3
+   \   000014   7A01         MOV     R2,#0x1
+   \   000016   12....       LCALL   ??Subroutine5_0 & 0xFFFF
+    198              HalLedBlink ( HAL_LED_1, 0xFF, HAL_LED_DEFAULT_DUTY_CYCLE, HAL_LED_DEFAULT_FLASH_TIME );
+   \                     ??CrossCallReturnLabel_6:
+   \   000019                ; Setup parameters for call to function HalLedBlink
+   \   000019   7CE8         MOV     R4,#-0x18
+   \   00001B   7D03         MOV     R5,#0x3
+   \   00001D   7B05         MOV     R3,#0x5
+   \   00001F   7AFF         MOV     R2,#-0x1
+   \   000021   7901         MOV     R1,#0x1
+   \   000023   12....       LCALL   ??HalLedBlink?relay
+   \   000026   800C         SJMP    ??AT_ZCL_DHT_ProcessIdentifyTimeChange_1
+    199            }
+    200            else
+    201            {
+    202          
+    203              osal_stop_timerEx( AT_ZCL_DHT_TaskID, AT_ZCL_DHT_IDENTIFY_TIMEOUT_EVT );
+   \                     ??AT_ZCL_DHT_ProcessIdentifyTimeChange_0:
+   \   000028                ; Setup parameters for call to function osal_stop_timerEx
+   \   000028   7A01         MOV     R2,#0x1
+   \   00002A   7B00         MOV     R3,#0x0
+   \   00002C   90....       MOV     DPTR,#AT_ZCL_DHT_TaskID
+   \   00002F   E0           MOVX    A,@DPTR
+   \   000030   F9           MOV     R1,A
+   \   000031   12....       LCALL   ??osal_stop_timerEx?relay
+    204            }
+    205          }
+   \                     ??AT_ZCL_DHT_ProcessIdentifyTimeChange_1:
+   \   000034   80..         SJMP    ?Subroutine1
+    206          
+    207          
+    208          
+    209          /*********************************************************************
+    210           * @fn      AT_ZCL_DHT_OnOffCB
+    211           *
+    212           * @brief   Callback from the ZCL General Cluster Library when
+    213           *          it received an On/Off Command for this application.
+    214           *
+    215           * @param   cmd - COMMAND_ON, COMMAND_OFF or COMMAND_TOGGLE
+    216           *
+    217           * @return  none
+    218           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    219          static void AT_ZCL_DHT_OnOffCB( uint8 cmd )
+   \                     AT_ZCL_DHT_OnOffCB:
+    220          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    221            // Turn on the light
+    222            if ( cmd == COMMAND_ON )
+   \   000007   7401         MOV     A,#0x1
+   \   000009   6E           XRL     A,R6
+   \   00000A   7015         JNZ     ??AT_ZCL_DHT_OnOffCB_0
+    223              AT_ZCL_DHT_OnOff = AT_ZCL_GEN_ON;
+   \                     ??AT_ZCL_DHT_OnOffCB_1:
+   \   00000C   90....       MOV     DPTR,#AT_ZCL_DHT_OnOff
+   \   00000F   7401         MOV     A,#0x1
+   \   000011   F0           MOVX    @DPTR,A
+    224          
+    225            // Turn off the light
+    226            else if ( cmd == COMMAND_OFF )
+    227              AT_ZCL_DHT_OnOff = AT_ZCL_GEN_OFF;
+    228          
+    229            // Toggle the light
+    230            else
+    231            {
+    232              if ( AT_ZCL_DHT_OnOff == AT_ZCL_GEN_OFF )
+    233                AT_ZCL_DHT_OnOff = AT_ZCL_GEN_ON;
+    234              else
+    235                AT_ZCL_DHT_OnOff = AT_ZCL_GEN_OFF;
+    236            }
+    237          
+    238            // In this sample app, we use LED4 to simulate the Light
+    239            if ( AT_ZCL_DHT_OnOff == AT_ZCL_GEN_ON ){
+    240              HalLedSet( HAL_LED_2, HAL_LED_MODE_ON );
+   \   000012                ; Setup parameters for call to function HalLedSet
+   \   000012   FA           MOV     R2,A
+   \   000013   7902         MOV     R1,#0x2
+   \   000015   12....       LCALL   ??HalLedSet?relay
+    241              osal_start_timerEx( AT_ZCL_DHT_TaskID, AT_ZCL_DHT_MEASURE_EVT, 10 );
+   \   000018                ; Setup parameters for call to function osal_start_timerEx
+   \   000018   7C0A         MOV     R4,#0xa
+   \   00001A   7D00         MOV     R5,#0x0
+   \   00001C   12....       LCALL   ?Subroutine3 & 0xFFFF
+    242            }
+    243            else{
+    244              HalLedSet( HAL_LED_2, HAL_LED_MODE_ON );
+    245              osal_stop_timerEx( AT_ZCL_DHT_TaskID, AT_ZCL_DHT_MEASURE_EVT );
+    246              AT_ZCL_DHT_T_current=0xffff;   //0xfff indicates that the temperature measurement is invalid.
+    247              AT_ZCL_DHT_RH_current=0xffff;   //0xfff indicates that the reletive humidity measurement is invalid.
+    248            }
+    249          }
+   \                     ??CrossCallReturnLabel_5:
+   \   00001F   80..         SJMP    ?Subroutine0
+   \                     ??AT_ZCL_DHT_OnOffCB_0:
+   \   000021   EE           MOV     A,R6
+   \   000022   7028         JNZ     ??AT_ZCL_DHT_OnOffCB_2
+   \                     ??AT_ZCL_DHT_OnOffCB_3:
+   \   000024   90....       MOV     DPTR,#AT_ZCL_DHT_OnOff
+   \   000027   E4           CLR     A
+   \   000028   F0           MOVX    @DPTR,A
+   \   000029                ; Setup parameters for call to function HalLedSet
+   \   000029   7A01         MOV     R2,#0x1
+   \   00002B   7902         MOV     R1,#0x2
+   \   00002D   12....       LCALL   ??HalLedSet?relay
+   \   000030                ; Setup parameters for call to function osal_stop_timerEx
+   \   000030   7A02         MOV     R2,#0x2
+   \   000032   7B00         MOV     R3,#0x0
+   \   000034   90....       MOV     DPTR,#AT_ZCL_DHT_TaskID
+   \   000037   E0           MOVX    A,@DPTR
+   \   000038   F9           MOV     R1,A
+   \   000039   12....       LCALL   ??osal_stop_timerEx?relay
+   \   00003C   90....       MOV     DPTR,#AT_ZCL_DHT_T_current
+   \   00003F   74FF         MOV     A,#-0x1
+   \   000041   F0           MOVX    @DPTR,A
+   \   000042   A3           INC     DPTR
+   \   000043   F0           MOVX    @DPTR,A
+   \   000044   90....       MOV     DPTR,#AT_ZCL_DHT_RH_current
+   \   000047   F0           MOVX    @DPTR,A
+   \   000048   A3           INC     DPTR
+   \   000049   F0           MOVX    @DPTR,A
+   \   00004A   80D3         SJMP    ??CrossCallReturnLabel_5
+   \                     ??AT_ZCL_DHT_OnOffCB_2:
+   \   00004C   90....       MOV     DPTR,#AT_ZCL_DHT_OnOff
+   \   00004F   E0           MOVX    A,@DPTR
+   \   000050   70D2         JNZ     ??AT_ZCL_DHT_OnOffCB_3
+   \   000052   80B8         SJMP    ??AT_ZCL_DHT_OnOffCB_1
+    250          
+    251          
+    252          /************************************************
+    253          update relative humidity and temperature value
+    254          **************************************************/
+    255          static void AT_ZCL_DHT_update(void){
+    256            DHT11();  //read the data from DHT
+    257            AT_ZCL_DHT_T_current = ((uint16)ucharT_data_H)*100+ ((((uint16)ucharT_data_L)*100)>>8);
+    258            AT_ZCL_DHT_RH_current = ((uint16)ucharRH_data_H)*100+ ((((uint16)ucharRH_data_L)*100)>>8);
+    259          }
+    260          /******************************************************
+    261           * @fn      AT_ZCL_DHT_EP_ENABLE
+    262           *
+    263           * @brief   Process  Measurement and Sensing profile call Callback function
+    264          ********************************************************/
+    265          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    266          static void AT_ZCL_DHT_EP_ENABLE( bool isEnable){
+   \                     AT_ZCL_DHT_EP_ENABLE:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    267            if(isEnable) {
+   \   000006   6007         JZ      ??AT_ZCL_DHT_EP_ENABLE_0
+    268              AT_ZCL_DHT_OnOffCB(COMMAND_ON);
+   \   000008                ; Setup parameters for call to function AT_ZCL_DHT_OnOffCB
+   \   000008   7901         MOV     R1,#0x1
+   \   00000A   12....       LCALL   ??AT_ZCL_DHT_OnOffCB?relay
+   \   00000D   8003         SJMP    ??AT_ZCL_DHT_EP_ENABLE_1
+    269            }
+    270            else {
+    271              AT_ZCL_DHT_BasicResetCB( );
+   \                     ??AT_ZCL_DHT_EP_ENABLE_0:
+   \   00000F                ; Setup parameters for call to function AT_ZCL_DHT_BasicResetCB
+   \   00000F   12....       LCALL   ??AT_ZCL_DHT_BasicResetCB?relay
+    272            }
+    273          }
+   \                     ??AT_ZCL_DHT_EP_ENABLE_1:
+   \   000012                REQUIRE ?Subroutine0
+   \   000012                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   75F064       MOV     B,#0x64
+   \   000004   A4           MUL     AB
+   \   000005   FA           MOV     R2,A
+   \   000006   ABF0         MOV     R3,B
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   75F064       MOV     B,#0x64
+   \   000004   A4           MUL     AB
+   \   000005   A8F0         MOV     R0,B
+   \   000007   EA           MOV     A,R2
+   \   000008   28           ADD     A,R0
+   \   000009   F8           MOV     R0,A
+   \   00000A   EB           MOV     A,R3
+   \   00000B   3400         ADDC    A,#0x0
+   \   00000D   F9           MOV     R1,A
+   \   00000E   22           RET
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AT_ZCL_DHT_GEN_CmdCallbacks>`:
+   \   000000   ....         DW ??AT_ZCL_DHT_BasicResetCB?relay
+   \   000002   ....         DW ??AT_ZCL_DHT_IdentifyCB?relay
+   \   000004   0000         DW 0H
+   \   000006   ....         DW ??AT_ZCL_DHT_OnOffCB?relay
+   \   000008   0000         DW 0H
+   \   00000A   0000         DW 0H
+   \   00000C   0000         DW 0H
+   \   00000E   0000         DW 0H
+   \   000010   0000         DW 0H
+   \   000012   0000         DW 0H
+   \   000014   0000         DW 0H
+   \   000016   0000         DW 0H
+   \   000018   0000         DW 0H
+   \   00001A   0000         DW 0H
+   \   00001C   0000         DB 0, 0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_DHT_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_DHT_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_DHT_event_loop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_DHT_event_loop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_DHT_BasicResetCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_DHT_BasicResetCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_DHT_IdentifyCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_DHT_IdentifyCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_DHT_ProcessIdentifyTimeChange?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_DHT_ProcessIdentifyTimeChange
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_DHT_OnOffCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_DHT_OnOffCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_DHT_EP_ENABLE?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_DHT_EP_ENABLE
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {(afAddrType_t *)0, 0}>`:
+   \   000000   0000         DW 0H
+   \   000002   0000         DW 0
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     AT_ZCL_DHT_BasicResetCB            4      0     13
+       -> AT_ZCL_DHT_OnOffCB            4      0      8
+       -> AT_ZCL_DHT_IdentifyCB         4      0      8
+     AT_ZCL_DHT_EP_ENABLE               0      0      9
+       -> AT_ZCL_DHT_OnOffCB            0      0     18
+       -> AT_ZCL_DHT_BasicResetCB       0      0     18
+     AT_ZCL_DHT_IdentifyCB              2      0      4
+       -> AT_ZCL_DHT_ProcessIdentifyTimeChange
+                                        4      0      0
+     AT_ZCL_DHT_Init                    0      0      9
+       -> zclHA_Init                    0      0     18
+       -> zclGeneral_RegisterCmdCallbacks
+                                        0      0     18
+       -> zcl_registerAttrList          0      0     18
+       -> AT_ZCL_EP_ENABLE_Register     0      0     18
+     AT_ZCL_DHT_OnOffCB                 0      0     18
+       -> HalLedSet                     0      0     18
+       -> osal_start_timerEx            0      0     18
+       -> HalLedSet                     0      0     18
+       -> osal_stop_timerEx             0      0     18
+     AT_ZCL_DHT_ProcessIdentifyTimeChange
+                                        2      0     10
+       -> osal_start_timerEx            4      0      0
+       -> HalLedBlink                   4      0      0
+       -> osal_stop_timerEx             4      0      0
+     AT_ZCL_DHT_event_loop              0      0     10
+       -> AT_ZCL_DHT_ProcessIdentifyTimeChange
+                                        0      0     20
+       -> osal_msg_deallocate           0      0     20
+       -> osal_msg_receive              0      0     20
+       -> DHT11                         0      0     20
+       -> osal_start_timerEx            0      0     20
+
+
+   Segment part sizes:
+
+     Function/Label                                 Bytes
+     --------------                                 -----
+     AT_ZCL_DHT_TaskID                                 1
+     AT_ZCL_DHT_GEN_CmdCallbacks                      30
+     AT_ZCL_DHT_Init                                  49
+     ?Subroutine0                                      5
+     AT_ZCL_DHT_event_loop                           146
+     ?Subroutine3                                      2
+     ??Subroutine5_0                                  11
+     AT_ZCL_DHT_BasicResetCB                          53
+     ?Subroutine1                                      7
+     AT_ZCL_DHT_IdentifyCB                            28
+     AT_ZCL_DHT_ProcessIdentifyTimeChange
+                                                      54
+     AT_ZCL_DHT_OnOffCB                               84
+     AT_ZCL_DHT_EP_ENABLE                             18
+     ?Subroutine4                                      9
+     ?Subroutine2                                     15
+     ?<Initializer for AT_ZCL_DHT_GEN_CmdCallbacks>   30
+     ??AT_ZCL_DHT_Init?relay                           6
+     ??AT_ZCL_DHT_event_loop?relay                     6
+     ??AT_ZCL_DHT_BasicResetCB?relay                   6
+     ??AT_ZCL_DHT_IdentifyCB?relay                     6
+     ??AT_ZCL_DHT_ProcessIdentifyTimeChange?relay      6
+     ??AT_ZCL_DHT_OnOffCB?relay                        6
+     ??AT_ZCL_DHT_EP_ENABLE?relay                      6
+     ?<Constant {(afAddrType_t *)0, 0}>                4
+
+ 
+ 481 bytes in segment BANKED_CODE
+  42 bytes in segment BANK_RELAYS
+  30 bytes in segment XDATA_I
+  30 bytes in segment XDATA_ID
+   4 bytes in segment XDATA_ROM_C
+   1 byte  in segment XDATA_Z
+ 
+ 553 bytes of CODE  memory
+   4 bytes of CONST memory
+  31 bytes of XDATA memory
+
+Errors: none
+Warnings: none

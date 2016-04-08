@@ -1,0 +1,2076 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         26/Aug/2015  19:20:28 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\Source\AT_App.c                       #
+#    Command line       =  -f "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\Tools\CC2530DB\f8wE #
+#                          ndev.cfg" (-DCPU32MHZ -DROOT=__near_func           #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\Tools\C #
+#                          C2530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0     #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\Source\AT_App.c" -D       #
+#                          ZIGBEEPRO -D NWK_AUTO_POLL -D HAL_UART=TRUE -D     #
+#                          HOLD_AUTO_START -D NV_RESTORE -D REFLECTOR -D      #
+#                          HAL_UART_ISR=1 -D HAL_UART_DMA=0 -D                #
+#                          xHAL_UART_ISR_TX_MAX=200 -D xPOWER_SAVING -D       #
+#                          ZCL_READ -D ZCL_WRITE -D ZCL_IDENTIFY -D           #
+#                          ZCL_ON_OFF -D ZCL_DISCOVER -D xZTOOL_P1 -D         #
+#                          xMT_TASK -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D        #
+#                          xLCD_SUPPORTED=DEBUG -D xMT_UART_DEFAULT_OVERFLOW= #
+#                          FALSE -lC "S:\zigbee\Myzigbe\version 3.0 for       #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\" -lA       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\"           #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\Obj\" -e         #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\" -I               #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\hal\" -I           #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\Modified\" -I      #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\ZMain\TI2530DB\"    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\include\" -I "S:\zigbee\Myzigbe\version 3.0 for  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\target\CC2530EB\" -I "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\high_level\" -I "S:\zigbee\Myzigbe\version 3.0   #
+#                          for test\Projects\zstack\AT commands\AT command    #
+#                          3.2 -Body Sensor\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\low_level\srf04\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\low_level\srf04\single_chip\" -I                 #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\mt #
+#                          \" -I "S:\zigbee\Myzigbe\version 3.0 for           #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\os #
+#                          al\include\" -I "S:\zigbee\Myzigbe\version 3.0     #
+#                          for test\Projects\zstack\AT commands\AT command    #
+#                          3.2 -Body Sensor\CC2530DB\..\..\..\..\..\Component #
+#                          s\services\saddr\" -I "S:\zigbee\Myzigbe\version   #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\..\..\C #
+#                          omponents\services\sdata\" -I                      #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\af\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\nwk\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sapi\" -I "S:\zigbee\Myzigbe\version 3.0 for   #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sec\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sys\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\zdo\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\zcl\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\" -I "S:\zigbee\Myzigbe\version 3.0 for         #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\f8w\" -Ohz --require_prototypes                 #
+#    List file          =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\AT_App.lst  #
+#    Object file        =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\Obj\AT_App.r51   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+S:\zigbee\Myzigbe\version 3.0 for test\Projects\zstack\AT commands\AT command 3.2 -Body Sensor\Source\AT_App.c
+      1          /**************************************************************************************************
+      2            Filename:       AT_App.c
+      3          
+      4            Description:    AT command module
+      5            Author:         Xiao Wang
+      6          **************************************************************************************************/
+      7          #include "OSAL.h"
+      8          #include "OSAL_NV.h"
+      9          #include "ZGlobals.h"
+     10          #include "AF.h"
+     11          #include "aps_groups.h"
+     12          #include "ZDApp.h"
+     13          
+     14          #include "OnBoard.h"
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc9
+   \   unsigned char volatile __sfr WDCTL
+   \                     WDCTL:
+   \   000000                DS 1
+     15          #include "ZDObject.h"
+     16          
+     17          #include "zcl.h"
+     18          #include "AT_ONOFF_output.h"
+     19          #include "AT_include.h"
+     20          #include "AT_ZCL_ONOFF_SWITCH.h"
+     21          #include "AT_printf.h"
+     22          
+     23          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     24          uint8 AT_App_TaskID;   // Task ID for internal task/event processing
+   \                     AT_App_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     25                                    // This variable will be received when
+     26                                    // AT_App_Init() is called.
+     27          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     28          epList_t *removedEPList = NULL;  
+   \                     removedEPList:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     29          AT_App_Cmd_POWER_SAVING_EXP_t AT_App_Cmd_POWER_SAVING_EXP={0,0,0};
+   \                     AT_App_Cmd_POWER_SAVING_EXP:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+     30          /*********************************************************************
+     31           * LOCAL FUNCTIONS
+     32           *******************************************************************/
+     33          
+     34          uint8 AT_handleEntryEvt(void);
+     35          void AT_handleZCL_EP(void);
+     36          void AT_App_HandleKeys( uint8 shift, uint8 keys );
+     37          static void AT_App_process_Power_Saving_Exp_Evt(void);
+     38          
+     39          //initialize this task after the ZCL initialization, I have encounter the mistake that I initialized
+     40          //the task before the ZCL. this lead all the zcl layer work innormal.
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     41          void AT_App_Init(uint8 task_id ){
+   \                     AT_App_Init:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+     42            AT_App_TaskID=task_id;
+   \   000007   90....       MOV     DPTR,#AT_App_TaskID
+   \   00000A   F0           MOVX    @DPTR,A
+     43            //ZDO_RegisterForZDOMsg( task_id, Device_annce );
+     44            AT_ZDO_Register(&AT_App_TaskID);
+   \   00000B                ; Setup parameters for call to function AT_ZDO_Register
+   \   00000B   7A..         MOV     R2,#AT_App_TaskID & 0xff
+   \   00000D   7B..         MOV     R3,#(AT_App_TaskID >> 8) & 0xff
+   \   00000F   12....       LCALL   ??AT_ZDO_Register?relay
+     45            
+     46            AT_ONOFF_OUTPUT_Register(&AT_App_TaskID);
+   \   000012                ; Setup parameters for call to function AT_ONOFF_OUTPUT_Register
+   \   000012   7A..         MOV     R2,#AT_App_TaskID & 0xff
+   \   000014   7B..         MOV     R3,#(AT_App_TaskID >> 8) & 0xff
+   \   000016   12....       LCALL   ??AT_ONOFF_OUTPUT_Register?relay
+     47            
+     48            //register AT command AF layer application
+     49            AT_AF_Register(&AT_App_TaskID);
+   \   000019                ; Setup parameters for call to function AT_AF_Register
+   \   000019   7A..         MOV     R2,#AT_App_TaskID & 0xff
+   \   00001B   7B..         MOV     R3,#(AT_App_TaskID >> 8) & 0xff
+   \   00001D   12....       LCALL   ??AT_AF_Register?relay
+     50            
+     51            
+     52            // Register the Application to receive the unprocessed Foundation command/response messages
+     53            zcl_registerForMsg(task_id);
+   \   000020                ; Setup parameters for call to function zcl_registerForMsg
+   \   000020   EE           MOV     A,R6
+   \   000021   F9           MOV     R1,A
+   \   000022   12....       LCALL   ??zcl_registerForMsg?relay
+     54            //Initialize the AT ZCL to send AT ZCL command
+     55            AT_ZCL_Init();
+   \   000025                ; Setup parameters for call to function AT_ZCL_Init
+   \   000025   12....       LCALL   ??AT_ZCL_Init?relay
+     56            
+     57            
+     58            /*initialise AT_Uart*/
+     59            AT_UartInit(task_id);
+   \   000028                ; Setup parameters for call to function AT_UartInit
+   \   000028   EE           MOV     A,R6
+   \   000029   F9           MOV     R1,A
+   \   00002A   12....       LCALL   ??AT_UartInit?relay
+     60          
+     61          #if AT_MSG_SEND_MODE
+     62            AT_UartRegisterTaskID( task_id);
+     63          #endif
+     64            
+     65          #if defined ( HOLD_AUTO_START )
+     66            ZDOInitDevice(0);
+   \   00002D                ; Setup parameters for call to function ZDOInitDevice
+   \   00002D   7A00         MOV     R2,#0x0
+   \   00002F   7B00         MOV     R3,#0x0
+   \   000031   12....       LCALL   ??ZDOInitDevice?relay
+     67          #endif
+     68            
+     69            // Register for all key events - This app will handle all key events
+     70            HalKeyConfig (1, NULL);//enable interrupt
+   \   000034                ; Setup parameters for call to function HalKeyConfig
+   \   000034   7A00         MOV     R2,#0x0
+   \   000036   7B00         MOV     R3,#0x0
+   \   000038   7901         MOV     R1,#0x1
+   \   00003A   12....       LCALL   ??HalKeyConfig?relay
+     71            RegisterForKeys( task_id );
+   \   00003D                ; Setup parameters for call to function RegisterForKeys
+   \   00003D   EE           MOV     A,R6
+   \   00003E   F9           MOV     R1,A
+   \   00003F   12....       LCALL   ??RegisterForKeys?relay
+     72            
+     73            NLME_PermitJoiningRequest(0);      //disable permit joining
+   \   000042                ; Setup parameters for call to function NLME_PermitJoiningRequest
+   \   000042   7900         MOV     R1,#0x0
+   \   000044   12....       LCALL   ??NLME_PermitJoiningRequest?relay
+     74            
+     75            osal_set_event(task_id, AT_ENTRY_EVENT);
+   \   000047                ; Setup parameters for call to function osal_set_event
+   \   000047   7A00         MOV     R2,#0x0
+   \   000049   7B40         MOV     R3,#0x40
+   \   00004B   EE           MOV     A,R6
+   \   00004C   F9           MOV     R1,A
+   \   00004D   12....       LCALL   ??osal_set_event?relay
+     76            
+     77          }
+   \   000050                REQUIRE ?Subroutine0
+   \   000050                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     78          
+     79          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     80          uint16 AT_App_ProcessEvent( uint8 task_id, uint16 events ){
+   \                     AT_App_ProcessEvent:
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 0,R2
+   \   000007   8B..         MOV     ?V0 + 1,R3
+     81            
+     82            afIncomingMSGPacket_t *MSGpkt;
+     83            (void)task_id;  // Intentionally unreferenced parameter
+     84          
+     85            if ( events & SYS_EVENT_MSG )
+   \   000009   EB           MOV     A,R3
+   \   00000A   5480         ANL     A,#0x80
+   \   00000C   7003         JNZ     $+5
+   \   00000E   02....       LJMP    ??AT_App_ProcessEvent_0 & 0xFFFF
+     86            {
+     87              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( AT_App_TaskID );
+   \   000011                ; Setup parameters for call to function osal_msg_receive
+   \   000011   8017         SJMP    ??AT_App_ProcessEvent_1
+     88              while ( MSGpkt )
+     89              {
+     90                switch ( MSGpkt->hdr.event )
+     91                {
+     92                  // Received when a messages is received (OTA) for this endpoint
+     93                  case AF_INCOMING_MSG_CMD:
+     94                    switch(MSGpkt->endPoint)
+     95                    {
+     96                      case AT_ONOFF_OUTPUT_ENDPOINT:
+     97                        AT_ONOFF_OUTPUT_MessageMSGCB( MSGpkt );
+     98                        break;
+     99                      case AT_AF_ENDPOINT:
+    100                        AT_AF_MessageMSGCB( MSGpkt );
+    101                        break;
+    102                        
+    103                      default:
+    104                        break;
+    105                    }
+    106                    break;
+    107                    
+    108                  case ZCL_INCOMING_MSG:
+    109                    // Incoming ZCL Foundation command/response messages
+    110                    AT_ZCL_ProcessIncomingMsg( (zclIncomingMsg_t *)MSGpkt );
+    111                    break;
+    112                    
+    113                  // Received whenever the device changes state in the network
+    114                  case ZDO_STATE_CHANGE:
+    115                    // If the device has started up, notify the application
+    116                    if (((osal_event_hdr_t *) MSGpkt)->status == DEV_END_DEVICE ||
+    117                        ((osal_event_hdr_t *) MSGpkt)->status == DEV_ROUTER ||
+    118                        ((osal_event_hdr_t *) MSGpkt)->status == DEV_ZB_COORD )
+    119                    {
+    120                      HalLedSet (HAL_LED_2, HAL_LED_MODE_ON);
+    121                    }
+    122                    else  if (((osal_event_hdr_t *) MSGpkt)->status == DEV_HOLD ||
+    123                            ((osal_event_hdr_t *) MSGpkt)->status == DEV_INIT)
+    124                    {
+    125                      HalLedSet ( HAL_LED_2, HAL_LED_MODE_FLASH );
+    126                    }
+    127          #if AT_MSG_SEND_MODE
+    128                  case AT_CMD_MSG:
+    129                    //HalUARTWrite ( 0, " received \n", sizeof(" received \n") );
+    130                    AT_HandleCMD(((atOSALSerialData_t*) MSGpkt)->msg);
+    131                   break;
+    132          #endif
+    133                  case ZDO_CB_MSG:
+    134                      AT_ZDO_ProcessMsgCBs( (zdoIncomingMsg_t *)MSGpkt );
+    135                    break;
+    136                    
+    137                  // Received when a key is pressed
+    138                  case KEY_CHANGE:
+    139                    AT_App_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+   \                     ??AT_App_ProcessEvent_2:
+   \   000013                ; Setup parameters for call to function AT_App_HandleKeys
+   \   000013   A3           INC     DPTR
+   \   000014   A3           INC     DPTR
+   \   000015   A3           INC     DPTR
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   FA           MOV     R2,A
+   \   000018   8E82         MOV     DPL,R6
+   \   00001A   8F83         MOV     DPH,R7
+   \   00001C   A3           INC     DPTR
+   \   00001D   A3           INC     DPTR
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   F9           MOV     R1,A
+   \   000020   12....       LCALL   ??AT_App_HandleKeys?relay
+    140                    break;
+    141                }
+    142          
+    143                // Release the memory
+    144                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??AT_App_ProcessEvent_3:
+   \   000023                ; Setup parameters for call to function osal_msg_deallocate
+   \   000023   EE           MOV     A,R6
+   \   000024   FA           MOV     R2,A
+   \   000025   EF           MOV     A,R7
+   \   000026   FB           MOV     R3,A
+   \   000027   12....       LCALL   ??osal_msg_deallocate?relay
+    145          
+    146                // Next - if one is available
+    147                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( AT_App_TaskID );
+   \   00002A                ; Setup parameters for call to function osal_msg_receive
+   \                     ??AT_App_ProcessEvent_1:
+   \   00002A   90....       MOV     DPTR,#AT_App_TaskID
+   \   00002D   E0           MOVX    A,@DPTR
+   \   00002E   F9           MOV     R1,A
+   \   00002F   12....       LCALL   ??osal_msg_receive?relay
+   \   000032   8A..         MOV     ?V0 + 2,R2
+   \   000034   8B..         MOV     ?V0 + 3,R3
+   \   000036   AE..         MOV     R6,?V0 + 2
+   \   000038   AF..         MOV     R7,?V0 + 3
+   \   00003A   EE           MOV     A,R6
+   \   00003B   4F           ORL     A,R7
+   \   00003C   7003         JNZ     $+5
+   \   00003E   02....       LJMP    ??AT_App_ProcessEvent_4 & 0xFFFF
+   \   000041   8E82         MOV     DPL,R6
+   \   000043   8F83         MOV     DPH,R7
+   \   000045   E0           MOVX    A,@DPTR
+   \   000046   24E6         ADD     A,#-0x1a
+   \   000048   6012         JZ      ??AT_App_ProcessEvent_5
+   \   00004A   24E6         ADD     A,#-0x1a
+   \   00004C   6035         JZ      ??AT_App_ProcessEvent_6
+   \   00004E   2474         ADD     A,#0x74
+   \   000050   60C1         JZ      ??AT_App_ProcessEvent_2
+   \   000052   24EF         ADD     A,#-0x11
+   \   000054   6036         JZ      ??AT_App_ProcessEvent_7
+   \   000056   24FE         ADD     A,#-0x2
+   \   000058   6063         JZ      ??AT_App_ProcessEvent_8
+   \   00005A   80C7         SJMP    ??AT_App_ProcessEvent_3
+   \                     ??AT_App_ProcessEvent_5:
+   \   00005C   EE           MOV     A,R6
+   \   00005D   2414         ADD     A,#0x14
+   \   00005F   F582         MOV     DPL,A
+   \   000061   EF           MOV     A,R7
+   \   000062   3400         ADDC    A,#0x0
+   \   000064   F583         MOV     DPH,A
+   \   000066   E0           MOVX    A,@DPTR
+   \   000067   2437         ADD     A,#0x37
+   \   000069   6006         JZ      ??AT_App_ProcessEvent_9
+   \   00006B   24FD         ADD     A,#-0x3
+   \   00006D   600B         JZ      ??AT_App_ProcessEvent_10
+   \   00006F   80B2         SJMP    ??AT_App_ProcessEvent_3
+   \                     ??AT_App_ProcessEvent_9:
+   \   000071                ; Setup parameters for call to function AT_ONOFF_OUTPUT_MessageMSGCB
+   \   000071   EE           MOV     A,R6
+   \   000072   FA           MOV     R2,A
+   \   000073   EF           MOV     A,R7
+   \   000074   FB           MOV     R3,A
+   \   000075   12....       LCALL   ??AT_ONOFF_OUTPUT_MessageMSGCB?relay
+   \   000078   80A9         SJMP    ??AT_App_ProcessEvent_3
+   \                     ??AT_App_ProcessEvent_10:
+   \   00007A                ; Setup parameters for call to function AT_AF_MessageMSGCB
+   \   00007A   EE           MOV     A,R6
+   \   00007B   FA           MOV     R2,A
+   \   00007C   EF           MOV     A,R7
+   \   00007D   FB           MOV     R3,A
+   \   00007E   12....       LCALL   ??AT_AF_MessageMSGCB?relay
+   \   000081   80A0         SJMP    ??AT_App_ProcessEvent_3
+   \                     ??AT_App_ProcessEvent_6:
+   \   000083                ; Setup parameters for call to function AT_ZCL_ProcessIncomingMsg
+   \   000083   EE           MOV     A,R6
+   \   000084   FA           MOV     R2,A
+   \   000085   EF           MOV     A,R7
+   \   000086   FB           MOV     R3,A
+   \   000087   12....       LCALL   ??AT_ZCL_ProcessIncomingMsg?relay
+   \   00008A   8097         SJMP    ??AT_App_ProcessEvent_3
+   \                     ??AT_App_ProcessEvent_7:
+   \   00008C   A3           INC     DPTR
+   \   00008D   E0           MOVX    A,@DPTR
+   \   00008E   6406         XRL     A,#0x6
+   \   000090   6014         JZ      ??AT_App_ProcessEvent_11
+   \   000092   8E82         MOV     DPL,R6
+   \   000094   8F83         MOV     DPH,R7
+   \   000096   A3           INC     DPTR
+   \   000097   E0           MOVX    A,@DPTR
+   \   000098   6407         XRL     A,#0x7
+   \   00009A   600A         JZ      ??AT_App_ProcessEvent_11
+   \   00009C   8E82         MOV     DPL,R6
+   \   00009E   8F83         MOV     DPH,R7
+   \   0000A0   A3           INC     DPTR
+   \   0000A1   E0           MOVX    A,@DPTR
+   \   0000A2   6409         XRL     A,#0x9
+   \   0000A4   7004         JNZ     ??AT_App_ProcessEvent_12
+   \                     ??AT_App_ProcessEvent_11:
+   \   0000A6                ; Setup parameters for call to function HalLedSet
+   \   0000A6   7A01         MOV     R2,#0x1
+   \   0000A8   800E         SJMP    ??AT_App_ProcessEvent_13
+   \                     ??AT_App_ProcessEvent_12:
+   \   0000AA   8E82         MOV     DPL,R6
+   \   0000AC   8F83         MOV     DPH,R7
+   \   0000AE   A3           INC     DPTR
+   \   0000AF   E0           MOVX    A,@DPTR
+   \   0000B0   6004         JZ      ??AT_App_ProcessEvent_14
+   \   0000B2   6401         XRL     A,#0x1
+   \   0000B4   7007         JNZ     ??AT_App_ProcessEvent_8
+   \                     ??AT_App_ProcessEvent_14:
+   \   0000B6                ; Setup parameters for call to function HalLedSet
+   \   0000B6   7A04         MOV     R2,#0x4
+   \                     ??AT_App_ProcessEvent_13:
+   \   0000B8   7902         MOV     R1,#0x2
+   \   0000BA   12....       LCALL   ??HalLedSet?relay
+   \                     ??AT_App_ProcessEvent_8:
+   \   0000BD                ; Setup parameters for call to function AT_ZDO_ProcessMsgCBs
+   \   0000BD   EE           MOV     A,R6
+   \   0000BE   FA           MOV     R2,A
+   \   0000BF   EF           MOV     A,R7
+   \   0000C0   FB           MOV     R3,A
+   \   0000C1   12....       LCALL   ??AT_ZDO_ProcessMsgCBs?relay
+   \   0000C4   02....       LJMP    ??AT_App_ProcessEvent_3 & 0xFFFF
+    148              }
+    149          
+    150              // return unprocessed events
+    151              return (events ^ SYS_EVENT_MSG);
+   \                     ??AT_App_ProcessEvent_4:
+   \   0000C7   AA..         MOV     R2,?V0 + 0
+   \   0000C9   E5..         MOV     A,?V0 + 1
+   \   0000CB   6480         XRL     A,#0x80
+   \                     ??AT_App_ProcessEvent_15:
+   \   0000CD   FB           MOV     R3,A
+   \   0000CE   8038         SJMP    ??AT_App_ProcessEvent_16
+    152            }
+    153            else if( events & AT_ENTRY_EVENT){
+   \                     ??AT_App_ProcessEvent_0:
+   \   0000D0   EB           MOV     A,R3
+   \   0000D1   5440         ANL     A,#0x40
+   \   0000D3   600E         JZ      ??AT_App_ProcessEvent_17
+    154              AT_handleZCL_EP();
+   \   0000D5                ; Setup parameters for call to function AT_handleZCL_EP
+   \   0000D5   12....       LCALL   ??AT_handleZCL_EP?relay
+    155              AT_handleEntryEvt();
+   \   0000D8                ; Setup parameters for call to function AT_handleEntryEvt
+   \   0000D8   12....       LCALL   ??AT_handleEntryEvt?relay
+    156              return (events ^ AT_ENTRY_EVENT);
+   \   0000DB   AA..         MOV     R2,?V0 + 0
+   \   0000DD   E5..         MOV     A,?V0 + 1
+   \   0000DF   6440         XRL     A,#0x40
+   \   0000E1   80EA         SJMP    ??AT_App_ProcessEvent_15
+    157            }
+    158            else if( events & AT_POWER_SAVING_EXP_EVENT){
+   \                     ??AT_App_ProcessEvent_17:
+   \   0000E3   EB           MOV     A,R3
+   \   0000E4   5410         ANL     A,#0x10
+   \   0000E6   600B         JZ      ??AT_App_ProcessEvent_18
+    159              AT_App_process_Power_Saving_Exp_Evt();
+   \   0000E8                ; Setup parameters for call to function AT_App_process_Power_Saving_Exp_Evt
+   \   0000E8   12....       LCALL   ??AT_App_process_Power_Saving_Exp_Evt?relay
+    160              return (events ^ AT_POWER_SAVING_EXP_EVENT);
+   \   0000EB   AA..         MOV     R2,?V0 + 0
+   \   0000ED   E5..         MOV     A,?V0 + 1
+   \   0000EF   6410         XRL     A,#0x10
+   \   0000F1   80DA         SJMP    ??AT_App_ProcessEvent_15
+    161            }else if( events & AT_RESET_EVENT ){
+   \                     ??AT_App_ProcessEvent_18:
+   \   0000F3   EB           MOV     A,R3
+   \   0000F4   5420         ANL     A,#0x20
+   \   0000F6   600C         JZ      ??AT_App_ProcessEvent_19
+    162              SystemReset(); 
+   \   0000F8   C2AF         CLR     0xa8.7
+   \   0000FA   C2AF         CLR     0xa8.7
+   \   0000FC   75C9AB       MOV     0xc9,#-0x55
+   \   0000FF   75C95B       MOV     0xc9,#0x5b
+   \                     ??AT_App_ProcessEvent_20:
+   \   000102   80FE         SJMP    ??AT_App_ProcessEvent_20
+    163            }
+    164          
+    165            // Discard unknown events
+    166            return 0;
+   \                     ??AT_App_ProcessEvent_19:
+   \   000104   7A00         MOV     R2,#0x0
+   \   000106   7B00         MOV     R3,#0x0
+   \                     ??AT_App_ProcessEvent_16:
+   \   000108   7F04         MOV     R7,#0x4
+   \   00010A   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00010D                REQUIRE _A_IEN0
+   \   00010D                REQUIRE WDCTL
+    167          }
+    168          
+    169          /*********************************************************
+    170          when the device just starts, this function will remove end point from AF layer, according 
+    171          to NV record.
+    172          ***************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    173          void AT_handleZCL_EP(void){
+   \                     AT_handleZCL_EP:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 2
+   \   000004   74FE         MOV     A,#-0x2
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+    174            const uint8 AT_CMD_EP_ARRAY[]=AT_CMD_EPs;
+   \   000009   85..82       MOV     DPL,?XSP + 0
+   \   00000C   85..83       MOV     DPH,?XSP + 1
+   \   00000F   AC82         MOV     R4,DPL
+   \   000011   AD83         MOV     R5,DPH
+   \   000013   7583..       MOV     DPH,#(`?<Constant {7}>` >> 8) & 0xff
+   \   000016   7582..       MOV     DPL,#`?<Constant {7}>` & 0xff
+   \   000019   7401         MOV     A,#0x1
+   \   00001B   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    175            uint8 i;
+    176            uint8 enable;
+    177            for(i=0;i<sizeof(AT_CMD_EP_ARRAY);i++){
+    178              //read ZCL NV
+    179              AT_NV_ZCL_readEPStatus(i,&enable);
+   \   00001E                ; Setup parameters for call to function AT_NV_ZCL_readEPStatus
+   \   00001E   04           INC     A
+   \   00001F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000022   AA82         MOV     R2,DPL
+   \   000024   AB83         MOV     R3,DPH
+   \   000026   7900         MOV     R1,#0x0
+   \   000028   12....       LCALL   ??AT_NV_ZCL_readEPStatus?relay
+    180              //if the NV indicate the enpoint is not enable, remove it
+    181              if(enable == 1) {
+   \   00002B   7401         MOV     A,#0x1
+   \   00002D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000030   E0           MOVX    A,@DPTR
+   \   000031   6401         XRL     A,#0x1
+   \   000033   85..82       MOV     DPL,?XSP + 0
+   \   000036   85..83       MOV     DPH,?XSP + 1
+   \   000039   7006         JNZ     ??AT_handleZCL_EP_0
+    182                
+    183                //enable the ZCL layer
+    184                AT_ZCL_EP_ENABLE( 1,AT_CMD_EP_ARRAY[i]);
+   \   00003B                ; Setup parameters for call to function AT_ZCL_EP_ENABLE
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   FA           MOV     R2,A
+   \   00003D   7901         MOV     R1,#0x1
+   \   00003F   800F         SJMP    ??AT_handleZCL_EP_1
+    185              }else{
+    186                AT_af_remove_ep(AT_CMD_EP_ARRAY[i]);
+   \                     ??AT_handleZCL_EP_0:
+   \   000041                ; Setup parameters for call to function AT_af_remove_ep
+   \   000041   E0           MOVX    A,@DPTR
+   \   000042   F9           MOV     R1,A
+   \   000043   12....       LCALL   ??AT_af_remove_ep?relay
+    187                //enable the ZCL layer
+    188                AT_ZCL_EP_ENABLE( 0,AT_CMD_EP_ARRAY[i]);
+   \   000046                ; Setup parameters for call to function AT_ZCL_EP_ENABLE
+   \   000046   85..82       MOV     DPL,?XSP + 0
+   \   000049   85..83       MOV     DPH,?XSP + 1
+   \   00004C   E0           MOVX    A,@DPTR
+   \   00004D   FA           MOV     R2,A
+   \   00004E   7900         MOV     R1,#0x0
+   \                     ??AT_handleZCL_EP_1:
+   \   000050   12....       LCALL   ??AT_ZCL_EP_ENABLE?relay
+    189              }
+    190            }
+    191            //ninglvfeihong
+    192            AT_Cmd_EPENABLE(0, ":0,7\r");//force to enable Light end point
+   \   000053                ; Setup parameters for call to function AT_Cmd_EPENABLE
+   \   000053   7A..         MOV     R2,#`?<Constant ":0,7\\r">` & 0xff
+   \   000055   7B..         MOV     R3,#(`?<Constant ":0,7\\r">` >> 8) & 0xff
+   \   000057   7900         MOV     R1,#0x0
+   \   000059   12....       LCALL   ??AT_Cmd_EPENABLE?relay
+    193          }
+   \   00005C   7402         MOV     A,#0x2
+   \   00005E   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000061   02....       LJMP    ?Subroutine1 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+    194          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    195          uint8 AT_handleEntryEvt(void){
+   \                     AT_handleEntryEvt:
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV     A,#-0x1
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    196            
+    197            //zgWriteStartupOptions( ZG_STARTUP_CLEAR, ZCD_STARTOPT_DEFAULT_NETWORK_STATE );
+    198            uint8 status;
+    199            uint8 startupOptions = 0;
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   E4           CLR     A
+   \   000011   12....       LCALL   ?Subroutine4 & 0xFFFF
+    200            
+    201            status = osal_nv_read( ZCD_NV_STARTUP_OPTION,
+    202                          0,
+    203                          sizeof( startupOptions ),
+    204                          &startupOptions );
+   \                     ??CrossCallReturnLabel_2:
+   \   000014   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000017   75..01       MOV     ?V0 + 0,#0x1
+   \   00001A   75..00       MOV     ?V0 + 1,#0x0
+   \   00001D   78..         MOV     R0,#?V0 + 0
+   \   00001F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000022   7C00         MOV     R4,#0x0
+   \   000024   7D00         MOV     R5,#0x0
+   \   000026   7A03         MOV     R2,#0x3
+   \   000028   7B00         MOV     R3,#0x0
+   \   00002A   12....       LCALL   ??osal_nv_read?relay
+   \   00002D   7404         MOV     A,#0x4
+   \   00002F   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000032   E9           MOV     A,R1
+    205          
+    206            if ( status == ZSUCCESS )
+   \   000033   702F         JNZ     ??AT_handleEntryEvt_0
+    207            {
+    208              
+    209              if(startupOptions & (ZCD_STARTOPT_DEFAULT_NETWORK_STATE|ZCD_STARTOPT_DEFAULT_CONFIG_STATE)  ){
+   \   000035   85..82       MOV     DPL,?XSP + 0
+   \   000038   85..83       MOV     DPH,?XSP + 1
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   5403         ANL     A,#0x3
+   \   00003E   6024         JZ      ??AT_handleEntryEvt_0
+    210                
+    211                startupOptions &= (~(ZCD_STARTOPT_DEFAULT_NETWORK_STATE|ZCD_STARTOPT_DEFAULT_CONFIG_STATE));
+   \   000040   E0           MOVX    A,@DPTR
+   \   000041   54FC         ANL     A,#0xfc
+   \   000043   12....       LCALL   ?Subroutine4 & 0xFFFF
+    212                status = osal_nv_write( ZCD_NV_STARTUP_OPTION,
+    213                           0,
+    214                           sizeof( startupOptions ),
+    215                           &startupOptions );
+    216               }
+    217             }
+   \                     ??CrossCallReturnLabel_3:
+   \   000046   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000049   75..01       MOV     ?V0 + 0,#0x1
+   \   00004C   75..00       MOV     ?V0 + 1,#0x0
+   \   00004F   78..         MOV     R0,#?V0 + 0
+   \   000051   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000054   7C00         MOV     R4,#0x0
+   \   000056   7D00         MOV     R5,#0x0
+   \   000058   7A03         MOV     R2,#0x3
+   \   00005A   7B00         MOV     R3,#0x0
+   \   00005C   12....       LCALL   ??osal_nv_write?relay
+   \   00005F   7404         MOV     A,#0x4
+   \   000061   12....       LCALL   ?DEALLOC_XSTACK8
+    218             return status;
+   \                     ??AT_handleEntryEvt_0:
+   \   000064   7401         MOV     A,#0x1
+   \   000066   02....       LJMP    ?Subroutine2 & 0xFFFF
+    219          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001                ; Setup parameters for call to function osal_nv_read
+   \   000001                ; Setup parameters for call to function osal_nv_write
+   \   000001   8582..       MOV     ?V0 + 0,DPL
+   \   000004   8583..       MOV     ?V0 + 1,DPH
+   \   000007   78..         MOV     R0,#?V0 + 0
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000003                REQUIRE ??Subroutine21_0
+   \   000003                ; // Fall through to label ??Subroutine21_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine21_0:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    220          
+    221          /********************************************************
+    222          Handles all key events for this device.
+    223          *******************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    224          void AT_App_HandleKeys( uint8 shift, uint8 keys ){
+   \                     AT_App_HandleKeys:
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 12
+   \   000005   74F4         MOV     A,#-0xc
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EA           MOV     A,R2
+   \   00000D   FF           MOV     R7,A
+    225            switch (shift){
+   \   00000E   EE           MOV     A,R6
+   \   00000F   600F         JZ      ??AT_App_HandleKeys_0
+   \   000011   14           DEC     A
+   \   000012   7003         JNZ     $+5
+   \   000014   02....       LJMP    ??AT_App_HandleKeys_1 & 0xFFFF
+   \   000017   14           DEC     A
+   \   000018   7003         JNZ     $+5
+   \   00001A   02....       LJMP    ??AT_App_HandleKeys_2 & 0xFFFF
+   \   00001D   02....       LJMP    ??AT_App_HandleKeys_3 & 0xFFFF
+    226            case 0: //pressing time less than 5 seconds
+    227              if ( keys & HAL_KEY_SW_1 )
+   \                     ??AT_App_HandleKeys_0:
+   \   000020   EF           MOV     A,R7
+   \   000021   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000023   4003         JC      $+5
+   \   000025   02....       LJMP    ??AT_App_HandleKeys_3 & 0xFFFF
+    228              {
+    229                
+    230                afAddrType_t dstAddr;
+    231                dstAddr.endPoint = 7;
+   \   000028   7409         MOV     A,#0x9
+   \   00002A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002D   7407         MOV     A,#0x7
+   \   00002F   F0           MOVX    @DPTR,A
+    232                //dstAddr.panId =2016;//0;
+    233                dstAddr.addrMode =(afAddrMode_t)Addr16Bit;
+   \   000030   04           INC     A
+   \   000031   12....       LCALL   ?XSTACK_DISP0_8
+   \   000034   7402         MOV     A,#0x2
+   \   000036   F0           MOVX    @DPTR,A
+    234                dstAddr.addr.shortAddr=NLME_GetShortAddr();     
+   \   000037                ; Setup parameters for call to function NLME_GetShortAddr
+   \   000037   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   00003A   85..82       MOV     DPL,?XSP + 0
+   \   00003D   85..83       MOV     DPH,?XSP + 1
+   \   000040   EA           MOV     A,R2
+   \   000041   F0           MOVX    @DPTR,A
+   \   000042   A3           INC     DPTR
+   \   000043   EB           MOV     A,R3
+   \   000044   F0           MOVX    @DPTR,A
+    235                uint8 status;
+    236                //this is allow the socket is locked by parent to prevent child from playing it
+    237                status=zclGeneral_SendOnOff_CmdToggle(AT_ZCL_ENDPOINT,&dstAddr,0,1); //stand for without onoff parameter, toggle
+    238                if(status==ZSUCCESS){
+   \   000045                ; Setup parameters for call to function zcl_SendCommand
+   \   000045   E4           CLR     A
+   \   000046   F5..         MOV     ?V0 + 0,A
+   \   000048   F5..         MOV     ?V0 + 1,A
+   \   00004A   78..         MOV     R0,#?V0 + 0
+   \   00004C   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00004F   78..         MOV     R0,#?V0 + 0
+   \   000051   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000054   75..01       MOV     ?V0 + 0,#0x1
+   \   000057   78..         MOV     R0,#?V0 + 0
+   \   000059   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00005C   E4           CLR     A
+   \   00005D   F5..         MOV     ?V0 + 0,A
+   \   00005F   78..         MOV     R0,#?V0 + 0
+   \   000061   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000064   78..         MOV     R0,#?V0 + 0
+   \   000066   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000069   78..         MOV     R0,#?V0 + 0
+   \   00006B   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00006E   75..01       MOV     ?V0 + 0,#0x1
+   \   000071   78..         MOV     R0,#?V0 + 0
+   \   000073   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000076   75..02       MOV     ?V0 + 0,#0x2
+   \   000079   78..         MOV     R0,#?V0 + 0
+   \   00007B   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00007E   7C06         MOV     R4,#0x6
+   \   000080   7D00         MOV     R5,#0x0
+   \   000082   740B         MOV     A,#0xb
+   \   000084   12....       LCALL   ?XSTACK_DISP0_8
+   \   000087   AA82         MOV     R2,DPL
+   \   000089   AB83         MOV     R3,DPH
+   \   00008B   79CB         MOV     R1,#-0x35
+   \   00008D   12....       LCALL   ??zcl_SendCommand?relay
+   \   000090   740B         MOV     A,#0xb
+   \   000092   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000095   E9           MOV     A,R1
+   \   000096   7003         JNZ     $+5
+   \   000098   02....       LJMP    ??AT_App_HandleKeys_3 & 0xFFFF
+    239                }else{
+    240                  //execute when the node isn't in the PAN
+    241                  extern void AT_ZCL_ONOFF_SWITCH_OnOffCB( uint8 cmd );
+    242                  AT_ZCL_ONOFF_SWITCH_OnOffCB(2);//toggle switch when the network isn't connected
+   \   00009B                ; Setup parameters for call to function AT_ZCL_ONOFF_SWITCH_OnOffCB
+   \   00009B   7902         MOV     R1,#0x2
+   \   00009D   12....       LCALL   ??AT_ZCL_ONOFF_SWITCH_OnOffCB?relay
+   \   0000A0   8079         SJMP    ??AT_App_HandleKeys_3
+    243                 
+    244                }
+    245              }
+    246              break;
+    247            case 1: //pressing time during 5 to 10 seconds
+    248              
+    249              if ( keys & HAL_KEY_SW_1 )
+   \                     ??AT_App_HandleKeys_1:
+   \   0000A2   EF           MOV     A,R7
+   \   0000A3   A2E0         MOV     C,0xE0 /* A   */.0
+   \   0000A5   5074         JNC     ??AT_App_HandleKeys_3
+    250              {
+    251                //ninglvfeihong modified for light sensor
+    252                AT_ZCL_ONOFF_SWITCH_setting(AT_ZCL_ONOFF_SWITCH_setting_Reverse);
+   \   0000A7                ; Setup parameters for call to function AT_ZCL_ONOFF_SWITCH_setting
+   \   0000A7   7902         MOV     R1,#0x2
+   \   0000A9   12....       LCALL   ??AT_ZCL_ONOFF_SWITCH_setting?relay
+    253                
+    254                AT_Cmd_ANNCE(0,"\r");//announce in the network
+   \   0000AC                ; Setup parameters for call to function AT_Cmd_ANNCE
+   \   0000AC   7A..         MOV     R2,#`?<Constant "\\r">` & 0xff
+   \   0000AE   7B..         MOV     R3,#(`?<Constant "\\r">` >> 8) & 0xff
+   \   0000B0   7900         MOV     R1,#0x0
+   \   0000B2   12....       LCALL   ??AT_Cmd_ANNCE?relay
+    255                NLME_PermitJoiningRequest(30);//allow join in 30 seconds
+   \   0000B5                ; Setup parameters for call to function NLME_PermitJoiningRequest
+   \   0000B5   791E         MOV     R1,#0x1e
+   \   0000B7   12....       LCALL   ??NLME_PermitJoiningRequest?relay
+    256                //build broadcast address
+    257                afAddrType_t AT_AF_broad_addr={
+    258                  {AT_AF_GROUP_ID},                       //addr
+    259                  (afAddrMode_t)AddrGroup,              //addr mode
+    260                  AT_AF_ENDPOINT,                         //end point
+    261                  NULL                                    //PAN ID
+    262                };
+   \   0000BA   85..82       MOV     DPL,?XSP + 0
+   \   0000BD   85..83       MOV     DPH,?XSP + 1
+   \   0000C0   AC82         MOV     R4,DPL
+   \   0000C2   AD83         MOV     R5,DPH
+   \   0000C4   7583..       MOV     DPH,#(`?<Constant {{32768}, 1, 204, 0}>` >> 8) & 0xff
+   \   0000C7   7582..       MOV     DPL,#`?<Constant {{32768}, 1, 204, 0}>` & 0xff
+   \   0000CA   740C         MOV     A,#0xc
+   \   0000CC   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    263                AF_DataRequest( &AT_AF_broad_addr, &AT_AF_epDesc,
+    264                                   AT_AF_TEST_KEY_CLUSTERID,
+    265                                   0,
+    266                                   0,
+    267                                   &AT_AF_TransID,
+    268                                   AF_DISCV_ROUTE,
+    269                                   AF_DEFAULT_RADIUS );
+   \   0000CF                ; Setup parameters for call to function AF_DataRequest
+   \   0000CF   75..1E       MOV     ?V0 + 0,#0x1e
+   \   0000D2   78..         MOV     R0,#?V0 + 0
+   \   0000D4   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000D7   75....       MOV     ?V0 + 0,#AT_AF_TransID & 0xff
+   \   0000DA   75....       MOV     ?V0 + 1,#(AT_AF_TransID >> 8) & 0xff
+   \   0000DD   78..         MOV     R0,#?V0 + 0
+   \   0000DF   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000E2   E4           CLR     A
+   \   0000E3   F5..         MOV     ?V0 + 0,A
+   \   0000E5   F5..         MOV     ?V0 + 1,A
+   \   0000E7   78..         MOV     R0,#?V0 + 0
+   \   0000E9   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000EC   78..         MOV     R0,#?V0 + 0
+   \   0000EE   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000F1   75..05       MOV     ?V0 + 0,#0x5
+   \   0000F4   78..         MOV     R0,#?V0 + 0
+   \   0000F6   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000F9   7920         MOV     R1,#0x20
+   \   0000FB   7C..         MOV     R4,#AT_AF_epDesc & 0xff
+   \   0000FD   7D..         MOV     R5,#(AT_AF_epDesc >> 8) & 0xff
+   \   0000FF   7409         MOV     A,#0x9
+   \   000101   12....       LCALL   ?XSTACK_DISP0_8
+   \   000104   AA82         MOV     R2,DPL
+   \   000106   AB83         MOV     R3,DPH
+   \   000108   12....       LCALL   ??AF_DataRequest?relay
+   \   00010B   7409         MOV     A,#0x9
+   \   00010D   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000110   8009         SJMP    ??AT_App_HandleKeys_3
+    270                
+    271              }
+    272              break;
+    273            case 2: //pressing time during 10 to 15 
+    274              AT_Cmd_AT_F(0, "\r");//recover factory setting, so it will search PAN which has the strongest singal and join that PAN
+   \                     ??AT_App_HandleKeys_2:
+   \   000112                ; Setup parameters for call to function AT_Cmd_AT_F
+   \   000112   7A..         MOV     R2,#`?<Constant "\\r">` & 0xff
+   \   000114   7B..         MOV     R3,#(`?<Constant "\\r">` >> 8) & 0xff
+   \   000116   7900         MOV     R1,#0x0
+   \   000118   12....       LCALL   ??AT_Cmd_AT_F?relay
+    275              break;
+    276            default:
+    277              break;
+    278            }
+    279          }
+   \                     ??AT_App_HandleKeys_3:
+   \   00011B   740C         MOV     A,#0xc
+   \   00011D   02....       LJMP    ?Subroutine2 & 0xFFFF
+    280          
+    281          /*******************************************************
+    282          the reverse proces of afRegister() function
+    283          ********************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    284          afStatus_t AT_af_remove_ep(uint8 EndPoint){
+   \                     AT_af_remove_ep:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    285            
+    286            
+    287            epList_t *epSearchpre;
+    288            epList_t *epSearchcur;
+    289          
+    290            //endPoint range:(1-240)
+    291            if(EndPoint<1 || EndPoint>240 ) return ( afStatus_INVALID_PARAMETER);
+   \   000007   74FF         MOV     A,#-0x1
+   \   000009   2E           ADD     A,R6
+   \   00000A   C3           CLR     C
+   \   00000B   94F0         SUBB    A,#-0x10
+   \   00000D   4004         JC      ??AT_af_remove_ep_0
+   \                     ??AT_af_remove_ep_1:
+   \   00000F   7902         MOV     R1,#0x2
+   \   000011   803C         SJMP    ??AT_af_remove_ep_2
+    292            
+    293            // Start at the beginning
+    294            epSearchcur = epList;
+   \                     ??AT_af_remove_ep_0:
+   \   000013   90....       MOV     DPTR,#epList
+   \   000016   12....       LCALL   ?Subroutine15 & 0xFFFF
+    295            epSearchpre = NULL;
+   \                     ??CrossCallReturnLabel_26:
+   \   000019   8003         SJMP    ??CrossCallReturnLabel_34
+    296          
+    297            // Look through the list until the end
+    298            while ( epSearchcur )
+    299            {
+    300              // Is there a match?
+    301              if ( epSearchcur->epDesc->endPoint == EndPoint )
+    302              {
+    303                //the enpoint is found
+    304                //delete the epSearchcur
+    305                if(epSearchpre==NULL)//check whether the aim is the first one
+    306                    epList = epSearchcur->nextDesc;
+    307                else epSearchpre->nextDesc = epSearchcur->nextDesc;
+    308                
+    309                epSearchcur->nextDesc=removedEPList;
+    310                removedEPList = epSearchcur;
+    311                //osal_mem_free(epSearchcur);
+    312                return afStatus_SUCCESS;
+    313              }
+    314              else
+    315                
+    316                epSearchpre = epSearchcur;
+   \                     ??AT_af_remove_ep_3:
+   \   00001B   12....       LCALL   ?Subroutine16 & 0xFFFF
+    317                epSearchcur = epSearchcur->nextDesc;  // Next entry
+   \                     ??CrossCallReturnLabel_34:
+   \   00001E   E8           MOV     A,R0
+   \   00001F   49           ORL     A,R1
+   \   000020   60ED         JZ      ??AT_af_remove_ep_1
+   \   000022   12....       LCALL   ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_20:
+   \   000025   70F4         JNZ     ??AT_af_remove_ep_3
+   \   000027   EA           MOV     A,R2
+   \   000028   4B           ORL     A,R3
+   \   000029   8882         MOV     DPL,R0
+   \   00002B   8983         MOV     DPH,R1
+   \   00002D   700C         JNZ     ??AT_af_remove_ep_4
+   \   00002F   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_22:
+   \   000032   90....       MOV     DPTR,#epList
+   \   000035   EA           MOV     A,R2
+   \   000036   F0           MOVX    @DPTR,A
+   \   000037   A3           INC     DPTR
+   \   000038   EB           MOV     A,R3
+   \   000039   8003         SJMP    ??CrossCallReturnLabel_10
+   \                     ??AT_af_remove_ep_4:
+   \   00003B   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   00003E   F0           MOVX    @DPTR,A
+   \   00003F   90....       MOV     DPTR,#removedEPList
+   \   000042   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   000045   90....       MOV     DPTR,#removedEPList
+   \   000048   E8           MOV     A,R0
+   \   000049   F0           MOVX    @DPTR,A
+   \   00004A   A3           INC     DPTR
+   \   00004B   E9           MOV     A,R1
+   \   00004C   F0           MOVX    @DPTR,A
+   \   00004D   7900         MOV     R1,#0x0
+    318            }
+   \                     ??AT_af_remove_ep_2:
+   \   00004F   02....       LJMP    ?Subroutine0 & 0xFFFF
+    319            return ( afStatus_INVALID_PARAMETER);
+    320          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine16:
+   \   000000   E8           MOV     A,R0
+   \   000001   FA           MOV     R2,A
+   \   000002   E9           MOV     A,R1
+   \   000003   FB           MOV     R3,A
+   \   000004   8882         MOV     DPL,R0
+   \   000006   8983         MOV     DPH,R1
+   \   000008                REQUIRE ??Subroutine20_0
+   \   000008                ; // Fall through to label ??Subroutine20_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine20_0:
+   \   000000   12....       LCALL   ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_47:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine19:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F9           MOV     R1,A
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine15:
+   \   000000   12....       LCALL   ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_46:
+   \   000003   7A00         MOV     R2,#0x0
+   \   000005   7B00         MOV     R3,#0x0
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine14:
+   \   000000   12....       LCALL   ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_33:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine18:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   FA           MOV     R2,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   FB           MOV     R3,A
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine13:
+   \   000000   8882         MOV     DPL,R0
+   \   000002   8983         MOV     DPH,R1
+   \   000004   A3           INC     DPTR
+   \   000005   A3           INC     DPTR
+   \   000006   E0           MOVX    A,@DPTR
+   \   000007   FC           MOV     R4,A
+   \   000008   A3           INC     DPTR
+   \   000009   E0           MOVX    A,@DPTR
+   \   00000A   F583         MOV     DPH,A
+   \   00000C   8C82         MOV     DPL,R4
+   \   00000E   E0           MOVX    A,@DPTR
+   \   00000F   6E           XRL     A,R6
+   \   000010   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   FC           MOV     R4,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   FD           MOV     R5,A
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   EC           MOV     A,R4
+   \   00000A   F0           MOVX    @DPTR,A
+   \   00000B   A3           INC     DPTR
+   \   00000C   ED           MOV     A,R5
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   12....       LCALL   ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_30:
+   \   000003   8882         MOV     DPL,R0
+   \   000005   8983         MOV     DPH,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   F0           MOVX    @DPTR,A
+   \   000009   A3           INC     DPTR
+   \   00000A   EB           MOV     A,R3
+   \   00000B   F0           MOVX    @DPTR,A
+   \   00000C   22           RET
+    321          
+    322          /*******************************************************
+    323          the afRegister() function for register an endpoint with provided endpoint
+    324          ********************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    325          afStatus_t AT_af_register_ep(uint8 EndPoint){
+   \                     AT_af_register_ep:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    326            
+    327            
+    328            epList_t *epSearchpre;
+    329            epList_t *epSearchcur;
+    330            //endPoint range:(1-240)
+    331            if(EndPoint<1 || EndPoint>240 ) return ( afStatus_INVALID_PARAMETER);
+   \   000007   74FF         MOV     A,#-0x1
+   \   000009   2E           ADD     A,R6
+   \   00000A   C3           CLR     C
+   \   00000B   94F0         SUBB    A,#-0x10
+   \   00000D   4004         JC      ??AT_af_register_ep_0
+   \                     ??AT_af_register_ep_1:
+   \   00000F   7902         MOV     R1,#0x2
+   \   000011   803C         SJMP    ??AT_af_register_ep_2
+    332            
+    333            // Start at the beginning
+    334            epSearchcur = removedEPList;
+   \                     ??AT_af_register_ep_0:
+   \   000013   90....       MOV     DPTR,#removedEPList
+   \   000016   12....       LCALL   ?Subroutine15 & 0xFFFF
+    335            epSearchpre = NULL;
+   \                     ??CrossCallReturnLabel_27:
+   \   000019   8003         SJMP    ??CrossCallReturnLabel_35
+    336            
+    337            // Look through the list until the end
+    338            while ( epSearchcur )
+    339            {
+    340              // Is there a match?
+    341              if ( epSearchcur->epDesc->endPoint == EndPoint )
+    342              {
+    343                //the enpoint is found
+    344                //delete the epSearchcur
+    345                if(epSearchpre==NULL)//check whether the aim is the first one
+    346                    removedEPList = epSearchcur->nextDesc;
+    347                else epSearchpre->nextDesc = epSearchcur->nextDesc;
+    348                
+    349                epSearchcur->nextDesc=epList;
+    350                epList = epSearchcur;
+    351                
+    352                //osal_mem_free(epSearchcur);
+    353                return afStatus_SUCCESS;
+    354              }
+    355              else
+    356                
+    357                epSearchpre = epSearchcur;
+   \                     ??AT_af_register_ep_3:
+   \   00001B   12....       LCALL   ?Subroutine16 & 0xFFFF
+    358                epSearchcur = epSearchcur->nextDesc;  // Next entry
+   \                     ??CrossCallReturnLabel_35:
+   \   00001E   E8           MOV     A,R0
+   \   00001F   49           ORL     A,R1
+   \   000020   60ED         JZ      ??AT_af_register_ep_1
+   \   000022   12....       LCALL   ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_21:
+   \   000025   70F4         JNZ     ??AT_af_register_ep_3
+   \   000027   EA           MOV     A,R2
+   \   000028   4B           ORL     A,R3
+   \   000029   8882         MOV     DPL,R0
+   \   00002B   8983         MOV     DPH,R1
+   \   00002D   700C         JNZ     ??AT_af_register_ep_4
+   \   00002F   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_23:
+   \   000032   90....       MOV     DPTR,#removedEPList
+   \   000035   EA           MOV     A,R2
+   \   000036   F0           MOVX    @DPTR,A
+   \   000037   A3           INC     DPTR
+   \   000038   EB           MOV     A,R3
+   \   000039   8003         SJMP    ??CrossCallReturnLabel_11
+   \                     ??AT_af_register_ep_4:
+   \   00003B   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   00003E   F0           MOVX    @DPTR,A
+   \   00003F   90....       MOV     DPTR,#epList
+   \   000042   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   000045   90....       MOV     DPTR,#epList
+   \   000048   E8           MOV     A,R0
+   \   000049   F0           MOVX    @DPTR,A
+   \   00004A   A3           INC     DPTR
+   \   00004B   E9           MOV     A,R1
+   \   00004C   F0           MOVX    @DPTR,A
+   \   00004D   7900         MOV     R1,#0x0
+    359            }
+   \                     ??AT_af_register_ep_2:
+   \   00004F   02....       LJMP    ?Subroutine0 & 0xFFFF
+    360            return ( afStatus_INVALID_PARAMETER);
+    361          }
+    362          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    363          epList_t* AT_af_get_ep(uint8 EndPoint){
+   \                     AT_af_get_ep:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    364            
+    365            epList_t *epSearch;
+    366            // Start at the beginning
+    367            epSearch = removedEPList;
+   \   000004   90....       MOV     DPTR,#removedEPList
+   \   000007   8004         SJMP    ??AT_af_get_ep_0
+    368            // Look through the list until the end
+    369            while ( epSearch )
+    370            {
+    371              // Is there a match?
+    372              if ( epSearch->epDesc->endPoint == EndPoint )
+    373              {
+    374                return epSearch;
+    375              }
+    376              else
+    377                epSearch = epSearch->nextDesc;  // Next entry
+   \                     ??AT_af_get_ep_1:
+   \   000009   8A82         MOV     DPL,R2
+   \   00000B   8B83         MOV     DPH,R3
+   \                     ??AT_af_get_ep_0:
+   \   00000D   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_24:
+   \   000010   EA           MOV     A,R2
+   \   000011   4B           ORL     A,R3
+   \   000012   6007         JZ      ??AT_af_get_ep_2
+   \   000014   12....       LCALL   ?Subroutine12 & 0xFFFF
+   \                     ??CrossCallReturnLabel_18:
+   \   000017   70F0         JNZ     ??AT_af_get_ep_1
+   \   000019   8019         SJMP    ??AT_af_get_ep_3
+    378            }
+    379            epSearch = epList;
+   \                     ??AT_af_get_ep_2:
+   \   00001B   90....       MOV     DPTR,#epList
+   \   00001E   8009         SJMP    ??AT_af_get_ep_4
+    380            // Look through the list until the end
+    381            while ( epSearch )
+    382            {
+    383              // Is there a match?
+    384              if ( epSearch->epDesc->endPoint == EndPoint )
+   \                     ??AT_af_get_ep_5:
+   \   000020   12....       LCALL   ?Subroutine12 & 0xFFFF
+   \                     ??CrossCallReturnLabel_19:
+   \   000023   600F         JZ      ??AT_af_get_ep_3
+    385              {
+    386                return epSearch;
+    387              }
+    388              else
+    389                epSearch = epSearch->nextDesc;  // Next entry
+   \   000025   8A82         MOV     DPL,R2
+   \   000027   8B83         MOV     DPH,R3
+    390            }
+   \                     ??AT_af_get_ep_4:
+   \   000029   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_25:
+   \   00002C   EA           MOV     A,R2
+   \   00002D   4B           ORL     A,R3
+   \   00002E   70F0         JNZ     ??AT_af_get_ep_5
+    391          
+    392            return false;
+   \   000030   7A00         MOV     R2,#0x0
+   \   000032   7B00         MOV     R3,#0x0
+   \                     ??AT_af_get_ep_3:
+   \   000034   80..         SJMP    ?Subroutine1
+    393          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine12:
+   \   000000   8A82         MOV     DPL,R2
+   \   000002   8B83         MOV     DPH,R3
+   \   000004   A3           INC     DPTR
+   \   000005   A3           INC     DPTR
+   \   000006   E0           MOVX    A,@DPTR
+   \   000007   F8           MOV     R0,A
+   \   000008   A3           INC     DPTR
+   \   000009   E0           MOVX    A,@DPTR
+   \   00000A   F583         MOV     DPH,A
+   \   00000C   8882         MOV     DPL,R0
+   \   00000E   E0           MOVX    A,@DPTR
+   \   00000F   69           XRL     A,R1
+   \   000010   22           RET
+    394          
+    395          
+    396          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    397          uint8 AT_af_ep_num( void ){
+   \                     AT_af_ep_num:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    398            epList_t *epSearch;
+    399            uint8 cnt=0;
+   \   000004   7900         MOV     R1,#0x0
+    400            // Start at the beginning
+    401            epSearch = removedEPList;
+   \   000006   90....       MOV     DPTR,#removedEPList
+   \   000009   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   00000C   8004         SJMP    ??AT_af_ep_num_0
+    402            // Look through the list until the end
+    403            while ( epSearch )
+    404            {
+    405                epSearch = epSearch->nextDesc;  // Next entry
+   \                     ??AT_af_ep_num_1:
+   \   00000E   12....       LCALL   ?Subroutine10 & 0xFFFF
+    406                cnt++;
+   \                     ??CrossCallReturnLabel_13:
+   \   000011   09           INC     R1
+    407            }
+   \                     ??AT_af_ep_num_0:
+   \   000012   E582         MOV     A,DPL
+   \   000014   4583         ORL     A,DPH
+   \   000016   70F6         JNZ     ??AT_af_ep_num_1
+    408            epSearch = epList;
+   \   000018   90....       MOV     DPTR,#epList
+   \   00001B   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_14:
+   \   00001E   8004         SJMP    ??AT_af_ep_num_2
+    409            // Look through the list until the end
+    410            while ( epSearch )
+    411            {
+    412                epSearch = epSearch->nextDesc;  // Next entry
+   \                     ??AT_af_ep_num_3:
+   \   000020   12....       LCALL   ?Subroutine10 & 0xFFFF
+    413                cnt++;
+   \                     ??CrossCallReturnLabel_15:
+   \   000023   09           INC     R1
+    414            }
+   \                     ??AT_af_ep_num_2:
+   \   000024   E582         MOV     A,DPL
+   \   000026   4583         ORL     A,DPH
+   \   000028   70F6         JNZ     ??AT_af_ep_num_3
+    415          
+    416            return cnt;
+   \   00002A                REQUIRE ?Subroutine1
+   \   00002A                ; // Fall through to label ?Subroutine1
+    417            
+    418          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine10:
+   \   000000   12....       LCALL   ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_31:
+   \   000003   8A82         MOV     DPL,R2
+   \   000005   8B83         MOV     DPH,R3
+   \   000007   22           RET
+    419          
+    420          /********************************************************************
+    421          give all endpoint, indcluding deleted endpoint by AT_af_remove_ep;
+    422          *************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    423          void AT_af_ep_list( uint8 len, uint8 *list ){
+   \                     AT_af_ep_list:
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    424            epList_t *epSearch;
+    425            uint8 cnt=0;
+   \   000005   7C00         MOV     R4,#0x0
+    426            // Start at the beginning
+    427            epSearch = removedEPList;
+   \   000007   90....       MOV     DPTR,#removedEPList
+   \   00000A   12....       LCALL   ??Subroutine20_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_36:
+   \   00000D   800C         SJMP    ??AT_af_ep_list_0
+    428            // Look through the list until the end
+    429            while ( epSearch )
+    430            {
+    431                epSearch = epSearch->nextDesc;  // Next entry
+   \                     ??AT_af_ep_list_1:
+   \   00000F   12....       LCALL   ?Subroutine6 & 0xFFFF
+    432                list[cnt] = epSearch->epDesc->endPoint;
+   \                     ??CrossCallReturnLabel_6:
+   \   000012   C0E0         PUSH    A
+   \   000014   12....       LCALL   ?Subroutine17 & 0xFFFF
+   \                     ??CrossCallReturnLabel_28:
+   \   000017   D0E0         POP     A
+   \   000019   F0           MOVX    @DPTR,A
+    433                cnt++;
+   \   00001A   0C           INC     R4
+    434            }
+   \                     ??AT_af_ep_list_0:
+   \   00001B   E8           MOV     A,R0
+   \   00001C   49           ORL     A,R1
+   \   00001D   70F0         JNZ     ??AT_af_ep_list_1
+    435            epSearch = epList;
+   \   00001F   90....       MOV     DPTR,#epList
+   \   000022   12....       LCALL   ??Subroutine20_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_37:
+   \   000025   800C         SJMP    ??AT_af_ep_list_2
+    436            // Look through the list until the end
+    437            while ( epSearch )
+    438            {
+    439                epSearch = epSearch->nextDesc;  // Next entry
+   \                     ??AT_af_ep_list_3:
+   \   000027   12....       LCALL   ?Subroutine6 & 0xFFFF
+    440                list[cnt] = epSearch->epDesc->endPoint;
+   \                     ??CrossCallReturnLabel_7:
+   \   00002A   C0E0         PUSH    A
+   \   00002C   12....       LCALL   ?Subroutine17 & 0xFFFF
+   \                     ??CrossCallReturnLabel_29:
+   \   00002F   D0E0         POP     A
+   \   000031   F0           MOVX    @DPTR,A
+    441                cnt++;
+   \   000032   0C           INC     R4
+    442            }
+   \                     ??AT_af_ep_list_2:
+   \   000033   E8           MOV     A,R0
+   \   000034   49           ORL     A,R1
+   \   000035   70F0         JNZ     ??AT_af_ep_list_3
+    443          }
+   \   000037   02....       LJMP    ??Subroutine21_0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine17:
+   \   000000   8C..         MOV     ?V0 + 0,R4
+   \   000002   EA           MOV     A,R2
+   \   000003   25..         ADD     A,?V0 + 0
+   \   000005   F582         MOV     DPL,A
+   \   000007   EB           MOV     A,R3
+   \   000008   3400         ADDC    A,#0x0
+   \   00000A   F583         MOV     DPH,A
+   \   00000C   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   8882         MOV     DPL,R0
+   \   000002   8983         MOV     DPH,R1
+   \   000004   12....       LCALL   ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_45:
+   \   000007   8882         MOV     DPL,R0
+   \   000009   8983         MOV     DPH,R1
+   \   00000B   A3           INC     DPTR
+   \   00000C   A3           INC     DPTR
+   \   00000D   E0           MOVX    A,@DPTR
+   \   00000E   FD           MOV     R5,A
+   \   00000F   A3           INC     DPTR
+   \   000010   E0           MOVX    A,@DPTR
+   \   000011   F583         MOV     DPH,A
+   \   000013   8D82         MOV     DPL,R5
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   22           RET
+    444          /*********************************************************************
+    445          for power saving experiment command 
+    446          Power Saving Experiment PSEXP:<address><count><interval>
+    447          *************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    448          uint8 AT_App_Power_saving_exp(AT_App_Cmd_POWER_SAVING_EXP_t* pBuf){
+   \                     AT_App_Power_saving_exp:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    449            //Error check
+    450            if(AT_App_Cmd_POWER_SAVING_EXP.count!=0) return AT_isActive_ERROR;
+   \   000004   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_43:
+   \   000007   6004         JZ      ??AT_App_Power_saving_exp_0
+   \   000009   7908         MOV     R1,#0x8
+   \   00000B   8055         SJMP    ??AT_App_Power_saving_exp_1
+    451            if(pBuf->count==0 || pBuf->interval==0) return AT_PARA_ERROR;  
+   \                     ??AT_App_Power_saving_exp_0:
+   \   00000D   8A82         MOV     DPL,R2
+   \   00000F   8B83         MOV     DPH,R3
+   \   000011   A3           INC     DPTR
+   \   000012   A3           INC     DPTR
+   \   000013   12....       LCALL   ??Subroutine22_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_41:
+   \   000016   600D         JZ      ??AT_App_Power_saving_exp_2
+   \   000018   8A82         MOV     DPL,R2
+   \   00001A   8B83         MOV     DPH,R3
+   \   00001C   A3           INC     DPTR
+   \   00001D   A3           INC     DPTR
+   \   00001E   A3           INC     DPTR
+   \   00001F   A3           INC     DPTR
+   \   000020   12....       LCALL   ??Subroutine22_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_42:
+   \   000023   7004         JNZ     ??AT_App_Power_saving_exp_3
+   \                     ??AT_App_Power_saving_exp_2:
+   \   000025   7924         MOV     R1,#0x24
+   \   000027   8039         SJMP    ??AT_App_Power_saving_exp_1
+    452            
+    453            
+    454            AT_App_Cmd_POWER_SAVING_EXP.count= pBuf->count;
+   \                     ??AT_App_Power_saving_exp_3:
+   \   000029   8A82         MOV     DPL,R2
+   \   00002B   8B83         MOV     DPH,R3
+   \   00002D   A3           INC     DPTR
+   \   00002E   A3           INC     DPTR
+   \   00002F   12....       LCALL   ??Subroutine20_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_38:
+   \   000032   90....       MOV     DPTR,#AT_App_Cmd_POWER_SAVING_EXP + 2
+   \   000035   12....       LCALL   ?Subroutine5 & 0xFFFF
+    455            AT_App_Cmd_POWER_SAVING_EXP.nwkAddr= pBuf->nwkAddr;
+   \                     ??CrossCallReturnLabel_4:
+   \   000038   12....       LCALL   ??Subroutine20_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_39:
+   \   00003B   90....       MOV     DPTR,#AT_App_Cmd_POWER_SAVING_EXP
+   \   00003E   12....       LCALL   ?Subroutine5 & 0xFFFF
+    456            AT_App_Cmd_POWER_SAVING_EXP.interval= pBuf->interval;
+   \                     ??CrossCallReturnLabel_5:
+   \   000041   A3           INC     DPTR
+   \   000042   A3           INC     DPTR
+   \   000043   A3           INC     DPTR
+   \   000044   A3           INC     DPTR
+   \   000045   12....       LCALL   ??Subroutine20_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_40:
+   \   000048   90....       MOV     DPTR,#AT_App_Cmd_POWER_SAVING_EXP + 4
+   \   00004B   E8           MOV     A,R0
+   \   00004C   F0           MOVX    @DPTR,A
+   \   00004D   A3           INC     DPTR
+   \   00004E   E9           MOV     A,R1
+   \   00004F   F0           MOVX    @DPTR,A
+    457            
+    458            //start timer to start send task
+    459            osal_start_timerEx( AT_App_TaskID, AT_POWER_SAVING_EXP_EVENT, 500 );  
+   \   000050                ; Setup parameters for call to function osal_start_timerEx
+   \   000050   7CF4         MOV     R4,#-0xc
+   \   000052   7D01         MOV     R5,#0x1
+   \   000054   7A00         MOV     R2,#0x0
+   \   000056   7B10         MOV     R3,#0x10
+   \   000058   90....       MOV     DPTR,#AT_App_TaskID
+   \   00005B   E0           MOVX    A,@DPTR
+   \   00005C   F9           MOV     R1,A
+   \   00005D   12....       LCALL   ??osal_start_timerEx?relay
+    460            return AT_NO_ERROR;
+   \   000060   7900         MOV     R1,#0x0
+   \                     ??AT_App_Power_saving_exp_1:
+   \   000062   02....       LJMP    ?Subroutine1 & 0xFFFF
+    461          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   E8           MOV     A,R0
+   \   000001   F0           MOVX    @DPTR,A
+   \   000002   A3           INC     DPTR
+   \   000003   E9           MOV     A,R1
+   \   000004   F0           MOVX    @DPTR,A
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   90....       MOV     DPTR,#AT_App_Cmd_POWER_SAVING_EXP + 2
+   \   000003                REQUIRE ??Subroutine22_0
+   \   000003                ; // Fall through to label ??Subroutine22_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine22_0:
+   \   000000   12....       LCALL   ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_48:
+   \   000003   E8           MOV     A,R0
+   \   000004   49           ORL     A,R1
+   \   000005   22           RET
+    462          
+    463          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    464          static void AT_App_process_Power_Saving_Exp_Evt(){
+   \                     AT_App_process_Power_Saving_Exp_Evt:
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV     A,#-0x2
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    465            AT_AF_hdr buf;
+    466            buf.cmd =AT_AT_PSE_EXP_req;
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   7402         MOV     A,#0x2
+   \   000012   F0           MOVX    @DPTR,A
+    467            if(AT_App_Cmd_POWER_SAVING_EXP.count==0) {
+   \   000013   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_44:
+   \   000016   7041         JNZ     ??AT_App_process_Power_Saving_Exp_Evt_0
+    468              AT_App_Cmd_POWER_SAVING_EXP.interval=0;//not necessay but for robust;
+   \   000018   A3           INC     DPTR
+   \   000019   E4           CLR     A
+   \   00001A   F0           MOVX    @DPTR,A
+   \   00001B   A3           INC     DPTR
+   \   00001C   F0           MOVX    @DPTR,A
+    469              //send end information
+    470              buf.info =AT_AF_PSE_info_end;
+   \   00001D   04           INC     A
+   \   00001E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000021   7404         MOV     A,#0x4
+   \   000023   12....       LCALL   ?Subroutine3 & 0xFFFF
+    471              AT_AF_Cmd_send_simple(AT_App_Cmd_POWER_SAVING_EXP.nwkAddr,AT_AF_POWER_SVING_EXP_CLUSTERID,sizeof(buf), &buf);
+   \                     ??CrossCallReturnLabel_0:
+   \   000026   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000029   12....       LCALL   ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_16:
+   \   00002C   12....       LCALL   ?DEALLOC_XSTACK8
+    472              
+    473              HalLedSet ( HAL_LED_1, HAL_LED_MODE_OFF );
+   \   00002F                ; Setup parameters for call to function HalLedSet
+   \   00002F   7A00         MOV     R2,#0x0
+   \   000031   7901         MOV     R1,#0x1
+   \   000033   12....       LCALL   ??HalLedSet?relay
+    474              AT_RESP_START();
+   \   000036                ; Setup parameters for call to function AT_HalUARTWrite
+   \   000036   7C02         MOV     R4,#0x2
+   \   000038   7D00         MOV     R5,#0x0
+   \   00003A   7A..         MOV     R2,#`?<Constant "\\r\\n">` & 0xff
+   \   00003C   7B..         MOV     R3,#(`?<Constant "\\r\\n">` >> 8) & 0xff
+   \   00003E   7900         MOV     R1,#0x0
+   \   000040   12....       LCALL   ??AT_HalUARTWrite?relay
+    475              printf("Power Saving Experiment finished");
+   \   000043                ; Setup parameters for call to function printf
+   \   000043   7A..         MOV     R2,#`?<Constant "Power Saving Experime...">` & 0xff
+   \   000045   7B..         MOV     R3,#(`?<Constant "Power Saving Experime...">` >> 8) & 0xff
+   \   000047   12....       LCALL   ??printf?relay
+    476              AT_RESP_END();
+   \   00004A                ; Setup parameters for call to function AT_HalUARTWrite
+   \   00004A   7C02         MOV     R4,#0x2
+   \   00004C   7D00         MOV     R5,#0x0
+   \   00004E   7A..         MOV     R2,#`?<Constant "\\r\\n">` & 0xff
+   \   000050   7B..         MOV     R3,#(`?<Constant "\\r\\n">` >> 8) & 0xff
+   \   000052   7900         MOV     R1,#0x0
+   \   000054   12....       LCALL   ??AT_HalUARTWrite?relay
+    477              return;
+   \   000057   803A         SJMP    ??AT_App_process_Power_Saving_Exp_Evt_1
+    478            }
+    479            HalLedSet ( HAL_LED_1, HAL_LED_MODE_TOGGLE );
+   \                     ??AT_App_process_Power_Saving_Exp_Evt_0:
+   \   000059                ; Setup parameters for call to function HalLedSet
+   \   000059   7A08         MOV     R2,#0x8
+   \   00005B   7901         MOV     R1,#0x1
+   \   00005D   12....       LCALL   ??HalLedSet?relay
+    480            buf.info =AT_AF_PSE_info_ing;
+   \   000060   7401         MOV     A,#0x1
+   \   000062   12....       LCALL   ?XSTACK_DISP0_8
+   \   000065   7403         MOV     A,#0x3
+   \   000067   F0           MOVX    @DPTR,A
+    481            AT_App_Cmd_POWER_SAVING_EXP.count--;
+   \   000068   90....       MOV     DPTR,#AT_App_Cmd_POWER_SAVING_EXP + 2
+   \   00006B   E0           MOVX    A,@DPTR
+   \   00006C   24FF         ADD     A,#-0x1
+   \   00006E   F0           MOVX    @DPTR,A
+   \   00006F   A3           INC     DPTR
+   \   000070   E0           MOVX    A,@DPTR
+   \   000071   34FF         ADDC    A,#-0x1
+   \   000073   12....       LCALL   ?Subroutine3 & 0xFFFF
+    482            AT_AF_Cmd_send_simple(AT_App_Cmd_POWER_SAVING_EXP.nwkAddr,AT_AF_POWER_SVING_EXP_CLUSTERID,sizeof(buf), &buf);
+   \                     ??CrossCallReturnLabel_1:
+   \   000076   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000079   12....       LCALL   ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_17:
+   \   00007C   12....       LCALL   ?DEALLOC_XSTACK8
+    483            osal_start_timerEx( AT_App_TaskID, AT_POWER_SAVING_EXP_EVENT, AT_App_Cmd_POWER_SAVING_EXP.interval );
+   \   00007F                ; Setup parameters for call to function osal_start_timerEx
+   \   00007F   90....       MOV     DPTR,#AT_App_Cmd_POWER_SAVING_EXP + 4
+   \   000082   E0           MOVX    A,@DPTR
+   \   000083   FC           MOV     R4,A
+   \   000084   A3           INC     DPTR
+   \   000085   E0           MOVX    A,@DPTR
+   \   000086   FD           MOV     R5,A
+   \   000087   7A00         MOV     R2,#0x0
+   \   000089   7B10         MOV     R3,#0x10
+   \   00008B   90....       MOV     DPTR,#AT_App_TaskID
+   \   00008E   E0           MOVX    A,@DPTR
+   \   00008F   F9           MOV     R1,A
+   \   000090   12....       LCALL   ??osal_start_timerEx?relay
+    484          }
+   \                     ??AT_App_process_Power_Saving_Exp_Evt_1:
+   \   000093   7402         MOV     A,#0x2
+   \   000095                REQUIRE ?Subroutine2
+   \   000095                ; // Fall through to label ?Subroutine2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine11:
+   \   000000   7902         MOV     R1,#0x2
+   \   000002   7C06         MOV     R4,#0x6
+   \   000004   7D00         MOV     R5,#0x0
+   \   000006   90....       MOV     DPTR,#AT_App_Cmd_POWER_SAVING_EXP
+   \   000009   12....       LCALL   ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_32:
+   \   00000C   12....       LCALL   ??AT_AF_Cmd_send_simple_?relay
+   \   00000F   7402         MOV     A,#0x2
+   \   000011   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001                ; Setup parameters for call to function AT_AF_Cmd_send_simple_
+   \   000001                ; Setup parameters for call to function AT_AF_Cmd_send_simple_
+   \   000001   85..82       MOV     DPL,?XSP + 0
+   \   000004   85..83       MOV     DPH,?XSP + 1
+   \   000007   8582..       MOV     ?V0 + 0,DPL
+   \   00000A   8583..       MOV     ?V0 + 1,DPH
+   \   00000D   78..         MOV     R0,#?V0 + 0
+   \   00000F   22           RET
+    485          /*********************************************************************
+    486          for power saving experiment command 
+    487          stop experiment
+    488          *************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    489          void AT_App_Power_saving_exp_stop(void ){
+   \                     AT_App_Power_saving_exp_stop:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    490            AT_App_Cmd_POWER_SAVING_EXP.count=0;
+   \   000004   90....       MOV     DPTR,#AT_App_Cmd_POWER_SAVING_EXP + 2
+   \   000007   E4           CLR     A
+   \   000008   F0           MOVX    @DPTR,A
+   \   000009   A3           INC     DPTR
+   \   00000A   F0           MOVX    @DPTR,A
+    491          }
+   \   00000B   02....       LJMP    ?Subroutine1 & 0xFFFF
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_App_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_App_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_App_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_App_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_handleZCL_EP?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_handleZCL_EP
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_handleEntryEvt?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_handleEntryEvt
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_App_HandleKeys?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_App_HandleKeys
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_af_remove_ep?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_af_remove_ep
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_af_register_ep?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_af_register_ep
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_af_get_ep?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_af_get_ep
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_af_ep_num?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_af_ep_num
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_af_ep_list?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_af_ep_list
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_App_Power_saving_exp?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_App_Power_saving_exp
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_App_process_Power_Saving_Exp_Evt?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_App_process_Power_Saving_Exp_Evt
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_App_Power_saving_exp_stop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_App_Power_saving_exp_stop
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {7}>`:
+   \   000000   07           DB 7
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant ":0,7\\r">`:
+   \   000000   3A302C37     DB ":0,7\015"
+   \            0D00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "\\r">`:
+   \   000000   0D00         DB "\015"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {{32768}, 1, 204, 0}>`:
+   \   000000   0080         DW 32768
+   \   000002   00000000     DB 0, 0, 0, 0, 0, 0
+   \            0000    
+   \   000008   01           DB 1
+   \   000009   CC           DB 204
+   \   00000A   0000         DW 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "\\r\\n">`:
+   \   000000   0D0A00       DB "\015\012"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Power Saving Experime...">`:
+   \   000000   506F7765     DB "Power Saving Experiment finished"
+   \            72205361
+   \            76696E67
+   \            20457870
+   \            6572696D
+   \            656E7420
+   \            66696E69
+   \            73686564
+   \            00      
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     AT_App_HandleKeys                  2      0     45
+       -> NLME_GetShortAddr             0      0     44
+       -> zcl_SendCommand               0      0     66
+       -> AT_ZCL_ONOFF_SWITCH_OnOffCB
+                                        0      0     44
+       -> AT_ZCL_ONOFF_SWITCH_setting
+                                        0      0     44
+       -> AT_Cmd_ANNCE                  0      0     44
+       -> NLME_PermitJoiningRequest     0      0     44
+       -> AF_DataRequest                0      0     62
+       -> AT_Cmd_AT_F                   0      0     44
+     AT_App_Init                        0      0      9
+       -> AT_ZDO_Register               0      0     18
+       -> AT_ONOFF_OUTPUT_Register      0      0     18
+       -> AT_AF_Register                0      0     18
+       -> zcl_registerForMsg            0      0     18
+       -> AT_ZCL_Init                   0      0     18
+       -> AT_UartInit                   0      0     18
+       -> ZDOInitDevice                 0      0     18
+       -> HalKeyConfig                  0      0     18
+       -> RegisterForKeys               0      0     18
+       -> NLME_PermitJoiningRequest     0      0     18
+       -> osal_set_event                0      0     18
+     AT_App_Power_saving_exp            2      0      0
+       -> osal_start_timerEx            4      0      0
+     AT_App_Power_saving_exp_stop       2      0      0
+     AT_App_ProcessEvent                0      0     12
+       -> osal_msg_receive              0      0     24
+       -> AT_App_HandleKeys             0      0     24
+       -> osal_msg_deallocate           0      0     24
+       -> osal_msg_receive              0      0     24
+       -> AT_ONOFF_OUTPUT_MessageMSGCB
+                                        0      0     24
+       -> AT_AF_MessageMSGCB            0      0     24
+       -> AT_ZCL_ProcessIncomingMsg     0      0     24
+       -> HalLedSet                     0      0     24
+       -> HalLedSet                     0      0     24
+       -> AT_ZDO_ProcessMsgCBs          0      0     24
+       -> AT_handleZCL_EP               0      0     24
+       -> AT_handleEntryEvt             0      0     24
+       -> AT_App_process_Power_Saving_Exp_Evt
+                                        0      0     24
+     AT_App_process_Power_Saving_Exp_Evt
+                                        0      0     26
+       -> AT_AF_Cmd_send_simple_        0      0     28
+       -> HalLedSet                     0      0     24
+       -> AT_HalUARTWrite               0      0     24
+       -> printf                        0      0     24
+       -> AT_HalUARTWrite               0      0     24
+       -> HalLedSet                     0      0     24
+       -> AT_AF_Cmd_send_simple_        0      0     28
+       -> osal_start_timerEx            0      0     24
+     AT_af_ep_list                      1      0     10
+     AT_af_ep_num                       2      0      0
+     AT_af_get_ep                       2      0      0
+     AT_af_register_ep                  0      0      9
+     AT_af_remove_ep                    0      0     11
+     AT_handleEntryEvt                  0      0     27
+       -> osal_nv_read                  0      0     30
+       -> osal_nv_write                 0      0     30
+     AT_handleZCL_EP                    4      0     14
+       -> AT_NV_ZCL_readEPStatus        4      0      4
+       -> AT_ZCL_EP_ENABLE              4      0      4
+       -> AT_af_remove_ep               4      0      4
+       -> AT_ZCL_EP_ENABLE              4      0      4
+       -> AT_Cmd_EPENABLE               4      0      4
+
+
+   Segment part sizes:
+
+     Function/Label                              Bytes
+     --------------                              -----
+     _A_IEN0                                        1
+     WDCTL                                          1
+     AT_App_TaskID                                  1
+     removedEPList                                  2
+     AT_App_Cmd_POWER_SAVING_EXP                    6
+     AT_App_Init                                   80
+     ?Subroutine0                                   5
+     AT_App_ProcessEvent                          269
+     AT_handleZCL_EP                              100
+     ?Subroutine1                                   7
+     AT_handleEntryEvt                            105
+     ?Subroutine4                                  10
+     ?Subroutine2                                   3
+     ??Subroutine21_0                               5
+     AT_App_HandleKeys                            288
+     AT_af_remove_ep                               82
+     ?Subroutine16                                  8
+     ??Subroutine20_0                               4
+     ?Subroutine19                                  6
+     ?Subroutine15                                  8
+     ?Subroutine14                                  4
+     ?Subroutine18                                  6
+     ?Subroutine13                                 17
+     ?Subroutine9                                  14
+     ?Subroutine8                                  13
+     AT_af_register_ep                             82
+     AT_af_get_ep                                  54
+     ?Subroutine12                                 17
+     AT_af_ep_num                                  42
+     ?Subroutine10                                  8
+     AT_af_ep_list                                 58
+     ?Subroutine17                                 13
+     ?Subroutine6                                  23
+     AT_App_Power_saving_exp                      101
+     ?Subroutine5                                  10
+     ?Subroutine7                                   3
+     ??Subroutine22_0                               6
+     AT_App_process_Power_Saving_Exp_Evt
+                                                  149
+     ?Subroutine11                                 18
+     ?Subroutine3                                  16
+     AT_App_Power_saving_exp_stop                  14
+     ??AT_App_Init?relay                            6
+     ??AT_App_ProcessEvent?relay                    6
+     ??AT_handleZCL_EP?relay                        6
+     ??AT_handleEntryEvt?relay                      6
+     ??AT_App_HandleKeys?relay                      6
+     ??AT_af_remove_ep?relay                        6
+     ??AT_af_register_ep?relay                      6
+     ??AT_af_get_ep?relay                           6
+     ??AT_af_ep_num?relay                           6
+     ??AT_af_ep_list?relay                          6
+     ??AT_App_Power_saving_exp?relay                6
+     ??AT_App_process_Power_Saving_Exp_Evt?relay    6
+     ??AT_App_Power_saving_exp_stop?relay           6
+     ?<Constant {7}>                                1
+     ?<Constant ":0,7\r">                           6
+     ?<Constant "\r">                               2
+     ?<Constant {{32768}, 1, 204, 0}>              12
+     ?<Constant "\r\n">                             3
+     ?<Constant "Power Saving Experime...">        33
+
+ 
+ 1 648 bytes in segment BANKED_CODE
+    78 bytes in segment BANK_RELAYS
+     2 bytes in segment SFR_AN
+    57 bytes in segment XDATA_ROM_C
+     9 bytes in segment XDATA_Z
+ 
+ 1 726 bytes of CODE  memory
+    57 bytes of CONST memory
+     0 bytes of DATA  memory (+ 2 bytes shared)
+     9 bytes of XDATA memory
+
+Errors: none
+Warnings: none

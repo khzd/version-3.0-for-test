@@ -1,0 +1,527 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         26/Aug/2015  19:20:29 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\Source\AT_ONOFF_output.c              #
+#    Command line       =  -f "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\Tools\CC2530DB\f8wE #
+#                          ndev.cfg" (-DCPU32MHZ -DROOT=__near_func           #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\Tools\C #
+#                          C2530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0     #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\Source\AT_ONOFF_output.c" #
+#                           -D ZIGBEEPRO -D NWK_AUTO_POLL -D HAL_UART=TRUE    #
+#                          -D HOLD_AUTO_START -D NV_RESTORE -D REFLECTOR -D   #
+#                          HAL_UART_ISR=1 -D HAL_UART_DMA=0 -D                #
+#                          xHAL_UART_ISR_TX_MAX=200 -D xPOWER_SAVING -D       #
+#                          ZCL_READ -D ZCL_WRITE -D ZCL_IDENTIFY -D           #
+#                          ZCL_ON_OFF -D ZCL_DISCOVER -D xZTOOL_P1 -D         #
+#                          xMT_TASK -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D        #
+#                          xLCD_SUPPORTED=DEBUG -D xMT_UART_DEFAULT_OVERFLOW= #
+#                          FALSE -lC "S:\zigbee\Myzigbe\version 3.0 for       #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\" -lA       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\"           #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\Obj\" -e         #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\" -I               #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\hal\" -I           #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\Modified\" -I      #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\ZMain\TI2530DB\"    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\include\" -I "S:\zigbee\Myzigbe\version 3.0 for  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\target\CC2530EB\" -I "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\high_level\" -I "S:\zigbee\Myzigbe\version 3.0   #
+#                          for test\Projects\zstack\AT commands\AT command    #
+#                          3.2 -Body Sensor\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\low_level\srf04\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\low_level\srf04\single_chip\" -I                 #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\mt #
+#                          \" -I "S:\zigbee\Myzigbe\version 3.0 for           #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\os #
+#                          al\include\" -I "S:\zigbee\Myzigbe\version 3.0     #
+#                          for test\Projects\zstack\AT commands\AT command    #
+#                          3.2 -Body Sensor\CC2530DB\..\..\..\..\..\Component #
+#                          s\services\saddr\" -I "S:\zigbee\Myzigbe\version   #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\..\..\C #
+#                          omponents\services\sdata\" -I                      #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\af\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\nwk\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sapi\" -I "S:\zigbee\Myzigbe\version 3.0 for   #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sec\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sys\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\zdo\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\zcl\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\" -I "S:\zigbee\Myzigbe\version 3.0 for         #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\f8w\" -Ohz --require_prototypes                 #
+#    List file          =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\AT_ONOFF_ou #
+#                          tput.lst                                           #
+#    Object file        =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\Obj\AT_ONOFF_out #
+#                          put.r51                                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+S:\zigbee\Myzigbe\version 3.0 for test\Projects\zstack\AT commands\AT command 3.2 -Body Sensor\Source\AT_ONOFF_output.c
+      1          /**************************************************************************************************
+      2            Filename:       AT_ONOFF_output.c
+      3          
+      4            Description:    AT command module
+      5            Author:         Xiao Wang
+      6          **************************************************************************************************/
+      7          
+      8          
+      9          #include "OSAL.h"
+     10          #include "ZGlobals.h"
+     11          #include "AF.h"
+     12          #include "aps_groups.h"
+     13          #include "ZDApp.h"
+     14          
+     15          #include "AT_ONOFF_output.h"
+     16          #include "At_include.h"
+     17          #include "hal_led.h"
+     18          
+     19          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     20          const cId_t AT_ONOFF_OUTPUT_ClusterList[AT_ONOFF_OUTPUT_MAX_CLUSTERS] =
+   \                     AT_ONOFF_OUTPUT_ClusterList:
+   \   000000   0000         DW 0
+   \   000002   0100         DW 1
+   \   000004   0200         DW 2
+   \   000006   0300         DW 3
+   \   000008   0400         DW 4
+   \   00000A   0500         DW 5
+   \   00000C   0600         DW 6
+     21          {
+     22           AT_ONOFF_OUTPUT_Basic_CLUSTERID,                       
+     23           AT_ONOFF_OUTPUT_Power_configuration_CLUSTERID,         
+     24           AT_ONOFF_OUTPUT_Device_temperature_cfg_CLUSTERID,      
+     25           AT_ONOFF_OUTPUT_Identify_CLUSTERID ,                   
+     26           AT_ONOFF_OUTPUT_Group_CLUSTERID    ,                  
+     27           AT_ONOFF_OUTPUT_Scenes_CLUSTERID    ,            
+     28           AT_ONOFF_OUTPUT_On_Off_CLUSTERID ,
+     29          };
+     30          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     31          const SimpleDescriptionFormat_t AT_ONOFF_OUTPUT_SimpleDesc =
+   \                     AT_ONOFF_OUTPUT_SimpleDesc:
+   \   000000   C9           DB 201
+   \   000001   0700         DW 7
+   \   000003   0200         DW 2
+   \   000005   00           DB 0
+   \   000006   07           DB 7
+   \   000007   ....         DW AT_ONOFF_OUTPUT_ClusterList
+   \   000009   07           DB 7
+   \   00000A   ....         DW AT_ONOFF_OUTPUT_ClusterList
+     32          {
+     33            AT_ONOFF_OUTPUT_ENDPOINT,              //  int Endpoint;
+     34            AT_ONOFF_OUTPUT_PROFID,                //  uint16 AppProfId[2];
+     35            AT_ONOFF_OUTPUT_DEVICEID,              //  uint16 AppDeviceId[2];
+     36            AT_ONOFF_OUTPUT_DEVICE_VERSION,        //  int   AppDevVer:4;
+     37            AT_ONOFF_OUTPUT_FLAGS,                 //  int   AppFlags:4;
+     38            AT_ONOFF_OUTPUT_MAX_CLUSTERS,                                     //  uint8  AppNumInClusters;
+     39            (cId_t *)AT_ONOFF_OUTPUT_ClusterList,                            //  uint8 *pAppInClusterList;
+     40            AT_ONOFF_OUTPUT_MAX_CLUSTERS,          //  uint8  AppNumInClusters;
+     41            (cId_t *)AT_ONOFF_OUTPUT_ClusterList   //  uint8 *pAppInClusterList;
+     42          };
+     43          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     44          endPointDesc_t AT_ONOFF_OUTPUT_epDesc;
+   \                     AT_ONOFF_OUTPUT_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     45          uint8 AT_ONOFF_OUTPUT_TransID;  // This is the unique message ID (counter)
+   \                     AT_ONOFF_OUTPUT_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     46          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     47          void AT_ONOFF_OUTPUT_Register(uint8 *task_id){
+   \                     AT_ONOFF_OUTPUT_Register:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     48           // Fill out the endpoint description.
+     49            AT_ONOFF_OUTPUT_epDesc.endPoint = AT_ONOFF_OUTPUT_ENDPOINT;
+   \   000004   90....       MOV     DPTR,#AT_ONOFF_OUTPUT_epDesc
+   \   000007   74C9         MOV     A,#-0x37
+   \   000009   F0           MOVX    @DPTR,A
+     50            AT_ONOFF_OUTPUT_epDesc.task_id = task_id;
+   \   00000A   A3           INC     DPTR
+   \   00000B   EA           MOV     A,R2
+   \   00000C   F0           MOVX    @DPTR,A
+   \   00000D   A3           INC     DPTR
+   \   00000E   EB           MOV     A,R3
+   \   00000F   F0           MOVX    @DPTR,A
+     51            AT_ONOFF_OUTPUT_epDesc.simpleDesc
+     52                      = (SimpleDescriptionFormat_t *)&AT_ONOFF_OUTPUT_SimpleDesc;
+   \   000010   A3           INC     DPTR
+   \   000011   74..         MOV     A,#AT_ONOFF_OUTPUT_SimpleDesc & 0xff
+   \   000013   F0           MOVX    @DPTR,A
+   \   000014   A3           INC     DPTR
+   \   000015   74..         MOV     A,#(AT_ONOFF_OUTPUT_SimpleDesc >> 8) & 0xff
+   \   000017   F0           MOVX    @DPTR,A
+     53            AT_ONOFF_OUTPUT_epDesc.latencyReq = noLatencyReqs;
+   \   000018   A3           INC     DPTR
+   \   000019   E4           CLR     A
+   \   00001A   F0           MOVX    @DPTR,A
+     54            
+     55            // Register the endpoint description with the AF
+     56            afRegister( &AT_ONOFF_OUTPUT_epDesc );
+   \   00001B                ; Setup parameters for call to function afRegister
+   \   00001B   7A..         MOV     R2,#AT_ONOFF_OUTPUT_epDesc & 0xff
+   \   00001D   7B..         MOV     R3,#(AT_ONOFF_OUTPUT_epDesc >> 8) & 0xff
+   \   00001F   12....       LCALL   ??afRegister?relay
+     57          }
+   \   000022                REQUIRE ?Subroutine0
+   \   000022                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+     58          
+     59          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     60          void AT_ONOFF_OUTPUT_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+   \                     AT_ONOFF_OUTPUT_MessageMSGCB:
+     61          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     62            
+     63            uint8 on_off = (uint8)pkt->cmd.Data[0];
+     64            switch ( pkt->clusterId )
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+   \   000008   A3           INC     DPTR
+   \   000009   A3           INC     DPTR
+   \   00000A   A3           INC     DPTR
+   \   00000B   A3           INC     DPTR
+   \   00000C   E0           MOVX    A,@DPTR
+   \   00000D   6406         XRL     A,#0x6
+   \   00000F   7002         JNZ     ??AT_ONOFF_OUTPUT_MessageMSGCB_0
+   \   000011   A3           INC     DPTR
+   \   000012   E0           MOVX    A,@DPTR
+   \                     ??AT_ONOFF_OUTPUT_MessageMSGCB_0:
+   \   000013   702C         JNZ     ??AT_ONOFF_OUTPUT_MessageMSGCB_1
+     65            {
+     66              case AT_ONOFF_OUTPUT_Basic_CLUSTERID:
+     67                break;   
+     68              case AT_ONOFF_OUTPUT_Power_configuration_CLUSTERID:
+     69                break;
+     70              case AT_ONOFF_OUTPUT_Device_temperature_cfg_CLUSTERID:
+     71                break;
+     72              case AT_ONOFF_OUTPUT_Identify_CLUSTERID:
+     73                break;
+     74              case AT_ONOFF_OUTPUT_Group_CLUSTERID :
+     75                break;
+     76              case AT_ONOFF_OUTPUT_Scenes_CLUSTERID :
+     77                break;
+     78                
+     79              case AT_ONOFF_OUTPUT_On_Off_CLUSTERID:
+     80                switch(on_off){
+   \   000015   EA           MOV     A,R2
+   \   000016   2422         ADD     A,#0x22
+   \   000018   F582         MOV     DPL,A
+   \   00001A   EB           MOV     A,R3
+   \   00001B   3400         ADDC    A,#0x0
+   \   00001D   F583         MOV     DPH,A
+   \   00001F   E0           MOVX    A,@DPTR
+   \   000020   F8           MOV     R0,A
+   \   000021   A3           INC     DPTR
+   \   000022   E0           MOVX    A,@DPTR
+   \   000023   F583         MOV     DPH,A
+   \   000025   8882         MOV     DPL,R0
+   \   000027   E0           MOVX    A,@DPTR
+   \   000028   6008         JZ      ??AT_ONOFF_OUTPUT_MessageMSGCB_2
+   \   00002A   14           DEC     A
+   \   00002B   6009         JZ      ??AT_ONOFF_OUTPUT_MessageMSGCB_3
+   \   00002D   14           DEC     A
+   \   00002E   600A         JZ      ??AT_ONOFF_OUTPUT_MessageMSGCB_4
+   \   000030   800F         SJMP    ??AT_ONOFF_OUTPUT_MessageMSGCB_1
+     81                  case 0:
+     82                    HalLedSet( HAL_LED_1,HAL_LED_MODE_OFF);
+   \                     ??AT_ONOFF_OUTPUT_MessageMSGCB_2:
+   \   000032                ; Setup parameters for call to function HalLedSet
+   \   000032   7A00         MOV     R2,#0x0
+   \   000034   8006         SJMP    ??AT_ONOFF_OUTPUT_MessageMSGCB_5
+     83                    break;
+     84                  case 1:
+     85                    HalLedSet( HAL_LED_1,HAL_LED_MODE_ON);
+   \                     ??AT_ONOFF_OUTPUT_MessageMSGCB_3:
+   \   000036                ; Setup parameters for call to function HalLedSet
+   \   000036   7A01         MOV     R2,#0x1
+   \   000038   8002         SJMP    ??AT_ONOFF_OUTPUT_MessageMSGCB_5
+     86                    break;
+     87                  case 2:
+     88                    HalLedSet( HAL_LED_1,HAL_LED_MODE_TOGGLE);
+   \                     ??AT_ONOFF_OUTPUT_MessageMSGCB_4:
+   \   00003A                ; Setup parameters for call to function HalLedSet
+   \   00003A   7A08         MOV     R2,#0x8
+   \                     ??AT_ONOFF_OUTPUT_MessageMSGCB_5:
+   \   00003C   7901         MOV     R1,#0x1
+   \   00003E   12....       LCALL   ??HalLedSet?relay
+     89                    break;
+     90                    
+     91                }
+     92                break;
+     93            }
+     94          }
+   \                     ??AT_ONOFF_OUTPUT_MessageMSGCB_1:
+   \   000041   80..         SJMP    ?Subroutine0
+     95          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     96          uint8 AT_AF_error_state;
+   \                     AT_AF_error_state:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     97          void AT_ONOFF_OUTPUT_Cmd_RONOFF(afAddrType_t* dstAddr,uint8 on_off){
+   \                     AT_ONOFF_OUTPUT_Cmd_RONOFF:
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV     A,#-0x1
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   85..82       MOV     DPL,?XSP + 0
+   \   00000E   85..83       MOV     DPH,?XSP + 1
+   \   000011   F0           MOVX    @DPTR,A
+     98             if ( (AT_AF_error_state=AF_DataRequest( dstAddr, & AT_ONOFF_OUTPUT_epDesc,
+     99                                 AT_ONOFF_OUTPUT_On_Off_CLUSTERID,
+    100                                 1,
+    101                                 (uint8*)&on_off,
+    102                                 &AT_ONOFF_OUTPUT_TransID,
+    103                                 AF_DISCV_ROUTE,
+    104                                 AF_DEFAULT_RADIUS )) == afStatus_SUCCESS )
+   \   000012                ; Setup parameters for call to function AF_DataRequest
+   \   000012   75..1E       MOV     ?V0 + 0,#0x1e
+   \   000015   78..         MOV     R0,#?V0 + 0
+   \   000017   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00001A   75....       MOV     ?V0 + 0,#AT_ONOFF_OUTPUT_TransID & 0xff
+   \   00001D   75....       MOV     ?V0 + 1,#(AT_ONOFF_OUTPUT_TransID >> 8) & 0xff
+   \   000020   78..         MOV     R0,#?V0 + 0
+   \   000022   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000025   7403         MOV     A,#0x3
+   \   000027   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002A   8582..       MOV     ?V0 + 0,DPL
+   \   00002D   8583..       MOV     ?V0 + 1,DPH
+   \   000030   78..         MOV     R0,#?V0 + 0
+   \   000032   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000035   75..01       MOV     ?V0 + 0,#0x1
+   \   000038   75..00       MOV     ?V0 + 1,#0x0
+   \   00003B   78..         MOV     R0,#?V0 + 0
+   \   00003D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000040   75..06       MOV     ?V0 + 0,#0x6
+   \   000043   78..         MOV     R0,#?V0 + 0
+   \   000045   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000048   7920         MOV     R1,#0x20
+   \   00004A   7C..         MOV     R4,#AT_ONOFF_OUTPUT_epDesc & 0xff
+   \   00004C   7D..         MOV     R5,#(AT_ONOFF_OUTPUT_epDesc >> 8) & 0xff
+   \   00004E   12....       LCALL   ??AF_DataRequest?relay
+   \   000051   7409         MOV     A,#0x9
+   \   000053   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000056   E9           MOV     A,R1
+   \   000057   90....       MOV     DPTR,#AT_AF_error_state
+   \   00005A   F0           MOVX    @DPTR,A
+   \   00005B   700F         JNZ     ??AT_ONOFF_OUTPUT_Cmd_RONOFF_0
+    105            {
+    106              AT_OK();
+   \   00005D                ; Setup parameters for call to function AT_HalUARTWrite
+   \   00005D   7C07         MOV     R4,#0x7
+   \   00005F   7D00         MOV     R5,#0x0
+   \   000061   7A..         MOV     R2,#`?<Constant "\\r\\nOK\\r\\n">` & 0xff
+   \   000063   7B..         MOV     R3,#(`?<Constant "\\r\\nOK\\r\\n">` >> 8) & 0xff
+   \   000065   7900         MOV     R1,#0x0
+   \   000067   12....       LCALL   ??AT_HalUARTWrite?relay
+   \   00006A   8003         SJMP    ??AT_ONOFF_OUTPUT_Cmd_RONOFF_1
+    107            }
+    108            else
+    109            {
+    110              AT_ERROR(AT_AF_error_state);
+   \                     ??AT_ONOFF_OUTPUT_Cmd_RONOFF_0:
+   \   00006C                ; Setup parameters for call to function AT_UARTWriteErrMsg
+   \   00006C   12....       LCALL   ??AT_UARTWriteErrMsg?relay
+    111            }
+    112          }
+   \                     ??AT_ONOFF_OUTPUT_Cmd_RONOFF_1:
+   \   00006F   7401         MOV     A,#0x1
+   \   000071   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000074   7F02         MOV     R7,#0x2
+   \   000076   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ONOFF_OUTPUT_Register?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ONOFF_OUTPUT_Register
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ONOFF_OUTPUT_MessageMSGCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ONOFF_OUTPUT_MessageMSGCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ONOFF_OUTPUT_Cmd_RONOFF?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ONOFF_OUTPUT_Cmd_RONOFF
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "\\r\\nOK\\r\\n">`:
+   \   000000   0D0A4F4B     DB "\015\012OK\015\012"
+   \            0D0A00  
+
+   Maximum stack usage in bytes:
+
+     Function                     ISTACK PSTACK XSTACK
+     --------                     ------ ------ ------
+     AT_ONOFF_OUTPUT_Cmd_RONOFF       1      0     20
+       -> AF_DataRequest              0      0     40
+       -> AT_HalUARTWrite             0      0     22
+       -> AT_UARTWriteErrMsg          0      0     22
+     AT_ONOFF_OUTPUT_MessageMSGCB     2      0      0
+       -> HalLedSet                   4      0      0
+       -> HalLedSet                   4      0      0
+       -> HalLedSet                   4      0      0
+     AT_ONOFF_OUTPUT_Register         2      0      0
+       -> afRegister                  4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                       Bytes
+     --------------                       -----
+     AT_ONOFF_OUTPUT_ClusterList            14
+     AT_ONOFF_OUTPUT_SimpleDesc             12
+     AT_ONOFF_OUTPUT_epDesc                  6
+     AT_ONOFF_OUTPUT_TransID                 1
+     AT_ONOFF_OUTPUT_Register               34
+     ?Subroutine0                            7
+     AT_ONOFF_OUTPUT_MessageMSGCB           67
+     AT_AF_error_state                       1
+     AT_ONOFF_OUTPUT_Cmd_RONOFF            121
+     ??AT_ONOFF_OUTPUT_Register?relay        6
+     ??AT_ONOFF_OUTPUT_MessageMSGCB?relay    6
+     ??AT_ONOFF_OUTPUT_Cmd_RONOFF?relay      6
+     ?<Constant "\r\nOK\r\n">                7
+
+ 
+ 229 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+  33 bytes in segment XDATA_ROM_C
+   8 bytes in segment XDATA_Z
+ 
+ 247 bytes of CODE  memory
+  33 bytes of CONST memory
+   8 bytes of XDATA memory
+
+Errors: none
+Warnings: none

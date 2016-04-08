@@ -1,0 +1,906 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         01/Jul/2015  18:28:57 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  S:\zigbee\Myzigbe\version 3.0 for new              #
+#                          ZStack-CC2530-2.5.1a\Components\stack\zcl\zcl_ms.c #
+#    Command line       =  -f "S:\zigbee\Myzigbe\version 3.0 for new          #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\Tools\CC2530DB\f8wRouter. #
+#                          cfg" (-DCPU32MHZ -DROOT=__near_func                #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig. #
+#                          cfg" (-DZIGBEEPRO -DSECURE=0                       #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x2015                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "S:\zigbee\Myzigbe\version  #
+#                          3.0 for new ZStack-CC2530-2.5.1a\Components\stack\ #
+#                          zcl\zcl_ms.c" -D ZIGBEEPRO -D NWK_AUTO_POLL -D     #
+#                          HAL_UART=TRUE -D HOLD_AUTO_START -D NV_RESTORE -D  #
+#                          REFLECTOR -D xHAL_UART_ISR_TX_MAX=200 -D           #
+#                          xPOWER_SAVING -D ZCL_READ -D ZCL_WRITE -D          #
+#                          ZCL_IDENTIFY -D ZCL_ON_OFF -D ZCL_DISCOVER -D      #
+#                          HAL_UART_ISR=1 -D HAL_UART_DMA=0 -D xZTOOL_P1 -D   #
+#                          xMT_TASK -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D        #
+#                          xLCD_SUPPORTED=DEBUG -D xMT_UART_DEFAULT_OVERFLOW= #
+#                          FALSE -lC "S:\zigbee\Myzigbe\version 3.0 for new   #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\RouterEB\List\" -lA                #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\RouterEB\List\" --diag_suppress    #
+#                          Pe001,Pa010 -o "S:\zigbee\Myzigbe\version 3.0 for  #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\RouterEB\Obj\" -e                  #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for new          #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 - SOCKET\CC2530DB\" -I     #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\Source\" -I                     #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\Source\hal\" -I                 #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\Source\Modified\" -I            #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\ZMain\TI2530DB\" -I       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\hal\incl #
+#                          ude\" -I "S:\zigbee\Myzigbe\version 3.0 for new    #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\hal\targ #
+#                          et\CC2530EB\" -I "S:\zigbee\Myzigbe\version 3.0    #
+#                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT    #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\mac\incl #
+#                          ude\" -I "S:\zigbee\Myzigbe\version 3.0 for new    #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\mac\high #
+#                          _level\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\mac\low_ #
+#                          level\srf04\" -I "S:\zigbee\Myzigbe\version 3.0    #
+#                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT    #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\mac\low_ #
+#                          level\srf04\single_chip\" -I                       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\mt\" -I  #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\osal\inc #
+#                          lude\" -I "S:\zigbee\Myzigbe\version 3.0 for new   #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\services #
+#                          \saddr\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\services #
+#                          \sdata\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\af #
+#                          \" -I "S:\zigbee\Myzigbe\version 3.0 for new       #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\nw #
+#                          k\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\sa #
+#                          pi\" -I "S:\zigbee\Myzigbe\version 3.0 for new     #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\se #
+#                          c\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\sy #
+#                          s\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\zd #
+#                          o\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\stack\zc #
+#                          l\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\zmac\"   #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for new          #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\..\..\..\..\..\Components\zmac\f8w #
+#                          \" -Ohz --require_prototypes                       #
+#    List file          =  S:\zigbee\Myzigbe\version 3.0 for new              #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\RouterEB\List\zcl_ms.lst           #
+#    Object file        =  S:\zigbee\Myzigbe\version 3.0 for new              #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          SOCKET\CC2530DB\RouterEB\Obj\zcl_ms.r51            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+S:\zigbee\Myzigbe\version 3.0 for new ZStack-CC2530-2.5.1a\Components\stack\zcl\zcl_ms.c
+      1          /**************************************************************************************************
+      2            Filename:       zcl_ms.c
+      3            Revised:        $Date: 2010-02-09 15:28:14 -0800 (Tue, 09 Feb 2010) $
+      4            Revision:       $Revision: 21679 $
+      5          
+      6            Description:    Zigbee Cluster Library - Measurements and Sensing ( MS )
+      7          
+      8          
+      9            Copyright 2006-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com. 
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          #include "ZComDef.h"
+     44          #include "OSAL.h"
+     45          #include "zcl.h"
+     46          #include "zcl_general.h"
+     47          #include "zcl_ms.h"
+     48          
+     49          #if defined ( INTER_PAN )
+     50            #include "stub_aps.h"
+     51          #endif
+     52          
+     53          /*********************************************************************
+     54           * MACROS
+     55           */
+     56          
+     57          /*********************************************************************
+     58           * CONSTANTS
+     59           */
+     60          
+     61          /*********************************************************************
+     62           * TYPEDEFS
+     63           */
+     64          typedef struct zclMSCBRec
+     65          {
+     66            struct zclMSCBRec     *next;
+     67            uint8                 endpoint; // Used to link it into the endpoint descriptor
+     68            zclMS_AppCallbacks_t  *CBs;     // Pointer to Callback function
+     69          } zclMSCBRec_t;
+     70          
+     71          /*********************************************************************
+     72           * GLOBAL VARIABLES
+     73           */
+     74          
+     75          /*********************************************************************
+     76           * GLOBAL FUNCTIONS
+     77           */
+     78          
+     79          /*********************************************************************
+     80           * LOCAL VARIABLES
+     81           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     82          static zclMSCBRec_t *zclMSCBs = (zclMSCBRec_t *)NULL;
+   \                     zclMSCBs:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     83          static uint8 zclMSPluginRegisted = FALSE;
+   \                     zclMSPluginRegisted:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     84          
+     85          /*********************************************************************
+     86           * LOCAL FUNCTIONS
+     87           */
+     88          static ZStatus_t zclMS_HdlIncoming( zclIncoming_t *pInMsg );
+     89          static ZStatus_t zclMS_HdlInSpecificCommands( zclIncoming_t *pInMsg );
+     90          static zclMS_AppCallbacks_t *zclMS_FindCallbacks( uint8 endpoint );
+     91          
+     92          static ZStatus_t zclMS_ProcessIn_IlluminanceMeasurementCmds( zclIncoming_t *pInMsg );
+     93          static ZStatus_t zclMS_ProcessIn_IlluminanceLevelSensingCmds( zclIncoming_t *pInMsg );
+     94          static ZStatus_t zclMS_ProcessIn_TemperatureMeasurementCmds( zclIncoming_t *pInMsg );
+     95          static ZStatus_t zclMS_ProcessIn_PressureMeasurementCmds( zclIncoming_t *pInMsg );
+     96          static ZStatus_t zclMS_ProcessIn_FlowMeasurementCmds( zclIncoming_t *pInMsg );
+     97          static ZStatus_t zclMS_ProcessIn_RelativeHumidityCmds( zclIncoming_t *pInMsg );
+     98          static ZStatus_t zclMS_ProcessIn_OccupancySensingCmds( zclIncoming_t *pInMsg );
+     99          
+    100          /*********************************************************************
+    101           * @fn      zclMS_RegisterCmdCallbacks
+    102           *
+    103           * @brief   Register an applications command callbacks
+    104           *
+    105           * @param   endpoint - application's endpoint
+    106           * @param   callbacks - pointer to the callback record.
+    107           *
+    108           * @return  ZMemError if not able to allocate
+    109           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    110          ZStatus_t zclMS_RegisterCmdCallbacks( uint8 endpoint, zclMS_AppCallbacks_t *callbacks )
+   \                     zclMS_RegisterCmdCallbacks:
+    111          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   FF           MOV     R7,A
+    112            zclMSCBRec_t *pNewItem;
+    113            zclMSCBRec_t *pLoop;
+    114          
+    115            // Register as a ZCL Plugin
+    116            if ( !zclMSPluginRegisted )
+   \   00000B   90....       MOV     DPTR,#zclMSPluginRegisted
+   \   00000E   E0           MOVX    A,@DPTR
+   \   00000F   7021         JNZ     ??zclMS_RegisterCmdCallbacks_0
+    117            {
+    118              zcl_registerPlugin( ZCL_CLUSTER_ID_MS_ILLUMINANCE_MEASUREMENT,
+    119                                  ZCL_CLUSTER_ID_MS_OCCUPANCY_SENSING,
+    120                                  zclMS_HdlIncoming );
+   \   000011                ; Setup parameters for call to function zcl_registerPlugin
+   \   000011   75....       MOV     ?V0 + 2,#??zclMS_HdlIncoming?relay & 0xff
+   \   000014   75....       MOV     ?V0 + 3,#(??zclMS_HdlIncoming?relay >> 8) & 0xff
+   \   000017   78..         MOV     R0,#?V0 + 2
+   \   000019   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00001C   7C06         MOV     R4,#0x6
+   \   00001E   7D04         MOV     R5,#0x4
+   \   000020   7A00         MOV     R2,#0x0
+   \   000022   7B04         MOV     R3,#0x4
+   \   000024   12....       LCALL   ??zcl_registerPlugin?relay
+   \   000027   7402         MOV     A,#0x2
+   \   000029   12....       LCALL   ?DEALLOC_XSTACK8
+    121              zclMSPluginRegisted = TRUE;
+   \   00002C   90....       MOV     DPTR,#zclMSPluginRegisted
+   \   00002F   7401         MOV     A,#0x1
+   \   000031   F0           MOVX    @DPTR,A
+    122            }
+    123          
+    124            // Fill in the new profile list
+    125            pNewItem = osal_mem_alloc( sizeof( zclMSCBRec_t ) );
+   \                     ??zclMS_RegisterCmdCallbacks_0:
+   \   000032                ; Setup parameters for call to function osal_mem_alloc
+   \   000032   7A05         MOV     R2,#0x5
+   \   000034   7B00         MOV     R3,#0x0
+   \   000036   12....       LCALL   ??osal_mem_alloc?relay
+   \   000039   8A..         MOV     ?V0 + 2,R2
+   \   00003B   8B..         MOV     ?V0 + 3,R3
+   \   00003D   A8..         MOV     R0,?V0 + 2
+   \   00003F   A9..         MOV     R1,?V0 + 3
+    126            if ( pNewItem == NULL )
+   \   000041   E8           MOV     A,R0
+   \   000042   49           ORL     A,R1
+   \   000043   7004         JNZ     ??zclMS_RegisterCmdCallbacks_1
+    127              return (ZMemError);
+   \   000045   7910         MOV     R1,#0x10
+   \   000047   804B         SJMP    ??zclMS_RegisterCmdCallbacks_2
+    128          
+    129            pNewItem->next = (zclMSCBRec_t *)NULL;
+   \                     ??zclMS_RegisterCmdCallbacks_1:
+   \   000049   8882         MOV     DPL,R0
+   \   00004B   8983         MOV     DPH,R1
+   \   00004D   E4           CLR     A
+   \   00004E   F0           MOVX    @DPTR,A
+   \   00004F   A3           INC     DPTR
+   \   000050   F0           MOVX    @DPTR,A
+    130            pNewItem->endpoint = endpoint;
+   \   000051   8882         MOV     DPL,R0
+   \   000053   8983         MOV     DPH,R1
+   \   000055   A3           INC     DPTR
+   \   000056   A3           INC     DPTR
+   \   000057   E5..         MOV     A,?V0 + 0
+   \   000059   F0           MOVX    @DPTR,A
+    131            pNewItem->CBs = callbacks;
+   \   00005A   8882         MOV     DPL,R0
+   \   00005C   8983         MOV     DPH,R1
+   \   00005E   A3           INC     DPTR
+   \   00005F   A3           INC     DPTR
+   \   000060   A3           INC     DPTR
+   \   000061   EE           MOV     A,R6
+   \   000062   F0           MOVX    @DPTR,A
+   \   000063   A3           INC     DPTR
+   \   000064   EF           MOV     A,R7
+   \   000065   F0           MOVX    @DPTR,A
+    132          
+    133            // Find spot in list
+    134            if ( zclMSCBs == NULL )
+   \   000066   90....       MOV     DPTR,#zclMSCBs
+   \   000069   E0           MOVX    A,@DPTR
+   \   00006A   FA           MOV     R2,A
+   \   00006B   A3           INC     DPTR
+   \   00006C   E0           MOVX    A,@DPTR
+   \   00006D   FB           MOV     R3,A
+   \   00006E   EA           MOV     A,R2
+   \   00006F   4B           ORL     A,R3
+   \   000070   7008         JNZ     ??zclMS_RegisterCmdCallbacks_3
+    135            {
+    136              zclMSCBs = pNewItem;
+   \   000072   90....       MOV     DPTR,#zclMSCBs
+   \   000075   8016         SJMP    ??zclMS_RegisterCmdCallbacks_4
+    137            }
+    138            else
+    139            {
+    140              // Look for end of list
+    141              pLoop = zclMSCBs;
+    142              while ( pLoop->next != NULL )
+    143                pLoop = pLoop->next;
+   \                     ??zclMS_RegisterCmdCallbacks_5:
+   \   000077   E0           MOVX    A,@DPTR
+   \   000078   FA           MOV     R2,A
+   \   000079   A3           INC     DPTR
+   \                     ??zclMS_RegisterCmdCallbacks_3:
+   \   00007A   E0           MOVX    A,@DPTR
+   \   00007B   FB           MOV     R3,A
+   \   00007C   8A82         MOV     DPL,R2
+   \   00007E   8B83         MOV     DPH,R3
+   \   000080   E0           MOVX    A,@DPTR
+   \   000081   FC           MOV     R4,A
+   \   000082   A3           INC     DPTR
+   \   000083   E0           MOVX    A,@DPTR
+   \   000084   FD           MOV     R5,A
+   \   000085   EC           MOV     A,R4
+   \   000086   4D           ORL     A,R5
+   \   000087   8A82         MOV     DPL,R2
+   \   000089   8B83         MOV     DPH,R3
+   \   00008B   70EA         JNZ     ??zclMS_RegisterCmdCallbacks_5
+    144          
+    145              // Put new item at end of list
+    146              pLoop->next = pNewItem;
+   \                     ??zclMS_RegisterCmdCallbacks_4:
+   \   00008D   E8           MOV     A,R0
+   \   00008E   F0           MOVX    @DPTR,A
+   \   00008F   A3           INC     DPTR
+   \   000090   E9           MOV     A,R1
+   \   000091   F0           MOVX    @DPTR,A
+    147            }
+    148            return ( ZSuccess );
+   \   000092   7900         MOV     R1,#0x0
+   \                     ??zclMS_RegisterCmdCallbacks_2:
+   \   000094   7F04         MOV     R7,#0x4
+   \   000096   02....       LJMP    ?BANKED_LEAVE_XDATA
+    149          }
+    150          
+    151          /*********************************************************************
+    152           * @fn      zclMS_FindCallbacks
+    153           *
+    154           * @brief   Find the callbacks for an endpoint
+    155           *
+    156           * @param   endpoint
+    157           *
+    158           * @return  pointer to the callbacks
+    159           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    160          static zclMS_AppCallbacks_t *zclMS_FindCallbacks( uint8 endpoint )
+   \                     zclMS_FindCallbacks:
+    161          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    162            zclMSCBRec_t *pCBs;
+    163            
+    164            pCBs = zclMSCBs;
+   \   000004   90....       MOV     DPTR,#zclMSCBs
+    165            while ( pCBs )
+    166            {
+    167              if ( pCBs->endpoint == endpoint )
+    168                return ( pCBs->CBs );
+    169              pCBs = pCBs->next;
+   \                     ??zclMS_FindCallbacks_0:
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   FA           MOV     R2,A
+   \   000009   A3           INC     DPTR
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   FB           MOV     R3,A
+   \   00000C   EA           MOV     A,R2
+   \   00000D   4B           ORL     A,R3
+   \   00000E   6018         JZ      ??zclMS_FindCallbacks_1
+   \   000010   8A82         MOV     DPL,R2
+   \   000012   8B83         MOV     DPH,R3
+   \   000014   A3           INC     DPTR
+   \   000015   A3           INC     DPTR
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   69           XRL     A,R1
+   \   000018   8A82         MOV     DPL,R2
+   \   00001A   8B83         MOV     DPH,R3
+   \   00001C   70E9         JNZ     ??zclMS_FindCallbacks_0
+   \   00001E   A3           INC     DPTR
+   \   00001F   A3           INC     DPTR
+   \   000020   A3           INC     DPTR
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   FA           MOV     R2,A
+   \   000023   A3           INC     DPTR
+   \   000024   E0           MOVX    A,@DPTR
+   \   000025   FB           MOV     R3,A
+   \   000026   8004         SJMP    ??zclMS_FindCallbacks_2
+    170            }
+    171            return ( (zclMS_AppCallbacks_t *)NULL );
+   \                     ??zclMS_FindCallbacks_1:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     ??zclMS_FindCallbacks_2:
+   \   00002C                REQUIRE ?Subroutine0
+   \   00002C                ; // Fall through to label ?Subroutine0
+    172          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+    173          
+    174          /*********************************************************************
+    175           * @fn      zclMS_HdlIncoming
+    176           *
+    177           * @brief   Callback from ZCL to process incoming Commands specific
+    178           *          to this cluster library or Profile commands for attributes
+    179           *          that aren't in the attribute list
+    180           *
+    181           * @param   pInMsg - pointer to the incoming message
+    182           * @param   logicalClusterID
+    183           *
+    184           * @return  ZStatus_t
+    185           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    186          static ZStatus_t zclMS_HdlIncoming( zclIncoming_t *pInMsg )
+   \                     zclMS_HdlIncoming:
+    187          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    188            ZStatus_t stat = ZSuccess;
+    189          
+    190          #if defined ( INTER_PAN )
+    191            if ( StubAPS_InterPan( pInMsg->msg->srcAddr.panId, pInMsg->msg->srcAddr.endPoint ) )
+    192              return ( stat ); // Cluster not supported thru Inter-PAN
+    193          #endif
+    194            if ( zcl_ClusterCmd( pInMsg->hdr.fc.type ) )
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+   \   000008   A3           INC     DPTR
+   \   000009   A3           INC     DPTR
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   5403         ANL     A,#0x3
+   \   00000D   6401         XRL     A,#0x1
+   \   00000F   7021         JNZ     ??zclMS_HdlIncoming_0
+    195            {
+    196              // Is this a manufacturer specific command?
+    197              if ( pInMsg->hdr.fc.manuSpecific == 0 ) 
+   \   000011   8A82         MOV     DPL,R2
+   \   000013   8B83         MOV     DPH,R3
+   \   000015   A3           INC     DPTR
+   \   000016   A3           INC     DPTR
+   \   000017   E0           MOVX    A,@DPTR
+   \   000018   5404         ANL     A,#0x4
+   \   00001A   7016         JNZ     ??zclMS_HdlIncoming_0
+    198              {
+    199                stat = zclMS_HdlInSpecificCommands( pInMsg );
+   \   00001C                ; Setup parameters for call to function zclMS_FindCallbacks
+   \   00001C   8A82         MOV     DPL,R2
+   \   00001E   8B83         MOV     DPH,R3
+   \   000020   E0           MOVX    A,@DPTR
+   \   000021   2414         ADD     A,#0x14
+   \   000023   F8           MOV     R0,A
+   \   000024   A3           INC     DPTR
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   3400         ADDC    A,#0x0
+   \   000028   F9           MOV     R1,A
+   \   000029   8882         MOV     DPL,R0
+   \   00002B   8983         MOV     DPH,R1
+   \   00002D   E0           MOVX    A,@DPTR
+   \   00002E   F9           MOV     R1,A
+   \   00002F   12....       LCALL   ??zclMS_FindCallbacks?relay
+    200              }
+    201              else
+    202              {
+    203                // We don't support any manufacturer specific command -- ignore it.
+    204                stat = ZFailure;
+    205              }
+    206            }
+    207            else
+    208            {
+    209              // Handle all the normal (Read, Write...) commands
+    210              stat = ZFailure;
+    211            }
+    212            return ( stat );
+   \                     ??zclMS_HdlIncoming_0:
+   \   000032   7901         MOV     R1,#0x1
+   \   000034   80..         SJMP    ?Subroutine0
+    213          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclMS_RegisterCmdCallbacks?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclMS_RegisterCmdCallbacks
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclMS_FindCallbacks?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclMS_FindCallbacks
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclMS_HdlIncoming?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclMS_HdlIncoming
+    214          
+    215          /*********************************************************************
+    216           * @fn      zclMS_HdlInSpecificCommands
+    217           *
+    218           * @brief   Callback from ZCL to process incoming Commands specific
+    219           *          to this cluster library
+    220           *
+    221           * @param   pInMsg - pointer to the incoming message
+    222           *
+    223           * @return  ZStatus_t
+    224           */
+    225          static ZStatus_t zclMS_HdlInSpecificCommands( zclIncoming_t *pInMsg )
+    226          {
+    227            ZStatus_t stat = ZSuccess;
+    228            zclMS_AppCallbacks_t *pCBs;
+    229            
+    230            // make sure endpoint exists
+    231            pCBs = (void*)zclMS_FindCallbacks( pInMsg->msg->endPoint );
+    232            if ( pCBs == NULL )
+    233              return ( ZFailure );
+    234            
+    235            switch ( pInMsg->msg->clusterId )			
+    236            {
+    237              case ZCL_CLUSTER_ID_MS_ILLUMINANCE_MEASUREMENT:
+    238                stat = zclMS_ProcessIn_IlluminanceMeasurementCmds( pInMsg );
+    239                break;
+    240          
+    241              case ZCL_CLUSTER_ID_MS_ILLUMINANCE_LEVEL_SENSING_CONFIG:
+    242                stat = zclMS_ProcessIn_IlluminanceLevelSensingCmds( pInMsg );
+    243                break;
+    244          
+    245              case ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT:
+    246                stat = zclMS_ProcessIn_TemperatureMeasurementCmds( pInMsg );
+    247                break;
+    248          
+    249              case ZCL_CLUSTER_ID_MS_PRESSURE_MEASUREMENT:
+    250                stat = zclMS_ProcessIn_PressureMeasurementCmds( pInMsg );
+    251                break;
+    252          
+    253              case ZCL_CLUSTER_ID_MS_FLOW_MEASUREMENT:
+    254                stat = zclMS_ProcessIn_FlowMeasurementCmds( pInMsg );
+    255                break;
+    256          
+    257              case ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY:
+    258                stat = zclMS_ProcessIn_RelativeHumidityCmds( pInMsg );
+    259                break;
+    260                
+    261              case ZCL_CLUSTER_ID_MS_OCCUPANCY_SENSING:
+    262                stat = zclMS_ProcessIn_OccupancySensingCmds( pInMsg );
+    263                break;
+    264          
+    265              default:
+    266                stat = ZFailure;
+    267                break;
+    268            }
+    269          
+    270            return ( stat );
+    271          }
+    272          
+    273          /*********************************************************************
+    274           * @fn      zclMS_ProcessIn_IlluminanceMeasurementCmds
+    275           *
+    276           * @brief   Callback from ZCL to process incoming Commands specific
+    277           *          to this cluster library on a command ID basis
+    278           *
+    279           * @param   pInMsg - pointer to the incoming message
+    280           *
+    281           * @return  ZStatus_t
+    282           */
+    283          static ZStatus_t zclMS_ProcessIn_IlluminanceMeasurementCmds( zclIncoming_t *pInMsg )
+    284          {
+    285            ZStatus_t stat = ZFailure;
+    286          
+    287            // there are no specific command for this cluster yet.
+    288            // instead of suppressing a compiler warnings( for a code porting reasons )
+    289            // fake unused call here and keep the code skeleton intact
+    290           (void)pInMsg;
+    291            if ( stat != ZFailure )
+    292              zclMS_FindCallbacks( 0 );
+    293          
+    294            return ( stat );
+    295          }
+    296          
+    297          /*********************************************************************
+    298           * @fn      zclMS_ProcessIn_IlluminanceLevelSensingCmds
+    299           *
+    300           * @brief   Callback from ZCL to process incoming Commands specific
+    301           *          to this cluster library on a command ID basis
+    302           *
+    303           * @param   pInMsg - pointer to the incoming message
+    304           *
+    305           * @return  ZStatus_t
+    306           */
+    307          static ZStatus_t zclMS_ProcessIn_IlluminanceLevelSensingCmds( zclIncoming_t *pInMsg )
+    308          {
+    309            ZStatus_t stat = ZSuccess;
+    310            uint8 cmdID;
+    311          
+    312            cmdID = pInMsg->hdr.commandID;
+    313          
+    314            switch ( cmdID )				
+    315            {
+    316          
+    317              default:
+    318                stat = ZFailure;
+    319                break;
+    320            }
+    321          
+    322            return ( stat );
+    323          }
+    324          
+    325          /*********************************************************************
+    326           * @fn      zclMS_ProcessIn_TemperatureMeasurementCmds
+    327           *
+    328           * @brief   Callback from ZCL to process incoming Commands specific
+    329           *          to this cluster library on a command ID basis
+    330           *
+    331           * @param   pInMsg - pointer to the incoming message
+    332           *
+    333           * @return  ZStatus_t
+    334           */
+    335          static ZStatus_t zclMS_ProcessIn_TemperatureMeasurementCmds( zclIncoming_t *pInMsg )
+    336          {
+    337            ZStatus_t stat = ZSuccess;
+    338            uint8 cmdID;
+    339          
+    340            cmdID = pInMsg->hdr.commandID;
+    341          
+    342            switch ( cmdID )				
+    343            {
+    344          
+    345              default:
+    346                stat = ZFailure;
+    347                break;
+    348            }
+    349          
+    350            return ( stat );
+    351          }
+    352          
+    353          /*********************************************************************
+    354           * @fn      zclMS_ProcessIn_PressureMeasurementCmds
+    355           *
+    356           * @brief   Callback from ZCL to process incoming Commands specific
+    357           *          to this cluster library on a command ID basis
+    358           *
+    359           * @param   pInMsg - pointer to the incoming message
+    360           *
+    361           * @return  ZStatus_t
+    362           */
+    363          static ZStatus_t zclMS_ProcessIn_PressureMeasurementCmds( zclIncoming_t *pInMsg )
+    364          {
+    365            ZStatus_t stat = ZSuccess;
+    366            uint8 cmdID;
+    367          
+    368            cmdID = pInMsg->hdr.commandID;
+    369          
+    370            switch ( cmdID )				
+    371            {
+    372              default:
+    373                stat = ZFailure;
+    374                break;
+    375            }
+    376          
+    377            return ( stat );
+    378          }
+    379          
+    380          /*********************************************************************
+    381           * @fn      zclMS_ProcessIn_FlowMeasurementCmds
+    382           *
+    383           * @brief   Callback from ZCL to process incoming Commands specific
+    384           *          to this cluster library on a command ID basis
+    385           *
+    386           * @param   pInMsg - pointer to the incoming message
+    387           *
+    388           * @return  ZStatus_t
+    389           */
+    390          static ZStatus_t zclMS_ProcessIn_FlowMeasurementCmds( zclIncoming_t *pInMsg )
+    391          {
+    392            ZStatus_t stat = ZSuccess;
+    393            uint8 cmdID;
+    394          
+    395            cmdID = pInMsg->hdr.commandID;
+    396          
+    397            switch ( cmdID )				
+    398            {
+    399          
+    400              default:
+    401                stat = ZFailure;
+    402                break;
+    403            }
+    404          
+    405            return ( stat );
+    406          }
+    407          
+    408          /*********************************************************************
+    409           * @fn      zclMS_ProcessIn_RelativeHumidityCmds
+    410           *
+    411           * @brief   Callback from ZCL to process incoming Commands specific
+    412           *          to this cluster library on a command ID basis
+    413           *
+    414           * @param   pInMsg - pointer to the incoming message
+    415           *
+    416           * @return  ZStatus_t
+    417           */
+    418          static ZStatus_t zclMS_ProcessIn_RelativeHumidityCmds( zclIncoming_t *pInMsg )
+    419          {
+    420            ZStatus_t stat = ZSuccess;
+    421            uint8 cmdID;
+    422          
+    423            cmdID = pInMsg->hdr.commandID;
+    424          
+    425            switch ( cmdID )				
+    426            {
+    427          
+    428              default:
+    429                stat = ZFailure;
+    430                break;
+    431            }
+    432          
+    433            return ( stat );
+    434          }
+    435          
+    436          /*********************************************************************
+    437           * @fn      zclMS_ProcessIn_OccupancySensingCmds
+    438           *
+    439           * @brief   Callback from ZCL to process incoming Commands specific
+    440           *          to this cluster library on a command ID basis
+    441           *
+    442           * @param   pInMsg - pointer to the incoming message
+    443           *
+    444           * @return  ZStatus_t
+    445           */
+    446          static ZStatus_t zclMS_ProcessIn_OccupancySensingCmds( zclIncoming_t *pInMsg )
+    447          {
+    448            ZStatus_t stat = ZSuccess;
+    449            uint8 cmdID;
+    450          
+    451            cmdID = pInMsg->hdr.commandID;
+    452          
+    453            switch ( cmdID )				
+    454            {
+    455          
+    456              default:
+    457                stat = ZFailure;
+    458                break;
+    459            }
+    460          
+    461            return ( stat );
+    462          }
+    463          
+    464          /****************************************************************************
+    465          ****************************************************************************/
+    466          
+
+   Maximum stack usage in bytes:
+
+     Function                   ISTACK PSTACK XSTACK
+     --------                   ------ ------ ------
+     zclMS_FindCallbacks            2      0      0
+     zclMS_HdlIncoming              2      0      0
+       -> zclMS_FindCallbacks       4      0      0
+     zclMS_RegisterCmdCallbacks     1      0     14
+       -> zcl_registerPlugin        0      0     28
+       -> osal_mem_alloc            0      0     24
+
+
+   Segment part sizes:
+
+     Function/Label                     Bytes
+     --------------                     -----
+     zclMSCBs                              2
+     zclMSPluginRegisted                   1
+     zclMS_RegisterCmdCallbacks          153
+     zclMS_FindCallbacks                  44
+     ?Subroutine0                          7
+     zclMS_HdlIncoming                    54
+     ??zclMS_RegisterCmdCallbacks?relay    6
+     ??zclMS_FindCallbacks?relay           6
+     ??zclMS_HdlIncoming?relay             6
+
+ 
+ 258 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+   3 bytes in segment XDATA_Z
+ 
+ 276 bytes of CODE  memory
+   3 bytes of XDATA memory
+
+Errors: none
+Warnings: none

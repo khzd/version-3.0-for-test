@@ -1,0 +1,573 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         26/Aug/2015  19:20:31 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\Source\AT_ZCL_ONOFF_SWITCH_data.c     #
+#    Command line       =  -f "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\Tools\CC2530DB\f8wE #
+#                          ndev.cfg" (-DCPU32MHZ -DROOT=__near_func           #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\Tools\C #
+#                          C2530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0     #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\Source\AT_ZCL_ONOFF_SWITC #
+#                          H_data.c" -D ZIGBEEPRO -D NWK_AUTO_POLL -D         #
+#                          HAL_UART=TRUE -D HOLD_AUTO_START -D NV_RESTORE -D  #
+#                          REFLECTOR -D HAL_UART_ISR=1 -D HAL_UART_DMA=0 -D   #
+#                          xHAL_UART_ISR_TX_MAX=200 -D xPOWER_SAVING -D       #
+#                          ZCL_READ -D ZCL_WRITE -D ZCL_IDENTIFY -D           #
+#                          ZCL_ON_OFF -D ZCL_DISCOVER -D xZTOOL_P1 -D         #
+#                          xMT_TASK -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D        #
+#                          xLCD_SUPPORTED=DEBUG -D xMT_UART_DEFAULT_OVERFLOW= #
+#                          FALSE -lC "S:\zigbee\Myzigbe\version 3.0 for       #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\" -lA       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\"           #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\Obj\" -e         #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\" -I               #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\hal\" -I           #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\Modified\" -I      #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\ZMain\TI2530DB\"    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\include\" -I "S:\zigbee\Myzigbe\version 3.0 for  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\target\CC2530EB\" -I "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\high_level\" -I "S:\zigbee\Myzigbe\version 3.0   #
+#                          for test\Projects\zstack\AT commands\AT command    #
+#                          3.2 -Body Sensor\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\low_level\srf04\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\low_level\srf04\single_chip\" -I                 #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\mt #
+#                          \" -I "S:\zigbee\Myzigbe\version 3.0 for           #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\os #
+#                          al\include\" -I "S:\zigbee\Myzigbe\version 3.0     #
+#                          for test\Projects\zstack\AT commands\AT command    #
+#                          3.2 -Body Sensor\CC2530DB\..\..\..\..\..\Component #
+#                          s\services\saddr\" -I "S:\zigbee\Myzigbe\version   #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\..\..\C #
+#                          omponents\services\sdata\" -I                      #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\af\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\nwk\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sapi\" -I "S:\zigbee\Myzigbe\version 3.0 for   #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sec\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sys\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\zdo\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\zcl\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\" -I "S:\zigbee\Myzigbe\version 3.0 for         #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\f8w\" -Ohz --require_prototypes                 #
+#    List file          =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\AT_ZCL_ONOF #
+#                          F_SWITCH_data.lst                                  #
+#    Object file        =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\Obj\AT_ZCL_ONOFF #
+#                          _SWITCH_data.r51                                   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+S:\zigbee\Myzigbe\version 3.0 for test\Projects\zstack\AT commands\AT command 3.2 -Body Sensor\Source\AT_ZCL_ONOFF_SWITCH_data.c
+      1          /*********************************************************************
+      2           * INCLUDES
+      3           */
+      4          #include "ZComDef.h"
+      5          #include "OSAL.h"
+      6          #include "AF.h"
+      7          #include "ZDConfig.h"
+      8          
+      9          #include "zcl.h"
+     10          #include "zcl_general.h"
+     11          #include "zcl_ms.h"
+     12          #include "zcl_ha.h"
+     13          
+     14          #include "AT_ZCL_ONOFF_SWITCH.h"
+     15          
+     16          
+     17          #define AT_ZCL_ONOFF_SWITCH_DEVICE_VERSION     0
+     18          #define AT_ZCL_ONOFF_SWITCH_FLAGS              0
+     19          
+     20          /*********************************************************************
+     21           * GLOBAL VARIABLES
+     22           */
+     23          
+     24          // Basic Cluster
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     25          const uint8 AT_ZCL_ONOFF_SWITCH_ManufacturerName[] = { 5, 'E','S','S','E','X' };
+   \                     AT_ZCL_ONOFF_SWITCH_ManufacturerName:
+   \   000000   05           DB 5
+   \   000001   45           DB 69
+   \   000002   53           DB 83
+   \   000003   53           DB 83
+   \   000004   45           DB 69
+   \   000005   58           DB 88
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     26          const uint8 AT_ZCL_ONOFF_SWITCH_ModelId[] = { 8, 'L','i','g','h','t',' ','E','B' };
+   \                     AT_ZCL_ONOFF_SWITCH_ModelId:
+   \   000000   08           DB 8
+   \   000001   4C           DB 76
+   \   000002   69           DB 105
+   \   000003   67           DB 103
+   \   000004   68           DB 104
+   \   000005   74           DB 116
+   \   000006   20           DB 32
+   \   000007   45           DB 69
+   \   000008   42           DB 66
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     27          const uint8 AT_ZCL_ONOFF_SWITCH_DateCode[] = { 8, '2','0','1','5','0','7','1','7'};
+   \                     AT_ZCL_ONOFF_SWITCH_DateCode:
+   \   000000   08           DB 8
+   \   000001   32           DB 50
+   \   000002   30           DB 48
+   \   000003   31           DB 49
+   \   000004   35           DB 53
+   \   000005   30           DB 48
+   \   000006   37           DB 55
+   \   000007   31           DB 49
+   \   000008   37           DB 55
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     28          const uint8 AT_ZCL_ONOFF_SWITCH_PowerSource = POWER_SOURCE_BATTERY;
+   \                     AT_ZCL_ONOFF_SWITCH_PowerSource:
+   \   000000   03           DB 3
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     29          const uint8 AT_ZCL_ONOFF_SWITCH_type =0xFF;   //stand for unknown
+   \                     AT_ZCL_ONOFF_SWITCH_type:
+   \   000000   FF           DB 255
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     30          uint8 AT_ZCL_ONOFF_SWITCH_LocationDescription[]={ 10, 'L','A','B','0','0','7',' ',' ',' ',' ' };
+   \                     AT_ZCL_ONOFF_SWITCH_LocationDescription:
+   \   000000                DS 11
+   \   00000B                REQUIRE `?<Initializer for AT_ZCL_ONOFF_SWITCH_Location`
+   \   00000B                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     31          uint8 AT_ZCL_ONOFF_SWITCH_DeviceEnable = DEVICE_ENABLED;
+   \                     AT_ZCL_ONOFF_SWITCH_DeviceEnable:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for AT_ZCL_ONOFF_SWITCH_DeviceEn`
+   \   000001                REQUIRE __INIT_XDATA_I
+     32          
+     33          // Device Temperature Configuration Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     34          int16 AT_ZCL_ONOFF_SWITCH_current=0;
+   \                     AT_ZCL_ONOFF_SWITCH_current:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     35          
+     36          // Identify Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     37          uint16 AT_ZCL_ONOFF_SWITCH_IdentifyTime = 0;
+   \                     AT_ZCL_ONOFF_SWITCH_IdentifyTime:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     38          
+     39          
+     40          // On/Off Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     41          uint8  AT_ZCL_ONOFF_SWITCH_OnOff = AT_ZCL_GEN_OFF;
+   \                     AT_ZCL_ONOFF_SWITCH_OnOff:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     42          
+     43          
+     44          // On/Off Switch Cluster Attributes
+     45          //0xFF indicates that the value is invalid.
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     46          uint8  AT_ZCL_ONOFF_SWITCH_action = 0xFF;
+   \                     AT_ZCL_ONOFF_SWITCH_action:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for AT_ZCL_ONOFF_SWITCH_action>`
+   \   000001                REQUIRE __INIT_XDATA_I
+     47          
+     48          /*********************************************************************
+     49           * ATTRIBUTE DEFINITIONS - Uses REAL cluster IDs
+     50           */
+
+   \                                 In  segment CODE_C, align 1
+     51          CONST zclAttrRec_t AT_ZCL_ONOFF_SWITCH_Attrs[AT_ZCL_ONOFF_SWITCH_MAX_ATTRIBUTES] =
+   \                     AT_ZCL_ONOFF_SWITCH_Attrs:
+   \   000000   0000         DW 0
+   \   000002   0400         DW 4
+   \   000004   42           DB 66
+   \   000005   01           DB 1
+   \   000006   ....         DW AT_ZCL_ONOFF_SWITCH_ManufacturerName
+   \   000008   0000         DW 0
+   \   00000A   0500         DW 5
+   \   00000C   42           DB 66
+   \   00000D   01           DB 1
+   \   00000E   ....         DW AT_ZCL_ONOFF_SWITCH_ModelId
+   \   000010   0000         DW 0
+   \   000012   0600         DW 6
+   \   000014   42           DB 66
+   \   000015   01           DB 1
+   \   000016   ....         DW AT_ZCL_ONOFF_SWITCH_DateCode
+   \   000018   0000         DW 0
+   \   00001A   0700         DW 7
+   \   00001C   20           DB 32
+   \   00001D   01           DB 1
+   \   00001E   ....         DW AT_ZCL_ONOFF_SWITCH_PowerSource
+   \   000020   0000         DW 0
+   \   000022   1000         DW 16
+   \   000024   42           DB 66
+   \   000025   03           DB 3
+   \   000026   ....         DW AT_ZCL_ONOFF_SWITCH_LocationDescription
+   \   000028   0000         DW 0
+   \   00002A   1200         DW 18
+   \   00002C   10           DB 16
+   \   00002D   03           DB 3
+   \   00002E   ....         DW AT_ZCL_ONOFF_SWITCH_DeviceEnable
+   \   000030   0300         DW 3
+   \   000032   0000         DW 0
+   \   000034   21           DB 33
+   \   000035   03           DB 3
+   \   000036   ....         DW AT_ZCL_ONOFF_SWITCH_IdentifyTime
+   \   000038   0600         DW 6
+   \   00003A   0000         DW 0
+   \   00003C   20           DB 32
+   \   00003D   01           DB 1
+   \   00003E   ....         DW AT_ZCL_ONOFF_SWITCH_OnOff
+   \   000040   0700         DW 7
+   \   000042   0000         DW 0
+   \   000044   30           DB 48
+   \   000045   01           DB 1
+   \   000046   ....         DW AT_ZCL_ONOFF_SWITCH_type
+   \   000048   0700         DW 7
+   \   00004A   1000         DW 16
+   \   00004C   30           DB 48
+   \   00004D   01           DB 1
+   \   00004E   ....         DW AT_ZCL_ONOFF_SWITCH_action
+   \   000050   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000058   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+     52          {
+     53            // *** General Basic Cluster Attributes ***
+     54            {
+     55              ZCL_CLUSTER_ID_GEN_BASIC,             // Cluster IDs - defined in the foundation (ie. zcl.h)
+     56              {  // Attribute record
+     57                ATTRID_BASIC_MANUFACTURER_NAME,            // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+     58                ZCL_DATATYPE_CHAR_STR,                 // Data Type - found in zcl.h
+     59                ACCESS_CONTROL_READ,                // Variable access control - found in zcl.h
+     60                (void *)AT_ZCL_ONOFF_SWITCH_ManufacturerName  // Pointer to attribute variable
+     61              }
+     62            },
+     63            {
+     64              ZCL_CLUSTER_ID_GEN_BASIC,
+     65              { // Attribute record
+     66                ATTRID_BASIC_MODEL_ID,
+     67                ZCL_DATATYPE_CHAR_STR,
+     68                ACCESS_CONTROL_READ,
+     69                (void *)AT_ZCL_ONOFF_SWITCH_ModelId
+     70              }
+     71            },
+     72            {
+     73              ZCL_CLUSTER_ID_GEN_BASIC,
+     74              { // Attribute record
+     75                ATTRID_BASIC_DATE_CODE,
+     76                ZCL_DATATYPE_CHAR_STR,
+     77                ACCESS_CONTROL_READ,
+     78                (void *)AT_ZCL_ONOFF_SWITCH_DateCode
+     79              }
+     80            },
+     81            {
+     82              ZCL_CLUSTER_ID_GEN_BASIC,
+     83              { // Attribute record
+     84                ATTRID_BASIC_POWER_SOURCE,
+     85                ZCL_DATATYPE_UINT8,
+     86                ACCESS_CONTROL_READ,
+     87                (void *)&AT_ZCL_ONOFF_SWITCH_PowerSource
+     88              }
+     89            },
+     90            {
+     91              ZCL_CLUSTER_ID_GEN_BASIC,
+     92              { // Attribute record
+     93                ATTRID_BASIC_LOCATION_DESC,
+     94                ZCL_DATATYPE_CHAR_STR,
+     95                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+     96                (void *)AT_ZCL_ONOFF_SWITCH_LocationDescription
+     97              }
+     98            },
+     99            {
+    100              ZCL_CLUSTER_ID_GEN_BASIC,
+    101              { // Attribute record
+    102                ATTRID_BASIC_DEVICE_ENABLED,
+    103                ZCL_DATATYPE_BOOLEAN,
+    104                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    105                (void *)&AT_ZCL_ONOFF_SWITCH_DeviceEnable
+    106              }
+    107            },
+    108          
+    109            // *** Identify Cluster Attribute ***
+    110            {
+    111              ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    112              { // Attribute record
+    113                ATTRID_IDENTIFY_TIME,
+    114                ZCL_DATATYPE_UINT16,
+    115                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    116                (void *)&AT_ZCL_ONOFF_SWITCH_IdentifyTime
+    117              }
+    118            },
+    119            
+    120            // *** On/Off Cluster Attributes ***
+    121            {
+    122              ZCL_CLUSTER_ID_GEN_ON_OFF,
+    123              { // Attribute record
+    124                ATTRID_ON_OFF,
+    125                ZCL_DATATYPE_UINT8,
+    126                ACCESS_CONTROL_READ,
+    127                (void *)&AT_ZCL_ONOFF_SWITCH_OnOff
+    128              }
+    129            }, 
+    130            
+    131            
+    132            // *** On/Off Switch Cluster Attributes ***
+    133            {
+    134              ZCL_CLUSTER_ID_GEN_ON_OFF_SWITCH_CONFIG,
+    135              { // Attribute record
+    136                ATTRID_ON_OFF_SWITCH_TYPE,
+    137                ZCL_DATATYPE_ENUM8,
+    138                ACCESS_CONTROL_READ,
+    139                (void *)&AT_ZCL_ONOFF_SWITCH_type
+    140              }
+    141            }, 
+    142            
+    143            {
+    144              ZCL_CLUSTER_ID_GEN_ON_OFF_SWITCH_CONFIG,
+    145              { // Attribute record
+    146                ATTRID_ON_OFF_SWITCH_ACTIONS,
+    147                ZCL_DATATYPE_ENUM8,
+    148                ACCESS_CONTROL_READ,
+    149                (void *)&AT_ZCL_ONOFF_SWITCH_action
+    150              }
+    151            }, 
+    152            
+    153            
+    154          };
+    155          
+    156          
+    157          
+    158          /*********************************************************************
+    159           * SIMPLE DESCRIPTOR
+    160           */
+    161          
+    162          #define AT_ZCL_ONOFF_SWITCH_MAX_INCLUSTERS       3
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    163          const cId_t AT_ZCL_ONOFF_SWITCH_InClusterList[AT_ZCL_ONOFF_SWITCH_MAX_INCLUSTERS] =
+   \                     AT_ZCL_ONOFF_SWITCH_InClusterList:
+   \   000000   0000         DW 0
+   \   000002   0300         DW 3
+   \   000004   0600         DW 6
+    164          {
+    165            ZCL_CLUSTER_ID_GEN_BASIC,
+    166            ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    167            ZCL_CLUSTER_ID_GEN_ON_OFF
+    168          };
+    169          
+    170          #define AT_ZCL_ONOFF_SWITCH_MAX_OUTCLUSTERS       1
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    171          const cId_t AT_ZCL_ONOFF_SWITCH_OutClusterList[AT_ZCL_ONOFF_SWITCH_MAX_OUTCLUSTERS] =
+   \                     AT_ZCL_ONOFF_SWITCH_OutClusterList:
+   \   000000   0700         DW 7
+    172          {
+    173            ZCL_CLUSTER_ID_GEN_ON_OFF_SWITCH_CONFIG
+    174          };
+    175          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    176          SimpleDescriptionFormat_t AT_ZCL_ONOFF_SWITCH_SimpleDesc =
+   \                     AT_ZCL_ONOFF_SWITCH_SimpleDesc:
+   \   000000                DS 12
+   \   00000C                REQUIRE `?<Initializer for AT_ZCL_ONOFF_SWITCH_SimpleDe`
+   \   00000C                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AT_ZCL_ONOFF_SWITCH_Location`:
+   \   000000   0A           DB 10
+   \   000001   4C           DB 76
+   \   000002   41           DB 65
+   \   000003   42           DB 66
+   \   000004   30           DB 48
+   \   000005   30           DB 48
+   \   000006   37           DB 55
+   \   000007   20           DB 32
+   \   000008   20           DB 32
+   \   000009   20           DB 32
+   \   00000A   20           DB 32
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AT_ZCL_ONOFF_SWITCH_DeviceEn`:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AT_ZCL_ONOFF_SWITCH_action>`:
+   \   000000   FF           DB 255
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AT_ZCL_ONOFF_SWITCH_SimpleDe`:
+   \   000000   07           DB 7
+   \   000001   0401         DW 260
+   \   000003   FF00         DW 255
+   \   000005   00           DB 0
+   \   000006   03           DB 3
+   \   000007   ....         DW AT_ZCL_ONOFF_SWITCH_InClusterList
+   \   000009   01           DB 1
+   \   00000A   ....         DW AT_ZCL_ONOFF_SWITCH_OutClusterList
+    177          {
+    178            AT_ZCL_ONOFF_SWITCH_ENDPOINT,                  //  int Endpoint;
+    179            ZCL_HA_PROFILE_ID,                     //  uint16 AppProfId[2];
+    180            ZCL_HA_DEVICEID_TEST_DEVICE,           //  uint16 AppDeviceId[2];
+    181            AT_ZCL_ONOFF_SWITCH_DEVICE_VERSION,            //  int   AppDevVer:4;
+    182            AT_ZCL_ONOFF_SWITCH_FLAGS,                     //  int   AppFlags:4;
+    183            AT_ZCL_ONOFF_SWITCH_MAX_INCLUSTERS,            //  byte  AppNumInClusters;
+    184            (cId_t *)AT_ZCL_ONOFF_SWITCH_InClusterList,    //  byte *pAppInClusterList;
+    185            AT_ZCL_ONOFF_SWITCH_MAX_OUTCLUSTERS,           //  byte  AppNumInClusters;
+    186            (cId_t *)AT_ZCL_ONOFF_SWITCH_OutClusterList    //  byte *pAppInClusterList;
+    187          };
+
+
+   Segment part sizes:
+
+     Function/Label                                 Bytes
+     --------------                                 -----
+     AT_ZCL_ONOFF_SWITCH_ManufacturerName
+                                                       6
+     AT_ZCL_ONOFF_SWITCH_ModelId                       9
+     AT_ZCL_ONOFF_SWITCH_DateCode                      9
+     AT_ZCL_ONOFF_SWITCH_PowerSource
+                                                       1
+     AT_ZCL_ONOFF_SWITCH_type                          1
+     AT_ZCL_ONOFF_SWITCH_LocationDescription
+                                                      11
+     AT_ZCL_ONOFF_SWITCH_DeviceEnable
+                                                       1
+     AT_ZCL_ONOFF_SWITCH_current                       2
+     AT_ZCL_ONOFF_SWITCH_IdentifyTime
+                                                       2
+     AT_ZCL_ONOFF_SWITCH_OnOff                         1
+     AT_ZCL_ONOFF_SWITCH_action                        1
+     AT_ZCL_ONOFF_SWITCH_Attrs                        96
+     AT_ZCL_ONOFF_SWITCH_InClusterList
+                                                       6
+     AT_ZCL_ONOFF_SWITCH_OutClusterList
+                                                       2
+     AT_ZCL_ONOFF_SWITCH_SimpleDesc                   12
+     ?<Initializer for AT_ZCL_ONOFF_SWITCH_Location   11
+     ?<Initializer for AT_ZCL_ONOFF_SWITCH_DeviceEn    1
+     ?<Initializer for AT_ZCL_ONOFF_SWITCH_action>     1
+     ?<Initializer for AT_ZCL_ONOFF_SWITCH_SimpleDe   12
+
+ 
+ 96 bytes in segment CODE_C
+ 25 bytes in segment XDATA_I
+ 25 bytes in segment XDATA_ID
+ 34 bytes in segment XDATA_ROM_C
+  5 bytes in segment XDATA_Z
+ 
+ 121 bytes of CODE  memory
+  34 bytes of CONST memory
+  30 bytes of XDATA memory
+
+Errors: none
+Warnings: none

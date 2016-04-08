@@ -1,0 +1,644 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         26/Aug/2015  19:20:30 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\Source\AT_ZCL_DHT_data.c              #
+#    Command line       =  -f "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\Tools\CC2530DB\f8wE #
+#                          ndev.cfg" (-DCPU32MHZ -DROOT=__near_func           #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\Tools\C #
+#                          C2530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0     #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\Source\AT_ZCL_DHT_data.c" #
+#                           -D ZIGBEEPRO -D NWK_AUTO_POLL -D HAL_UART=TRUE    #
+#                          -D HOLD_AUTO_START -D NV_RESTORE -D REFLECTOR -D   #
+#                          HAL_UART_ISR=1 -D HAL_UART_DMA=0 -D                #
+#                          xHAL_UART_ISR_TX_MAX=200 -D xPOWER_SAVING -D       #
+#                          ZCL_READ -D ZCL_WRITE -D ZCL_IDENTIFY -D           #
+#                          ZCL_ON_OFF -D ZCL_DISCOVER -D xZTOOL_P1 -D         #
+#                          xMT_TASK -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D        #
+#                          xLCD_SUPPORTED=DEBUG -D xMT_UART_DEFAULT_OVERFLOW= #
+#                          FALSE -lC "S:\zigbee\Myzigbe\version 3.0 for       #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\" -lA       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\"           #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\Obj\" -e         #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\" -I               #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\hal\" -I           #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\Source\Modified\" -I      #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\ZMain\TI2530DB\"    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for              #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\include\" -I "S:\zigbee\Myzigbe\version 3.0 for  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\target\CC2530EB\" -I "S:\zigbee\Myzigbe\version  #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\include\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\high_level\" -I "S:\zigbee\Myzigbe\version 3.0   #
+#                          for test\Projects\zstack\AT commands\AT command    #
+#                          3.2 -Body Sensor\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\low_level\srf04\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\low_level\srf04\single_chip\" -I                 #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\mt #
+#                          \" -I "S:\zigbee\Myzigbe\version 3.0 for           #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\os #
+#                          al\include\" -I "S:\zigbee\Myzigbe\version 3.0     #
+#                          for test\Projects\zstack\AT commands\AT command    #
+#                          3.2 -Body Sensor\CC2530DB\..\..\..\..\..\Component #
+#                          s\services\saddr\" -I "S:\zigbee\Myzigbe\version   #
+#                          3.0 for test\Projects\zstack\AT commands\AT        #
+#                          command 3.2 -Body Sensor\CC2530DB\..\..\..\..\..\C #
+#                          omponents\services\sdata\" -I                      #
+#                          "S:\zigbee\Myzigbe\version 3.0 for                 #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\af\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\nwk\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sapi\" -I "S:\zigbee\Myzigbe\version 3.0 for   #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sec\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sys\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\zdo\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\zcl\" -I "S:\zigbee\Myzigbe\version 3.0 for    #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\" -I "S:\zigbee\Myzigbe\version 3.0 for         #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\f8w\" -Ohz --require_prototypes                 #
+#    List file          =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\List\AT_ZCL_DHT_ #
+#                          data.lst                                           #
+#    Object file        =  S:\zigbee\Myzigbe\version 3.0 for                  #
+#                          test\Projects\zstack\AT commands\AT command 3.2    #
+#                          -Body Sensor\CC2530DB\EndDeviceEB\Obj\AT_ZCL_DHT_d #
+#                          ata.r51                                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+S:\zigbee\Myzigbe\version 3.0 for test\Projects\zstack\AT commands\AT command 3.2 -Body Sensor\Source\AT_ZCL_DHT_data.c
+      1          /*********************************************************************
+      2           * INCLUDES
+      3           */
+      4          #include "ZComDef.h"
+      5          #include "OSAL.h"
+      6          #include "AF.h"
+      7          #include "ZDConfig.h"
+      8          
+      9          #include "zcl.h"
+     10          #include "zcl_general.h"
+     11          #include "zcl_ms.h"
+     12          #include "zcl_ha.h"
+     13          
+     14          #include "AT_ZCL_DHT.h"
+     15          
+     16          
+     17          #define AT_ZCL_DHT_DEVICE_VERSION     0
+     18          #define AT_ZCL_DHT_FLAGS              0
+     19          
+     20          /*********************************************************************
+     21           * GLOBAL VARIABLES
+     22           */
+     23          
+     24          // Basic Cluster
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     25          const uint8 AT_ZCL_DHT_ManufacturerName[] = { 5, 'E','S','S','E','X' };
+   \                     AT_ZCL_DHT_ManufacturerName:
+   \   000000   05           DB 5
+   \   000001   45           DB 69
+   \   000002   53           DB 83
+   \   000003   53           DB 83
+   \   000004   45           DB 69
+   \   000005   58           DB 88
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     26          const uint8 AT_ZCL_DHT_ModelId[] = { 5, 'D','H','T','1','1' };
+   \                     AT_ZCL_DHT_ModelId:
+   \   000000   05           DB 5
+   \   000001   44           DB 68
+   \   000002   48           DB 72
+   \   000003   54           DB 84
+   \   000004   31           DB 49
+   \   000005   31           DB 49
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     27          const uint8 AT_ZCL_DHT_DateCode[] = { 8, '2','0','1','5','0','4','1','8'};
+   \                     AT_ZCL_DHT_DateCode:
+   \   000000   08           DB 8
+   \   000001   32           DB 50
+   \   000002   30           DB 48
+   \   000003   31           DB 49
+   \   000004   35           DB 53
+   \   000005   30           DB 48
+   \   000006   34           DB 52
+   \   000007   31           DB 49
+   \   000008   38           DB 56
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     28          const uint8 AT_ZCL_DHT_PowerSource = POWER_SOURCE_BATTERY;
+   \                     AT_ZCL_DHT_PowerSource:
+   \   000000   03           DB 3
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     29          uint8 AT_ZCL_DHT_LocationDescription[]={ 10, 'L','A','B','0','0','7',' ',' ',' ',' ' };
+   \                     AT_ZCL_DHT_LocationDescription:
+   \   000000                DS 11
+   \   00000B                REQUIRE `?<Initializer for AT_ZCL_DHT_LocationDescripti`
+   \   00000B                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     30          uint8 AT_ZCL_DHT_DeviceEnable = DEVICE_ENABLED;
+   \                     AT_ZCL_DHT_DeviceEnable:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for AT_ZCL_DHT_DeviceEnable>`
+   \   000001                REQUIRE __INIT_XDATA_I
+     31          //Tempetrue
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     32          uint16 AT_ZCL_DHT_T_current =0xffff;
+   \                     AT_ZCL_DHT_T_current:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for AT_ZCL_DHT_T_current>`
+   \   000002                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     33          const uint16 AT_ZCL_DTH_T_max_value = 5000;  //stand for 50 C
+   \                     AT_ZCL_DTH_T_max_value:
+   \   000000   8813         DW 5000
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     34          const uint16 AT_ZCL_DTH_T_min_value = 0;    //stand for 0 C
+   \                     AT_ZCL_DTH_T_min_value:
+   \   000000   0000         DW 0
+     35          //Relative Humidity
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     36          uint16 AT_ZCL_DHT_RH_current =0xffff;
+   \                     AT_ZCL_DHT_RH_current:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for AT_ZCL_DHT_RH_current>`
+   \   000002                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     37          const uint16 AT_ZCL_DTH_RH_max_value = 9000; //stand for 90% RH
+   \                     AT_ZCL_DTH_RH_max_value:
+   \   000000   2823         DW 9000
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     38          const uint16 AT_ZCL_DTH_RH_min_value = 2000;  //stand for 20% RH
+   \                     AT_ZCL_DTH_RH_min_value:
+   \   000000   D007         DW 2000
+     39          
+     40          // Device Temperature Configuration Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     41          int16 AT_ZCL_DHT_current=0;
+   \                     AT_ZCL_DHT_current:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     42          
+     43          // Identify Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     44          uint16 AT_ZCL_DHT_IdentifyTime = 0;
+   \                     AT_ZCL_DHT_IdentifyTime:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     45          
+     46          
+     47          // On/Off Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     48          uint8  AT_ZCL_DHT_OnOff = AT_ZCL_GEN_OFF;
+   \                     AT_ZCL_DHT_OnOff:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     49          
+     50          /*********************************************************************
+     51           * ATTRIBUTE DEFINITIONS - Uses REAL cluster IDs
+     52           */
+
+   \                                 In  segment CODE_C, align 1
+     53          CONST zclAttrRec_t AT_ZCL_DHT_Attrs[AT_ZCL_DHT_MAX_ATTRIBUTES] =
+   \                     AT_ZCL_DHT_Attrs:
+   \   000000   0000         DW 0
+   \   000002   0400         DW 4
+   \   000004   42           DB 66
+   \   000005   01           DB 1
+   \   000006   ....         DW AT_ZCL_DHT_ManufacturerName
+   \   000008   0000         DW 0
+   \   00000A   0500         DW 5
+   \   00000C   42           DB 66
+   \   00000D   01           DB 1
+   \   00000E   ....         DW AT_ZCL_DHT_ModelId
+   \   000010   0000         DW 0
+   \   000012   0600         DW 6
+   \   000014   42           DB 66
+   \   000015   01           DB 1
+   \   000016   ....         DW AT_ZCL_DHT_DateCode
+   \   000018   0000         DW 0
+   \   00001A   0700         DW 7
+   \   00001C   20           DB 32
+   \   00001D   01           DB 1
+   \   00001E   ....         DW AT_ZCL_DHT_PowerSource
+   \   000020   0000         DW 0
+   \   000022   1000         DW 16
+   \   000024   42           DB 66
+   \   000025   03           DB 3
+   \   000026   ....         DW AT_ZCL_DHT_LocationDescription
+   \   000028   0000         DW 0
+   \   00002A   1200         DW 18
+   \   00002C   10           DB 16
+   \   00002D   03           DB 3
+   \   00002E   ....         DW AT_ZCL_DHT_DeviceEnable
+   \   000030   0300         DW 3
+   \   000032   0000         DW 0
+   \   000034   21           DB 33
+   \   000035   03           DB 3
+   \   000036   ....         DW AT_ZCL_DHT_IdentifyTime
+   \   000038   0600         DW 6
+   \   00003A   0000         DW 0
+   \   00003C   20           DB 32
+   \   00003D   01           DB 1
+   \   00003E   ....         DW AT_ZCL_DHT_OnOff
+   \   000040   0204         DW 1026
+   \   000042   0000         DW 0
+   \   000044   29           DB 41
+   \   000045   01           DB 1
+   \   000046   ....         DW AT_ZCL_DHT_T_current
+   \   000048   0204         DW 1026
+   \   00004A   0100         DW 1
+   \   00004C   29           DB 41
+   \   00004D   01           DB 1
+   \   00004E   ....         DW AT_ZCL_DTH_T_min_value
+   \   000050   0204         DW 1026
+   \   000052   0200         DW 2
+   \   000054   29           DB 41
+   \   000055   01           DB 1
+   \   000056   ....         DW AT_ZCL_DTH_T_max_value
+   \   000058   0504         DW 1029
+   \   00005A   0000         DW 0
+   \   00005C   29           DB 41
+   \   00005D   01           DB 1
+   \   00005E   ....         DW AT_ZCL_DHT_RH_current
+   \   000060   0504         DW 1029
+   \   000062   0100         DW 1
+   \   000064   29           DB 41
+   \   000065   01           DB 1
+   \   000066   ....         DW AT_ZCL_DTH_RH_min_value
+   \   000068   0504         DW 1029
+   \   00006A   0200         DW 2
+   \   00006C   29           DB 41
+   \   00006D   01           DB 1
+   \   00006E   ....         DW AT_ZCL_DTH_RH_max_value
+     54          {
+     55            // *** General Basic Cluster Attributes ***
+     56            {
+     57              ZCL_CLUSTER_ID_GEN_BASIC,             // Cluster IDs - defined in the foundation (ie. zcl.h)
+     58              {  // Attribute record
+     59                ATTRID_BASIC_MANUFACTURER_NAME,            // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+     60                ZCL_DATATYPE_CHAR_STR,                 // Data Type - found in zcl.h
+     61                ACCESS_CONTROL_READ,                // Variable access control - found in zcl.h
+     62                (void *)AT_ZCL_DHT_ManufacturerName  // Pointer to attribute variable
+     63              }
+     64            },
+     65            {
+     66              ZCL_CLUSTER_ID_GEN_BASIC,
+     67              { // Attribute record
+     68                ATTRID_BASIC_MODEL_ID,
+     69                ZCL_DATATYPE_CHAR_STR,
+     70                ACCESS_CONTROL_READ,
+     71                (void *)AT_ZCL_DHT_ModelId
+     72              }
+     73            },
+     74            {
+     75              ZCL_CLUSTER_ID_GEN_BASIC,
+     76              { // Attribute record
+     77                ATTRID_BASIC_DATE_CODE,
+     78                ZCL_DATATYPE_CHAR_STR,
+     79                ACCESS_CONTROL_READ,
+     80                (void *)AT_ZCL_DHT_DateCode
+     81              }
+     82            },
+     83            {
+     84              ZCL_CLUSTER_ID_GEN_BASIC,
+     85              { // Attribute record
+     86                ATTRID_BASIC_POWER_SOURCE,
+     87                ZCL_DATATYPE_UINT8,
+     88                ACCESS_CONTROL_READ,
+     89                (void *)&AT_ZCL_DHT_PowerSource
+     90              }
+     91            },
+     92            {
+     93              ZCL_CLUSTER_ID_GEN_BASIC,
+     94              { // Attribute record
+     95                ATTRID_BASIC_LOCATION_DESC,
+     96                ZCL_DATATYPE_CHAR_STR,
+     97                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+     98                (void *)AT_ZCL_DHT_LocationDescription
+     99              }
+    100            },
+    101            {
+    102              ZCL_CLUSTER_ID_GEN_BASIC,
+    103              { // Attribute record
+    104                ATTRID_BASIC_DEVICE_ENABLED,
+    105                ZCL_DATATYPE_BOOLEAN,
+    106                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    107                (void *)&AT_ZCL_DHT_DeviceEnable
+    108              }
+    109            },
+    110          
+    111            // *** Identify Cluster Attribute ***
+    112            {
+    113              ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    114              { // Attribute record
+    115                ATTRID_IDENTIFY_TIME,
+    116                ZCL_DATATYPE_UINT16,
+    117                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    118                (void *)&AT_ZCL_DHT_IdentifyTime
+    119              }
+    120            },
+    121            
+    122            // *** On/Off Cluster Attributes ***
+    123            {
+    124              ZCL_CLUSTER_ID_GEN_ON_OFF,
+    125              { // Attribute record
+    126                ATTRID_ON_OFF,
+    127                ZCL_DATATYPE_UINT8,
+    128                ACCESS_CONTROL_READ,
+    129                (void *)&AT_ZCL_DHT_OnOff
+    130              }
+    131            },
+    132            
+    133             
+    134            // *** Temperature Measurement Cluster Attributes ***
+    135            {
+    136              ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+    137              { // Attribute record
+    138                ATTRID_MS_TEMPERATURE_MEASURED_VALUE,
+    139                ZCL_DATATYPE_INT16,
+    140                ACCESS_CONTROL_READ,
+    141                (void *)&AT_ZCL_DHT_T_current
+    142              }
+    143            },
+    144            {
+    145              ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+    146              { // Attribute record
+    147                ATTRID_MS_TEMPERATURE_MIN_MEASURED_VALUE,
+    148                ZCL_DATATYPE_INT16,
+    149                ACCESS_CONTROL_READ,
+    150                (void *)&AT_ZCL_DTH_T_min_value
+    151              }
+    152            },
+    153            
+    154            {
+    155              ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+    156              { // Attribute record
+    157                ATTRID_MS_TEMPERATURE_MAX_MEASURED_VALUE,
+    158                ZCL_DATATYPE_INT16,
+    159                ACCESS_CONTROL_READ,
+    160                (void *)&AT_ZCL_DTH_T_max_value
+    161              }
+    162            },  
+    163            
+    164            // *** Relative Humidity Cluster Attributes ***
+    165            {
+    166              ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY,
+    167              { // Attribute record
+    168                ATTRID_MS_RELATIVE_HUMIDITY_MEASURED_VALUE,
+    169                ZCL_DATATYPE_INT16,
+    170                ACCESS_CONTROL_READ,
+    171                (void *)&AT_ZCL_DHT_RH_current
+    172              }
+    173            },
+    174            {
+    175              ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY,
+    176              { // Attribute record
+    177                ATTRID_MS_RELATIVE_HUMIDITY_MIN_MEASURED_VALUE,
+    178                ZCL_DATATYPE_INT16,
+    179                ACCESS_CONTROL_READ,
+    180                (void *)&AT_ZCL_DTH_RH_min_value
+    181              }
+    182            },
+    183            
+    184            {
+    185              ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY,
+    186              { // Attribute record
+    187                ATTRID_MS_RELATIVE_HUMIDITY_MAX_MEASURED_VALUE,
+    188                ZCL_DATATYPE_INT16,
+    189                ACCESS_CONTROL_READ,
+    190                (void *)&AT_ZCL_DTH_RH_max_value
+    191              }
+    192            },
+    193          };
+    194          
+    195          
+    196          
+    197          /*********************************************************************
+    198           * SIMPLE DESCRIPTOR
+    199           */
+    200          
+    201          #define AT_ZCL_DHT_MAX_INCLUSTERS       5
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    202          const cId_t AT_ZCL_DHT_InClusterList[AT_ZCL_DHT_MAX_INCLUSTERS] =
+   \                     AT_ZCL_DHT_InClusterList:
+   \   000000   0000         DW 0
+   \   000002   0300         DW 3
+   \   000004   0600         DW 6
+   \   000006   0204         DW 1026
+   \   000008   0504         DW 1029
+    203          {
+    204            ZCL_CLUSTER_ID_GEN_BASIC,
+    205            ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    206            ZCL_CLUSTER_ID_GEN_ON_OFF,
+    207            ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+    208            ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY
+    209          };
+    210          /*
+    211          #define AT_ZCL_DHT_MAX_OUTCLUSTERS       1
+    212          const cId_t AT_ZCL_DHT_OutClusterList[AT_ZCL_DHT_MAX_OUTCLUSTERS] =
+    213          {
+    214            ZCL_CLUSTER_ID_GEN_BASIC
+    215          };*/
+    216          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    217          SimpleDescriptionFormat_t AT_ZCL_DHT_SimpleDesc =
+   \                     AT_ZCL_DHT_SimpleDesc:
+   \   000000                DS 12
+   \   00000C                REQUIRE `?<Initializer for AT_ZCL_DHT_SimpleDesc>`
+   \   00000C                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AT_ZCL_DHT_LocationDescripti`:
+   \   000000   0A           DB 10
+   \   000001   4C           DB 76
+   \   000002   41           DB 65
+   \   000003   42           DB 66
+   \   000004   30           DB 48
+   \   000005   30           DB 48
+   \   000006   37           DB 55
+   \   000007   20           DB 32
+   \   000008   20           DB 32
+   \   000009   20           DB 32
+   \   00000A   20           DB 32
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AT_ZCL_DHT_DeviceEnable>`:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AT_ZCL_DHT_T_current>`:
+   \   000000   FFFF         DW 65535
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AT_ZCL_DHT_RH_current>`:
+   \   000000   FFFF         DW 65535
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AT_ZCL_DHT_SimpleDesc>`:
+   \   000000   06           DB 6
+   \   000001   0401         DW 260
+   \   000003   FF00         DW 255
+   \   000005   00           DB 0
+   \   000006   05           DB 5
+   \   000007   ....         DW AT_ZCL_DHT_InClusterList
+   \   000009   00           DB 0
+   \   00000A   0000         DW 0H
+    218          {
+    219            AT_ZCL_DHT_ENDPOINT,                  //  int Endpoint;
+    220            ZCL_HA_PROFILE_ID,                     //  uint16 AppProfId[2];
+    221            ZCL_HA_DEVICEID_TEST_DEVICE,           //  uint16 AppDeviceId[2];
+    222            AT_ZCL_DHT_DEVICE_VERSION,            //  int   AppDevVer:4;
+    223            AT_ZCL_DHT_FLAGS,                     //  int   AppFlags:4;
+    224            AT_ZCL_DHT_MAX_INCLUSTERS,            //  byte  AppNumInClusters;
+    225            (cId_t *)AT_ZCL_DHT_InClusterList,    //  byte *pAppInClusterList;
+    226            0,                                       //  byte  AppNumInClusters;
+    227            (cId_t *)NULL                           //  byte *pAppInClusterList;
+    228          };
+
+
+   Segment part sizes:
+
+     Function/Label                                 Bytes
+     --------------                                 -----
+     AT_ZCL_DHT_ManufacturerName                       6
+     AT_ZCL_DHT_ModelId                                6
+     AT_ZCL_DHT_DateCode                               9
+     AT_ZCL_DHT_PowerSource                            1
+     AT_ZCL_DHT_LocationDescription                   11
+     AT_ZCL_DHT_DeviceEnable                           1
+     AT_ZCL_DHT_T_current                              2
+     AT_ZCL_DTH_T_max_value                            2
+     AT_ZCL_DTH_T_min_value                            2
+     AT_ZCL_DHT_RH_current                             2
+     AT_ZCL_DTH_RH_max_value                           2
+     AT_ZCL_DTH_RH_min_value                           2
+     AT_ZCL_DHT_current                                2
+     AT_ZCL_DHT_IdentifyTime                           2
+     AT_ZCL_DHT_OnOff                                  1
+     AT_ZCL_DHT_Attrs                                112
+     AT_ZCL_DHT_InClusterList                         10
+     AT_ZCL_DHT_SimpleDesc                            12
+     ?<Initializer for AT_ZCL_DHT_LocationDescripti   11
+     ?<Initializer for AT_ZCL_DHT_DeviceEnable>        1
+     ?<Initializer for AT_ZCL_DHT_T_current>           2
+     ?<Initializer for AT_ZCL_DHT_RH_current>          2
+     ?<Initializer for AT_ZCL_DHT_SimpleDesc>         12
+
+ 
+ 112 bytes in segment CODE_C
+  28 bytes in segment XDATA_I
+  28 bytes in segment XDATA_ID
+  40 bytes in segment XDATA_ROM_C
+   5 bytes in segment XDATA_Z
+ 
+ 140 bytes of CODE  memory
+  40 bytes of CONST memory
+  33 bytes of XDATA memory
+
+Errors: none
+Warnings: none

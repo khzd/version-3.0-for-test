@@ -1,0 +1,677 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        17/Jul/2015  19:21:17 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  S:\zigbee\Myzigbe\version 3.0 for new             /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\Source\AT_ZCL_temperature_data.c    /
+//    Command line       =  -f "S:\zigbee\Myzigbe\version 3.0 for new         /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\Tools\CC2530DB\f8 /
+//                          wRouter.cfg" (-DCPU32MHZ -DROOT=__near_func       /
+//                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                  /
+//                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8        /
+//                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                  /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\Tools\CC2530DB\f8 /
+//                          wConfig.cfg" (-DZIGBEEPRO -DSECURE=0              /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0x2015                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 "S:\zigbee\Myzigbe\version /
+//                           3.0 for new ZStack-CC2530-2.5.1a\Projects\zstack /
+//                          \AT commands\AT command 3.2 -                     /
+//                          Temputerature\Source\AT_ZCL_temperature_data.c"   /
+//                          -D ZIGBEEPRO -D NWK_AUTO_POLL -D HAL_UART=TRUE    /
+//                          -D HOLD_AUTO_START -D NV_RESTORE -D REFLECTOR -D  /
+//                          xHAL_UART_ISR_TX_MAX=200 -D xPOWER_SAVING -D      /
+//                          ZCL_READ -D ZCL_WRITE -D ZCL_IDENTIFY -D          /
+//                          ZCL_ON_OFF -D ZCL_DISCOVER -D HAL_UART_ISR=1 -D   /
+//                          HAL_UART_DMA=0 -D xZTOOL_P1 -D xMT_TASK -D        /
+//                          xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                   /
+//                          xLCD_SUPPORTED=DEBUG -D                           /
+//                          xMT_UART_DEFAULT_OVERFLOW=FALSE -lC               /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\RouterEB\List\" -lA        /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\RouterEB\List\"            /
+//                          --diag_suppress Pe001,Pa010 -o                    /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\RouterEB\Obj\" -e          /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\" -I                       /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\Source\" -I             /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\Source\hal\" -I         /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\Source\Modified\" -I    /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\ZMain\TI2530DB\"  /
+//                          -I "S:\zigbee\Myzigbe\version 3.0 for new         /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          hal\include\" -I "S:\zigbee\Myzigbe\version 3.0   /
+//                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT   /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          hal\target\CC2530EB\" -I                          /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          mac\include\" -I "S:\zigbee\Myzigbe\version 3.0   /
+//                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT   /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          mac\high_level\" -I "S:\zigbee\Myzigbe\version    /
+//                          3.0 for new ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          AT commands\AT command 3.2 -                      /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          mac\low_level\srf04\" -I                          /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          mac\low_level\srf04\single_chip\" -I              /
+//                          "S:\zigbee\Myzigbe\version 3.0 for new            /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          mt\" -I "S:\zigbee\Myzigbe\version 3.0 for new    /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          osal\include\" -I "S:\zigbee\Myzigbe\version 3.0  /
+//                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT   /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          services\saddr\" -I "S:\zigbee\Myzigbe\version    /
+//                          3.0 for new ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          AT commands\AT command 3.2 -                      /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          services\sdata\" -I "S:\zigbee\Myzigbe\version    /
+//                          3.0 for new ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          AT commands\AT command 3.2 -                      /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          stack\af\" -I "S:\zigbee\Myzigbe\version 3.0 for  /
+//                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT       /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          stack\nwk\" -I "S:\zigbee\Myzigbe\version 3.0     /
+//                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT   /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          stack\sapi\" -I "S:\zigbee\Myzigbe\version 3.0    /
+//                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT   /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          stack\sec\" -I "S:\zigbee\Myzigbe\version 3.0     /
+//                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT   /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          stack\sys\" -I "S:\zigbee\Myzigbe\version 3.0     /
+//                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT   /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          stack\zdo\" -I "S:\zigbee\Myzigbe\version 3.0     /
+//                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT   /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          stack\zcl\" -I "S:\zigbee\Myzigbe\version 3.0     /
+//                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT   /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          zmac\" -I "S:\zigbee\Myzigbe\version 3.0 for new  /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\..\..\..\..\..\Components\ /
+//                          zmac\f8w\" -Ohz --require_prototypes              /
+//    List file          =  S:\zigbee\Myzigbe\version 3.0 for new             /
+//                          ZStack-CC2530-2.5.1a\Projects\zstack\AT           /
+//                          commands\AT command 3.2 -                         /
+//                          Temputerature\CC2530DB\RouterEB\List\AT_ZCL_tempe /
+//                          rature_data.s51                                   /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME AT_ZCL_temperature_data
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC AT_ZCL_TEMP_Attrs
+        PUBLIC AT_ZCL_TEMP_DateCode
+        PUBLIC AT_ZCL_TEMP_DeviceEnable
+        PUBLIC AT_ZCL_TEMP_IdentifyTime
+        PUBLIC AT_ZCL_TEMP_InClusterList
+        PUBLIC AT_ZCL_TEMP_LocationDescription
+        PUBLIC AT_ZCL_TEMP_ManufacturerName
+        PUBLIC AT_ZCL_TEMP_ModelId
+        PUBLIC AT_ZCL_TEMP_OnOff
+        PUBLIC AT_ZCL_TEMP_PowerSource
+        PUBLIC AT_ZCL_TEMP_SimpleDesc
+        PUBLIC AT_ZCL_TEMP_current
+        PUBLIC AT_ZCL_TEMP_max_value
+        PUBLIC AT_ZCL_TEMP_min_value
+// S:\zigbee\Myzigbe\version 3.0 for new ZStack-CC2530-2.5.1a\Projects\zstack\AT commands\AT command 3.2 - Temputerature\Source\AT_ZCL_temperature_data.c
+//    1 /*********************************************************************
+//    2  * INCLUDES
+//    3  */
+//    4 #include "ZComDef.h"
+//    5 #include "OSAL.h"
+//    6 #include "AF.h"
+//    7 #include "ZDConfig.h"
+//    8 
+//    9 #include "zcl.h"
+//   10 #include "zcl_general.h"
+//   11 #include "zcl_ms.h"
+//   12 #include "zcl_ha.h"
+//   13 
+//   14 #include "AT_ZCL_temperature.h"
+//   15 
+//   16 
+//   17 #define AT_ZCL_TEMP_DEVICE_VERSION     0
+//   18 #define AT_ZCL_TEMP_FLAGS              0
+//   19 
+//   20 /*********************************************************************
+//   21  * GLOBAL VARIABLES
+//   22  */
+//   23 
+//   24 // Basic Cluster
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   25 const uint8 AT_ZCL_TEMP_ManufacturerName[] = { 5, 'E','S','S','E','X' };
+AT_ZCL_TEMP_ManufacturerName:
+        DB 5
+        DB 69
+        DB 83
+        DB 83
+        DB 69
+        DB 88
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   26 const uint8 AT_ZCL_TEMP_ModelId[] = { 7, 'D','S','1','8','B','2','0' };
+AT_ZCL_TEMP_ModelId:
+        DB 7
+        DB 68
+        DB 83
+        DB 49
+        DB 56
+        DB 66
+        DB 50
+        DB 48
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   27 const uint8 AT_ZCL_TEMP_DateCode[] = { 8, '2','0','1','5','0','7','1','7'};
+AT_ZCL_TEMP_DateCode:
+        DB 8
+        DB 50
+        DB 48
+        DB 49
+        DB 53
+        DB 48
+        DB 55
+        DB 49
+        DB 55
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   28 const uint8 AT_ZCL_TEMP_PowerSource = POWER_SOURCE_BATTERY;
+AT_ZCL_TEMP_PowerSource:
+        DB 3
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//   29 uint8 AT_ZCL_TEMP_LocationDescription[]={ 11, 'I',' ','l','o','v','e',' ','U',' ',':',')' };
+AT_ZCL_TEMP_LocationDescription:
+        DATA8
+        DS 12
+        REQUIRE `?<Initializer for AT_ZCL_TEMP_LocationDescript`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   30 const int16 AT_ZCL_TEMP_min_value = -5500;  //stand for -55 C
+AT_ZCL_TEMP_min_value:
+        DW -5500
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   31 const int16 AT_ZCL_TEMP_max_value = 12500;  //stand for 125 C
+AT_ZCL_TEMP_max_value:
+        DW 12500
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//   32 uint8 AT_ZCL_TEMP_DeviceEnable = DEVICE_ENABLED;
+AT_ZCL_TEMP_DeviceEnable:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for AT_ZCL_TEMP_DeviceEnable>`
+        REQUIRE __INIT_XDATA_I
+//   33 
+//   34 // Device Temperature Configuration Cluster
+//   35 //0x8000 indicates that the temperature measurement is invalid.
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//   36 int16 AT_ZCL_TEMP_current=0x8000;
+AT_ZCL_TEMP_current:
+        DATA16
+        DS 2
+        REQUIRE `?<Initializer for AT_ZCL_TEMP_current>`
+        REQUIRE __INIT_XDATA_I
+//   37 
+//   38 // Identify Cluster
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//   39 uint16 AT_ZCL_TEMP_IdentifyTime = 0;
+AT_ZCL_TEMP_IdentifyTime:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//   40 
+//   41 
+//   42 // On/Off Cluster
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   43 uint8  AT_ZCL_TEMP_OnOff = TEMP_OFF;
+AT_ZCL_TEMP_OnOff:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   44 
+//   45 /*********************************************************************
+//   46  * ATTRIBUTE DEFINITIONS - Uses REAL cluster IDs
+//   47  */
+
+        RSEG CODE_C:CODE:REORDER:NOROOT(0)
+        DATA8
+//   48 CONST zclAttrRec_t AT_ZCL_TEMP_Attrs[AT_ZCL_TEMP_MAX_ATTRIBUTES] =
+AT_ZCL_TEMP_Attrs:
+        DATA16
+        DW 0
+        DW 4
+        DATA8
+        DB 66
+        DB 1
+        DATA16
+        DW AT_ZCL_TEMP_ManufacturerName
+        DW 0
+        DW 5
+        DATA8
+        DB 66
+        DB 1
+        DATA16
+        DW AT_ZCL_TEMP_ModelId
+        DW 0
+        DW 6
+        DATA8
+        DB 66
+        DB 1
+        DATA16
+        DW AT_ZCL_TEMP_DateCode
+        DW 0
+        DW 7
+        DATA8
+        DB 32
+        DB 1
+        DATA16
+        DW AT_ZCL_TEMP_PowerSource
+        DW 0
+        DW 16
+        DATA8
+        DB 66
+        DB 3
+        DATA16
+        DW AT_ZCL_TEMP_LocationDescription
+        DW 0
+        DW 18
+        DATA8
+        DB 16
+        DB 3
+        DATA16
+        DW AT_ZCL_TEMP_DeviceEnable
+        DW 2
+        DW 0
+        DATA8
+        DB 9
+        DB 1
+        DATA16
+        DW AT_ZCL_TEMP_current
+        DW 3
+        DW 0
+        DATA8
+        DB 33
+        DB 3
+        DATA16
+        DW AT_ZCL_TEMP_IdentifyTime
+        DW 6
+        DW 0
+        DATA8
+        DB 32
+        DB 1
+        DATA16
+        DW AT_ZCL_TEMP_OnOff
+        DW 1026
+        DW 0
+        DATA8
+        DB 41
+        DB 1
+        DATA16
+        DW AT_ZCL_TEMP_current
+        DW 1026
+        DW 1
+        DATA8
+        DB 41
+        DB 1
+        DATA16
+        DW AT_ZCL_TEMP_min_value
+        DW 1026
+        DW 2
+        DATA8
+        DB 41
+        DB 1
+        DATA16
+        DW AT_ZCL_TEMP_max_value
+//   49 {
+//   50   // *** General Basic Cluster Attributes ***
+//   51   {
+//   52     ZCL_CLUSTER_ID_GEN_BASIC,             // Cluster IDs - defined in the foundation (ie. zcl.h)
+//   53     {  // Attribute record
+//   54       ATTRID_BASIC_MANUFACTURER_NAME,            // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+//   55       ZCL_DATATYPE_CHAR_STR,                 // Data Type - found in zcl.h
+//   56       ACCESS_CONTROL_READ,                // Variable access control - found in zcl.h
+//   57       (void *)AT_ZCL_TEMP_ManufacturerName  // Pointer to attribute variable
+//   58     }
+//   59   },
+//   60   {
+//   61     ZCL_CLUSTER_ID_GEN_BASIC,
+//   62     { // Attribute record
+//   63       ATTRID_BASIC_MODEL_ID,
+//   64       ZCL_DATATYPE_CHAR_STR,
+//   65       ACCESS_CONTROL_READ,
+//   66       (void *)AT_ZCL_TEMP_ModelId
+//   67     }
+//   68   },
+//   69   {
+//   70     ZCL_CLUSTER_ID_GEN_BASIC,
+//   71     { // Attribute record
+//   72       ATTRID_BASIC_DATE_CODE,
+//   73       ZCL_DATATYPE_CHAR_STR,
+//   74       ACCESS_CONTROL_READ,
+//   75       (void *)AT_ZCL_TEMP_DateCode
+//   76     }
+//   77   },
+//   78   {
+//   79     ZCL_CLUSTER_ID_GEN_BASIC,
+//   80     { // Attribute record
+//   81       ATTRID_BASIC_POWER_SOURCE,
+//   82       ZCL_DATATYPE_UINT8,
+//   83       ACCESS_CONTROL_READ,
+//   84       (void *)&AT_ZCL_TEMP_PowerSource
+//   85     }
+//   86   },
+//   87   {
+//   88     ZCL_CLUSTER_ID_GEN_BASIC,
+//   89     { // Attribute record
+//   90       ATTRID_BASIC_LOCATION_DESC,
+//   91       ZCL_DATATYPE_CHAR_STR,
+//   92       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//   93       (void *)AT_ZCL_TEMP_LocationDescription
+//   94     }
+//   95   },
+//   96   {
+//   97     ZCL_CLUSTER_ID_GEN_BASIC,
+//   98     { // Attribute record
+//   99       ATTRID_BASIC_DEVICE_ENABLED,
+//  100       ZCL_DATATYPE_BOOLEAN,
+//  101       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  102       (void *)&AT_ZCL_TEMP_DeviceEnable
+//  103     }
+//  104   },
+//  105   
+//  106    // *** Device Temperature Configuration Cluster ***
+//  107   {
+//  108     ZCL_CLUSTER_ID_GEN_DEVICE_TEMP_CONFIG,
+//  109     { // Attribute record
+//  110       ATTRID_DEV_TEMP_CURRENT,
+//  111       ZCL_DATATYPE_DATA16,
+//  112       ACCESS_CONTROL_READ,
+//  113       (void *)&AT_ZCL_TEMP_current
+//  114     }
+//  115   },
+//  116 
+//  117   // *** Identify Cluster Attribute ***
+//  118   {
+//  119     ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  120     { // Attribute record
+//  121       ATTRID_IDENTIFY_TIME,
+//  122       ZCL_DATATYPE_UINT16,
+//  123       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  124       (void *)&AT_ZCL_TEMP_IdentifyTime
+//  125     }
+//  126   },
+//  127   
+//  128   // *** On/Off Cluster Attributes ***
+//  129   {
+//  130     ZCL_CLUSTER_ID_GEN_ON_OFF,
+//  131     { // Attribute record
+//  132       ATTRID_ON_OFF,
+//  133       ZCL_DATATYPE_UINT8,
+//  134       ACCESS_CONTROL_READ,
+//  135       (void *)&AT_ZCL_TEMP_OnOff
+//  136     }
+//  137   }, 
+//  138   
+//  139   // *** Temperature Measurement Cluster Attributes ***
+//  140   {
+//  141     ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+//  142     { // Attribute record
+//  143       ATTRID_MS_TEMPERATURE_MEASURED_VALUE,
+//  144       ZCL_DATATYPE_INT16,
+//  145       ACCESS_CONTROL_READ,
+//  146       (void *)&AT_ZCL_TEMP_current
+//  147     }
+//  148   },
+//  149   
+//  150   {
+//  151     ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+//  152     { // Attribute record
+//  153       ATTRID_MS_TEMPERATURE_MIN_MEASURED_VALUE,
+//  154       ZCL_DATATYPE_INT16,
+//  155       ACCESS_CONTROL_READ,
+//  156       (void *)&AT_ZCL_TEMP_min_value
+//  157     }
+//  158   },
+//  159   
+//  160   {
+//  161     ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+//  162     { // Attribute record
+//  163       ATTRID_MS_TEMPERATURE_MAX_MEASURED_VALUE,
+//  164       ZCL_DATATYPE_INT16,
+//  165       ACCESS_CONTROL_READ,
+//  166       (void *)&AT_ZCL_TEMP_max_value
+//  167     }
+//  168   },
+//  169 };
+//  170 
+//  171 
+//  172 
+//  173 /*********************************************************************
+//  174  * SIMPLE DESCRIPTOR
+//  175  */
+//  176 
+//  177 #define AT_ZCL_TEMP_MAX_INCLUSTERS       5
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  178 const cId_t AT_ZCL_TEMP_InClusterList[AT_ZCL_TEMP_MAX_INCLUSTERS] =
+AT_ZCL_TEMP_InClusterList:
+        DATA16
+        DW 0
+        DW 3
+        DW 2
+        DW 6
+        DW 1026
+//  179 {
+//  180   ZCL_CLUSTER_ID_GEN_BASIC,
+//  181   ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  182   ZCL_CLUSTER_ID_GEN_DEVICE_TEMP_CONFIG,
+//  183   ZCL_CLUSTER_ID_GEN_ON_OFF,
+//  184   ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT
+//  185 };
+//  186 /*
+//  187 #define AT_ZCL_TEMP_MAX_OUTCLUSTERS       5
+//  188 const cId_t AT_ZCL_TEMP_OutClusterList[AT_ZCL_TEMP_MAX_OUTCLUSTERS] =
+//  189 {
+//  190 };*/
+//  191 
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  192 SimpleDescriptionFormat_t AT_ZCL_TEMP_SimpleDesc =
+AT_ZCL_TEMP_SimpleDesc:
+        DATA8
+        DS 12
+        REQUIRE `?<Initializer for AT_ZCL_TEMP_SimpleDesc>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for AT_ZCL_TEMP_LocationDescript`:
+        DATA8
+        DB 11
+        DB 73
+        DB 32
+        DB 108
+        DB 111
+        DB 118
+        DB 101
+        DB 32
+        DB 85
+        DB 32
+        DB 58
+        DB 41
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for AT_ZCL_TEMP_DeviceEnable>`:
+        DATA8
+        DB 1
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for AT_ZCL_TEMP_current>`:
+        DATA16
+        DW -32768
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for AT_ZCL_TEMP_SimpleDesc>`:
+        DATA8
+        DB 4
+        DATA16
+        DW 260
+        DW 255
+        DATA8
+        DB 0
+        DB 5
+        DATA16
+        DW AT_ZCL_TEMP_InClusterList
+        DATA8
+        DB 0
+        DATA16
+        DW 0H
+
+        END
+//  193 {
+//  194   AT_ZCL_TEMP_ENDPOINT,                  //  int Endpoint;
+//  195   ZCL_HA_PROFILE_ID,                     //  uint16 AppProfId[2];
+//  196   ZCL_HA_DEVICEID_TEST_DEVICE,           //  uint16 AppDeviceId[2];
+//  197   AT_ZCL_TEMP_DEVICE_VERSION,            //  int   AppDevVer:4;
+//  198   AT_ZCL_TEMP_FLAGS,                     //  int   AppFlags:4;
+//  199   AT_ZCL_TEMP_MAX_INCLUSTERS,            //  byte  AppNumInClusters;
+//  200   (cId_t *)AT_ZCL_TEMP_InClusterList,    //  byte *pAppInClusterList;
+//  201   0,                                      //  byte  AppNumInClusters;
+//  202   (cId_t *)NULL                           //  byte *pAppInClusterList;
+//  203 };
+// 
+// 96 bytes in segment CODE_C
+// 27 bytes in segment XDATA_I
+// 27 bytes in segment XDATA_ID
+// 38 bytes in segment XDATA_ROM_C
+//  3 bytes in segment XDATA_Z
+// 
+// 123 bytes of CODE  memory
+//  38 bytes of CONST memory
+//  30 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

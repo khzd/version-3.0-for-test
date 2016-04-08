@@ -1,0 +1,280 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         14/Jul/2015  13:20:13 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  S:\zigbee\Myzigbe\version 3.0 for new              #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 - temp\Source\AT_switch.c  #
+#    Command line       =  -f "S:\zigbee\Myzigbe\version 3.0 for new          #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\Tools\CC2530DB\f8wRouter.cf #
+#                          g" (-DCPU32MHZ -DROOT=__near_func                  #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cf #
+#                          g" (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0   #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800          #
+#                          -DZDAPP_CONFIG_PAN_ID=0x2015                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "S:\zigbee\Myzigbe\version  #
+#                          3.0 for new ZStack-CC2530-2.5.1a\Projects\zstack\A #
+#                          T commands\AT command 3.2 -                        #
+#                          temp\Source\AT_switch.c" -D ZIGBEEPRO -D           #
+#                          NWK_AUTO_POLL -D HAL_UART=TRUE -D HOLD_AUTO_START  #
+#                          -D NV_RESTORE -D REFLECTOR -D                      #
+#                          xHAL_UART_ISR_TX_MAX=200 -D xPOWER_SAVING -D       #
+#                          ZCL_READ -D ZCL_WRITE -D ZCL_IDENTIFY -D           #
+#                          ZCL_ON_OFF -D ZCL_DISCOVER -D HAL_UART_ISR=1 -D    #
+#                          HAL_UART_DMA=0 -D xZTOOL_P1 -D xMT_TASK -D         #
+#                          xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                    #
+#                          xLCD_SUPPORTED=DEBUG -D xMT_UART_DEFAULT_OVERFLOW= #
+#                          FALSE -lC "S:\zigbee\Myzigbe\version 3.0 for new   #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\RouterEB\List\" -lA                  #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\RouterEB\List\" --diag_suppress      #
+#                          Pe001,Pa010 -o "S:\zigbee\Myzigbe\version 3.0 for  #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\RouterEB\Obj\" -e --no_code_motion   #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for new          #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 - temp\CC2530DB\" -I       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\Source\" -I                       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\Source\hal\" -I                   #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\Source\Modified\" -I              #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\ZMain\TI2530DB\" -I         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\hal\includ #
+#                          e\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\hal\target #
+#                          \CC2530EB\" -I "S:\zigbee\Myzigbe\version 3.0 for  #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\mac\includ #
+#                          e\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\mac\high_l #
+#                          evel\" -I "S:\zigbee\Myzigbe\version 3.0 for new   #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\mac\low_le #
+#                          vel\srf04\" -I "S:\zigbee\Myzigbe\version 3.0 for  #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\mac\low_le #
+#                          vel\srf04\single_chip\" -I                         #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\mt\" -I    #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\osal\inclu #
+#                          de\" -I "S:\zigbee\Myzigbe\version 3.0 for new     #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\services\s #
+#                          addr\" -I "S:\zigbee\Myzigbe\version 3.0 for new   #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\services\s #
+#                          data\" -I "S:\zigbee\Myzigbe\version 3.0 for new   #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\stack\af\" #
+#                           -I "S:\zigbee\Myzigbe\version 3.0 for new         #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\stack\nwk\ #
+#                          " -I "S:\zigbee\Myzigbe\version 3.0 for new        #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\stack\sapi #
+#                          \" -I "S:\zigbee\Myzigbe\version 3.0 for new       #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\stack\sec\ #
+#                          " -I "S:\zigbee\Myzigbe\version 3.0 for new        #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\stack\sys\ #
+#                          " -I "S:\zigbee\Myzigbe\version 3.0 for new        #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\stack\zdo\ #
+#                          " -I "S:\zigbee\Myzigbe\version 3.0 for new        #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\stack\zcl\ #
+#                          " -I "S:\zigbee\Myzigbe\version 3.0 for new        #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\zmac\" -I  #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\" #
+#                           -Ohz --require_prototypes                         #
+#    List file          =  S:\zigbee\Myzigbe\version 3.0 for new              #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\RouterEB\List\AT_switch.lst          #
+#    Object file        =  S:\zigbee\Myzigbe\version 3.0 for new              #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -                          #
+#                          temp\CC2530DB\RouterEB\Obj\AT_switch.r51           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+S:\zigbee\Myzigbe\version 3.0 for new ZStack-CC2530-2.5.1a\Projects\zstack\AT commands\AT command 3.2 - temp\Source\AT_switch.c
+      1          #include"iocc2530.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      2          #include"OnBoard.h"
+      3          #include "AT_switch.h" 
+      4          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      5          void switch_init(void){
+   \                     switch_init:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+      6            SWITCH_SET_PIN_INPUT();
+   \   000000   53FDEF       ANL     0xfd,#0xef
+      7          }
+   \   000003   02....       LJMP    ?BRET
+   \   000006                REQUIRE P0DIR
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      8          uint8 switch_status(void){
+   \                     switch_status:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+      9            if(SWITCH_ONOFF_IO_PIN == SWITCH_ON){
+   \   000000   A284         MOV     C,0x80.4
+   \   000002   5004         JNC     ??switch_status_0
+     10              return 0x00;
+   \   000004   7900         MOV     R1,#0x0
+   \   000006   800A         SJMP    ??switch_status_1
+     11            }else if(SWITCH_ONOFF_IO_PIN == SWITCH_OFF){
+   \                     ??switch_status_0:
+   \   000008   A284         MOV     C,0x80.4
+   \   00000A   4004         JC      ??switch_status_2
+     12              return 0x01;
+   \   00000C   7901         MOV     R1,#0x1
+   \   00000E   8002         SJMP    ??switch_status_1
+     13            }else{
+     14              return 0x02;
+   \                     ??switch_status_2:
+   \   000010   7902         MOV     R1,#0x2
+   \                     ??switch_status_1:
+   \   000012   02....       LJMP    ?BRET
+   \   000015                REQUIRE _A_P0
+     15            }
+     16          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??switch_init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    switch_init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??switch_status?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    switch_status
+     17          
+
+   Maximum stack usage in bytes:
+
+     Function      ISTACK PSTACK XSTACK
+     --------      ------ ------ ------
+     switch_init       0      0      0
+     switch_status     0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label        Bytes
+     --------------        -----
+     _A_P0                    1
+     P0DIR                    1
+     switch_init              6
+     switch_status           21
+     ??switch_init?relay      6
+     ??switch_status?relay    6
+
+ 
+ 27 bytes in segment BANKED_CODE
+ 12 bytes in segment BANK_RELAYS
+  2 bytes in segment SFR_AN
+ 
+ 39 bytes of CODE memory
+  0 bytes of DATA memory (+ 2 bytes shared)
+
+Errors: none
+Warnings: none

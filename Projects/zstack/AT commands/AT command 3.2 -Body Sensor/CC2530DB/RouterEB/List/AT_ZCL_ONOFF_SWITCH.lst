@@ -1,0 +1,1240 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         19/Jul/2015  11:18:37 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  S:\zigbee\Myzigbe\version 3.0 for new              #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\Source\AT_ZCL_ONOFF_SWITCH.c                #
+#    Command line       =  -f "S:\zigbee\Myzigbe\version 3.0 for new          #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\Tools\CC2530DB\f8wRouter. #
+#                          cfg" (-DCPU32MHZ -DROOT=__near_func                #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig. #
+#                          cfg" (-DZIGBEEPRO -DSECURE=0                       #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x2015                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "S:\zigbee\Myzigbe\version  #
+#                          3.0 for new ZStack-CC2530-2.5.1a\Projects\zstack\A #
+#                          T commands\AT command 3.2 -Body                    #
+#                          Sensor\Source\AT_ZCL_ONOFF_SWITCH.c" -D ZIGBEEPRO  #
+#                          -D NWK_AUTO_POLL -D HAL_UART=TRUE -D               #
+#                          HOLD_AUTO_START -D NV_RESTORE -D REFLECTOR -D      #
+#                          xHAL_UART_ISR_TX_MAX=200 -D xPOWER_SAVING -D       #
+#                          ZCL_READ -D ZCL_WRITE -D ZCL_IDENTIFY -D           #
+#                          ZCL_ON_OFF -D ZCL_DISCOVER -D HAL_UART_ISR=1 -D    #
+#                          HAL_UART_DMA=0 -D xZTOOL_P1 -D xMT_TASK -D         #
+#                          xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                    #
+#                          xLCD_SUPPORTED=DEBUG -D xMT_UART_DEFAULT_OVERFLOW= #
+#                          FALSE -lC "S:\zigbee\Myzigbe\version 3.0 for new   #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\RouterEB\List\" -lA                #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\RouterEB\List\" --diag_suppress    #
+#                          Pe001,Pa010 -o "S:\zigbee\Myzigbe\version 3.0 for  #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\RouterEB\Obj\" -e                  #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for new          #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body Sensor\CC2530DB\"    #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for new          #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\Source\" -I                     #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\Source\hal\" -I                 #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\Source\Modified\" -I            #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\ZMain\TI2530DB\" -I       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\hal\incl #
+#                          ude\" -I "S:\zigbee\Myzigbe\version 3.0 for new    #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\hal\targ #
+#                          et\CC2530EB\" -I "S:\zigbee\Myzigbe\version 3.0    #
+#                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT    #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\mac\incl #
+#                          ude\" -I "S:\zigbee\Myzigbe\version 3.0 for new    #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\mac\high #
+#                          _level\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\mac\low_ #
+#                          level\srf04\" -I "S:\zigbee\Myzigbe\version 3.0    #
+#                          for new ZStack-CC2530-2.5.1a\Projects\zstack\AT    #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\mac\low_ #
+#                          level\srf04\single_chip\" -I                       #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\mt\" -I  #
+#                          "S:\zigbee\Myzigbe\version 3.0 for new             #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\osal\inc #
+#                          lude\" -I "S:\zigbee\Myzigbe\version 3.0 for new   #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\services #
+#                          \saddr\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\services #
+#                          \sdata\" -I "S:\zigbee\Myzigbe\version 3.0 for     #
+#                          new ZStack-CC2530-2.5.1a\Projects\zstack\AT        #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\stack\af #
+#                          \" -I "S:\zigbee\Myzigbe\version 3.0 for new       #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\stack\nw #
+#                          k\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\stack\sa #
+#                          pi\" -I "S:\zigbee\Myzigbe\version 3.0 for new     #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\stack\se #
+#                          c\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\stack\sy #
+#                          s\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\stack\zd #
+#                          o\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\stack\zc #
+#                          l\" -I "S:\zigbee\Myzigbe\version 3.0 for new      #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\zmac\"   #
+#                          -I "S:\zigbee\Myzigbe\version 3.0 for new          #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\..\..\..\..\..\Components\zmac\f8w #
+#                          \" -Ohz --require_prototypes                       #
+#    List file          =  S:\zigbee\Myzigbe\version 3.0 for new              #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\RouterEB\List\AT_ZCL_ONOFF_SWITCH. #
+#                          lst                                                #
+#    Object file        =  S:\zigbee\Myzigbe\version 3.0 for new              #
+#                          ZStack-CC2530-2.5.1a\Projects\zstack\AT            #
+#                          commands\AT command 3.2 -Body                      #
+#                          Sensor\CC2530DB\RouterEB\Obj\AT_ZCL_ONOFF_SWITCH.r #
+#                          51                                                 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+S:\zigbee\Myzigbe\version 3.0 for new ZStack-CC2530-2.5.1a\Projects\zstack\AT commands\AT command 3.2 -Body Sensor\Source\AT_ZCL_ONOFF_SWITCH.c
+      1          
+      2          /*********************************************************************
+      3           * INCLUDES
+      4           */
+      5          #include "ZComDef.h"
+      6          #include "OSAL.h"
+      7          #include "AF.h"
+      8          #include "ZDApp.h"
+      9          
+     10          #include "zcl.h"
+     11          #include "zcl_general.h"
+     12          #include "zcl_ms.h"
+     13          #include "zcl_ha.h"
+     14          #include "AT_ZCL.h"
+     15          #include "AT_uart.h"
+     16          #include "AT_ZCL_ONOFF_SWITCH.h"
+     17          #include "AT_switch.h"
+     18          #include "OSAL_Nv.h"
+     19          
+     20          #include "onboard.h"
+     21          
+     22          /* HAL */
+     23          #include "hal_led.h"
+     24          #include "hal_key.h"
+     25          
+     26          /*********************************************************************
+     27           * GLOBAL VARIABLES
+     28           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     29          byte AT_ZCL_ONOFF_SWITCH_TaskID;
+   \                     AT_ZCL_ONOFF_SWITCH_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     30          
+     31          /*********************************************************************
+     32           * LOCAL FUNCTION
+     33           */
+     34          static void AT_ZCL_ONOFF_SWITCH_IdentifyCB( zclIdentify_t *pCmd );
+     35          static void AT_ZCL_ONOFF_SWITCH_BasicResetCB( void );
+     36          static void AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange( void );
+     37          static void AT_ZCL_ONOFF_SWITCH_update(void);
+     38          
+     39          //ninglvfeihong Modified
+     40          void AT_ZCL_ONOFF_SWITCH_OnOffCB( uint8 cmd );
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     41          static uint8 light_setting_reverse = FALSE;
+   \                     light_setting_reverse:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     42          void AT_ZCL_ONOFF_SWITCH_setting(uint8 reverse);
+     43          
+     44          static void AT_ZCL_ONOFF_SWITCH_EP_ENABLE( bool isEnable);
+     45          
+     46          /*********************************************************************
+     47           * ZCL General Profile Callback table
+     48           */
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     49          static zclGeneral_AppCallbacks_t AT_ZCL_ONOFF_SWITCH_GEN_CmdCallbacks =
+   \                     AT_ZCL_ONOFF_SWITCH_GEN_CmdCallbacks:
+   \   000000                DS 30
+   \   00001E                REQUIRE `?<Initializer for AT_ZCL_ONOFF_SWITCH_GEN_CmdC`
+   \   00001E                REQUIRE __INIT_XDATA_I
+     50          { 
+     51            AT_ZCL_ONOFF_SWITCH_BasicResetCB,                 // Basic Cluster Reset command
+     52            AT_ZCL_ONOFF_SWITCH_IdentifyCB,                   // Identify command   
+     53            NULL,                                             // Identify Query Response command
+     54            AT_ZCL_ONOFF_SWITCH_OnOffCB,                      // On/Off cluster command
+     55            NULL,                                     // Level Control Move to Level command
+     56            NULL,                                     // Level Control Move command
+     57            NULL,                                     // Level Control Step command
+     58            NULL,                                     // Group Response commands
+     59            NULL,                                     // Scene Store Request command
+     60            NULL,                                     // Scene Recall Request command
+     61            NULL,                                     // Scene Response command
+     62            NULL,                                     // Alarm (Response) command
+     63            NULL,                                     // RSSI Location commands
+     64            NULL,                                     // RSSI Location Response commands
+     65          };
+     66          
+     67          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     68          void AT_ZCL_ONOFF_SWITCH_Init( byte task_id )
+   \                     AT_ZCL_ONOFF_SWITCH_Init:
+     69          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+     70            AT_ZCL_ONOFF_SWITCH_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+     71          
+     72            // This app is part of the Home Automation Profile
+     73            zclHA_Init( &AT_ZCL_ONOFF_SWITCH_SimpleDesc );
+   \   00000A                ; Setup parameters for call to function zclHA_Init
+   \   00000A   7A..         MOV     R2,#AT_ZCL_ONOFF_SWITCH_SimpleDesc & 0xff
+   \   00000C   7B..         MOV     R3,#(AT_ZCL_ONOFF_SWITCH_SimpleDesc >> 8) & 0xff
+   \   00000E   12....       LCALL   ??zclHA_Init?relay
+     74          
+     75            // Register the ZCL General Cluster Library callback functions
+     76            zclGeneral_RegisterCmdCallbacks( AT_ZCL_ONOFF_SWITCH_ENDPOINT, &AT_ZCL_ONOFF_SWITCH_GEN_CmdCallbacks );
+   \   000011                ; Setup parameters for call to function zclGeneral_RegisterCmdCallbacks
+   \   000011   7A..         MOV     R2,#AT_ZCL_ONOFF_SWITCH_GEN_CmdCallbacks & 0xff
+   \   000013   7B..         MOV     R3,#(AT_ZCL_ONOFF_SWITCH_GEN_CmdCallbacks >> 8) & 0xff
+   \   000015   7907         MOV     R1,#0x7
+   \   000017   12....       LCALL   ??zclGeneral_RegisterCmdCallbacks?relay
+     77            
+     78            // Register the application's attribute list
+     79            zcl_registerAttrList( AT_ZCL_ONOFF_SWITCH_ENDPOINT, AT_ZCL_ONOFF_SWITCH_MAX_ATTRIBUTES, AT_ZCL_ONOFF_SWITCH_Attrs );
+   \   00001A                ; Setup parameters for call to function zcl_registerAttrList
+   \   00001A   7C..         MOV     R4,#AT_ZCL_ONOFF_SWITCH_Attrs & 0xff
+   \   00001C   7D..         MOV     R5,#(AT_ZCL_ONOFF_SWITCH_Attrs >> 8) & 0xff
+   \   00001E   7A0C         MOV     R2,#0xc
+   \   000020   7907         MOV     R1,#0x7
+   \   000022   12....       LCALL   ??zcl_registerAttrList?relay
+     80            
+     81            //register for AT command system enable/disable call back function
+     82            AT_ZCL_EP_ENABLE_Register(  AT_ZCL_ONOFF_SWITCH_ENDPOINT,AT_ZCL_ONOFF_SWITCH_EP_ENABLE);
+   \   000025                ; Setup parameters for call to function AT_ZCL_EP_ENABLE_Register
+   \   000025   7A..         MOV     R2,#??AT_ZCL_ONOFF_SWITCH_EP_ENABLE?relay & 0xff
+   \   000027   7B..         MOV     R3,#(??AT_ZCL_ONOFF_SWITCH_EP_ENABLE?relay >> 8) & 0xff
+   \   000029   7907         MOV     R1,#0x7
+   \   00002B   12....       LCALL   ??AT_ZCL_EP_ENABLE_Register?relay
+     83            
+     84            //initialize the switch device
+     85            switch_init();
+   \   00002E                ; Setup parameters for call to function switch_init
+   \   00002E   12....       LCALL   ??switch_init?relay
+     86            
+     87            //ninglvfeihong for light sensor: record the setting of light endpoint
+     88            //uint8 osal_nv_read( uint16 id, uint16 ndx, uint16 len, void *buf )
+     89            osal_nv_item_init( AT_S_NV_OFFSET+AT_S_BUTTON_FUN_ID, 1, NULL );
+   \   000031                ; Setup parameters for call to function osal_nv_item_init
+   \   000031   E4           CLR     A
+   \   000032   F5..         MOV     ?V0 + 0,A
+   \   000034   F5..         MOV     ?V0 + 1,A
+   \   000036   78..         MOV     R0,#?V0 + 0
+   \   000038   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00003B   7C01         MOV     R4,#0x1
+   \   00003D   7D00         MOV     R5,#0x0
+   \   00003F   7A64         MOV     R2,#0x64
+   \   000041   7B04         MOV     R3,#0x4
+   \   000043   12....       LCALL   ??osal_nv_item_init?relay
+   \   000046   7402         MOV     A,#0x2
+   \   000048   12....       LCALL   ?DEALLOC_XSTACK8
+     90            osal_nv_read(AT_S_NV_OFFSET+AT_S_BUTTON_FUN_ID, 0, 1, &light_setting_reverse);
+   \   00004B                ; Setup parameters for call to function osal_nv_read
+   \   00004B   75....       MOV     ?V0 + 0,#light_setting_reverse & 0xff
+   \   00004E   75....       MOV     ?V0 + 1,#(light_setting_reverse >> 8) & 0xff
+   \   000051   78..         MOV     R0,#?V0 + 0
+   \   000053   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000056   75..01       MOV     ?V0 + 0,#0x1
+   \   000059   75..00       MOV     ?V0 + 1,#0x0
+   \   00005C   78..         MOV     R0,#?V0 + 0
+   \   00005E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000061   7C00         MOV     R4,#0x0
+   \   000063   7D00         MOV     R5,#0x0
+   \   000065   7A64         MOV     R2,#0x64
+   \   000067   7B04         MOV     R3,#0x4
+   \   000069   12....       LCALL   ??osal_nv_read?relay
+   \   00006C   02....       LJMP    ?Subroutine0 & 0xFFFF
+     91          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7404         MOV     A,#0x4
+   \   000002                REQUIRE ??Subroutine5_0
+   \   000002                ; // Fall through to label ??Subroutine5_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine5_0:
+   \   000000   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000003                REQUIRE ??Subroutine6_0
+   \   000003                ; // Fall through to label ??Subroutine6_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine6_0:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     92          //ninglvfeihong modified for light sensor
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     93          void AT_ZCL_ONOFF_SWITCH_setting(uint8 reverse){
+   \                     AT_ZCL_ONOFF_SWITCH_setting:
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+     94            if(AT_ZCL_ONOFF_SWITCH_setting_Reverse==reverse)
+   \   000007   7402         MOV     A,#0x2
+   \   000009   6E           XRL     A,R6
+   \   00000A   700D         JNZ     ??AT_ZCL_ONOFF_SWITCH_setting_0
+     95              light_setting_reverse = !light_setting_reverse;
+   \   00000C   90....       MOV     DPTR,#light_setting_reverse
+   \   00000F   E0           MOVX    A,@DPTR
+   \   000010   7004         JNZ     ??AT_ZCL_ONOFF_SWITCH_setting_1
+   \   000012   7401         MOV     A,#0x1
+   \   000014   8007         SJMP    ??AT_ZCL_ONOFF_SWITCH_setting_2
+   \                     ??AT_ZCL_ONOFF_SWITCH_setting_1:
+   \   000016   E4           CLR     A
+   \   000017   8004         SJMP    ??AT_ZCL_ONOFF_SWITCH_setting_2
+     96            else
+     97              light_setting_reverse=reverse;
+   \                     ??AT_ZCL_ONOFF_SWITCH_setting_0:
+   \   000019   EE           MOV     A,R6
+   \   00001A   90....       MOV     DPTR,#light_setting_reverse
+   \                     ??AT_ZCL_ONOFF_SWITCH_setting_2:
+   \   00001D   F0           MOVX    @DPTR,A
+     98            osal_nv_item_init( AT_S_NV_OFFSET+AT_S_BUTTON_FUN_ID, 1, NULL );
+   \   00001E                ; Setup parameters for call to function osal_nv_item_init
+   \   00001E   E4           CLR     A
+   \   00001F   F5..         MOV     ?V0 + 0,A
+   \   000021   F5..         MOV     ?V0 + 1,A
+   \   000023   78..         MOV     R0,#?V0 + 0
+   \   000025   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000028   7C01         MOV     R4,#0x1
+   \   00002A   7D00         MOV     R5,#0x0
+   \   00002C   7A64         MOV     R2,#0x64
+   \   00002E   7B04         MOV     R3,#0x4
+   \   000030   12....       LCALL   ??osal_nv_item_init?relay
+   \   000033   7402         MOV     A,#0x2
+   \   000035   12....       LCALL   ?DEALLOC_XSTACK8
+     99            osal_nv_write( AT_S_NV_OFFSET+AT_S_BUTTON_FUN_ID, 0,1, &light_setting_reverse );
+   \   000038                ; Setup parameters for call to function osal_nv_write
+   \   000038   75....       MOV     ?V0 + 0,#light_setting_reverse & 0xff
+   \   00003B   75....       MOV     ?V0 + 1,#(light_setting_reverse >> 8) & 0xff
+   \   00003E   78..         MOV     R0,#?V0 + 0
+   \   000040   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000043   75..01       MOV     ?V0 + 0,#0x1
+   \   000046   75..00       MOV     ?V0 + 1,#0x0
+   \   000049   78..         MOV     R0,#?V0 + 0
+   \   00004B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00004E   7C00         MOV     R4,#0x0
+   \   000050   7D00         MOV     R5,#0x0
+   \   000052   7A64         MOV     R2,#0x64
+   \   000054   7B04         MOV     R3,#0x4
+   \   000056   12....       LCALL   ??osal_nv_write?relay
+   \   000059   02....       LJMP    ?Subroutine0 & 0xFFFF
+    100            
+    101          }
+    102          
+    103          /*********************************************************************
+    104           * @fn          zclSample_event_loop
+    105           *
+    106           * @brief       Event Loop Processor for zclGeneral.
+    107           *
+    108           * @param       none
+    109           *
+    110           * @return      none
+    111           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    112          uint16 AT_ZCL_ONOFF_SWITCH_event_loop( uint8 task_id, uint16 events )
+   \                     AT_ZCL_ONOFF_SWITCH_event_loop:
+    113          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    114            afIncomingMSGPacket_t *MSGpkt;
+    115            
+    116            (void)task_id;  // Intentionally unreferenced parameter
+    117          
+    118            if ( events & SYS_EVENT_MSG )
+   \   000009   5480         ANL     A,#0x80
+   \   00000B   702B         JNZ     ??AT_ZCL_ONOFF_SWITCH_event_loop_0
+    119            {
+    120              while ( (MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( AT_ZCL_ONOFF_SWITCH_TaskID )) )
+    121              {
+    122                switch ( MSGpkt->hdr.event )
+    123                { 
+    124                   default:
+    125                    break;
+    126                }
+    127                // Release the memory
+    128                osal_msg_deallocate( (uint8 *)MSGpkt );
+    129              }
+    130          
+    131              // return unprocessed events
+    132              return (events ^ SYS_EVENT_MSG);
+    133            }
+    134          
+    135            if ( events & AT_ZCL_ONOFF_SWITCH_IDENTIFY_TIMEOUT_EVT )
+   \   00000D   EE           MOV     A,R6
+   \   00000E   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000010   5039         JNC     ??AT_ZCL_ONOFF_SWITCH_event_loop_1
+    136            {
+    137              if (AT_ZCL_ONOFF_SWITCH_IdentifyTime > 0 )
+   \   000012   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_IdentifyTime
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   F8           MOV     R0,A
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   F9           MOV     R1,A
+   \   00001A   E8           MOV     A,R0
+   \   00001B   49           ORL     A,R1
+   \   00001C   600C         JZ      ??AT_ZCL_ONOFF_SWITCH_event_loop_2
+    138                AT_ZCL_ONOFF_SWITCH_IdentifyTime--;
+   \   00001E   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_IdentifyTime
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   24FF         ADD     A,#-0x1
+   \   000024   F0           MOVX    @DPTR,A
+   \   000025   A3           INC     DPTR
+   \   000026   E0           MOVX    A,@DPTR
+   \   000027   34FF         ADDC    A,#-0x1
+   \   000029   F0           MOVX    @DPTR,A
+    139              AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange();
+   \                     ??AT_ZCL_ONOFF_SWITCH_event_loop_2:
+   \   00002A                ; Setup parameters for call to function AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange
+   \   00002A   12....       LCALL   ??AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange
+    140          
+    141              return ( events ^ AT_ZCL_ONOFF_SWITCH_IDENTIFY_TIMEOUT_EVT );
+   \   00002D   EE           MOV     A,R6
+   \   00002E   6401         XRL     A,#0x1
+   \   000030   FA           MOV     R2,A
+   \   000031   EF           MOV     A,R7
+   \                     ??AT_ZCL_ONOFF_SWITCH_event_loop_3:
+   \   000032   FB           MOV     R3,A
+   \   000033   8030         SJMP    ??AT_ZCL_ONOFF_SWITCH_event_loop_4
+    142            }
+   \                     ??AT_ZCL_ONOFF_SWITCH_event_loop_5:
+   \   000035                ; Setup parameters for call to function osal_msg_deallocate
+   \   000035   12....       LCALL   ??osal_msg_deallocate?relay
+   \                     ??AT_ZCL_ONOFF_SWITCH_event_loop_0:
+   \   000038                ; Setup parameters for call to function osal_msg_receive
+   \   000038   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_TaskID
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   F9           MOV     R1,A
+   \   00003D   12....       LCALL   ??osal_msg_receive?relay
+   \   000040   EA           MOV     A,R2
+   \   000041   4B           ORL     A,R3
+   \   000042   70F1         JNZ     ??AT_ZCL_ONOFF_SWITCH_event_loop_5
+   \   000044   EE           MOV     A,R6
+   \   000045   FA           MOV     R2,A
+   \   000046   EF           MOV     A,R7
+   \   000047   6480         XRL     A,#0x80
+   \   000049   80E7         SJMP    ??AT_ZCL_ONOFF_SWITCH_event_loop_3
+    143            
+    144            //updata the switch status
+    145            if ( events & AT_ZCL_ONOFF_SWITCH_UPDATE_EVT )
+   \                     ??AT_ZCL_ONOFF_SWITCH_event_loop_1:
+   \   00004B   5402         ANL     A,#0x2
+   \   00004D   6012         JZ      ??AT_ZCL_ONOFF_SWITCH_event_loop_6
+    146            {
+    147              AT_ZCL_ONOFF_SWITCH_update();
+   \   00004F                ; Setup parameters for call to function AT_ZCL_ONOFF_SWITCH_update
+   \   00004F   12....       LCALL   ??AT_ZCL_ONOFF_SWITCH_update?relay
+    148              osal_start_timerEx( AT_ZCL_ONOFF_SWITCH_TaskID, AT_ZCL_ONOFF_SWITCH_UPDATE_EVT, 500 );
+   \   000052                ; Setup parameters for call to function osal_start_timerEx
+   \   000052   7CF4         MOV     R4,#-0xc
+   \   000054   7D01         MOV     R5,#0x1
+   \   000056   12....       LCALL   ?Subroutine3 & 0xFFFF
+    149              return ( events ^ AT_ZCL_ONOFF_SWITCH_UPDATE_EVT );
+   \                     ??CrossCallReturnLabel_0:
+   \   000059   EE           MOV     A,R6
+   \   00005A   6402         XRL     A,#0x2
+   \   00005C   FA           MOV     R2,A
+   \   00005D   EF           MOV     A,R7
+   \   00005E   FB           MOV     R3,A
+   \   00005F   8004         SJMP    ??AT_ZCL_ONOFF_SWITCH_event_loop_4
+    150            }
+    151            
+    152            // Discard unknown events
+    153            return 0;
+   \                     ??AT_ZCL_ONOFF_SWITCH_event_loop_6:
+   \   000061   7A00         MOV     R2,#0x0
+   \   000063   7B00         MOV     R3,#0x0
+   \                     ??AT_ZCL_ONOFF_SWITCH_event_loop_4:
+   \   000065   02....       LJMP    ??Subroutine6_0 & 0xFFFF
+    154          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7A02         MOV     R2,#0x2
+   \   000002                REQUIRE ??Subroutine4_0
+   \   000002                ; // Fall through to label ??Subroutine4_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine4_0:
+   \   000000   7B00         MOV     R3,#0x0
+   \   000002   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_TaskID
+   \   000005   E0           MOVX    A,@DPTR
+   \   000006   F9           MOV     R1,A
+   \   000007   12....       LCALL   ??osal_start_timerEx?relay
+   \   00000A   22           RET
+    155          
+    156          
+    157          
+    158          
+    159          /*********************************************************************
+    160           * @fn      AT_ZCL_ONOFF_SWITCH_update
+    161           *
+    162           * @brief   updata the Device Temperature Configuration Cluster every second
+    163           *
+    164           * @param   none
+    165           *
+    166           * @return  none
+    167           *
+    168          ************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    169          static void AT_ZCL_ONOFF_SWITCH_update(void){
+   \                     AT_ZCL_ONOFF_SWITCH_update:
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 12
+   \   000005   74F4         MOV     A,#-0xc
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    170            uint8 sw = switch_status();
+   \   00000A                ; Setup parameters for call to function switch_status
+   \   00000A   12....       LCALL   ??switch_status?relay
+    171            if(light_setting_reverse){
+   \   00000D   90....       MOV     DPTR,#light_setting_reverse
+   \   000010   E0           MOVX    A,@DPTR
+   \   000011   606C         JZ      ??AT_ZCL_ONOFF_SWITCH_update_0
+    172              if(AT_ZCL_ONOFF_SWITCH_action != !sw){
+   \   000013   E9           MOV     A,R1
+   \   000014   7004         JNZ     ??AT_ZCL_ONOFF_SWITCH_update_1
+   \   000016   D2F0         SETB    B.0
+   \   000018   8002         SJMP    ??AT_ZCL_ONOFF_SWITCH_update_2
+   \                     ??AT_ZCL_ONOFF_SWITCH_update_1:
+   \   00001A   C2F0         CLR     B.0
+   \                     ??AT_ZCL_ONOFF_SWITCH_update_2:
+   \   00001C   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_action
+   \   00001F   E0           MOVX    A,@DPTR
+   \   000020   F8           MOV     R0,A
+   \   000021   A2F0         MOV     C,B.0
+   \   000023   E4           CLR     A
+   \   000024   33           RLC     A
+   \   000025   68           XRL     A,R0
+   \   000026   7003         JNZ     $+5
+   \   000028   02....       LJMP    ??AT_ZCL_ONOFF_SWITCH_update_3 & 0xFFFF
+    173                AT_ZCL_ONOFF_SWITCH_action= !sw;
+   \   00002B   E9           MOV     A,R1
+   \   00002C   7004         JNZ     ??AT_ZCL_ONOFF_SWITCH_update_4
+   \   00002E   7401         MOV     A,#0x1
+   \   000030   8001         SJMP    ??AT_ZCL_ONOFF_SWITCH_update_5
+   \                     ??AT_ZCL_ONOFF_SWITCH_update_4:
+   \   000032   E4           CLR     A
+   \                     ??AT_ZCL_ONOFF_SWITCH_update_5:
+   \   000033   F0           MOVX    @DPTR,A
+    174                
+    175                afAddrType_t dstAddr;
+    176                dstAddr.addrMode = afAddrNotPresent;
+   \   000034   7408         MOV     A,#0x8
+   \   000036   12....       LCALL   ?XSTACK_DISP0_8
+   \   000039   E4           CLR     A
+   \   00003A   F0           MOVX    @DPTR,A
+    177                if(AT_ZCL_ONOFF_SWITCH_action==ON_OFF_SWITCH_ACTIONS_0 ){
+   \   00003B   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_action
+   \   00003E   E0           MOVX    A,@DPTR
+   \   00003F   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000041   E4           CLR     A
+   \   000042   F5..         MOV     ?V0 + 0,A
+   \   000044   F5..         MOV     ?V0 + 1,A
+   \   000046   78..         MOV     R0,#?V0 + 0
+   \   000048   405B         JC      ??AT_ZCL_ONOFF_SWITCH_update_6
+    178                  zclGeneral_SendOnOff_CmdOff(AT_ZCL_ONOFF_SWITCH_ENDPOINT,&dstAddr,1,1);
+   \   00004A                ; Setup parameters for call to function zcl_SendCommand
+   \                     ??AT_ZCL_ONOFF_SWITCH_update_7:
+   \   00004A   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00004D   78..         MOV     R0,#?V0 + 0
+   \   00004F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000052   75..01       MOV     ?V0 + 0,#0x1
+   \   000055   78..         MOV     R0,#?V0 + 0
+   \   000057   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00005A   E4           CLR     A
+   \   00005B   F5..         MOV     ?V0 + 0,A
+   \   00005D   78..         MOV     R0,#?V0 + 0
+   \   00005F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000062   75..01       MOV     ?V0 + 0,#0x1
+   \   000065   78..         MOV     R0,#?V0 + 0
+   \   000067   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00006A   75..00       MOV     ?V0 + 0,#0x0
+   \   00006D   78..         MOV     R0,#?V0 + 0
+   \   00006F   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000072   75..01       MOV     ?V0 + 0,#0x1
+   \   000075   78..         MOV     R0,#?V0 + 0
+   \   000077   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00007A   75..00       MOV     ?V0 + 0,#0x0
+   \   00007D   8056         SJMP    ??AT_ZCL_ONOFF_SWITCH_update_8
+    179                }else{
+    180                  zclGeneral_SendOnOff_CmdOn(AT_ZCL_ONOFF_SWITCH_ENDPOINT,&dstAddr,1,1);
+    181                }
+    182              }
+    183                
+    184            }
+    185            else{
+    186              if(AT_ZCL_ONOFF_SWITCH_action != sw){
+   \                     ??AT_ZCL_ONOFF_SWITCH_update_0:
+   \   00007F   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_action
+   \   000082   E0           MOVX    A,@DPTR
+   \   000083   69           XRL     A,R1
+   \   000084   606B         JZ      ??AT_ZCL_ONOFF_SWITCH_update_3
+    187                  AT_ZCL_ONOFF_SWITCH_action= sw;
+   \   000086   E9           MOV     A,R1
+   \   000087   F0           MOVX    @DPTR,A
+    188                
+    189                afAddrType_t dstAddr;
+    190                dstAddr.addrMode = afAddrNotPresent;
+   \   000088   7408         MOV     A,#0x8
+   \   00008A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00008D   E4           CLR     A
+   \   00008E   F0           MOVX    @DPTR,A
+    191                if(AT_ZCL_ONOFF_SWITCH_action==ON_OFF_SWITCH_ACTIONS_0 ){
+   \   00008F   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_action
+   \   000092   E0           MOVX    A,@DPTR
+   \   000093   7009         JNZ     ??AT_ZCL_ONOFF_SWITCH_update_9
+    192                  zclGeneral_SendOnOff_CmdOff(AT_ZCL_ONOFF_SWITCH_ENDPOINT,&dstAddr,1,1);
+   \   000095                ; Setup parameters for call to function zcl_SendCommand
+   \   000095   E4           CLR     A
+   \   000096   F5..         MOV     ?V0 + 0,A
+   \   000098   F5..         MOV     ?V0 + 1,A
+   \   00009A   78..         MOV     R0,#?V0 + 0
+   \   00009C   80AC         SJMP    ??AT_ZCL_ONOFF_SWITCH_update_7
+    193                }else{
+    194                  zclGeneral_SendOnOff_CmdOn(AT_ZCL_ONOFF_SWITCH_ENDPOINT,&dstAddr,1,1);
+   \                     ??AT_ZCL_ONOFF_SWITCH_update_9:
+   \   00009E                ; Setup parameters for call to function zcl_SendCommand
+   \   00009E   E4           CLR     A
+   \   00009F   F5..         MOV     ?V0 + 0,A
+   \   0000A1   F5..         MOV     ?V0 + 1,A
+   \   0000A3   78..         MOV     R0,#?V0 + 0
+   \                     ??AT_ZCL_ONOFF_SWITCH_update_6:
+   \   0000A5   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000A8   78..         MOV     R0,#?V0 + 0
+   \   0000AA   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000AD   75..01       MOV     ?V0 + 0,#0x1
+   \   0000B0   78..         MOV     R0,#?V0 + 0
+   \   0000B2   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000B5   E4           CLR     A
+   \   0000B6   F5..         MOV     ?V0 + 0,A
+   \   0000B8   78..         MOV     R0,#?V0 + 0
+   \   0000BA   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000BD   75..01       MOV     ?V0 + 0,#0x1
+   \   0000C0   78..         MOV     R0,#?V0 + 0
+   \   0000C2   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000C5   75..00       MOV     ?V0 + 0,#0x0
+   \   0000C8   78..         MOV     R0,#?V0 + 0
+   \   0000CA   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000CD   75..01       MOV     ?V0 + 0,#0x1
+   \   0000D0   78..         MOV     R0,#?V0 + 0
+   \   0000D2   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \                     ??AT_ZCL_ONOFF_SWITCH_update_8:
+   \   0000D5   78..         MOV     R0,#?V0 + 0
+   \   0000D7   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000DA   7C06         MOV     R4,#0x6
+   \   0000DC   7D00         MOV     R5,#0x0
+   \   0000DE   740B         MOV     A,#0xb
+   \   0000E0   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000E3   AA82         MOV     R2,DPL
+   \   0000E5   AB83         MOV     R3,DPH
+   \   0000E7   7907         MOV     R1,#0x7
+   \   0000E9   12....       LCALL   ??zcl_SendCommand?relay
+   \   0000EC   740B         MOV     A,#0xb
+   \   0000EE   12....       LCALL   ?DEALLOC_XSTACK8
+    195                }
+    196              }
+    197            }
+    198          
+    199          }
+   \                     ??AT_ZCL_ONOFF_SWITCH_update_3:
+   \   0000F1   740C         MOV     A,#0xc
+   \   0000F3   80..         SJMP    ??Subroutine5_0
+    200          
+    201          
+    202          
+    203          
+    204          /*********************************************************************
+    205           * @fn      AT_ZCL_ONOFF_SWITCH_BasicResetCB
+    206           *
+    207           * @brief   Callback from the ZCL General Cluster Library
+    208           *          to set all the Basic Cluster attributes to default values.
+    209           *
+    210           * @param   none
+    211           *
+    212           * @return  none
+    213           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    214          static void AT_ZCL_ONOFF_SWITCH_BasicResetCB( void )
+   \                     AT_ZCL_ONOFF_SWITCH_BasicResetCB:
+    215          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 4
+   \   000004   74FC         MOV     A,#-0x4
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+    216            // Reset all attributes to default values
+    217            AT_ZCL_ONOFF_SWITCH_OnOffCB(COMMAND_OFF);
+   \   000009                ; Setup parameters for call to function AT_ZCL_ONOFF_SWITCH_OnOffCB
+   \   000009   7900         MOV     R1,#0x0
+   \   00000B   12....       LCALL   ??AT_ZCL_ONOFF_SWITCH_OnOffCB?relay
+    218            
+    219            zclIdentify_t identifyCmd={NULL,0};
+   \   00000E   85..82       MOV     DPL,?XSP + 0
+   \   000011   85..83       MOV     DPH,?XSP + 1
+   \   000014   AC82         MOV     R4,DPL
+   \   000016   AD83         MOV     R5,DPH
+   \   000018   7583..       MOV     DPH,#(`?<Constant {(afAddrType_t *)0, 0}>` >> 8) & 0xff
+   \   00001B   7582..       MOV     DPL,#`?<Constant {(afAddrType_t *)0, 0}>` & 0xff
+   \   00001E   7404         MOV     A,#0x4
+   \   000020   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    220            AT_ZCL_ONOFF_SWITCH_IdentifyCB( &identifyCmd );
+   \   000023                ; Setup parameters for call to function AT_ZCL_ONOFF_SWITCH_IdentifyCB
+   \   000023   85..82       MOV     DPL,?XSP + 0
+   \   000026   85..83       MOV     DPH,?XSP + 1
+   \   000029   AA82         MOV     R2,DPL
+   \   00002B   AB83         MOV     R3,DPH
+   \   00002D   12....       LCALL   ??AT_ZCL_ONOFF_SWITCH_IdentifyCB?relay
+    221          }
+   \   000030   7404         MOV     A,#0x4
+   \   000032   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000035                REQUIRE ?Subroutine1
+   \   000035                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+    222          
+    223          
+    224          /*********************************************************************
+    225           * @fn      AT_ZCL_ONOFF_SWITCH_IdentifyCB
+    226           *
+    227           * @brief   Callback from the ZCL General Cluster Library when
+    228           *          it received an Identity Command for this application.
+    229           *
+    230           * @param   srcAddr - source address and endpoint of the response message
+    231           * @param   identifyTime - the number of seconds to identify yourself
+    232           *
+    233           * @return  none
+    234           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    235          static void AT_ZCL_ONOFF_SWITCH_IdentifyCB( zclIdentify_t *pCmd )
+   \                     AT_ZCL_ONOFF_SWITCH_IdentifyCB:
+    236          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    237            AT_ZCL_ONOFF_SWITCH_IdentifyTime = pCmd->identifyTime;
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+   \   000008   A3           INC     DPTR
+   \   000009   A3           INC     DPTR
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   F8           MOV     R0,A
+   \   00000C   A3           INC     DPTR
+   \   00000D   E0           MOVX    A,@DPTR
+   \   00000E   F9           MOV     R1,A
+   \   00000F   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_IdentifyTime
+   \   000012   E8           MOV     A,R0
+   \   000013   F0           MOVX    @DPTR,A
+   \   000014   A3           INC     DPTR
+   \   000015   E9           MOV     A,R1
+   \   000016   F0           MOVX    @DPTR,A
+    238            AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange();
+   \   000017                ; Setup parameters for call to function AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange
+   \   000017   12....       LCALL   ??AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange
+    239          }
+   \   00001A   80..         SJMP    ?Subroutine1
+    240          
+    241          
+    242          
+    243          /*********************************************************************
+    244           * @fn      AT_ZCL_ONOFF_SWITCH_OnOffCB
+    245           *
+    246           * @brief   Callback from the ZCL General Cluster Library when
+    247           *          it received an On/Off Command for this application.
+    248           *
+    249           * @param   cmd - COMMAND_ON, COMMAND_OFF or COMMAND_TOGGLE
+    250           *
+    251           * @return  none
+    252           */
+    253          //ninglvfeihong Modified
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    254          void AT_ZCL_ONOFF_SWITCH_OnOffCB( uint8 cmd )
+   \                     AT_ZCL_ONOFF_SWITCH_OnOffCB:
+    255          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    256            // Turn on the light
+    257            if ( cmd == COMMAND_ON )
+   \   000007   7401         MOV     A,#0x1
+   \   000009   6E           XRL     A,R6
+   \   00000A   7014         JNZ     ??AT_ZCL_ONOFF_SWITCH_OnOffCB_0
+    258              AT_ZCL_ONOFF_SWITCH_OnOff = AT_ZCL_GEN_ON;
+   \                     ??AT_ZCL_ONOFF_SWITCH_OnOffCB_1:
+   \   00000C   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_OnOff
+   \   00000F   7401         MOV     A,#0x1
+   \   000011   F0           MOVX    @DPTR,A
+    259          
+    260            // Turn off the light
+    261            else if ( cmd == COMMAND_OFF )
+    262              AT_ZCL_ONOFF_SWITCH_OnOff = AT_ZCL_GEN_OFF;
+    263          
+    264            // Toggle the light
+    265            else
+    266            {
+    267              if ( AT_ZCL_ONOFF_SWITCH_OnOff == AT_ZCL_GEN_OFF )
+    268                AT_ZCL_ONOFF_SWITCH_OnOff = AT_ZCL_GEN_ON;
+    269              else
+    270                AT_ZCL_ONOFF_SWITCH_OnOff = AT_ZCL_GEN_OFF;
+    271            }
+    272          
+    273            // In this sample app, we use LED2 to simulate
+    274            if ( AT_ZCL_ONOFF_SWITCH_OnOff == AT_ZCL_GEN_ON ){
+    275              HalLedSet( HAL_LED_1, HAL_LED_MODE_ON );
+   \   000012                ; Setup parameters for call to function HalLedSet
+   \   000012   FA           MOV     R2,A
+   \   000013   F9           MOV     R1,A
+   \   000014   12....       LCALL   ??HalLedSet?relay
+    276              osal_start_timerEx( AT_ZCL_ONOFF_SWITCH_TaskID, AT_ZCL_ONOFF_SWITCH_UPDATE_EVT, 10 );
+   \   000017                ; Setup parameters for call to function osal_start_timerEx
+   \   000017   7C0A         MOV     R4,#0xa
+   \   000019   7D00         MOV     R5,#0x0
+   \   00001B   12....       LCALL   ?Subroutine3 & 0xFFFF
+    277            }
+    278            else{
+    279              HalLedSet( HAL_LED_1, HAL_LED_MODE_OFF );
+    280              osal_stop_timerEx( AT_ZCL_ONOFF_SWITCH_TaskID, AT_ZCL_ONOFF_SWITCH_UPDATE_EVT );
+    281              AT_ZCL_ONOFF_SWITCH_action=0xFF;   //0xFF indicates that the value is invalid.
+    282            }
+    283          }
+   \                     ??CrossCallReturnLabel_1:
+   \   00001E   80..         SJMP    ?Subroutine2
+   \                     ??AT_ZCL_ONOFF_SWITCH_OnOffCB_0:
+   \   000020   EE           MOV     A,R6
+   \   000021   701F         JNZ     ??AT_ZCL_ONOFF_SWITCH_OnOffCB_2
+   \                     ??AT_ZCL_ONOFF_SWITCH_OnOffCB_3:
+   \   000023   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_OnOff
+   \   000026   E4           CLR     A
+   \   000027   F0           MOVX    @DPTR,A
+   \   000028                ; Setup parameters for call to function HalLedSet
+   \   000028   FA           MOV     R2,A
+   \   000029   7901         MOV     R1,#0x1
+   \   00002B   12....       LCALL   ??HalLedSet?relay
+   \   00002E                ; Setup parameters for call to function osal_stop_timerEx
+   \   00002E   7A02         MOV     R2,#0x2
+   \   000030   7B00         MOV     R3,#0x0
+   \   000032   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_TaskID
+   \   000035   E0           MOVX    A,@DPTR
+   \   000036   F9           MOV     R1,A
+   \   000037   12....       LCALL   ??osal_stop_timerEx?relay
+   \   00003A   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_action
+   \   00003D   74FF         MOV     A,#-0x1
+   \   00003F   F0           MOVX    @DPTR,A
+   \   000040   80DC         SJMP    ??CrossCallReturnLabel_1
+   \                     ??AT_ZCL_ONOFF_SWITCH_OnOffCB_2:
+   \   000042   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_OnOff
+   \   000045   E0           MOVX    A,@DPTR
+   \   000046   70DB         JNZ     ??AT_ZCL_ONOFF_SWITCH_OnOffCB_3
+   \   000048   80C2         SJMP    ??AT_ZCL_ONOFF_SWITCH_OnOffCB_1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    284          
+    285          
+    286          /*********************************************************************
+    287           * @fn      AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange
+    288           *
+    289           * @brief   Called to process any change to the IdentifyTime attribute.
+    290           *
+    291           * @param   none
+    292           *
+    293           * @return  none
+    294           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    295          static void AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange( void )
+   \                     AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange:
+    296          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    297            if ( AT_ZCL_ONOFF_SWITCH_IdentifyTime > 0 )
+   \   000004   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_IdentifyTime
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   F8           MOV     R0,A
+   \   000009   A3           INC     DPTR
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   F9           MOV     R1,A
+   \   00000C   E8           MOV     A,R0
+   \   00000D   49           ORL     A,R1
+   \   00000E   6018         JZ      ??AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange_1
+    298            {
+    299              osal_start_timerEx( AT_ZCL_ONOFF_SWITCH_TaskID, AT_ZCL_ONOFF_SWITCH_IDENTIFY_TIMEOUT_EVT, 1000 );
+   \   000010                ; Setup parameters for call to function osal_start_timerEx
+   \   000010   7CE8         MOV     R4,#-0x18
+   \   000012   7D03         MOV     R5,#0x3
+   \   000014   7A01         MOV     R2,#0x1
+   \   000016   12....       LCALL   ??Subroutine4_0 & 0xFFFF
+    300              HalLedBlink ( HAL_LED_2, 0xFF, HAL_LED_DEFAULT_DUTY_CYCLE, HAL_LED_DEFAULT_FLASH_TIME );
+   \                     ??CrossCallReturnLabel_2:
+   \   000019                ; Setup parameters for call to function HalLedBlink
+   \   000019   7CE8         MOV     R4,#-0x18
+   \   00001B   7D03         MOV     R5,#0x3
+   \   00001D   7B05         MOV     R3,#0x5
+   \   00001F   7AFF         MOV     R2,#-0x1
+   \   000021   7902         MOV     R1,#0x2
+   \   000023   12....       LCALL   ??HalLedBlink?relay
+   \   000026   800C         SJMP    ??AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange_2
+    301            }
+    302            else
+    303            {
+    304              osal_stop_timerEx( AT_ZCL_ONOFF_SWITCH_TaskID, AT_ZCL_ONOFF_SWITCH_IDENTIFY_TIMEOUT_EVT );
+   \                     ??AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange_1:
+   \   000028                ; Setup parameters for call to function osal_stop_timerEx
+   \   000028   7A01         MOV     R2,#0x1
+   \   00002A   7B00         MOV     R3,#0x0
+   \   00002C   90....       MOV     DPTR,#AT_ZCL_ONOFF_SWITCH_TaskID
+   \   00002F   E0           MOVX    A,@DPTR
+   \   000030   F9           MOV     R1,A
+   \   000031   12....       LCALL   ??osal_stop_timerEx?relay
+    305             }
+    306          }
+   \                     ??AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange_2:
+   \   000034   02....       LJMP    ?Subroutine1 & 0xFFFF
+    307          
+    308          /******************************************************
+    309           * @fn      AT_ZCL_ONOFF_SWITCH_EP_ENABLE
+    310           *
+    311           * @brief   Process  Measurement and Sensing profile call Callback function
+    312          ********************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    313          static void AT_ZCL_ONOFF_SWITCH_EP_ENABLE( bool isEnable){
+   \                     AT_ZCL_ONOFF_SWITCH_EP_ENABLE:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    314            if(isEnable) {
+   \   000006   6007         JZ      ??AT_ZCL_ONOFF_SWITCH_EP_ENABLE_0
+    315              AT_ZCL_ONOFF_SWITCH_OnOffCB(COMMAND_ON);
+   \   000008                ; Setup parameters for call to function AT_ZCL_ONOFF_SWITCH_OnOffCB
+   \   000008   7901         MOV     R1,#0x1
+   \   00000A   12....       LCALL   ??AT_ZCL_ONOFF_SWITCH_OnOffCB?relay
+   \   00000D   8003         SJMP    ??AT_ZCL_ONOFF_SWITCH_EP_ENABLE_1
+    316            }
+    317            else AT_ZCL_ONOFF_SWITCH_BasicResetCB();
+   \                     ??AT_ZCL_ONOFF_SWITCH_EP_ENABLE_0:
+   \   00000F                ; Setup parameters for call to function AT_ZCL_ONOFF_SWITCH_BasicResetCB
+   \   00000F   12....       LCALL   ??AT_ZCL_ONOFF_SWITCH_BasicResetCB?relay
+    318          }
+   \                     ??AT_ZCL_ONOFF_SWITCH_EP_ENABLE_1:
+   \   000012                REQUIRE ?Subroutine2
+   \   000012                ; // Fall through to label ?Subroutine2
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AT_ZCL_ONOFF_SWITCH_GEN_CmdC`:
+   \   000000   ....         DW ??AT_ZCL_ONOFF_SWITCH_BasicResetCB?relay
+   \   000002   ....         DW ??AT_ZCL_ONOFF_SWITCH_IdentifyCB?relay
+   \   000004   0000         DW 0H
+   \   000006   ....         DW ??AT_ZCL_ONOFF_SWITCH_OnOffCB?relay
+   \   000008   0000         DW 0H
+   \   00000A   0000         DW 0H
+   \   00000C   0000         DW 0H
+   \   00000E   0000         DW 0H
+   \   000010   0000         DW 0H
+   \   000012   0000         DW 0H
+   \   000014   0000         DW 0H
+   \   000016   0000         DW 0H
+   \   000018   0000         DW 0H
+   \   00001A   0000         DW 0H
+   \   00001C   0000         DB 0, 0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_ONOFF_SWITCH_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_ONOFF_SWITCH_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_ONOFF_SWITCH_setting?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_ONOFF_SWITCH_setting
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_ONOFF_SWITCH_event_loop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_ONOFF_SWITCH_event_loop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_ONOFF_SWITCH_update?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_ONOFF_SWITCH_update
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_ONOFF_SWITCH_BasicResetCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_ONOFF_SWITCH_BasicResetCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_ONOFF_SWITCH_IdentifyCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_ONOFF_SWITCH_IdentifyCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_ONOFF_SWITCH_OnOffCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_ONOFF_SWITCH_OnOffCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AT_ZCL_ONOFF_SWITCH_EP_ENABLE?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AT_ZCL_ONOFF_SWITCH_EP_ENABLE
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {(afAddrType_t *)0, 0}>`:
+   \   000000   0000         DW 0H
+   \   000002   0000         DW 0
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     AT_ZCL_ONOFF_SWITCH_BasicResetCB
+                                        4      0     13
+       -> AT_ZCL_ONOFF_SWITCH_OnOffCB
+                                        4      0      8
+       -> AT_ZCL_ONOFF_SWITCH_IdentifyCB
+                                        4      0      8
+     AT_ZCL_ONOFF_SWITCH_EP_ENABLE      0      0      9
+       -> AT_ZCL_ONOFF_SWITCH_OnOffCB
+                                        0      0     18
+       -> AT_ZCL_ONOFF_SWITCH_BasicResetCB
+                                        0      0     18
+     AT_ZCL_ONOFF_SWITCH_IdentifyCB     2      0      4
+       -> AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange
+                                        4      0      0
+     AT_ZCL_ONOFF_SWITCH_Init           0      0     14
+       -> zclHA_Init                    0      0     20
+       -> zclGeneral_RegisterCmdCallbacks
+                                        0      0     20
+       -> zcl_registerAttrList          0      0     20
+       -> AT_ZCL_EP_ENABLE_Register     0      0     20
+       -> switch_init                   0      0     20
+       -> osal_nv_item_init             0      0     24
+       -> osal_nv_read                  0      0     28
+     AT_ZCL_ONOFF_SWITCH_OnOffCB        0      0     18
+       -> HalLedSet                     0      0     18
+       -> osal_start_timerEx            0      0     18
+       -> HalLedSet                     0      0     18
+       -> osal_stop_timerEx             0      0     18
+     AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange
+                                        2      0     10
+       -> osal_start_timerEx            4      0      0
+       -> HalLedBlink                   4      0      0
+       -> osal_stop_timerEx             4      0      0
+     AT_ZCL_ONOFF_SWITCH_event_loop     0      0     10
+       -> AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange
+                                        0      0     20
+       -> osal_msg_deallocate           0      0     20
+       -> osal_msg_receive              0      0     20
+       -> AT_ZCL_ONOFF_SWITCH_update
+                                        0      0     20
+       -> osal_start_timerEx            0      0     20
+     AT_ZCL_ONOFF_SWITCH_setting        0      0     14
+       -> osal_nv_item_init             0      0     24
+       -> osal_nv_write                 0      0     28
+     AT_ZCL_ONOFF_SWITCH_update         0      0     43
+       -> switch_status                 0      0     44
+       -> zcl_SendCommand               0      0     66
+       -> zcl_SendCommand               0      0     66
+       -> zcl_SendCommand               0      0     66
+       -> zcl_SendCommand               0      0     66
+
+
+   Segment part sizes:
+
+     Function/Label                                  Bytes
+     --------------                                  -----
+     AT_ZCL_ONOFF_SWITCH_TaskID                         1
+     light_setting_reverse                              1
+     AT_ZCL_ONOFF_SWITCH_GEN_CmdCallbacks
+                                                       30
+     AT_ZCL_ONOFF_SWITCH_Init                         111
+     ?Subroutine0                                       2
+     ??Subroutine5_0                                    3
+     ??Subroutine6_0                                    5
+     AT_ZCL_ONOFF_SWITCH_setting                       92
+     AT_ZCL_ONOFF_SWITCH_event_loop                   104
+     ?Subroutine3                                       2
+     ??Subroutine4_0                                   11
+     AT_ZCL_ONOFF_SWITCH_update                       245
+     AT_ZCL_ONOFF_SWITCH_BasicResetCB
+                                                       53
+     ?Subroutine1                                       7
+     AT_ZCL_ONOFF_SWITCH_IdentifyCB                    28
+     AT_ZCL_ONOFF_SWITCH_OnOffCB                       74
+     ?Subroutine2                                       5
+     AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange
+                                                       55
+     AT_ZCL_ONOFF_SWITCH_EP_ENABLE                     18
+     ?<Initializer for AT_ZCL_ONOFF_SWITCH_GEN_CmdC    30
+     ??AT_ZCL_ONOFF_SWITCH_Init?relay                   6
+     ??AT_ZCL_ONOFF_SWITCH_setting?relay                6
+     ??AT_ZCL_ONOFF_SWITCH_event_loop?relay             6
+     ??AT_ZCL_ONOFF_SWITCH_update?relay                 6
+     ??AT_ZCL_ONOFF_SWITCH_BasicResetCB?relay           6
+     ??AT_ZCL_ONOFF_SWITCH_IdentifyCB?relay             6
+     ??AT_ZCL_ONOFF_SWITCH_OnOffCB?relay                6
+     ??AT_ZCL_ONOFF_SWITCH_ProcessIdentifyTimeChange    6
+     ??AT_ZCL_ONOFF_SWITCH_EP_ENABLE?relay              6
+     ?<Constant {(afAddrType_t *)0, 0}>                 4
+
+ 
+ 815 bytes in segment BANKED_CODE
+  54 bytes in segment BANK_RELAYS
+  30 bytes in segment XDATA_I
+  30 bytes in segment XDATA_ID
+   4 bytes in segment XDATA_ROM_C
+   2 bytes in segment XDATA_Z
+ 
+ 899 bytes of CODE  memory
+   4 bytes of CONST memory
+  32 bytes of XDATA memory
+
+Errors: none
+Warnings: none
